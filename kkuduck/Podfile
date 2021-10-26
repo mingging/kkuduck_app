@@ -8,4 +8,5 @@ target 'kkuduck' do
   # Pods for kkuduck
   pod 'Alamofire'
   pod 'Charts'
+  pod 'DropDown'
 end

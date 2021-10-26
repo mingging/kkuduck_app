@@ -23,6 +23,14 @@
 		3963407B2727C6490079E845 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407A2727C6490079E845 /* ListTableViewController.swift */; };
 		3963407D2727C64D0079E845 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* CustomTableViewCell.swift */; };
 		3963407F2727C6520079E845 /* MetricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407E2727C6520079E845 /* MetricViewController.swift */; };
+		396340832727D2930079E845 /* CreateSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* CreateSubscriptionViewController.swift */; };
+		396340852727DF600079E845 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340842727DF600079E845 /* CustomCollectionViewCell.swift */; };
+		396340872727E4E30079E845 /* MoreInfoServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* MoreInfoServiceViewController.swift */; };
+		396340892727E7FE0079E845 /* back-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 396340882727E7FD0079E845 /* back-arrow.png */; };
+		3963408B2727F1990079E845 /* down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3963408A2727F1980079E845 /* down_arrow.png */; };
+		3963409827280BBA0079E845 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963409627280BBA0079E845 /* DropDownCell.swift */; };
+		3963409927280BBA0079E845 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3963409727280BBA0079E845 /* DropDownCell.xib */; };
+		3963409B272811740079E845 /* MoreInfoNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963409A272811740079E845 /* MoreInfoNewViewController.swift */; };
 		E8588FECCCC9E8C4B252BB21 /* Pods_kkuduck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5286D90185603632F2497BA0 /* Pods_kkuduck.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +53,14 @@
 		3963407A2727C6490079E845 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		3963407C2727C64D0079E845 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3963407E2727C6520079E845 /* MetricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricViewController.swift; sourceTree = "<group>"; };
+		396340822727D2930079E845 /* CreateSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSubscriptionViewController.swift; sourceTree = "<group>"; };
+		396340842727DF600079E845 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		396340862727E4E20079E845 /* MoreInfoServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoServiceViewController.swift; sourceTree = "<group>"; };
+		396340882727E7FD0079E845 /* back-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-arrow.png"; sourceTree = "<group>"; };
+		3963408A2727F1980079E845 /* down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_arrow.png; sourceTree = "<group>"; };
+		3963409627280BBA0079E845 /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		3963409727280BBA0079E845 /* DropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
+		3963409A272811740079E845 /* MoreInfoNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoNewViewController.swift; sourceTree = "<group>"; };
 		5286D90185603632F2497BA0 /* Pods_kkuduck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFBF873F0516D5703E519B0 /* Pods-kkuduck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.release.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.release.xcconfig"; sourceTree = "<group>"; };
 		D7424F31721DABFD5C45F837 /* Pods-kkuduck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.debug.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +108,8 @@
 		39633FDF272649800079E845 /* kkuduck */ = {
 			isa = PBXGroup;
 			children = (
+				3963408A2727F1980079E845 /* down_arrow.png */,
+				396340882727E7FD0079E845 /* back-arrow.png */,
 				3963401D272695470079E845 /* app_icon.jpg */,
 				39633FF4272651490079E845 /* font */,
 				39633FE0272649800079E845 /* AppDelegate.swift */,
@@ -108,6 +126,12 @@
 				396340782727C6370079E845 /* writeSubscription.plist */,
 				39633FF9272655E40079E845 /* StartMainViewController.swift */,
 				39633FFB27265A080079E845 /* MainViewController.swift */,
+				396340822727D2930079E845 /* CreateSubscriptionViewController.swift */,
+				396340842727DF600079E845 /* CustomCollectionViewCell.swift */,
+				396340862727E4E20079E845 /* MoreInfoServiceViewController.swift */,
+				3963409627280BBA0079E845 /* DropDownCell.swift */,
+				3963409727280BBA0079E845 /* DropDownCell.xib */,
+				3963409A272811740079E845 /* MoreInfoNewViewController.swift */,
 			);
 			path = kkuduck;
 			sourceTree = "<group>";
@@ -195,7 +219,10 @@
 				396340772727C6340079E845 /* user.plist in Resources */,
 				3963401E272695480079E845 /* app_icon.jpg in Resources */,
 				39633FE8272649800079E845 /* Main.storyboard in Resources */,
+				3963409927280BBA0079E845 /* DropDownCell.xib in Resources */,
+				3963408B2727F1990079E845 /* down_arrow.png in Resources */,
 				39633FF7272651570079E845 /* GmarketSansBold.otf in Resources */,
+				396340892727E7FE0079E845 /* back-arrow.png in Resources */,
 				39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,13 +276,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3963409827280BBA0079E845 /* DropDownCell.swift in Sources */,
 				3963407D2727C64D0079E845 /* CustomTableViewCell.swift in Sources */,
+				396340852727DF600079E845 /* CustomCollectionViewCell.swift in Sources */,
+				396340832727D2930079E845 /* CreateSubscriptionViewController.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
 				3963407F2727C6520079E845 /* MetricViewController.swift in Sources */,
+				3963409B272811740079E845 /* MoreInfoNewViewController.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
 				39633FFA272655E40079E845 /* StartMainViewController.swift in Sources */,
 				3963407B2727C6490079E845 /* ListTableViewController.swift in Sources */,
 				39633FFC27265A080079E845 /* MainViewController.swift in Sources */,
+				396340872727E4E30079E845 /* MoreInfoServiceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = kkuduck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,6 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9BN45C9994;
 				INFOPLIST_FILE = kkuduck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

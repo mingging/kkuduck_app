@@ -32,9 +32,10 @@ class ListTableViewController: UIViewController {
     
     func SearchBar() {
         searchBar.placeholder = "구독을 검색해보세요"
-        searchBar.searchTextField.backgroundColor = UIColor.clear
-        searchBar.backgroundColor = UIColor.clear
-        
+        searchBar.searchTextField.backgroundColor = .white
+        searchBar.barTintColor = UIColor(hex: "#FDAC53ff")
+        searchBar.backgroundImage = UIImage()
+
         
     }
 
@@ -60,14 +61,14 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 8
         
         // imageview를 원 모양으로 만들기
-        cell.inimageView.layer.cornerRadius = cell.inimageView.frame.size.width/2
+        cell.inimageView.layer.cornerRadius = cell.inimageView.frame.height / 2
         cell.inimageView.clipsToBounds = true
         
         // tableviewcell 의 shadow
         cell.cellView.layer.shadowColor = UIColor.black.cgColor
-        cell.cellView.layer.shadowOpacity = 0.5
-        cell.cellView.layer.shadowRadius = 5
-        cell.cellView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        cell.cellView.layer.shadowOpacity = 0.2
+        cell.cellView.layer.shadowRadius = 10
+        cell.cellView.layer.shadowOffset = CGSize(width: 1, height: 2)
         cell.cellView.layer.masksToBounds = false
         
         guard let subService = self.subService,
@@ -110,4 +111,31 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
+extension UIColor {
+    public convenience init?(hex: String) {
+        let r, g, b, a: CGFloat
+
+        if hex.hasPrefix("#") {
+            let start = hex.index(hex.startIndex, offsetBy: 1)
+            let hexColor = String(hex[start...])
+
+            if hexColor.count == 8 {
+                let scanner = Scanner(string: hexColor)
+                var hexNumber: UInt64 = 0
+
+                if scanner.scanHexInt64(&hexNumber) {
+                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+                    a = CGFloat(hexNumber & 0x000000ff) / 255
+
+                    self.init(red: r, green: g, blue: b, alpha: a)
+                    return
+                }
+            }
+        }
+
+        return nil
+    }
+}
 
