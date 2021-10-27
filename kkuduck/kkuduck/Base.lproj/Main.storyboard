@@ -231,7 +231,7 @@
                             <constraint firstItem="Dnm-CV-hRU" firstAttribute="leading" secondItem="gkL-ve-tbe" secondAttribute="leading" constant="30" id="vYK-Uk-tbp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="kzj-PG-vZq"/>
+                    <tabBarItem key="tabBarItem" title="" image="add_icon.png" selectedImage="add_icon.png" id="kzj-PG-vZq"/>
                     <navigationItem key="navigationItem" title="구독 만들기" id="5jV-Ej-1YV"/>
                     <connections>
                         <outlet property="collectionView" destination="nXW-px-dMN" id="y7C-4U-mMy"/>
@@ -603,11 +603,11 @@
             </objects>
             <point key="canvasLocation" x="4076" y="160"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="Akz-qx-VdQ">
             <objects>
                 <navigationController id="m3p-e5-eVa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6PW-tN-aY9"/>
+                    <tabBarItem key="tabBarItem" title="" image="add_icon.png" selectedImage="add_icon.png" id="6PW-tN-aY9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wo3-rd-kFK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -620,7 +620,7 @@
             </objects>
             <point key="canvasLocation" x="2522" y="858"/>
         </scene>
-        <!--Item 1-->
+        <!--Main View Controller-->
         <scene sceneID="XPi-hB-uam">
             <objects>
                 <viewController storyboardIdentifier="main" id="vkw-Bd-huf" customClass="MainViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
@@ -868,7 +868,9 @@
                             <constraint firstItem="78Y-hH-X8N" firstAttribute="trailing" secondItem="9Yh-Tt-3Ul" secondAttribute="trailing" constant="30" id="yCk-4I-hUM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="nH4-zK-L7l"/>
+                    <tabBarItem key="tabBarItem" title="" image="home_icon.png" selectedImage="home_icon.png" id="nH4-zK-L7l">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="Lqo-DL-Tod"/>
                     <connections>
                         <outlet property="collectionView" destination="59n-JM-yau" id="u0w-vg-5D2"/>
@@ -879,10 +881,10 @@
             </objects>
             <point key="canvasLocation" x="89.855072463768124" y="161.38392857142856"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="AOS-sl-RDK">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="cIl-3C-MNe" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="cIl-3C-MNe" customClass="CustomTabBarController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fry-dM-8Mw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -899,7 +901,7 @@
             </objects>
             <point key="canvasLocation" x="-746" y="859"/>
         </scene>
-        <!--List-->
+        <!--List Table View Controller-->
         <scene sceneID="AjS-rs-vOD">
             <objects>
                 <viewController id="Utf-Gy-Aft" customClass="ListTableViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
@@ -970,19 +972,19 @@
                                                             <rect key="frame" x="18" y="16" width="58" height="58"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.tip.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IGL-Nd-6y1">
-                                                                    <rect key="frame" x="9" y="8.5" width="40" height="39"/>
+                                                                    <rect key="frame" x="11.5" y="11.5" width="35" height="34"/>
                                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="1fr-jb-PVM"/>
-                                                                        <constraint firstAttribute="width" constant="40" id="Fyi-hw-4q5"/>
-                                                                        <constraint firstAttribute="width" secondItem="IGL-Nd-6y1" secondAttribute="height" multiplier="1:1" id="gms-Oe-dzO"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="NZH-SP-BvC"/>
+                                                                        <constraint firstAttribute="width" constant="35" id="UzY-lx-MCQ"/>
+                                                                        <constraint firstAttribute="width" secondItem="IGL-Nd-6y1" secondAttribute="height" multiplier="1:1" id="n0J-S7-sMx"/>
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" red="1" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstItem="IGL-Nd-6y1" firstAttribute="top" secondItem="fjp-fb-egv" secondAttribute="topMargin" id="VPa-QZ-wja"/>
-                                                                <constraint firstItem="IGL-Nd-6y1" firstAttribute="centerX" secondItem="fjp-fb-egv" secondAttribute="centerX" id="cen-4Y-DwE"/>
+                                                                <constraint firstItem="IGL-Nd-6y1" firstAttribute="top" secondItem="fjp-fb-egv" secondAttribute="topMargin" constant="3" id="TvR-oi-jQp"/>
+                                                                <constraint firstItem="IGL-Nd-6y1" firstAttribute="centerX" secondItem="fjp-fb-egv" secondAttribute="centerX" id="aQn-QR-fKX"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -990,6 +992,7 @@
                                                     <constraints>
                                                         <constraint firstItem="9ci-nc-S9m" firstAttribute="leading" secondItem="fjp-fb-egv" secondAttribute="trailing" constant="23" id="0Re-y9-xbD"/>
                                                         <constraint firstItem="du2-ZV-C93" firstAttribute="trailing" secondItem="PPF-pk-7KX" secondAttribute="trailingMargin" constant="-5" id="3AG-UK-MiV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="fjp-fb-egv" secondAttribute="bottom" constant="16" id="3Pa-KH-36c"/>
                                                         <constraint firstAttribute="trailing" secondItem="fjp-fb-egv" secondAttribute="trailing" constant="298" id="B8w-n3-O6g"/>
                                                         <constraint firstItem="fjp-fb-egv" firstAttribute="top" secondItem="PPF-pk-7KX" secondAttribute="top" constant="16" id="Cgv-3d-BD8"/>
                                                         <constraint firstAttribute="bottom" secondItem="9ci-nc-S9m" secondAttribute="bottom" constant="14" id="NsI-h9-kAV"/>
@@ -1029,7 +1032,7 @@
                             <constraint firstItem="6FD-Mm-tF3" firstAttribute="trailing" secondItem="8JK-jh-2xr" secondAttribute="trailing" id="TBO-Ay-NR3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" selectedImage="list.bullet" catalog="system" id="TWA-Pj-q7V"/>
+                    <tabBarItem key="tabBarItem" title="" image="list_icon.png" selectedImage="list_icon.png" id="TWA-Pj-q7V"/>
                     <connections>
                         <outlet property="searchBar" destination="yAx-rH-tfR" id="3Mz-pC-344"/>
                         <outlet property="tableView" destination="6FD-Mm-tF3" id="X9T-SG-rXe"/>
@@ -1039,7 +1042,7 @@
             </objects>
             <point key="canvasLocation" x="873.91304347826099" y="160.04464285714286"/>
         </scene>
-        <!--Chart-->
+        <!--Metric View Controller-->
         <scene sceneID="cmb-aA-f2a">
             <objects>
                 <viewController id="82Y-Ig-Q8e" customClass="MetricViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
@@ -1122,7 +1125,7 @@
                             <constraint firstItem="VQ0-gW-Izn" firstAttribute="top" secondItem="T6q-fI-exd" secondAttribute="bottom" constant="15" id="zof-ZI-QFJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chart" selectedImage="chart.bar.xaxis" catalog="system" id="x3T-vB-hr1"/>
+                    <tabBarItem key="tabBarItem" title="" image="metric_icon.png" selectedImage="metric_icon.png" id="x3T-vB-hr1"/>
                     <connections>
                         <outlet property="barChartView" destination="bn0-iB-ydY" id="Ztz-Og-H5o"/>
                         <outlet property="tableView" destination="EWM-Pl-YCh" id="jS3-tf-3N7"/>
@@ -1134,11 +1137,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_icon.png" width="18" height="18"/>
         <image name="app_icon.jpg" width="1024" height="1024"/>
         <image name="back-arrow.png" width="26" height="26"/>
-        <image name="chart.bar.xaxis" catalog="system" width="128" height="98"/>
         <image name="down_arrow.png" width="12" height="12"/>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="home_icon.png" width="22" height="22"/>
+        <image name="list_icon.png" width="21" height="21"/>
+        <image name="metric_icon.png" width="24" height="24"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.tip.crop.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
