@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		39633FE1272649800079E845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE0272649800079E845 /* AppDelegate.swift */; };
 		39633FE3272649800079E845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE2272649800079E845 /* SceneDelegate.swift */; };
-		39633FE8272649800079E845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39633FE6272649800079E845 /* Main.storyboard */; };
 		39633FEA272649830079E845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39633FE9272649830079E845 /* Assets.xcassets */; };
 		39633FED272649830079E845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39633FEB272649830079E845 /* LaunchScreen.storyboard */; };
 		39633FF7272651570079E845 /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39633FF6272651520079E845 /* GmarketSansBold.otf */; };
@@ -17,9 +16,6 @@
 		39633FFA272655E40079E845 /* StartMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FF9272655E40079E845 /* StartMainViewController.swift */; };
 		39633FFC27265A080079E845 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FFB27265A080079E845 /* MainViewController.swift */; };
 		3963401E272695480079E845 /* app_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3963401D272695470079E845 /* app_icon.jpg */; };
-		396340752727C62D0079E845 /* subservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340742727C62D0079E845 /* subservice.plist */; };
-		396340772727C6340079E845 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340762727C6340079E845 /* user.plist */; };
-		396340792727C6370079E845 /* writeSubscription.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340782727C6370079E845 /* writeSubscription.plist */; };
 		3963407B2727C6490079E845 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407A2727C6490079E845 /* ListTableViewController.swift */; };
 		3963407D2727C64D0079E845 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* CustomTableViewCell.swift */; };
 		3963407F2727C6520079E845 /* MetricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407E2727C6520079E845 /* MetricViewController.swift */; };
@@ -28,27 +24,26 @@
 		396340872727E4E30079E845 /* MoreInfoServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* MoreInfoServiceViewController.swift */; };
 		396340892727E7FE0079E845 /* back-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 396340882727E7FD0079E845 /* back-arrow.png */; };
 		3963408B2727F1990079E845 /* down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3963408A2727F1980079E845 /* down_arrow.png */; };
-		3963409827280BBA0079E845 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963409627280BBA0079E845 /* DropDownCell.swift */; };
-		3963409927280BBA0079E845 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3963409727280BBA0079E845 /* DropDownCell.xib */; };
 		3963409B272811740079E845 /* MoreInfoNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963409A272811740079E845 /* MoreInfoNewViewController.swift */; };
 		396340A1272923F60079E845 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3963409D272923F60079E845 /* list_icon.png */; };
 		396340A2272923F60079E845 /* add_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3963409E272923F60079E845 /* add_icon.png */; };
 		396340A3272923F60079E845 /* metric_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3963409F272923F60079E845 /* metric_icon.png */; };
 		396340A4272923F60079E845 /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 396340A0272923F60079E845 /* home_icon.png */; };
 		396340A6272924260079E845 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340A5272924260079E845 /* CustomTabBarController.swift */; };
-		396340B327293D030079E845 /* list_r_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 396340AF27293CFA0079E845 /* list_r_icon.png */; };
-		396340B427293D030079E845 /* metric_r_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 396340B027293CFA0079E845 /* metric_r_icon.png */; };
-		396340B527293D030079E845 /* add_r_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 396340B127293CFA0079E845 /* add_r_icon.png */; };
-		396340B627293D030079E845 /* home_r-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 396340B227293CFF0079E845 /* home_r-icon.png */; };
-		396340B827293EDB0079E845 /* home_r_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 396340B727293EDA0079E845 /* home_r_icon.jpg */; };
-		E8588FECCCC9E8C4B252BB21 /* Pods_kkuduck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5286D90185603632F2497BA0 /* Pods_kkuduck.framework */; };
+		396340C7272A38460079E845 /* subservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C5272A38460079E845 /* subservice.plist */; };
+		396340C8272A38460079E845 /* writeSubscription.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C6272A38460079E845 /* writeSubscription.plist */; };
+		396340CA272A385B0079E845 /* getFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340C9272A385B0079E845 /* getFile.swift */; };
+		396340CC272A3F400079E845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396340CB272A3F400079E845 /* Main.storyboard */; };
+		396340CF272A4AD90079E845 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340CD272A4AD90079E845 /* DropDownCell.swift */; };
+		396340D0272A4AD90079E845 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396340CE272A4AD90079E845 /* DropDownCell.xib */; };
+		39ED7F08272AAA9C00FA6FEB /* cat_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39ED7F07272AAA9C00FA6FEB /* cat_logo.png */; };
+		A0066EB4F690B1C972178648 /* Pods_kkuduck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39633FDD272649800079E845 /* kkuduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kkuduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39633FE0272649800079E845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39633FE2272649800079E845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		39633FE7272649800079E845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39633FE9272649830079E845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39633FEC272649830079E845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39633FEE272649830079E845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +52,6 @@
 		39633FF9272655E40079E845 /* StartMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMainViewController.swift; sourceTree = "<group>"; };
 		39633FFB27265A080079E845 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3963401D272695470079E845 /* app_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_icon.jpg; sourceTree = "<group>"; };
-		396340742727C62D0079E845 /* subservice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = subservice.plist; sourceTree = "<group>"; };
-		396340762727C6340079E845 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
-		396340782727C6370079E845 /* writeSubscription.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = writeSubscription.plist; sourceTree = "<group>"; };
 		3963407A2727C6490079E845 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		3963407C2727C64D0079E845 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3963407E2727C6520079E845 /* MetricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricViewController.swift; sourceTree = "<group>"; };
@@ -68,22 +60,22 @@
 		396340862727E4E20079E845 /* MoreInfoServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoServiceViewController.swift; sourceTree = "<group>"; };
 		396340882727E7FD0079E845 /* back-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-arrow.png"; sourceTree = "<group>"; };
 		3963408A2727F1980079E845 /* down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_arrow.png; sourceTree = "<group>"; };
-		3963409627280BBA0079E845 /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
-		3963409727280BBA0079E845 /* DropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
 		3963409A272811740079E845 /* MoreInfoNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoNewViewController.swift; sourceTree = "<group>"; };
 		3963409D272923F60079E845 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon.png; sourceTree = "<group>"; };
 		3963409E272923F60079E845 /* add_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_icon.png; sourceTree = "<group>"; };
 		3963409F272923F60079E845 /* metric_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metric_icon.png; sourceTree = "<group>"; };
 		396340A0272923F60079E845 /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		396340A5272924260079E845 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		396340AF27293CFA0079E845 /* list_r_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_r_icon.png; sourceTree = "<group>"; };
-		396340B027293CFA0079E845 /* metric_r_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metric_r_icon.png; sourceTree = "<group>"; };
-		396340B127293CFA0079E845 /* add_r_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_r_icon.png; sourceTree = "<group>"; };
-		396340B227293CFF0079E845 /* home_r-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_r-icon.png"; sourceTree = "<group>"; };
-		396340B727293EDA0079E845 /* home_r_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home_r_icon.jpg; sourceTree = "<group>"; };
-		5286D90185603632F2497BA0 /* Pods_kkuduck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAFBF873F0516D5703E519B0 /* Pods-kkuduck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.release.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.release.xcconfig"; sourceTree = "<group>"; };
-		D7424F31721DABFD5C45F837 /* Pods-kkuduck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.debug.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.debug.xcconfig"; sourceTree = "<group>"; };
+		396340C5272A38460079E845 /* subservice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = subservice.plist; sourceTree = "<group>"; };
+		396340C6272A38460079E845 /* writeSubscription.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = writeSubscription.plist; sourceTree = "<group>"; };
+		396340C9272A385B0079E845 /* getFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getFile.swift; sourceTree = "<group>"; };
+		396340CB272A3F400079E845 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		396340CD272A4AD90079E845 /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		396340CE272A4AD90079E845 /* DropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
+		39ED7F07272AAA9C00FA6FEB /* cat_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat_logo.png; sourceTree = "<group>"; };
+		AB4C7738B9E157DF5B5D05B9 /* Pods-kkuduck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.debug.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.debug.xcconfig"; sourceTree = "<group>"; };
+		E6B060A5EE82B12F09AD5F4A /* Pods-kkuduck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.release.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.release.xcconfig"; sourceTree = "<group>"; };
+		FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8588FECCCC9E8C4B252BB21 /* Pods_kkuduck.framework in Frameworks */,
+				A0066EB4F690B1C972178648 /* Pods_kkuduck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +93,8 @@
 		04376B44EADD78797287DAC0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D7424F31721DABFD5C45F837 /* Pods-kkuduck.debug.xcconfig */,
-				AAFBF873F0516D5703E519B0 /* Pods-kkuduck.release.xcconfig */,
+				AB4C7738B9E157DF5B5D05B9 /* Pods-kkuduck.debug.xcconfig */,
+				E6B060A5EE82B12F09AD5F4A /* Pods-kkuduck.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -113,7 +105,7 @@
 				39633FDF272649800079E845 /* kkuduck */,
 				39633FDE272649800079E845 /* Products */,
 				04376B44EADD78797287DAC0 /* Pods */,
-				4BAB98EDB6A484690D48FB79 /* Frameworks */,
+				BA3645781EFEBD3639E4E467 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,22 +127,22 @@
 				3963407A2727C6490079E845 /* ListTableViewController.swift */,
 				3963407C2727C64D0079E845 /* CustomTableViewCell.swift */,
 				3963407E2727C6520079E845 /* MetricViewController.swift */,
-				39633FE6272649800079E845 /* Main.storyboard */,
+				396340CB272A3F400079E845 /* Main.storyboard */,
 				39633FE9272649830079E845 /* Assets.xcassets */,
 				39633FEB272649830079E845 /* LaunchScreen.storyboard */,
 				39633FEE272649830079E845 /* Info.plist */,
-				396340742727C62D0079E845 /* subservice.plist */,
-				396340762727C6340079E845 /* user.plist */,
-				396340782727C6370079E845 /* writeSubscription.plist */,
+				396340C5272A38460079E845 /* subservice.plist */,
+				396340C6272A38460079E845 /* writeSubscription.plist */,
 				39633FF9272655E40079E845 /* StartMainViewController.swift */,
 				39633FFB27265A080079E845 /* MainViewController.swift */,
 				396340822727D2930079E845 /* CreateSubscriptionViewController.swift */,
 				396340842727DF600079E845 /* CustomCollectionViewCell.swift */,
 				396340862727E4E20079E845 /* MoreInfoServiceViewController.swift */,
-				3963409627280BBA0079E845 /* DropDownCell.swift */,
-				3963409727280BBA0079E845 /* DropDownCell.xib */,
 				3963409A272811740079E845 /* MoreInfoNewViewController.swift */,
 				396340A5272924260079E845 /* CustomTabBarController.swift */,
+				396340C9272A385B0079E845 /* getFile.swift */,
+				396340CD272A4AD90079E845 /* DropDownCell.swift */,
+				396340CE272A4AD90079E845 /* DropDownCell.xib */,
 			);
 			path = kkuduck;
 			sourceTree = "<group>";
@@ -167,11 +159,7 @@
 		3963409C272923DB0079E845 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				396340B727293EDA0079E845 /* home_r_icon.jpg */,
-				396340B127293CFA0079E845 /* add_r_icon.png */,
-				396340B227293CFF0079E845 /* home_r-icon.png */,
-				396340AF27293CFA0079E845 /* list_r_icon.png */,
-				396340B027293CFA0079E845 /* metric_r_icon.png */,
+				39ED7F07272AAA9C00FA6FEB /* cat_logo.png */,
 				3963409E272923F60079E845 /* add_icon.png */,
 				396340A0272923F60079E845 /* home_icon.png */,
 				3963409D272923F60079E845 /* list_icon.png */,
@@ -183,10 +171,10 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		4BAB98EDB6A484690D48FB79 /* Frameworks */ = {
+		BA3645781EFEBD3639E4E467 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5286D90185603632F2497BA0 /* Pods_kkuduck.framework */,
+				FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,11 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39633FF1272649830079E845 /* Build configuration list for PBXNativeTarget "kkuduck" */;
 			buildPhases = (
-				30CC2D94209F3BCC79DBA3E8 /* [CP] Check Pods Manifest.lock */,
+				513F913F105C09F19F78DC02 /* [CP] Check Pods Manifest.lock */,
 				39633FD92726497F0079E845 /* Sources */,
 				39633FDA2726497F0079E845 /* Frameworks */,
 				39633FDB2726497F0079E845 /* Resources */,
-				218E26EBFD695EB807541A13 /* [CP] Embed Pods Frameworks */,
+				0E0E98A554F1A660449C8349 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,26 +238,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396340792727C6370079E845 /* writeSubscription.plist in Resources */,
-				396340B527293D030079E845 /* add_r_icon.png in Resources */,
 				396340A4272923F60079E845 /* home_icon.png in Resources */,
-				396340752727C62D0079E845 /* subservice.plist in Resources */,
 				396340A1272923F60079E845 /* list_icon.png in Resources */,
 				39633FED272649830079E845 /* LaunchScreen.storyboard in Resources */,
-				396340B627293D030079E845 /* home_r-icon.png in Resources */,
-				396340B427293D030079E845 /* metric_r_icon.png in Resources */,
+				396340D0272A4AD90079E845 /* DropDownCell.xib in Resources */,
 				396340A3272923F60079E845 /* metric_icon.png in Resources */,
 				39633FEA272649830079E845 /* Assets.xcassets in Resources */,
-				396340772727C6340079E845 /* user.plist in Resources */,
 				396340A2272923F60079E845 /* add_icon.png in Resources */,
+				39ED7F08272AAA9C00FA6FEB /* cat_logo.png in Resources */,
 				3963401E272695480079E845 /* app_icon.jpg in Resources */,
-				39633FE8272649800079E845 /* Main.storyboard in Resources */,
-				3963409927280BBA0079E845 /* DropDownCell.xib in Resources */,
-				396340B827293EDB0079E845 /* home_r_icon.jpg in Resources */,
-				396340B327293D030079E845 /* list_r_icon.png in Resources */,
+				396340CC272A3F400079E845 /* Main.storyboard in Resources */,
+				396340C8272A38460079E845 /* writeSubscription.plist in Resources */,
 				3963408B2727F1990079E845 /* down_arrow.png in Resources */,
 				39633FF7272651570079E845 /* GmarketSansBold.otf in Resources */,
 				396340892727E7FE0079E845 /* back-arrow.png in Resources */,
+				396340C7272A38460079E845 /* subservice.plist in Resources */,
 				39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +260,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		218E26EBFD695EB807541A13 /* [CP] Embed Pods Frameworks */ = {
+		0E0E98A554F1A660449C8349 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,7 +277,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kkuduck/Pods-kkuduck-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		30CC2D94209F3BCC79DBA3E8 /* [CP] Check Pods Manifest.lock */ = {
+		513F913F105C09F19F78DC02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,11 +306,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3963409827280BBA0079E845 /* DropDownCell.swift in Sources */,
 				3963407D2727C64D0079E845 /* CustomTableViewCell.swift in Sources */,
+				396340CA272A385B0079E845 /* getFile.swift in Sources */,
 				396340852727DF600079E845 /* CustomCollectionViewCell.swift in Sources */,
 				396340832727D2930079E845 /* CreateSubscriptionViewController.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
+				396340CF272A4AD90079E845 /* DropDownCell.swift in Sources */,
 				3963407F2727C6520079E845 /* MetricViewController.swift in Sources */,
 				3963409B272811740079E845 /* MoreInfoNewViewController.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
@@ -342,14 +326,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		39633FE6272649800079E845 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				39633FE7272649800079E845 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		39633FEB272649830079E845 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -479,18 +455,18 @@
 		};
 		39633FF2272649830079E845 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7424F31721DABFD5C45F837 /* Pods-kkuduck.debug.xcconfig */;
+			baseConfigurationReference = AB4C7738B9E157DF5B5D05B9 /* Pods-kkuduck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V5N6533KS3;
 				INFOPLIST_FILE = kkuduck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hm.mini.project.kkuduck;
+				PRODUCT_BUNDLE_IDENTIFIER = hm.nambu.mini.project.kkuduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -499,18 +475,18 @@
 		};
 		39633FF3272649830079E845 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAFBF873F0516D5703E519B0 /* Pods-kkuduck.release.xcconfig */;
+			baseConfigurationReference = E6B060A5EE82B12F09AD5F4A /* Pods-kkuduck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9BN45C9994;
+				DEVELOPMENT_TEAM = V5N6533KS3;
 				INFOPLIST_FILE = kkuduck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hm.mini.project.kkuduck;
+				PRODUCT_BUNDLE_IDENTIFIER = hm.nambu.mini.project.kkuduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

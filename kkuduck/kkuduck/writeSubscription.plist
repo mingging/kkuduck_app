@@ -8,11 +8,11 @@
 		<key>planName</key>
 		<string>넷플릭스</string>
 		<key>planPrice</key>
-		<string>9900원</string>
+		<string>9900</string>
 		<key>cycle</key>
 		<string>월</string>
 		<key>subStartDay</key>
-		<string>2021.10.25</string>
+		<string>2021.10.27</string>
 		<key>subserviceID</key>
 		<string>kkuduck</string>
 	</dict>
@@ -20,13 +20,13 @@
 		<key>id</key>
 		<string>2</string>
 		<key>planName</key>
-		<string>네이버멤버쉽플러스</string>
+		<string>유튜브 프리미엄</string>
 		<key>planPrice</key>
-		<string>4900원</string>
+		<string>9500</string>
 		<key>cycle</key>
 		<string>월</string>
 		<key>subStartDay</key>
-		<string>2021.10.15</string>
+		<string>2021.10.08</string>
 		<key>subserviceID</key>
 		<string>kkuduck</string>
 	</dict>
@@ -34,27 +34,13 @@
 		<key>id</key>
 		<string>3</string>
 		<key>planName</key>
-		<string>유튜브 프리미엄</string>
-		<key>planPrice</key>
-		<string>9500원</string>
-		<key>cycle</key>
-		<string>월</string>
-		<key>subStartDay</key>
-		<string>2021.10.5</string>
-		<key>subserviceID</key>
-		<string>kkuduck</string>
-	</dict>
-	<dict>
-		<key>id</key>
-		<string>4</string>
-		<key>planName</key>
 		<string>애플뮤직</string>
 		<key>planPrice</key>
-		<string>8900원</string>
+		<string>8900</string>
 		<key>cycle</key>
 		<string>월</string>
 		<key>subStartDay</key>
-		<string>2021.10.12</string>
+		<string>2021.10.10</string>
 		<key>subserviceID</key>
 		<string>kkuduck</string>
 	</dict>

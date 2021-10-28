@@ -11,7 +11,6 @@ class CustomTabBarController: UITabBarController {
     var circle: UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.sendSubviewToBack(circle!)
         tabBar.backgroundColor = UIColor(hex: "#FDAC53ff")
         tabBar.backgroundImage = UIImage()
         tabBar.tintColor = UIColor(hex: "#ffffffff")

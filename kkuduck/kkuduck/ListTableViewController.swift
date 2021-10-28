@@ -9,7 +9,8 @@ import UIKit
 import Foundation
 
 class ListTableViewController: UIViewController {
-    var subService: NSArray?
+    var writeSubInfo: NSMutableArray?
+
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -18,33 +19,48 @@ class ListTableViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        Subscription()
+        tableView.backgroundColor = UIColor(hex: "#FDAC53ff")
         SearchBar()
         
-//        CurrentDay()
-    }
-
-    func Subscription() {
-        guard let path = Bundle.main.path(forResource: "writeSubscription", ofType: "plist") else { return }
-        subService = NSArray(contentsOfFile: path)
+        
+        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+        // array의 참조 변수를 넘겨주는 방법 생각해보기
         
     }
+    
+    
+    // 왜 테이블뷰에 리로드가 안 되는 것인가??? OK -> 중복코드 개선 방안 ....
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+
+        super.viewWillAppear(true)
+        self.tableView.reloadData()
+        print(writeSubInfo)
+    }
+
     
     func SearchBar() {
         searchBar.placeholder = "구독을 검색해보세요"
         searchBar.searchTextField.backgroundColor = .white
         searchBar.barTintColor = UIColor(hex: "#FDAC53ff")
         searchBar.backgroundImage = UIImage()
-
         
+        // searchBar.endEditing(true)
     }
 
+    
+    
+    
+    
 }
 
 extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let subService = self.subService {
-            return subService.count
+        
+        // 구독 중인 것들만 보여주기
+        if let writeSubInfo = self.writeSubInfo {
+            return writeSubInfo.count
         } else {
             return 0
         }
@@ -71,24 +87,77 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         cell.cellView.layer.shadowOffset = CGSize(width: 1, height: 2)
         cell.cellView.layer.masksToBounds = false
         
-        guard let subService = self.subService,
-              let item = subService[indexPath.row] as? [String:Any]
+        
+        // 데이터 불러오기
+        guard let writeSubInfo = self.writeSubInfo,
+              let item = writeSubInfo[indexPath.row] as? [String:Any]
         else { return cell }
         
-        
-        
         cell.lblSubName.text = item["planName"] as? String
+        guard let thumImage = item["img"] as? String else {return cell}
+        cell.subImage.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "cat_logo.png"))
         cell.lblSubStartday.text = item["subStartDay"] as? String
-        if let price = item["planPrice"] as? [String:Any] {
-            cell.lblPlanPrice.text = price["베이직"] as? String
-        } else {
-            cell.lblPlanPrice.text = item["planPrice"] as? String
+        // plist에 string으로 저장되기 때문에 따로 뭘 해줄 필요 없음
+        
+//        if let startDay = item["subStartDay"] as? Date { // subStartDay -> date 형태로 형변환
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "yyyy.MM.dd" //
+//            print(startDay) // 2021-10-27 06:58:56 +0000
+//            let day = formatter.string(from: startDay) // String 타입으로 변환
+//
+//            cell.lblSubStartday.text = day
+//            print(day) // 2021.10.27
+//            }
+            
+        
+        // D-day OK
+        let calendar = Calendar.current
+        let currentDate = Date()
+        print(currentDate)
+        func days(from date: Date) -> Int {
+            return calendar.dateComponents([.day], from: date, to: currentDate).day! + 1
+        }
+        if let date = item["subStartDay"] as? String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy.MM.dd"
+            if let day = formatter.date(from: date) {
+                let dDay = days(from: day)
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy.MM.dd"
+                cell.lblDDay.text = "D + \(dDay)"
+            }
         }
         
         
+        if let price = item["planPrice"] {
+            cell.lblPlanPrice.text = "\(price)원/월"
+        }
+        
+        
+        // subStartDay -> 2021.10.25
+        // 구독 시작일부터 +요일
+        
+        
+        
+        // 입력된 구독 정보를 가지고 계산
+        // 10월 1일부터 10월 26일까지의 구독료를 합산 -> 바차트로 표시
+        // 10월 1일부터 10월 26일까지의 구독리스트를 리스트뷰에 보여주기
+
 //        let day =
 //        cell.lblDDay.text = "D + \(day)"
         
+//        let calendar = Calendar.current
+//        if let firstDate = item["subStartDay"] as? Date {
+//            let secondDate = Date()
+//            let date1 = calendar.startOfDay(for: firstDate)
+//            let date2 = calendar.startOfDay(for: secondDate)
+//
+//            let components = calendar.dateComponents([.day], from: date1, to: date2)
+//            print(components)
+//
+//        }
+        
+
         
         
         tableView.backgroundColor = UIColor(red: 253, green: 172, blue: 83, alpha: 0)
@@ -96,6 +165,18 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+//    func isChatTomorrowWithString(dateString: String) -> Bool {
+//        let firebaseFormat = “yyyy년 MM월 dd일 HH:mm”
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = firebaseFormat
+//        formatter.locale = Locale(identifier: "ko")
+//        guard let tempDate1 = formatter.date(from: self) else { return false }
+//        guard let tempDate2 = formatter.date(from: dateString) else { return false }
+//        let date1 = Calendar.current.dateComponents([.year, .month, .day], from: tempDate1)
+//        let date2 = Calendar.current.dateComponents([.year, .month, .day], from: tempDate2)
+//        if date1.year == date2.year && date1.month == date2.month && date1.day == date2.day { return false } else { return true } }
+
     
 //    func CurrentDay() {
 //        var formatter = DateFormatter()
@@ -105,6 +186,43 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
 //    }
     
     
+    // 테이블뷰에서 셀을 삭제하면 저장된 데이터도 삭제되도록 구현
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: nil, handler: {
+            action, view, completionHandler in
+            print("delete")
+            
+            self.writeSubInfo?.removeObject(at: indexPath.row)
+            self.writeSubInfo?.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            completionHandler(true)
+        })
+        action.image = UIImage(systemName: "trash")
+        action.backgroundColor = UIColor(red: 253, green: 172, blue: 83, alpha: 0)
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+        
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: nil, handler: {
+            action, view, completionHandler in
+            print("delete")
+            
+            self.writeSubInfo?.removeObject(at: indexPath.row)
+            self.writeSubInfo?.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            completionHandler(true)
+        })
+        action.image = UIImage(systemName: "trash")
+        action.backgroundColor = UIColor(red: 253, green: 172, blue: 83, alpha: 0)
+        
+        return UISwipeActionsConfiguration(actions: [action])
+        
+
+    }
     
     
     

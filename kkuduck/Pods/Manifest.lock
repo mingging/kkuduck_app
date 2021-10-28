@@ -4,23 +4,29 @@ PODS:
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
   - DropDown (2.3.13)
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
 
 DEPENDENCIES:
   - Alamofire
   - Charts
   - DropDown
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Charts
     - DropDown
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
 
-PODFILE CHECKSUM: cdb1b2e4fbf40d317908d150be4be9ab7f4ced3a
+PODFILE CHECKSUM: 298b62204ea7da0f7848300ef213891bc89d438f
 
 COCOAPODS: 1.11.2
