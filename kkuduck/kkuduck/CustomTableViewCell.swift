@@ -16,7 +16,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var lblPlanPrice: UILabel!
     @IBOutlet weak var lblDDay: UILabel!
     
-    @IBOutlet weak var inimageView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

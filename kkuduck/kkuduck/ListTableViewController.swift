@@ -20,6 +20,7 @@ class ListTableViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(hex: "#FDAC53ff")
+        searchBar.endEditing(true)
         SearchBar()
         
         
@@ -36,7 +37,7 @@ class ListTableViewController: UIViewController {
 
         super.viewWillAppear(true)
         self.tableView.reloadData()
-        print(writeSubInfo)
+        
     }
 
     
@@ -74,11 +75,8 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
         // cell을 라운드 형식으로
-        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 8
-        
-        // imageview를 원 모양으로 만들기
-        cell.inimageView.layer.cornerRadius = cell.inimageView.frame.height / 2
-        cell.inimageView.clipsToBounds = true
+        cell.cellView.layer.cornerRadius = 15
+
         
         // tableviewcell 의 shadow
         cell.cellView.layer.shadowColor = UIColor.black.cgColor
@@ -97,6 +95,23 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         guard let thumImage = item["img"] as? String else {return cell}
         cell.subImage.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "cat_logo.png"))
         cell.lblSubStartday.text = item["subStartDay"] as? String
+        
+        print(item)
+        
+        guard let price = item["planPrice"] as? String else {return cell}
+        guard let cycle = item["cycle"] as? String else {return cell}
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        cell.lblPlanPrice.text = "\(numberFormatter.string(for: Int(price))!)원/\(cycle)"
+        
+        
+//        if let planPrice = cell.viewWithTag(4) as? UILabel {
+//            let price = item["planPrice"] as! String
+//            let numberFormatter = NumberFormatter()
+//            numberFormatter.numberStyle = .decimal
+//            planPrice.text = "\(numberFormatter.string(for: Int(price))!)원"
+//        }
+        
         // plist에 string으로 저장되기 때문에 따로 뭘 해줄 필요 없음
         
 //        if let startDay = item["subStartDay"] as? Date { // subStartDay -> date 형태로 형변환
@@ -129,10 +144,7 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         
-        if let price = item["planPrice"] {
-            cell.lblPlanPrice.text = "\(price)원/월"
-        }
-        
+       
         
         // subStartDay -> 2021.10.25
         // 구독 시작일부터 +요일

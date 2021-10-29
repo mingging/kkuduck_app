@@ -73,7 +73,18 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         dropDown.customCellConfiguration = {index, title, cell in
             guard let cell = cell as? MyCell else {return}
             cell.optionLabel.text = self.planName[index]
-            cell.testText.text = self.planPrice[index]
+            
+            
+            let str = self.planPrice[index].components(separatedBy: "/")
+            let won = self.planPrice[index].components(separatedBy: "원")
+            self.cycle = str[str.count - 1]
+            self.dataPrice = won[0]
+            
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            cell.testText.text = "\(numberFormatter.string(for: Int(self.dataPrice))!)/\(self.cycle)"
+            
+            
         }
         
         // 선택한 값 출력

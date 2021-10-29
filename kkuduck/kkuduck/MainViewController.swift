@@ -40,7 +40,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         // 총 구독 합계
         let totalP = totalPrice()
-        lblSumPrice.text = String(totalP)
+        lblSumPrice.text = totalP
     }
     
     func saveData() {
@@ -55,13 +55,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    func totalPrice() -> Int {
-        guard let writeSubInfo = self.writeSubInfo else { return 0 }
+    func totalPrice() -> String {
+        guard let writeSubInfo = self.writeSubInfo else { return "" }
         
         let count = writeSubInfo.count
 //        print(writeSubInfo[1])
         for i in 0..<count {
-            guard let item = writeSubInfo[i] as? [String:Any] else { return 0 }
+            guard let item = writeSubInfo[i] as? [String:Any] else { return "" }
             if let price = item["planPrice"] as? String {
                 if let intPrice = Int(price) {
 //                    print(intPrice)
@@ -69,7 +69,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 }
             }
         }
-        return total
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let stringTotal =  numberFormatter.string(for: total)!
+        return stringTotal
 //        print("total", total)
     }
     
@@ -123,7 +126,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cycle?.text = item["cycle"] as? String
         if let planPrice = cell.viewWithTag(4) as? UILabel {
             let price = item["planPrice"] as! String
-            planPrice.text = "\(price)원"
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            planPrice.text = "\(numberFormatter.string(for: Int(price))!)원"
         }
         guard let thumImage = item["img"] as? String else {return cell}
 //        cell.subImage.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "cat_logo.png"))

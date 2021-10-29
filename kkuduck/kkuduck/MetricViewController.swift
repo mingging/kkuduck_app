@@ -220,7 +220,9 @@ extension MetricViewController: UITableViewDelegate, UITableViewDataSource {
         
         let planPrice = cell.viewWithTag(2) as? UILabel
         if let totalPrice = item["planPrice"] as? String {
-            planPrice?.text = "\(totalPrice)원"
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            planPrice?.text = "\(numberFormatter.string(for: Int(totalPrice))!)원"
         }
         
         

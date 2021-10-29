@@ -55,6 +55,7 @@ class MoreInfoNewViewController: UIViewController, UITextFieldDelegate {
         let planName = textPlanName.text
         let planPrice = textPlanPrice.text // 뒤에 "원" 붙여서 데이터 저장되도록 하고, 숫자 외엔 입력 못도록 설정
         let subserviceID = textSubserviceID.text
+        let img = ""
         
         // segment 데이터
         let select = segCycle.selectedSegmentIndex
@@ -62,15 +63,10 @@ class MoreInfoNewViewController: UIViewController, UITextFieldDelegate {
         
         // datepicker 데이터
         let subStartDay = dateInfo
-        print(dateInfo)
         
-        let writeSub = ["planName": planName, "planPrice": planPrice, "subserviceID": subserviceID, "cycle": cycle, "subStartDay": subStartDay]
-        
-        
-        
-        let name = writeSub["planName"] as? String
-        let price = writeSub["planPrice"] as? String
-        let date = writeSub["subStartDay"] as? String
+        let name = planName
+        let price = planPrice
+        let date = subStartDay
         
         if name == "" || price == "" || date == nil {
             if name == "" {
@@ -84,7 +80,7 @@ class MoreInfoNewViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             
-            let writeSub = ["planName": planName, "planPrice": planPrice, "subserviceID": subserviceID, "cycle": cycle, "subStartDay": subStartDay]
+            let writeSub = ["planName": planName, "planPrice": planPrice, "subserviceID": subserviceID, "cycle": cycle, "subStartDay": subStartDay, "img": img]
             
             guard let writeSubInfo = self.writeSubInfo else { return }
             print(writeSub)
