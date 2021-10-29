@@ -93,7 +93,7 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.lblSubName.text = item["planName"] as? String
         guard let thumImage = item["img"] as? String else {return cell}
-        cell.subImage.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "cat_logo.png"))
+        cell.subImage.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "logo.png"))
         cell.lblSubStartday.text = item["subStartDay"] as? String
         
         print(item)

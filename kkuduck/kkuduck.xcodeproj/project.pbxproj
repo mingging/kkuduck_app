@@ -37,6 +37,7 @@
 		396340CF272A4AD90079E845 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340CD272A4AD90079E845 /* DropDownCell.swift */; };
 		396340D0272A4AD90079E845 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396340CE272A4AD90079E845 /* DropDownCell.xib */; };
 		39ED7F08272AAA9C00FA6FEB /* cat_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39ED7F07272AAA9C00FA6FEB /* cat_logo.png */; };
+		39ED7F0B272BBA5F00FA6FEB /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39ED7F09272BBA5D00FA6FEB /* logo.png */; };
 		A0066EB4F690B1C972178648 /* Pods_kkuduck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		396340CD272A4AD90079E845 /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
 		396340CE272A4AD90079E845 /* DropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
 		39ED7F07272AAA9C00FA6FEB /* cat_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat_logo.png; sourceTree = "<group>"; };
+		39ED7F09272BBA5D00FA6FEB /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		AB4C7738B9E157DF5B5D05B9 /* Pods-kkuduck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.debug.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B060A5EE82B12F09AD5F4A /* Pods-kkuduck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.release.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.release.xcconfig"; sourceTree = "<group>"; };
 		FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 		3963409C272923DB0079E845 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				39ED7F09272BBA5D00FA6FEB /* logo.png */,
 				39ED7F07272AAA9C00FA6FEB /* cat_logo.png */,
 				3963409E272923F60079E845 /* add_icon.png */,
 				396340A0272923F60079E845 /* home_icon.png */,
@@ -243,6 +246,7 @@
 				39633FED272649830079E845 /* LaunchScreen.storyboard in Resources */,
 				396340D0272A4AD90079E845 /* DropDownCell.xib in Resources */,
 				396340A3272923F60079E845 /* metric_icon.png in Resources */,
+				39ED7F0B272BBA5F00FA6FEB /* logo.png in Resources */,
 				39633FEA272649830079E845 /* Assets.xcassets in Resources */,
 				396340A2272923F60079E845 /* add_icon.png in Resources */,
 				39ED7F08272AAA9C00FA6FEB /* cat_logo.png in Resources */,

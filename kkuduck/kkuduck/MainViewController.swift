@@ -134,7 +134,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //        cell.subImage.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "cat_logo.png"))
         let thum = cell.viewWithTag(5) as? UIImageView
         if let thum = thum {
-            thum.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "cat_logo.png"))
+            thum.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "logo.png"))
         }
         // 다음 결제일 계산 악!!!!!!
         // 낡지 힘내요..

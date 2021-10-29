@@ -1,48 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
-	<dict>
-		<key>id</key>
-		<string>1</string>
-		<key>planName</key>
-		<string>넷플릭스</string>
-		<key>planPrice</key>
-		<string>9900</string>
-		<key>cycle</key>
-		<string>월</string>
-		<key>subStartDay</key>
-		<string>2021.10.27</string>
-		<key>subserviceID</key>
-		<string>kkuduck</string>
-	</dict>
-	<dict>
-		<key>id</key>
-		<string>2</string>
-		<key>planName</key>
-		<string>유튜브 프리미엄</string>
-		<key>planPrice</key>
-		<string>9500</string>
-		<key>cycle</key>
-		<string>월</string>
-		<key>subStartDay</key>
-		<string>2021.10.08</string>
-		<key>subserviceID</key>
-		<string>kkuduck</string>
-	</dict>
-	<dict>
-		<key>id</key>
-		<string>3</string>
-		<key>planName</key>
-		<string>애플뮤직</string>
-		<key>planPrice</key>
-		<string>8900</string>
-		<key>cycle</key>
-		<string>월</string>
-		<key>subStartDay</key>
-		<string>2021.10.10</string>
-		<key>subserviceID</key>
-		<string>kkuduck</string>
-	</dict>
-</array>
+<array/>
 </plist>
