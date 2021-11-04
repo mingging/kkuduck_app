@@ -1043,7 +1043,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="B2A-sv-c1R" customClass="CustomTableViewCell" customModule="kkuduck" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomTableViewCell" rowHeight="110" id="B2A-sv-c1R" customClass="CustomTableViewCell" customModule="kkuduck" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B2A-sv-c1R" id="mQP-Bw-AcT">
@@ -1126,11 +1126,11 @@
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="cellView" destination="PPF-pk-7KX" id="K4Q-U7-Qyu"/>
-                                            <outlet property="lblDDay" destination="du2-ZV-C93" id="Bxq-vh-SyR"/>
-                                            <outlet property="lblPlanPrice" destination="J9M-hx-TH6" id="0a7-YJ-ggh"/>
-                                            <outlet property="lblSubName" destination="xQa-gB-gp7" id="3L1-CU-rGd"/>
-                                            <outlet property="lblSubStartday" destination="C5u-3k-AEU" id="VV7-wW-msP"/>
-                                            <outlet property="subImage" destination="KNd-YC-3sg" id="uQs-v4-upW"/>
+                                            <outlet property="dDayLabel" destination="du2-ZV-C93" id="Bxq-vh-SyR"/>
+                                            <outlet property="priceLabel" destination="J9M-hx-TH6" id="0a7-YJ-ggh"/>
+                                            <outlet property="stratDateLabel" destination="C5u-3k-AEU" id="VV7-wW-msP"/>
+                                            <outlet property="subscriptionImageView" destination="KNd-YC-3sg" id="uQs-v4-upW"/>
+                                            <outlet property="subscriptionNameLabel" destination="xQa-gB-gp7" id="3L1-CU-rGd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

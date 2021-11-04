@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class StartMainViewController: UIViewController {
+final class StartMainViewController: UIViewController {
 
     @IBOutlet weak var lblStartinfo: UILabel!
     @IBOutlet weak var btnStart: UIButton!
@@ -60,7 +60,7 @@ class StartMainViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-         self.view.endEditing(true)
+         view.endEditing(true)
    }
 
 }

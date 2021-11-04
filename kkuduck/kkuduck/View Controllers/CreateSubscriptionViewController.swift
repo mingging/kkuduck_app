@@ -8,7 +8,6 @@
 import UIKit
 import SDWebImage
 
-
 class CreateSubscriptionViewController: UIViewController {
 
     var subService: NSArray?
@@ -68,14 +67,13 @@ extension CreateSubscriptionViewController: UICollectionViewDelegate, UICollecti
         cell.layer.masksToBounds = false
         
         // 데이터 뿌려주기
-        guard let subService = self.subService,
-              let item = subService[indexPath.row] as? [String:Any]
+        guard let subService = subService,
+              let item = subService[indexPath.row] as? [String: Any]
         else { return cell }
         
         cell.lblSubTitle.text = item["subName"] as? String
-        guard let thumImage = item["img"] as? String else {return cell}
+        guard let thumImage = item["img"] as? String else { return cell }
         cell.imageSubThum.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "placeholder.png"))
-        
         return cell
     }
     
@@ -83,15 +81,15 @@ extension CreateSubscriptionViewController: UICollectionViewDelegate, UICollecti
         collectionView.deselectItem(at: indexPath, animated: true)
         switch indexPath.row {
         case 11:
-            guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "moreInfoNew") as? MoreInfoNewViewController else { return }
-              self.navigationController?.pushViewController(homeVC, animated: true)
+            guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "moreInfoNew") as? MoreInfoNewViewController else { return }
+              navigationController?.pushViewController(homeVC, animated: true)
         default:
-            guard let homeVC = self.storyboard?.instantiateViewController(identifier: "moreInfoService") as? MoreInfoServiceViewController,
+            guard let homeVC = storyboard?.instantiateViewController(identifier: "moreInfoService") as? MoreInfoServiceViewController,
                   let subService = subService
             else { return }
-            let subInfo = subService[indexPath.row] as? [String:Any]
+            let subInfo = subService[indexPath.row] as? [String: Any]
             homeVC.subInfo = subInfo
-            self.navigationController?.pushViewController(homeVC, animated: true)
+            navigationController?.pushViewController(homeVC, animated: true)
         }
     }
 

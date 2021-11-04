@@ -8,9 +8,7 @@
 import UIKit
 
 class CustomTabBarController: UITabBarController {
-
-    var circle: UIView?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

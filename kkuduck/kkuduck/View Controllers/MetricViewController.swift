@@ -49,9 +49,9 @@ class MetricViewController: UIViewController {
 
     func totalSubPrice() {
         // 데이터 불러오기
-        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+        writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
         
-        guard let writeSubInfo = self.writeSubInfo else { return }
+        guard let writeSubInfo = writeSubInfo else { return }
         let count = writeSubInfo.count
 
         // 10월의 구독료 뽑아내기

@@ -7,13 +7,24 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+final class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var subImage: UIImageView!
-    @IBOutlet weak var lblSubName: UILabel!
-    @IBOutlet weak var lblSubStartday: UILabel!
-    @IBOutlet weak var lblPlanPrice: UILabel!
-    @IBOutlet weak var lblDDay: UILabel!
+    @IBOutlet weak var subscriptionImageView: UIImageView!
+    @IBOutlet weak var subscriptionNameLabel: UILabel!
+    @IBOutlet weak var stratDateLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var dDayLabel: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        backgroundColor = .clear
+        cellView.layer.cornerRadius = 15
+        cellView.layer.shadowColor = UIColor.black.cgColor
+        cellView.layer.shadowOpacity = 0.2
+        cellView.layer.shadowRadius = 10
+        cellView.layer.shadowOffset = CGSize(width: 1, height: 2)
+        cellView.layer.masksToBounds = false
+    }
 }

@@ -39,7 +39,7 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         lblPlanPrice.text = ""
    
         // 데이터 불러오기
-        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+        writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
     }
     
     @IBAction func actBack(_ sender: Any) {
@@ -54,9 +54,9 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
 
         // The list of items to display. Can be changed dynamically
         // 가져온 플랜 적용하기
-        let subInfoPlans = subInfo["plan"] as? [String:String]
+        let subInfoPlans = subInfo["plan"] as? [String: String]
        
-        guard let subInfoPlan = subInfoPlans else {return}
+        guard let subInfoPlan = subInfoPlans else { return }
 
         planName = Array(subInfoPlan.keys)
         planPrice = Array(subInfoPlan.values)
@@ -64,10 +64,9 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         
         // custom dropdown cell
         dropDown.cellNib = UINib(nibName: "DropDownCell", bundle: nil)
-        dropDown.customCellConfiguration = {index, title, cell in
-            guard let cell = cell as? MyCell else {return}
+        dropDown.customCellConfiguration = { index, title, cell in
+            guard let cell = cell as? MyCell else { return }
             cell.optionLabel.text = self.planName[index]
-            
             
             let str = self.planPrice[index].components(separatedBy: "/")
             let won = self.planPrice[index].components(separatedBy: "원")
@@ -102,19 +101,21 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
     // 구독 서비스 추가 버튼
     @IBAction func actDone(_ sender: Any) {
         let subserviceID = textSubID.text
-        let subStartDay = dateInfo
-        let cycle = self.cycle
-        let planPrice = self.dataPrice
         let img = subInfo["img"] as! String
-        guard let subName = subInfo["subName"] as? String else {return}
+        guard let subName = subInfo["subName"] as? String else { return }
 
-        let writeSub = ["planName": subName, "subserviceID": subserviceID, "subStartDay": subStartDay, "cycle": cycle, "planPrice": planPrice, "img" : img]
-        
-        guard let writeSubInfo = self.writeSubInfo else { return }
+        let writeSub = ["planName": subName,
+                        "subserviceID": subserviceID,
+                        "subStartDay": dateInfo,
+                        "cycle": cycle,
+                        "planPrice": dataPrice,
+                        "img" : img]
+
+        guard let writeSubInfo = writeSubInfo else { return }
         writeSubInfo.add(writeSub)
         writeSubInfo.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
         
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func actDatePicker(_ sender: Any) {
@@ -134,8 +135,8 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func onThridVCAction(data: [String:Any]) {
-        self.subInfo = data
+    func onThridVCAction(data: [String: Any]) {
+        subInfo = data
     }
 
 }
