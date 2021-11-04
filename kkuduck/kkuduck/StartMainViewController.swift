@@ -19,8 +19,7 @@ class StartMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         // label lineheight 조정
         let attrString = NSMutableAttributedString(string: lblStartinfo.text!)
         let paragraphStyle = NSMutableParagraphStyle()
@@ -50,42 +49,22 @@ class StartMainViewController: UIViewController {
             }
 
         }
-        
-        
     }
     
     // 페이지 이동
     @IBAction func btnStart(_ sender: UIButton) {
-        
-        
         // ADD Tab Bar 페이지로 변경
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let TabBarController = storyboard.instantiateViewController(identifier: "TabBarController")
         
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TabBarController)
-        
-        
-//        guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") else { return }
-//          self.navigationController?.pushViewController(homeVC, animated: true)
-        
+
         // ADD userID 저장
         UserDefaults.standard.set(lblUserName?.text, forKey: "userID")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-
          self.view.endEditing(true)
-
    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

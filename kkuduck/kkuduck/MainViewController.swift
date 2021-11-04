@@ -8,19 +8,15 @@
 import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
     var writeSubInfo: NSMutableArray?
     var total = 0
 
-
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblSubNum: UILabel!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewTotalSub: UIView!
-    
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblSubNum: UILabel!
     @IBOutlet weak var lblSumPrice: UILabel!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,21 +46,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         // 총 구독 금액 구현
         // 딕셔너리에서 하나씩 빼서 배열로 나열 -> 합계 계산
-        
-        
     }
-    
-    
+
     func totalPrice() -> String {
         guard let writeSubInfo = self.writeSubInfo else { return "" }
         
         let count = writeSubInfo.count
-//        print(writeSubInfo[1])
         for i in 0..<count {
             guard let item = writeSubInfo[i] as? [String:Any] else { return "" }
             if let price = item["planPrice"] as? String {
                 if let intPrice = Int(price) {
-//                    print(intPrice)
                     total += intPrice
                 }
             }
@@ -72,15 +63,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         let stringTotal =  numberFormatter.string(for: total)!
+
         return stringTotal
-//        print("total", total)
     }
-    
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         saveData()
-        print(writeSubInfo)
         collectionView.reloadData()
         
         total = 0
@@ -96,7 +86,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? UICollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? UICollectionViewCell else { return UICollectionViewCell() }
         
         // cell round 조정
         cell.contentView.layer.cornerRadius = 10
@@ -115,7 +105,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let viewServiceLogo = cell.viewWithTag(10)
         viewServiceLogo?.layer.cornerRadius = (viewServiceLogo?.frame.height)! / 2
         
-        
         // 데이터 넣기
         guard let writeSubInfo = self.writeSubInfo,
               let item = writeSubInfo[indexPath.row] as? [String:Any]
@@ -131,7 +120,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             planPrice.text = "\(numberFormatter.string(for: Int(price))!)원"
         }
         guard let thumImage = item["img"] as? String else {return cell}
-//        cell.subImage.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "cat_logo.png"))
         let thum = cell.viewWithTag(5) as? UIImageView
         if let thum = thum {
             thum.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "logo.png"))
@@ -160,8 +148,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // 결제일이 이른 순서로 나열... 악!!!!!
         // 현재 날짜부터 30일 이전의 구독은 보이지 않도록 구현
         // 현재 날짜에서 구독시작일에서 + 30일 했을때 현재 날짜보다 이전이면 추가로 +30 현재 날짜보다 이후면 그대로 두기
-        
-        
+
         return cell
     }
     
@@ -169,15 +156,5 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 100
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
