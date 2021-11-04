@@ -67,15 +67,13 @@ class MoreInfoNewViewController: UIViewController, UITextFieldDelegate {
         } else {
             let writeSub = ["planName": planName, "planPrice": planPrice, "subserviceID": subserviceID, "cycle": cycle, "subStartDay": subStartDay, "img": img]
             
-            guard let writeSubInfo = self.writeSubInfo else { return }
-            print(writeSub)
+            guard let writeSubInfo = writeSubInfo else { return }
             writeSubInfo.add(writeSub)
             writeSubInfo.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
         }
         
         // 완료 버튼을 누르면 이전 화면으로 돌아가도록 구현 OK
-        self.navigationController?.popViewController(animated: true)
-        
+        navigationController?.popViewController(animated: true)
     }
 
     func alert(message: String) {

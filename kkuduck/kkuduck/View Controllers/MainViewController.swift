@@ -7,16 +7,22 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+final class MainViewController: UIViewController {
 
-    var writeSubInfo: NSMutableArray?
-    var total = 0
+    // MARK: - Properties
+
+    private var writeSubInfo: NSMutableArray?
+    private var total = 0
+
+    // MARK: - Outlets
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewTotalSub: UIView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblSubNum: UILabel!
     @IBOutlet weak var lblSumPrice: UILabel!
+
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,26 +45,39 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         lblSumPrice.text = totalP
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        saveData()
+        collectionView.reloadData()
+
+        total = 0
+        let totalP = totalPrice()
+        lblSumPrice.text = String(totalP)
+    }
+
+    // MARK: - Private Methods
+
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
-    func saveData() {
-        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
-        guard let writeSubInfo = self.writeSubInfo else { return }
+    private func saveData() {
+        writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+        guard let writeSubInfo = writeSubInfo else { return }
         lblSubNum.text = String(writeSubInfo.count)
         
         // 총 구독 금액 구현
         // 딕셔너리에서 하나씩 빼서 배열로 나열 -> 합계 계산
     }
 
-    func totalPrice() -> String {
-        guard let writeSubInfo = self.writeSubInfo else { return "" }
+    private func totalPrice() -> String {
+        guard let writeSubInfo = writeSubInfo else { return "" }
         
         let count = writeSubInfo.count
         for i in 0..<count {
-            guard let item = writeSubInfo[i] as? [String:Any] else { return "" }
+            guard let item = writeSubInfo[i] as? [String: Any] else { return "" }
             if let price = item["planPrice"] as? String {
                 if let intPrice = Int(price) {
                     total += intPrice
@@ -72,47 +91,39 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return stringTotal
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+}
 
-        saveData()
-        collectionView.reloadData()
-        
-        total = 0
-        let totalP = totalPrice()
-        lblSumPrice.text = String(totalP)
-    }
-    
+// MARK: - UICollectionViewDelegate
+
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let writeSubInfo = self.writeSubInfo {
-            return writeSubInfo.count
-        }
-        return 0
+        return writeSubInfo?.count ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        
-        // cell round 조정
+
+            // cell round 조정
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
         cell.contentView.layer.masksToBounds = true
 
-        // cell shadow 추가
+            // cell shadow 추가
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOffset = CGSize(width: 1, height: 2)
         cell.layer.shadowRadius = 10
         cell.layer.shadowOpacity = 0.2
         cell.layer.masksToBounds = false
-        
-        // servicelogo round 조정
+
+            // servicelogo round 조정
         let viewServiceLogo = cell.viewWithTag(10)
         viewServiceLogo?.layer.cornerRadius = (viewServiceLogo?.frame.height)! / 2
-        
-        // 데이터 넣기
-        guard let writeSubInfo = self.writeSubInfo,
-              let item = writeSubInfo[indexPath.row] as? [String:Any]
+
+            // 데이터 넣기
+        guard let writeSubInfo = writeSubInfo,
+              let item = writeSubInfo[indexPath.row] as? [String: Any]
         else { return cell }
         let subName = cell.viewWithTag(1) as? UILabel
         subName?.text = item["planName"] as? String
@@ -129,8 +140,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if let thum = thum {
             thum.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "logo.png"))
         }
-        // 다음 결제일 계산 악!!!!!!
-        // 낡지 힘내요..
+            // 다음 결제일 계산 악!!!!!!
+            // 낡지 힘내요..
         if let startDay = item["subStartDay"] as? String { // subStartDay -> string 형태로 형변환
             print(startDay) // 2021.10.27
             let formatter = DateFormatter()
@@ -142,22 +153,22 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy.MM.dd"
                     let strday = formatter.string(from: componet)
-                    
+
                     let nextMonth = cell.viewWithTag(3) as? UILabel
                     nextMonth?.text = strday
                     print(strday)
                 }
             }
         }
-        
-        // 결제일이 이른 순서로 나열... 악!!!!!
-        // 현재 날짜부터 30일 이전의 구독은 보이지 않도록 구현
-        // 현재 날짜에서 구독시작일에서 + 30일 했을때 현재 날짜보다 이전이면 추가로 +30 현재 날짜보다 이후면 그대로 두기
+
+            // 결제일이 이른 순서로 나열... 악!!!!!
+            // 현재 날짜부터 30일 이전의 구독은 보이지 않도록 구현
+            // 현재 날짜에서 구독시작일에서 + 30일 했을때 현재 날짜보다 이전이면 추가로 +30 현재 날짜보다 이후면 그대로 두기
 
         return cell
     }
-    
-    // 옆 간격
+
+        // 옆 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 100
     }
