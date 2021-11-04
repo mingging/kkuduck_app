@@ -47,6 +47,8 @@ class MetricViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         totalSubPrice()
         self.tableView.reloadData()
         print(months, unitsSold)
@@ -54,7 +56,6 @@ class MetricViewController: UIViewController {
 
 //        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
 //
-//        super.viewWillAppear(true)
 //        self.tableView.reloadData()
 //
 //        setChart(dataPoints: months, values: unitsSold)

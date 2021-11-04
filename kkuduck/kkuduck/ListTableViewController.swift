@@ -17,6 +17,7 @@ class ListTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(hex: "#FDAC53ff")
@@ -26,16 +27,14 @@ class ListTableViewController: UIViewController {
         
         self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
         // array의 참조 변수를 넘겨주는 방법 생각해보기
-        
     }
     
     
     // 왜 테이블뷰에 리로드가 안 되는 것인가??? OK -> 중복코드 개선 방안 ....
     override func viewWillAppear(_ animated: Bool) {
-        
-        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
-
         super.viewWillAppear(true)
+
+        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
         self.tableView.reloadData()
         
     }
