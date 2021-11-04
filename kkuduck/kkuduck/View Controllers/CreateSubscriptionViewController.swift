@@ -18,14 +18,8 @@ class CreateSubscriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // NAVIGATION bar custom
-        navigationController?.isNavigationBarHidden = true
-        navigationController?.navigationBar.barTintColor = UIColor(hex: "#FDAC53ff")
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
+        configureNavigationController()
+        configureCollectionView()
         // 기존에 있는 SubService 목록을 가지고 나열해줌 (읽기전용)
         if let path = Bundle.main.path(forResource: "subservice", ofType: "plist") {
             self.subService = NSArray(contentsOfFile: path)
@@ -36,6 +30,17 @@ class CreateSubscriptionViewController: UIViewController {
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = false
+    }
+
+    private func configureNavigationController() {
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.barTintColor = UIColor(hex: "#FDAC53ff")
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+
+    private func configureCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
 
 }

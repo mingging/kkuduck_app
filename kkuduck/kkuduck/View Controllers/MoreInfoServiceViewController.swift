@@ -36,7 +36,7 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         btnSubAdd.layer.cornerRadius = 5
         
         lblPlanName.text = ""
-        lblPlanPrice.text = ""]
+        lblPlanPrice.text = ""
    
         // 데이터 불러오기
         self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
