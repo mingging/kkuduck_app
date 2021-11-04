@@ -13,6 +13,7 @@ class CustomTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tabBar.backgroundColor = UIColor(hex: "#FDAC53ff")
         tabBar.backgroundImage = UIImage()
         tabBar.tintColor = UIColor(hex: "#ffffffff")

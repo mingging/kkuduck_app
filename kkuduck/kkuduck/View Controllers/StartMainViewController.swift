@@ -8,14 +8,11 @@
 import UIKit
 import SDWebImage
 
-
 class StartMainViewController: UIViewController {
 
     @IBOutlet weak var lblStartinfo: UILabel!
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var lblUserName: UITextField!
-    
-    let startStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +51,9 @@ class StartMainViewController: UIViewController {
     // 페이지 이동
     @IBAction func btnStart(_ sender: UIButton) {
         // ADD Tab Bar 페이지로 변경
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let TabBarController = storyboard.instantiateViewController(identifier: "TabBarController")
+        let tabBarController = UIStoryboard.main.instantiateViewController(identifier: "TabBarController")
         
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TabBarController)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBarController)
 
         // ADD userID 저장
         UserDefaults.standard.set(lblUserName?.text, forKey: "userID")

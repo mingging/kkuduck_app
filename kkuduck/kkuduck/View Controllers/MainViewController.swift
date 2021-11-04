@@ -20,8 +20,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+
+        configureCollectionView()
        
         // view round 조정
         viewTotalSub.layer.cornerRadius = 15
@@ -37,6 +37,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // 총 구독 합계
         let totalP = totalPrice()
         lblSumPrice.text = totalP
+    }
+
+    private func configureCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     func saveData() {

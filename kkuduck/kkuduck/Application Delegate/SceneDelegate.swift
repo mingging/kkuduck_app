@@ -13,20 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        
-        
-        // ADD StartMainView가 어플 실행 시 한 번만 실행되도록 설정
-        let storayboard = UIStoryboard(name: "Main", bundle: nil)
-        
+
         if UserDefaults.standard.string(forKey: "userID") != nil {
-            let TabBarController = storayboard.instantiateViewController(identifier: "TabBarController")
-            window?.rootViewController = TabBarController
+            let tabBarController = UIStoryboard.main.instantiateViewController(identifier: "TabBarController")
+            window?.rootViewController = tabBarController
         } else {
-            let loginNavController = storayboard.instantiateViewController(identifier: "loginNavController")
+            let loginNavController = UIStoryboard.main.instantiateViewController(identifier: "loginNavController")
             window?.rootViewController = loginNavController
         }
     }

@@ -18,17 +18,14 @@ class ListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = UIColor(hex: "#FDAC53ff")
-        searchBar.endEditing(true)
-        SearchBar()
+        configureTableView()
+        configureSearchBar()
 
-        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
-        // array의 참조 변수를 넘겨주는 방법 생각해보기
+        // TODO: array의 참조 변수를 넘겨주는 방법 생각해보기
+        writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
     }
     
-    // 왜 테이블뷰에 리로드가 안 되는 것인가??? OK -> 중복코드 개선 방안 ....
+    // TODO: 왜 테이블뷰에 리로드가 안 되는 것인가??? OK -> 중복코드 개선 방안 ....
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 
@@ -36,8 +33,14 @@ class ListTableViewController: UIViewController {
         self.tableView.reloadData()
     }
 
+    private func configureTableView()  {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = UIColor(hex: "#FDAC53ff")
+        searchBar.endEditing(true)
+    }
     
-    func SearchBar() {
+    private func configureSearchBar() {
         searchBar.placeholder = "구독을 검색해보세요"
         searchBar.searchTextField.backgroundColor = .white
         searchBar.barTintColor = UIColor(hex: "#FDAC53ff")
@@ -49,12 +52,7 @@ class ListTableViewController: UIViewController {
 extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 구독 중인 것들만 보여주기
-        if let writeSubInfo = self.writeSubInfo {
-            return writeSubInfo.count
-        } else {
-            return 0
-        }
+        return writeSubInfo?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -73,16 +71,16 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         cell.cellView.layer.shadowRadius = 10
         cell.cellView.layer.shadowOffset = CGSize(width: 1, height: 2)
         cell.cellView.layer.masksToBounds = false
-        
-        
+
         // 데이터 불러오기
-        guard let writeSubInfo = self.writeSubInfo,
-              let item = writeSubInfo[indexPath.row] as? [String:Any]
+        guard let writeSubInfo = writeSubInfo,
+              let item = writeSubInfo[indexPath.row] as? [String: Any]
         else { return cell }
         
         cell.lblSubName.text = item["planName"] as? String
-        guard let thumImage = item["img"] as? String else {return cell}
-        cell.subImage.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "logo.png"))
+        guard let thumImage = item["img"] as? String else { return cell }
+        cell.subImage.sd_setImage(with: URL(string: thumImage),
+                                  placeholderImage: UIImage(named: "logo.png"))
         cell.lblSubStartday.text = item["subStartDay"] as? String
 
         guard let price = item["planPrice"] as? String else {return cell}
@@ -151,32 +149,4 @@ extension ListTableViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [action])
     }
 
-}
-
-extension UIColor {
-    public convenience init?(hex: String) {
-        let r, g, b, a: CGFloat
-
-        if hex.hasPrefix("#") {
-            let start = hex.index(hex.startIndex, offsetBy: 1)
-            let hexColor = String(hex[start...])
-
-            if hexColor.count == 8 {
-                let scanner = Scanner(string: hexColor)
-                var hexNumber: UInt64 = 0
-
-                if scanner.scanHexInt64(&hexNumber) {
-                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
-                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
-                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
-                    a = CGFloat(hexNumber & 0x000000ff) / 255
-
-                    self.init(red: r, green: g, blue: b, alpha: a)
-                    return
-                }
-            }
-        }
-
-        return nil
-    }
 }

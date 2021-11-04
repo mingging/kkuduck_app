@@ -28,7 +28,7 @@ class MoreInfoNewViewController: UIViewController, UITextFieldDelegate {
         textPlanPrice.delegate = self
         textSubserviceID.delegate = self
         
-        self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+        writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
         // 파일을 doc에 복사해 옴. 이 파일에 데이터를 저장할 것임
     }
     
@@ -90,7 +90,7 @@ class MoreInfoNewViewController: UIViewController, UITextFieldDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         dateInfo = formatter.string(from: date)
-        // 날짜 선택하면 dismiss 되도록
+        // TODO: 날짜 선택하면 dismiss 되도록
 //        dismiss(animated: true)
     }
     

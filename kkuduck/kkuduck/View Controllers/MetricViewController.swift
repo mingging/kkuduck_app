@@ -20,10 +20,8 @@ class MetricViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
 
+        configureTableView()
         totalSubPrice()
 
         months = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov"]
@@ -43,7 +41,12 @@ class MetricViewController: UIViewController {
 
         setChart(dataPoints: months, values: unitsSold)
     }
-    
+
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+
     func totalSubPrice() {
         // 데이터 불러오기
         self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
