@@ -161,7 +161,7 @@ extension MetricViewController: UITableViewDelegate, UITableViewDataSource {
             formatter.dateFormat = "yyyy.MM.dd"
             if let day = formatter.date(from: startDay) {
                 let calendar = Calendar.current
-                if let componet = calendar.date(byAdding: .day, value: +30, to: day) {
+                if calendar.date(byAdding: .day, value: +30, to: day) != nil {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy.MM.dd"
                 }
