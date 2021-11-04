@@ -21,6 +21,7 @@ class MoreInfoNewViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tabBarController?.tabBar.isHidden = true
         btnAddNew.layer.cornerRadius = 5
         textPlanName.delegate = self
