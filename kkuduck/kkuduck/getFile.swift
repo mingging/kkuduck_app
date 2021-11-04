@@ -15,12 +15,3 @@ func getFileName(_ fileName: String) -> String {
     
     return fullPath
 }
-
-//func saveData() {
-//    if let writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist")) {
-//        var plistArray: [[String:Any]]?
-//    }
-//    
-//
-//}
-

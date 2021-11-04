@@ -9,6 +9,7 @@ import UIKit
 import DropDown
 
 class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
+
     var writeSubInfo: NSMutableArray?
     var dateInfo: String?
     var subInfo: [String:Any]!
@@ -21,11 +22,9 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lblPlanName: UILabel!
     @IBOutlet weak var lblPlanPrice: UILabel!
     @IBOutlet weak var btnSubAdd: UIButton!
-    
     @IBOutlet weak var textPlanName: UITextField!
     @IBOutlet weak var textSubID: UITextField!
     @IBOutlet weak var dateSubstartday: UIDatePicker!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +36,10 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         btnSubAdd.layer.cornerRadius = 5
         
         lblPlanName.text = ""
-        lblPlanPrice.text = ""
-        
-        print(subInfo)
+        lblPlanPrice.text = ""]
    
         // 데이터 불러오기
         self.writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
-
     }
     
     @IBAction func actBack(_ sender: Any) {
@@ -59,14 +55,12 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         // The list of items to display. Can be changed dynamically
         // 가져온 플랜 적용하기
         let subInfoPlans = subInfo["plan"] as? [String:String]
-        
        
         guard let subInfoPlan = subInfoPlans else {return}
 
         planName = Array(subInfoPlan.keys)
         planPrice = Array(subInfoPlan.values)
         dropDown.dataSource = planName
-     
         
         // custom dropdown cell
         dropDown.cellNib = UINib(nibName: "DropDownCell", bundle: nil)
@@ -83,8 +77,6 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
             cell.testText.text = "\(numberFormatter.string(for: Int(self.dataPrice))!)/\(self.cycle)"
-            
-            
         }
         
         // 선택한 값 출력
@@ -105,7 +97,6 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         dropDown.cellHeight = 64
         dropDown.cornerRadius = 5
         dropDown.show()
-
     }
     
     // 구독 서비스 추가 버튼
@@ -124,9 +115,7 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         writeSubInfo.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
         
         self.navigationController?.popViewController(animated: true)
-        
     }
-    
     
     @IBAction func actDatePicker(_ sender: Any) {
         let date = dateSubstartday.date
@@ -148,16 +137,5 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
     func onThridVCAction(data: [String:Any]) {
         self.subInfo = data
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
-

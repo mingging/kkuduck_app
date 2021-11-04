@@ -10,8 +10,7 @@ import SDWebImage
 
 
 class CreateSubscriptionViewController: UIViewController {
-    
-    
+
     var subService: NSArray?
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -38,14 +37,6 @@ class CreateSubscriptionViewController: UIViewController {
         
         tabBarController?.tabBar.isHidden = false
     }
-    
-
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//
-//    }
-    
 
 }
 
@@ -71,14 +62,12 @@ extension CreateSubscriptionViewController: UICollectionViewDelegate, UICollecti
         cell.layer.shadowOpacity = 0.2
         cell.layer.masksToBounds = false
         
-        
         // 데이터 뿌려주기
         guard let subService = self.subService,
               let item = subService[indexPath.row] as? [String:Any]
         else { return cell }
         
         cell.lblSubTitle.text = item["subName"] as? String
-//        imageView.sd_setImage(with: URL(string: "http://www.domain.com/path/to/image.jpg"), placeholderImage: UIImage(named: "placeholder.png"))
         guard let thumImage = item["img"] as? String else {return cell}
         cell.imageSubThum.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "placeholder.png"))
         
@@ -98,14 +87,7 @@ extension CreateSubscriptionViewController: UICollectionViewDelegate, UICollecti
             let subInfo = subService[indexPath.row] as? [String:Any]
             homeVC.subInfo = subInfo
             self.navigationController?.pushViewController(homeVC, animated: true)
-      
-            
-            
         }
-    }
-    
-    func protocolData(dataSent: [String:Any]) {
-    
     }
 
 }
