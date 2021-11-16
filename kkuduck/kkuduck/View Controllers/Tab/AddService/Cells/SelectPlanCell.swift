@@ -8,7 +8,7 @@
 import UIKit
 import DropDown
 
-class MyCell: DropDownCell {
+final class SelectPlanCell: DropDownCell {
     
     @IBOutlet var testText: UILabel!
     

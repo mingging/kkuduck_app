@@ -8,8 +8,8 @@
 import UIKit
 import SDWebImage
 
-final class StartMainViewController: UIViewController {
-
+final class LoginViewController: UIViewController {
+    
     @IBOutlet weak var lblStartinfo: UILabel!
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var lblUserName: UITextField!

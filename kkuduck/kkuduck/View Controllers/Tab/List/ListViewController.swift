@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ListTableViewController: UIViewController {
+final class ListViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -58,7 +58,7 @@ final class ListTableViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension ListTableViewController: UITableViewDataSource {
+extension ListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return writeSubInfo?.count ?? 0
@@ -69,7 +69,7 @@ extension ListTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.reuseIdentifier, for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ServiceCell.reuseIdentifier, for: indexPath) as! ServiceCell
         // 데이터 불러오기
         guard let item = writeSubInfo?[indexPath.row] as? [String: Any] else { return cell }
 
@@ -104,7 +104,7 @@ extension ListTableViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension ListTableViewController: UITableViewDelegate {
+extension ListViewController: UITableViewDelegate {
 
     // 테이블뷰에서 셀을 삭제하면 저장된 데이터도 삭제되도록 구현
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

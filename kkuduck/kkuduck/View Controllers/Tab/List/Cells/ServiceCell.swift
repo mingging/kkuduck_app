@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomTableViewCell: UITableViewCell {
+final class ServiceCell: UITableViewCell {
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var subscriptionImageView: UIImageView!
@@ -27,4 +27,5 @@ final class CustomTableViewCell: UITableViewCell {
         cellView.layer.shadowOffset = CGSize(width: 1, height: 2)
         cellView.layer.masksToBounds = false
     }
+    
 }
