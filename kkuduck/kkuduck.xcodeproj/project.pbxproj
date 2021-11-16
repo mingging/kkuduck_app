@@ -34,6 +34,7 @@
 		5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF276FB27435FB9003C434B /* LaunchScreen.storyboard */; };
 		5DF276FF27435FCE003C434B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF276FE27435FCE003C434B /* Main.storyboard */; };
 		5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF2770F2743B609003C434B /* HomeSubscriptionCell.swift */; };
+		5DF277152743C945003C434B /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF277142743C945003C434B /* Subscribe.swift */; };
 		A0066EB4F690B1C972178648 /* Pods_kkuduck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		5DF276FC27435FB9003C434B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DF276FE27435FCE003C434B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5DF2770F2743B609003C434B /* HomeSubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubscriptionCell.swift; sourceTree = "<group>"; };
+		5DF277142743C945003C434B /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
 		AB4C7738B9E157DF5B5D05B9 /* Pods-kkuduck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.debug.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B060A5EE82B12F09AD5F4A /* Pods-kkuduck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.release.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.release.xcconfig"; sourceTree = "<group>"; };
 		FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				5DBCAB3C2733EDFC00343733 /* Application Delegate */,
+				5DF277162743C94D003C434B /* Models */,
 				5DBCAB392733ED7600343733 /* View Controllers */,
 				5DBCAB382733EA2800343733 /* Storyboards */,
 				5DBCAB342733E5FA00343733 /* Utils */,
@@ -274,6 +277,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		5DF277162743C94D003C434B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5DF277142743C945003C434B /* Subscribe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BA3645781EFEBD3639E4E467 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +427,7 @@
 				3963409B272811740079E845 /* AddServiceCustomViewConroller.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
+				5DF277152743C945003C434B /* Subscribe.swift in Sources */,
 				3963407B2727C6490079E845 /* ListViewController.swift in Sources */,
 				396340A6272924260079E845 /* TabBarController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,

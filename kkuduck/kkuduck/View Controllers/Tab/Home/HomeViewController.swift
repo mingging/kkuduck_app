@@ -86,6 +86,32 @@ final class HomeViewController: UIViewController {
         return stringTotal
     }
     
+    func subscribe(at row: Int) -> Subscribe {
+        guard let writeSubInfo = writeSubInfo,
+            let item = writeSubInfo[row] as? [String: Any] else { fatalError() }
+        
+        let name = item["planName"] as! String
+        let cycle = item["cycle"] as! String
+        let priceString = item["planPrice"] as! String
+        let price = Int(priceString)!
+        let imageUrlString = item["img"] as! String
+        let startDateString = item["subStartDay"] as! String
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd"
+        let startDate = formatter.date(from: startDateString)!
+        let subscribe = Subscribe(
+            subscription: Subscription(
+                name: name,
+                imageUrl: imageUrlString,
+                price: price,
+                cycle: cycle
+            ),
+            startDate: startDate
+        )
+        
+        return subscribe
+    }
+
 }
 
 // MARK: - UICollectionViewDelegate
@@ -101,46 +127,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
         
-        // cell round 조정
-        cell.contentView.layer.cornerRadius = 10
-        cell.contentView.layer.borderWidth = 1
-        cell.contentView.layer.borderColor = UIColor.clear.cgColor
-        cell.contentView.layer.masksToBounds = true
-        
-        // cell shadow 추가
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 1, height: 2)
-        cell.layer.shadowRadius = 10
-        cell.layer.shadowOpacity = 0.2
-        cell.layer.masksToBounds = false
-        
-        // servicelogo round 조정
-        let viewServiceLogo = cell.viewWithTag(10)
-        viewServiceLogo?.layer.cornerRadius = (viewServiceLogo?.frame.height)! / 2
-        
-        // 데이터 넣기
-        guard let writeSubInfo = writeSubInfo,
-              let item = writeSubInfo[indexPath.row] as? [String: Any] else { return cell }
-        
-        let name = item["planName"] as? String
-        let cycle = item["cycle"] as? String
-        let price = item["planPrice"] as! String
-        //  thumbnil
-        let imageUrlString = item["img"] as? String
-        let imageUrl = URL(string: imageUrlString!)
-        // nextDate
-        let startDateString = item["subStartDay"] as? String
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        let startDate = formatter.date(from: startDateString!)
-        let nextDate = Calendar.current.date(byAdding: .month, value: 1, to: startDate!)
-        
-        cell.nameLabel.text = name
-        cell.cycleLabel.text = cycle
-        cell.priceLabel.text = "\(price) 원"
-        cell.thumbnailImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "logo.png"))
-        cell.nextDateLabel.text = formatter.string(from: nextDate!)
-        
+        let subscribe = subscribe(at: indexPath.row)
+        cell.configure(with: subscribe)
         return cell
     }
     
