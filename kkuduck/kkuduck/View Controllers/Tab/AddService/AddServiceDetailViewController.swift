@@ -8,7 +8,8 @@
 import UIKit
 import DropDown
 
-class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
+// TODO: Custom과 중복되는 내용 많으므로 상속받는 방벙이 나은지?
+class AddServiceDetailViewController: UIViewController, UITextFieldDelegate {
 
     var writeSubInfo: NSMutableArray?
     var dateInfo: String?
@@ -63,9 +64,9 @@ class MoreInfoServiceViewController: UIViewController, UITextFieldDelegate {
         dropDown.dataSource = planName
         
         // custom dropdown cell
-        dropDown.cellNib = UINib(nibName: "DropDownCell", bundle: nil)
+        dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
         dropDown.customCellConfiguration = { index, title, cell in
-            guard let cell = cell as? MyCell else { return }
+            guard let cell = cell as? SelectPlanCell else { return }
             cell.optionLabel.text = self.planName[index]
             
             let str = self.planPrice[index].components(separatedBy: "/")

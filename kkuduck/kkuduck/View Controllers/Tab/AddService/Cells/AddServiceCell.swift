@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
+class AddServiceCell: UICollectionViewCell {
     
     @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var lblSubTitle: UILabel!

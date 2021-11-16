@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoreInfoNewViewController: UIViewController, UITextFieldDelegate {
+final class AddServiceCustomViewConroller: UIViewController, UITextFieldDelegate {
 
     var writeSubInfo: NSMutableArray?
     var dateInfo: String? // 날짜를 받기 위한 전역 변수 설정

@@ -8,7 +8,7 @@
 import UIKit
 import Charts
 
-class MetricViewController: UIViewController {
+class StatisticsViewController: UIViewController {
 
     var months: [String]!
     var unitsSold: [Double] = []
@@ -128,7 +128,7 @@ class MetricViewController: UIViewController {
 
 }
 
-extension MetricViewController: UITableViewDelegate, UITableViewDataSource {
+extension StatisticsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let writeSubInfo = self.writeSubInfo {
