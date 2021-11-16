@@ -12,7 +12,6 @@ final class HomeViewController: UIViewController {
     // MARK: - Properties
     
     private var writeSubInfo: NSMutableArray?
-    private var total = 0
     
     // MARK: - Outlets
     
@@ -27,8 +26,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureCollectionView()
-        
         // view round 조정
         viewTotalSub.layer.cornerRadius = 15
         
@@ -41,49 +38,33 @@ final class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // 데이터 추가 후 저장된 데이터를 다시 불러오려면 어떻게 해야하는가
-        saveData()
-        
-        // 총 구독 합계
-        let totalP = totalPrice()
-        totalPriceLabel.text = totalP
-
+        fetchSubscribes()
         collectionView.reloadData()
     }
+}
+
+// MARK: - Private Methods
+
+private extension HomeViewController {
     
-    // MARK: - Private Methods
-    
-    private func configureCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-    }
-    
-    private func saveData() {
+    func fetchSubscribes() {
         writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
         guard let writeSubInfo = writeSubInfo else { return }
         countLabel.text = String(writeSubInfo.count)
-        
-        // 총 구독 금액 구현
-        // 딕셔너리에서 하나씩 빼서 배열로 나열 -> 합계 계산
+        totalPriceLabel.text = "\(totalPrice())"
     }
     
-    private func totalPrice() -> String {
-        guard let writeSubInfo = writeSubInfo else { return "" }
-        
-        let count = writeSubInfo.count
-        for i in 0..<count {
-            guard let item = writeSubInfo[i] as? [String: Any] else { return "" }
-            if let price = item["planPrice"] as? String {
-                if let intPrice = Int(price) {
-                    total += intPrice
-                }
-            }
+    /// 총 구독 금액
+    func totalPrice() -> Int {
+        guard let writeSubInfo = writeSubInfo else {
+            fatalError()
         }
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let stringTotal =  numberFormatter.string(for: total)!
-        
-        return stringTotal
+        let prices = writeSubInfo
+            .map { $0 as! [String: Any] }
+            .map { $0["planPrice"] as! String }
+            .map { Int($0)! }
+            .reduce(0, +)
+        return prices
     }
     
     func subscribe(at row: Int) -> Subscribe {
@@ -111,7 +92,7 @@ final class HomeViewController: UIViewController {
         
         return subscribe
     }
-
+    
 }
 
 // MARK: - UICollectionViewDelegate
