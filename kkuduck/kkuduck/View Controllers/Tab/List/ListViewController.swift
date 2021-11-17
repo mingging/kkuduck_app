@@ -69,7 +69,7 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ServiceCell.reuseIdentifier, for: indexPath) as! ServiceCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SubscriptionCell.reuseIdentifier, for: indexPath) as! SubscriptionCell
         // 데이터 불러오기
         guard let item = writeSubInfo?[indexPath.row] as? [String: Any] else { return cell }
 

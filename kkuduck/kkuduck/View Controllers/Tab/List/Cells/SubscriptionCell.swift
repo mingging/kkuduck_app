@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ServiceCell: UITableViewCell {
+final class SubscriptionCell: UITableViewCell {
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var subscriptionImageView: UIImageView!

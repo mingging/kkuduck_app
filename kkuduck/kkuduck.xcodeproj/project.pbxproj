@@ -15,18 +15,22 @@
 		39633FFA272655E40079E845 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FF9272655E40079E845 /* LoginViewController.swift */; };
 		39633FFC27265A080079E845 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FFB27265A080079E845 /* HomeViewController.swift */; };
 		3963407B2727C6490079E845 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407A2727C6490079E845 /* ListViewController.swift */; };
-		3963407D2727C64D0079E845 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* ServiceCell.swift */; };
+		3963407D2727C64D0079E845 /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* SubscriptionCell.swift */; };
 		3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407E2727C6520079E845 /* StatisticsViewController.swift */; };
-		396340832727D2930079E845 /* AddServiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* AddServiceListViewController.swift */; };
+		396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* AddSubscriptionListViewController.swift */; };
 		396340852727DF600079E845 /* AddServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340842727DF600079E845 /* AddServiceCell.swift */; };
-		396340872727E4E30079E845 /* AddServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* AddServiceDetailViewController.swift */; };
-		3963409B272811740079E845 /* AddServiceCustomViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963409A272811740079E845 /* AddServiceCustomViewConroller.swift */; };
+		396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */; };
+		3963409B272811740079E845 /* AddSubscriptionCustomViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963409A272811740079E845 /* AddSubscriptionCustomViewConroller.swift */; };
 		396340A6272924260079E845 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340A5272924260079E845 /* TabBarController.swift */; };
 		396340C7272A38460079E845 /* subservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C5272A38460079E845 /* subservice.plist */; };
 		396340C8272A38460079E845 /* writeSubscription.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C6272A38460079E845 /* writeSubscription.plist */; };
 		396340CA272A385B0079E845 /* getFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340C9272A385B0079E845 /* getFile.swift */; };
 		396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340CD272A4AD90079E845 /* SelectPlanCell.swift */; };
 		396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396340CE272A4AD90079E845 /* SelectPlanCell.xib */; };
+		39CE79F82744FFC900F8F659 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CE79F72744FFC900F8F659 /* List.storyboard */; };
+		39CE79FA2745000300F8F659 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CE79F92745000300F8F659 /* Statistics.storyboard */; };
+		39CE79FC2745004400F8F659 /* AddSubscription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CE79FB2745004400F8F659 /* AddSubscription.storyboard */; };
+		39CE79FE274500F900F8F659 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CE79FD274500F900F8F659 /* Login.storyboard */; };
 		5DBCAB362733E60200343733 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor.swift */; };
 		5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */; };
 		5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB402733F74C00343733 /* ReusableView.swift */; };
@@ -47,18 +51,22 @@
 		39633FF9272655E40079E845 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39633FFB27265A080079E845 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3963407A2727C6490079E845 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		3963407C2727C64D0079E845 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		3963407C2727C64D0079E845 /* SubscriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionCell.swift; sourceTree = "<group>"; };
 		3963407E2727C6520079E845 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
-		396340822727D2930079E845 /* AddServiceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceListViewController.swift; sourceTree = "<group>"; };
+		396340822727D2930079E845 /* AddSubscriptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionListViewController.swift; sourceTree = "<group>"; };
 		396340842727DF600079E845 /* AddServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceCell.swift; sourceTree = "<group>"; };
-		396340862727E4E20079E845 /* AddServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceDetailViewController.swift; sourceTree = "<group>"; };
-		3963409A272811740079E845 /* AddServiceCustomViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceCustomViewConroller.swift; sourceTree = "<group>"; };
+		396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionDetailViewController.swift; sourceTree = "<group>"; };
+		3963409A272811740079E845 /* AddSubscriptionCustomViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionCustomViewConroller.swift; sourceTree = "<group>"; };
 		396340A5272924260079E845 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		396340C5272A38460079E845 /* subservice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = subservice.plist; sourceTree = "<group>"; };
 		396340C6272A38460079E845 /* writeSubscription.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = writeSubscription.plist; sourceTree = "<group>"; };
 		396340C9272A385B0079E845 /* getFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getFile.swift; sourceTree = "<group>"; };
 		396340CD272A4AD90079E845 /* SelectPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanCell.swift; sourceTree = "<group>"; };
 		396340CE272A4AD90079E845 /* SelectPlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlanCell.xib; sourceTree = "<group>"; };
+		39CE79F72744FFC900F8F659 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		39CE79F92745000300F8F659 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
+		39CE79FB2745004400F8F659 /* AddSubscription.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddSubscription.storyboard; sourceTree = "<group>"; };
+		39CE79FD274500F900F8F659 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5DBCAB352733E60200343733 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		5DBCAB402733F74C00343733 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 		5DBF02742743415E00FE6C1D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				39CE79FD274500F900F8F659 /* Login.storyboard */,
 				39633FF9272655E40079E845 /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -203,7 +212,7 @@
 				5DBF02762743418D00FE6C1D /* Home */,
 				5DBF02772743419600FE6C1D /* List */,
 				5DBF0278274341AE00FE6C1D /* Statistics */,
-				5DBF0279274341D100FE6C1D /* AddService */,
+				5DBF0279274341D100FE6C1D /* AddSubscription */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
@@ -220,6 +229,7 @@
 		5DBF02772743419600FE6C1D /* List */ = {
 			isa = PBXGroup;
 			children = (
+				39CE79F72744FFC900F8F659 /* List.storyboard */,
 				5DBF027B274345A700FE6C1D /* Cells */,
 				3963407A2727C6490079E845 /* ListViewController.swift */,
 			);
@@ -229,20 +239,22 @@
 		5DBF0278274341AE00FE6C1D /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				39CE79F92745000300F8F659 /* Statistics.storyboard */,
 				3963407E2727C6520079E845 /* StatisticsViewController.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
 		};
-		5DBF0279274341D100FE6C1D /* AddService */ = {
+		5DBF0279274341D100FE6C1D /* AddSubscription */ = {
 			isa = PBXGroup;
 			children = (
+				39CE79FB2745004400F8F659 /* AddSubscription.storyboard */,
 				5DBF027A2743434000FE6C1D /* Cells */,
-				396340822727D2930079E845 /* AddServiceListViewController.swift */,
-				396340862727E4E20079E845 /* AddServiceDetailViewController.swift */,
-				3963409A272811740079E845 /* AddServiceCustomViewConroller.swift */,
+				396340822727D2930079E845 /* AddSubscriptionListViewController.swift */,
+				396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */,
+				3963409A272811740079E845 /* AddSubscriptionCustomViewConroller.swift */,
 			);
-			path = AddService;
+			path = AddSubscription;
 			sourceTree = "<group>";
 		};
 		5DBF027A2743434000FE6C1D /* Cells */ = {
@@ -258,7 +270,7 @@
 		5DBF027B274345A700FE6C1D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3963407C2727C64D0079E845 /* ServiceCell.swift */,
+				3963407C2727C64D0079E845 /* SubscriptionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -332,6 +344,8 @@
 			files = (
 				5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */,
 				396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */,
+				39CE79FA2745000300F8F659 /* Statistics.storyboard in Resources */,
+				39CE79F82744FFC900F8F659 /* List.storyboard in Resources */,
 				39633FEA272649830079E845 /* Assets.xcassets in Resources */,
 				5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */,
 				396340C8272A38460079E845 /* writeSubscription.plist in Resources */,
@@ -339,6 +353,8 @@
 				5DF276FF27435FCE003C434B /* Main.storyboard in Resources */,
 				396340C7272A38460079E845 /* subservice.plist in Resources */,
 				39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */,
+				39CE79FC2745004400F8F659 /* AddSubscription.storyboard in Resources */,
+				39CE79FE274500F900F8F659 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,23 +407,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3963407D2727C64D0079E845 /* ServiceCell.swift in Sources */,
+				3963407D2727C64D0079E845 /* SubscriptionCell.swift in Sources */,
 				5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */,
 				396340CA272A385B0079E845 /* getFile.swift in Sources */,
 				396340852727DF600079E845 /* AddServiceCell.swift in Sources */,
-				396340832727D2930079E845 /* AddServiceListViewController.swift in Sources */,
+				396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */,
 				5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */,
 				5DBCAB362733E60200343733 /* UIColor.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
 				396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */,
 				3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */,
-				3963409B272811740079E845 /* AddServiceCustomViewConroller.swift in Sources */,
+				3963409B272811740079E845 /* AddSubscriptionCustomViewConroller.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
 				3963407B2727C6490079E845 /* ListViewController.swift in Sources */,
 				396340A6272924260079E845 /* TabBarController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,
-				396340872727E4E30079E845 /* AddServiceDetailViewController.swift in Sources */,
+				396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hm.nambu.mini.project.kkuduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -577,7 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hm.nambu.mini.project.kkuduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

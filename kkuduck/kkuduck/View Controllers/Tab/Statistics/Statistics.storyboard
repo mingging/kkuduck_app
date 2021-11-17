@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="82Y-Ig-Q8e">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansBold.otf">
+            <string>GmarketSansBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Statistics View Controller-->
+        <scene sceneID="cmb-aA-f2a">
+            <objects>
+                <viewController id="82Y-Ig-Q8e" customClass="StatisticsViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hMW-5m-sc2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bn0-iB-ydY" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="30" y="206" width="354" height="251"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="U5n-PB-ag5"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EWM-Pl-YCh">
+                                <rect key="frame" x="0.0" y="485" width="414" height="328"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="Aqn-IB-haO">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aqn-IB-haO" id="EkM-Gb-VDp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="넷플릭스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtB-tl-aEH">
+                                                    <rect key="frame" x="20" y="11" width="58" height="28"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500,000원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeE-gt-JQD">
+                                                    <rect key="frame" x="313.5" y="11" width="80.5" height="28"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JeE-gt-JQD" firstAttribute="top" secondItem="EkM-Gb-VDp" secondAttribute="topMargin" id="13d-cm-GWn"/>
+                                                <constraint firstItem="JeE-gt-JQD" firstAttribute="centerY" secondItem="CtB-tl-aEH" secondAttribute="centerY" id="HcD-wu-cBp"/>
+                                                <constraint firstItem="CtB-tl-aEH" firstAttribute="top" secondItem="EkM-Gb-VDp" secondAttribute="topMargin" id="Jux-RC-x7U"/>
+                                                <constraint firstItem="CtB-tl-aEH" firstAttribute="leading" secondItem="EkM-Gb-VDp" secondAttribute="leadingMargin" id="MGA-hM-0kr"/>
+                                                <constraint firstItem="JeE-gt-JQD" firstAttribute="trailing" secondItem="EkM-Gb-VDp" secondAttribute="trailingMargin" id="Xhs-jG-Bxv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CtB-tl-aEH" secondAttribute="bottom" id="cFx-KT-yBV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월별 사용 금액을" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6q-fI-exd">
+                                <rect key="frame" x="30" y="98" width="354" height="30"/>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="확인해보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-gW-Izn">
+                                <rect key="frame" x="30" y="136" width="354" height="30"/>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xWA-ot-u9j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T6q-fI-exd" firstAttribute="top" secondItem="xWA-ot-u9j" secondAttribute="top" constant="54" id="1oW-f4-nJS"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="trailing" secondItem="T6q-fI-exd" secondAttribute="trailing" constant="30" id="4xJ-RU-vjF"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="trailing" secondItem="VQ0-gW-Izn" secondAttribute="trailing" constant="30" id="9OT-ER-Hos"/>
+                            <constraint firstItem="VQ0-gW-Izn" firstAttribute="leading" secondItem="xWA-ot-u9j" secondAttribute="leading" constant="30" id="EKU-WY-fRY"/>
+                            <constraint firstItem="EWM-Pl-YCh" firstAttribute="leading" secondItem="xWA-ot-u9j" secondAttribute="leading" id="F3c-fc-nsd"/>
+                            <constraint firstItem="VQ0-gW-Izn" firstAttribute="leading" secondItem="bn0-iB-ydY" secondAttribute="leading" id="LUc-MW-4pN"/>
+                            <constraint firstItem="EWM-Pl-YCh" firstAttribute="top" secondItem="bn0-iB-ydY" secondAttribute="bottom" constant="28" id="dA5-5j-20L"/>
+                            <constraint firstItem="T6q-fI-exd" firstAttribute="leading" secondItem="xWA-ot-u9j" secondAttribute="leading" constant="30" id="doA-nR-OUg"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="bottom" secondItem="EWM-Pl-YCh" secondAttribute="bottom" id="iah-QM-Sf9"/>
+                            <constraint firstItem="VQ0-gW-Izn" firstAttribute="centerX" secondItem="T6q-fI-exd" secondAttribute="centerX" id="nLV-V5-XjG"/>
+                            <constraint firstItem="bn0-iB-ydY" firstAttribute="top" secondItem="VQ0-gW-Izn" secondAttribute="bottom" constant="40" id="oOV-L0-Dc8"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="trailing" secondItem="EWM-Pl-YCh" secondAttribute="trailing" id="sYG-zK-Rdy"/>
+                            <constraint firstItem="bn0-iB-ydY" firstAttribute="centerX" secondItem="xWA-ot-u9j" secondAttribute="centerX" id="uyo-r7-JYc"/>
+                            <constraint firstItem="VQ0-gW-Izn" firstAttribute="top" secondItem="T6q-fI-exd" secondAttribute="bottom" constant="8" id="zof-ZI-QFJ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="metric_icon.png" selectedImage="metric_icon.png" id="x3T-vB-hr1"/>
+                    <connections>
+                        <outlet property="barChartView" destination="bn0-iB-ydY" id="Ztz-Og-H5o"/>
+                        <outlet property="tableView" destination="EWM-Pl-YCh" id="jS3-tf-3N7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhA-O8-gCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1744.9275362318842" y="160.71428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="metric_icon.png" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

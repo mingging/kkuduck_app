@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afv-1H-Piq">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansBold.otf">
+            <string>GmarketSansBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="dRW-xn-kru">
+            <objects>
+                <navigationController id="afv-1H-Piq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xwz-Gw-qFs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qsf-JF-zK4" kind="relationship" relationship="rootViewController" id="XO6-gb-tja"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpe-dZ-9Qf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1529" y="171"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="CgX-IH-ZBt">
+            <objects>
+                <viewController storyboardIdentifier="loginNavController" id="qsf-JF-zK4" customClass="LoginViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcr-aF-85i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UJ-Xu-l8Q">
+                                <rect key="frame" x="30" y="173" width="354" height="90"/>
+                                <string key="text">만나서 반가워요!
+꾸덕을 시작하기 전에
+이름을 알려주세요!</string>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KG-Sa-hfy">
+                                <rect key="frame" x="30" y="382" width="354" height="13"/>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ynd-IZ-g5m">
+                                <rect key="frame" x="30" y="404" width="354" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="TT4-lI-WaE"/>
+                                    <constraint firstAttribute="width" constant="354" id="kNx-rG-dZS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT3-aZ-0aR">
+                                <rect key="frame" x="30" y="556" width="354" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="2y7-TM-OVo"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="Kd0-zX-W8C"/>
+                                    <constraint firstAttribute="width" constant="354" id="LmL-G4-CxB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="354" id="Xpu-Lc-ghD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnStart:" destination="qsf-JF-zK4" eventType="touchUpInside" id="Dbo-6E-RbF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nUp-Y1-Gsl"/>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="4KG-Sa-hfy" secondAttribute="trailing" constant="30" id="2n9-1G-AdF"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="8UJ-Xu-l8Q" secondAttribute="trailing" constant="30" id="4Hx-Zg-4AM"/>
+                            <constraint firstItem="Ynd-IZ-g5m" firstAttribute="top" secondItem="4KG-Sa-hfy" secondAttribute="bottom" constant="9" id="IFo-a0-vZm"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="dT3-aZ-0aR" secondAttribute="trailing" constant="30" id="MYH-qA-7js"/>
+                            <constraint firstItem="Ynd-IZ-g5m" firstAttribute="centerX" secondItem="bcr-aF-85i" secondAttribute="centerX" id="XaH-UE-w0K"/>
+                            <constraint firstItem="4KG-Sa-hfy" firstAttribute="top" secondItem="8UJ-Xu-l8Q" secondAttribute="bottom" constant="119" id="bXz-WZ-vWN"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="Ynd-IZ-g5m" secondAttribute="trailing" constant="30" id="e36-bV-tG4"/>
+                            <constraint firstItem="8UJ-Xu-l8Q" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="lI0-un-0uG"/>
+                            <constraint firstItem="8UJ-Xu-l8Q" firstAttribute="top" secondItem="nUp-Y1-Gsl" secondAttribute="top" constant="85" id="n0a-Lm-nYK"/>
+                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="top" secondItem="Ynd-IZ-g5m" secondAttribute="bottom" constant="118" id="rek-oQ-UIu"/>
+                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="xaI-z1-CPW"/>
+                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="centerX" secondItem="bcr-aF-85i" secondAttribute="centerX" id="xki-B3-227"/>
+                            <constraint firstItem="Ynd-IZ-g5m" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="xqy-QW-K3G"/>
+                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="top" secondItem="Ynd-IZ-g5m" secondAttribute="bottom" constant="118" id="yHQ-a9-bg3"/>
+                            <constraint firstItem="4KG-Sa-hfy" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="yle-T4-z84"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zHc-XM-Fd3"/>
+                    <connections>
+                        <outlet property="btnStart" destination="dT3-aZ-0aR" id="o86-hM-Eil"/>
+                        <outlet property="lblStartinfo" destination="8UJ-Xu-l8Q" id="SEc-Ji-4Vj"/>
+                        <outlet property="lblUserName" destination="Ynd-IZ-g5m" id="vq0-jV-bE0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUO-ag-JMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746.37681159420299" y="170.75892857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
