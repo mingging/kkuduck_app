@@ -25,7 +25,7 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // view round 조정
         viewTotalSub.layer.cornerRadius = 15
         
