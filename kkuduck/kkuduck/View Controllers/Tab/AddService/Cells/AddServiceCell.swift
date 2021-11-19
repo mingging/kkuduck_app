@@ -8,9 +8,9 @@
 import UIKit
 
 class AddServiceCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var lblSubTitle: UILabel!
     @IBOutlet weak var imageSubThum: UIImageView!
-    
+
 }
