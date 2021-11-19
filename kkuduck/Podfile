@@ -9,5 +9,4 @@ target 'kkuduck' do
   pod 'Alamofire'
   pod 'Charts'
   pod 'DropDown'
-  pod 'SDWebImage'
 end

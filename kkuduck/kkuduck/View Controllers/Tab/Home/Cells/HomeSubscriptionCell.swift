@@ -36,8 +36,9 @@ final class HomeSubscriptionCell: UICollectionViewCell {
  
     func configure(with subscribe: Subscribe) {
         nameLabel.text = subscribe.subscription.name
+        // TODO: image 수정
         let imageUrl = URL(string: subscribe.subscription.imageUrl)
-        thumbnailImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "logo.png"))
+        thumbnailImageView.image = UIImage(named: "logo.png")
         cycleLabel.text = subscribe.subscription.cycle
         priceLabel.text = "\(subscribe.subscription.price) 원"
         let startDate = subscribe.startDate
