@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3948619627476CB90016D34C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3948619527476CB90016D34C /* .swiftlint.yml */; };
 		39633FE1272649800079E845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE0272649800079E845 /* AppDelegate.swift */; };
 		39633FE3272649800079E845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE2272649800079E845 /* SceneDelegate.swift */; };
 		39633FEA272649830079E845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39633FE9272649830079E845 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3948619527476CB90016D34C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		39633FDD272649800079E845 /* kkuduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kkuduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39633FE0272649800079E845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39633FE2272649800079E845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		39633FD42726497F0079E845 = {
 			isa = PBXGroup;
 			children = (
+				3948619527476CB90016D34C /* .swiftlint.yml */,
 				39633FDF272649800079E845 /* kkuduck */,
 				39633FDE272649800079E845 /* Products */,
 				04376B44EADD78797287DAC0 /* Pods */,
@@ -295,6 +298,7 @@
 				39633FDA2726497F0079E845 /* Frameworks */,
 				39633FDB2726497F0079E845 /* Resources */,
 				0E0E98A554F1A660449C8349 /* [CP] Embed Pods Frameworks */,
+				3948619427476C490016D34C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -352,6 +356,7 @@
 				39633FF7272651570079E845 /* GmarketSansBold.otf in Resources */,
 				5DF276FF27435FCE003C434B /* Main.storyboard in Resources */,
 				396340C7272A38460079E845 /* subservice.plist in Resources */,
+				3948619627476CB90016D34C /* .swiftlint.yml in Resources */,
 				39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */,
 				39CE79FC2745004400F8F659 /* AddSubscription.storyboard in Resources */,
 				39CE79FE274500F900F8F659 /* Login.storyboard in Resources */,
@@ -377,6 +382,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kkuduck/Pods-kkuduck-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3948619427476C490016D34C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n";
 		};
 		513F913F105C09F19F78DC02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -566,6 +588,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5N6533KS3;
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,6 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5N6533KS3;
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

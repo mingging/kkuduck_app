@@ -23,23 +23,23 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var lblSumPrice: UILabel!
 
     // MARK: - View Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureCollectionView()
-       
+
         // view round 조정
         viewTotalSub.layer.cornerRadius = 15
-        
+
         // ADD 앱을 껐다가 켜도 이름이 저장되어 있도록 설정
         DispatchQueue.main.async {
             self.lblName.text = UserDefaults.standard.string(forKey: "userID")
         }
-        
+
         // 데이터 추가 후 저장된 데이터를 다시 불러오려면 어떻게 해야하는가
         saveData()
-        
+
         // 총 구독 합계
         let totalP = totalPrice()
         lblSumPrice.text = totalP
@@ -62,19 +62,19 @@ final class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    
+
     private func saveData() {
         writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
         guard let writeSubInfo = writeSubInfo else { return }
         lblSubNum.text = String(writeSubInfo.count)
-        
+
         // 총 구독 금액 구현
         // 딕셔너리에서 하나씩 빼서 배열로 나열 -> 합계 계산
     }
 
     private func totalPrice() -> String {
         guard let writeSubInfo = writeSubInfo else { return "" }
-        
+
         let count = writeSubInfo.count
         for i in 0..<count {
             guard let item = writeSubInfo[i] as? [String: Any] else { return "" }
@@ -136,7 +136,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             numberFormatter.numberStyle = .decimal
             planPrice.text = "\(numberFormatter.string(for: Int(price))!)원"
         }
-        guard let thumImage = item["img"] as? String else {return cell}
+        guard let thumImage = item["img"] as? String else { return cell }
         let thum = cell.viewWithTag(5) as? UIImageView
         if let thum = thum {
             thum.image = UIImage(named: "placeholder.png")

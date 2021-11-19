@@ -9,4 +9,6 @@ target 'kkuduck' do
   pod 'Alamofire'
   pod 'Charts'
   pod 'DropDown'
+  pod 'SwiftLint'
+
 end

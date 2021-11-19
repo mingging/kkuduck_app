@@ -4,23 +4,27 @@ PODS:
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
   - DropDown (2.3.13)
+  - SwiftLint (0.45.0)
 
 DEPENDENCIES:
   - Alamofire
   - Charts
   - DropDown
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Charts
     - DropDown
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
 
-PODFILE CHECKSUM: cdb1b2e4fbf40d317908d150be4be9ab7f4ced3a
+PODFILE CHECKSUM: 224f8a3aa4f78d7bf5d5411f6f4a4495cb58c5ca
 
 COCOAPODS: 1.11.2

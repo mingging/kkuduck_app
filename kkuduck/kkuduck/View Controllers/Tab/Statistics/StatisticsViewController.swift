@@ -25,17 +25,17 @@ class StatisticsViewController: UIViewController {
         totalSubPrice()
 
         months = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov"]
-        
+
         barChartView.noDataText = "데이터가 없습니다."
         barChartView.noDataFont = .systemFont(ofSize: 20)
         barChartView.noDataTextColor = .lightGray
-        
+
         setChart(dataPoints: months, values: unitsSold)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         totalSubPrice()
         self.tableView.reloadData()
 
@@ -50,7 +50,7 @@ class StatisticsViewController: UIViewController {
     func totalSubPrice() {
         // 데이터 불러오기
         writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
-        
+
         guard let writeSubInfo = writeSubInfo else { return }
         let count = writeSubInfo.count
 
@@ -60,8 +60,8 @@ class StatisticsViewController: UIViewController {
         func month(from date: Date) -> Int {
             return calendar.dateComponents([.month], from: date).month!
         }
-        
-        func totalmonth(oneMonth: Int) -> Int{
+
+        func totalmonth(oneMonth: Int) -> Int {
             totalMonth = 0
             for i in 0..<count {
                 guard let item = writeSubInfo[i] as? [String:Any] else { return 0 }
@@ -87,7 +87,7 @@ class StatisticsViewController: UIViewController {
             }
             return totalMonth
         }
-        
+
         for i in 6...11 {
             let totalPriceMonth = totalmonth(oneMonth: i)
             unitsSold.append(Double(totalPriceMonth))
@@ -101,23 +101,22 @@ class StatisticsViewController: UIViewController {
             let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
         }
-        
+
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "월별 사용 금액")
-        
+
         chartDataSet.colors = [.orange]
-        
-        
+
         let chartData = BarChartData(dataSet: chartDataSet)
         barChartView.data = chartData
-        
+
         chartDataSet.highlightEnabled = false
         barChartView.doubleTapToZoomEnabled = false
-        
+
         barChartView.xAxis.labelPosition = .bottom
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
-        
+
         barChartView.xAxis.setLabelCount(dataPoints.count, force: false)
-        
+
         barChartView.rightAxis.enabled = false
 
         barChartView.xAxis.drawAxisLineEnabled = false
@@ -129,31 +128,31 @@ class StatisticsViewController: UIViewController {
 }
 
 extension StatisticsViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let writeSubInfo = self.writeSubInfo {
             return writeSubInfo.count
         }
         return 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+
         guard let writeSubInfo = self.writeSubInfo,
               let item = writeSubInfo[indexPath.row] as? [String:Any]
         else { return cell }
-        
+
         let subName = cell.viewWithTag(1) as? UILabel
         subName?.text = item["planName"] as? String
-        
+
         let planPrice = cell.viewWithTag(2) as? UILabel
         if let totalPrice = item["planPrice"] as? String {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
             planPrice?.text = "\(numberFormatter.string(for: Int(totalPrice))!)원"
         }
-        
+
         // 달마다 지불되는 구독료를 계산해야 합니다유
         // 이름을 planName의 구독료를 가져와서 이번달까지 낸 것의 총 합
         if let startDay = item["subStartDay"] as? String { // subStartDay -> string 형태로 형변환
@@ -169,26 +168,26 @@ extension StatisticsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "서비스별 사용 금액"
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        
+
         let view: UIView = {
             let v = UIView(frame: .infinite)
             v.backgroundColor = .white
 
             return v
         }()
-        
+
         header.textLabel?.textColor = .black
         header.textLabel?.isHighlighted = false
         header.backgroundView = view
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
