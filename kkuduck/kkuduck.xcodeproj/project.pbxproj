@@ -33,6 +33,8 @@
 		5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF027C274345F800FE6C1D /* Home.storyboard */; };
 		5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF276FB27435FB9003C434B /* LaunchScreen.storyboard */; };
 		5DF276FF27435FCE003C434B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF276FE27435FCE003C434B /* Main.storyboard */; };
+		5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF2770F2743B609003C434B /* HomeSubscriptionCell.swift */; };
+		5DF277152743C945003C434B /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF277142743C945003C434B /* Subscribe.swift */; };
 		A0066EB4F690B1C972178648 /* Pods_kkuduck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		5DBF027C274345F800FE6C1D /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = kkuduck/Storyboards/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		5DF276FC27435FB9003C434B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DF276FE27435FCE003C434B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5DF2770F2743B609003C434B /* HomeSubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubscriptionCell.swift; sourceTree = "<group>"; };
+		5DF277142743C945003C434B /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
 		AB4C7738B9E157DF5B5D05B9 /* Pods-kkuduck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.debug.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B060A5EE82B12F09AD5F4A /* Pods-kkuduck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.release.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.release.xcconfig"; sourceTree = "<group>"; };
 		FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				5DBCAB3C2733EDFC00343733 /* Application Delegate */,
+				5DF277162743C94D003C434B /* Models */,
 				5DBCAB392733ED7600343733 /* View Controllers */,
 				5DBCAB382733EA2800343733 /* Storyboards */,
 				5DBCAB342733E5FA00343733 /* Utils */,
@@ -211,6 +216,7 @@
 		5DBF02762743418D00FE6C1D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5DF2770E2743B588003C434B /* Cells */,
 				5DBF027C274345F800FE6C1D /* Home.storyboard */,
 				39633FFB27265A080079E845 /* HomeViewController.swift */,
 			);
@@ -261,6 +267,22 @@
 				3963407C2727C64D0079E845 /* ServiceCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		5DF2770E2743B588003C434B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5DF2770F2743B609003C434B /* HomeSubscriptionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5DF277162743C94D003C434B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5DF277142743C945003C434B /* Subscribe.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BA3645781EFEBD3639E4E467 /* Frameworks */ = {
@@ -394,6 +416,7 @@
 				3963407D2727C64D0079E845 /* ServiceCell.swift in Sources */,
 				5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */,
 				396340CA272A385B0079E845 /* getFile.swift in Sources */,
+				5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */,
 				396340852727DF600079E845 /* AddServiceCell.swift in Sources */,
 				396340832727D2930079E845 /* AddServiceListViewController.swift in Sources */,
 				5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */,
@@ -404,6 +427,7 @@
 				3963409B272811740079E845 /* AddServiceCustomViewConroller.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
+				5DF277152743C945003C434B /* Subscribe.swift in Sources */,
 				3963407B2727C6490079E845 /* ListViewController.swift in Sources */,
 				396340A6272924260079E845 /* TabBarController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,

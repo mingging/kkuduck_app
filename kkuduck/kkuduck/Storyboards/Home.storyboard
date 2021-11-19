@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vkw-Bd-huf">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,285 +24,299 @@
             <objects>
                 <viewController id="vkw-Bd-huf" customClass="HomeViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dxU-ld-JeL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7G-7g-CjE">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jey-64-IqY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="980"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jey-64-IqY" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="705"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="혜지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0V-EZ-pQ3">
-                                                <rect key="frame" x="30" y="102" width="58" height="30"/>
-                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                                <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjb-rQ-6iF">
-                                                <rect key="frame" x="30" y="140" width="20.5" height="30"/>
-                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                                <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개의 구독서비스를" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAY-iH-xum">
-                                                <rect key="frame" x="58" y="140" width="239.5" height="30"/>
-                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgf-ym-n3x">
-                                                <rect key="frame" x="30" y="241" width="354" height="78"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-hq-NEf">
+                                                <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="6yG-d4-Mom"/>
+                                                    <constraint firstAttribute="width" secondItem="4xs-hq-NEf" secondAttribute="height" multiplier="1:1" id="tLa-vn-m5E"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ma8-f2-5Xc">
+                                                <rect key="frame" x="20" y="90" width="335" height="120"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 구독 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-qM-baz">
-                                                        <rect key="frame" x="20" y="31.5" width="81" height="15"/>
-                                                        <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="39000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKF-fC-S2T">
-                                                        <rect key="frame" x="108.5" y="27" width="203" height="25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="203" id="gIH-AW-y3j"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5G-M1-GfZ">
-                                                        <rect key="frame" x="319.5" y="32" width="14.5" height="14"/>
-                                                        <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7eN-Nl-CYb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="혜지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0V-EZ-pQ3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="58" height="30"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                                                <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님은" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yK-tq-z3k">
+                                                                <rect key="frame" x="66" y="0.0" width="58" height="30"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="tPS-YR-g6r">
+                                                        <rect key="frame" x="0.0" y="45" width="266.66666666666669" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjb-rQ-6iF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="20.333333333333332" height="30"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                                                <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개의 구독서비스를" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAY-iH-xum">
+                                                                <rect key="frame" x="27.333333333333329" y="0.0" width="239.33333333333337" height="30"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용하고 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-Dp-yas">
+                                                        <rect key="frame" x="0.0" y="90" width="220" height="30"/>
+                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstItem="cTe-qM-baz" firstAttribute="top" secondItem="dKF-fC-S2T" secondAttribute="top" constant="4.5" id="0Cy-ed-uwI"/>
-                                                    <constraint firstItem="cTe-qM-baz" firstAttribute="leading" secondItem="fgf-ym-n3x" secondAttribute="leading" constant="20" id="2EO-Ge-YKP"/>
-                                                    <constraint firstAttribute="height" constant="78" id="83M-9C-akG"/>
-                                                    <constraint firstItem="D5G-M1-GfZ" firstAttribute="centerY" secondItem="cTe-qM-baz" secondAttribute="centerY" id="EaZ-ea-fJY"/>
-                                                    <constraint firstAttribute="trailing" secondItem="D5G-M1-GfZ" secondAttribute="trailing" constant="20" id="JS6-8K-8dA"/>
-                                                    <constraint firstItem="cTe-qM-baz" firstAttribute="centerY" secondItem="fgf-ym-n3x" secondAttribute="centerY" id="LJl-hn-Wcp"/>
-                                                    <constraint firstItem="D5G-M1-GfZ" firstAttribute="top" secondItem="fgf-ym-n3x" secondAttribute="top" constant="32" id="sZT-MO-ucP"/>
-                                                    <constraint firstItem="D5G-M1-GfZ" firstAttribute="centerY" secondItem="fgf-ym-n3x" secondAttribute="centerY" id="tMM-NY-8LW"/>
-                                                    <constraint firstItem="D5G-M1-GfZ" firstAttribute="leading" secondItem="dKF-fC-S2T" secondAttribute="trailing" constant="8" id="vpI-3j-CUl"/>
-                                                </constraints>
-                                            </view>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제일이 얼마 남지 않았어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDO-Y0-LBO">
-                                                <rect key="frame" x="30" y="357" width="354" height="15"/>
+                                                <rect key="frame" x="20" y="360" width="335" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="mVt-OO-hAl"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="59n-JM-yau">
-                                                <rect key="frame" x="0.0" y="377" width="414" height="379"/>
+                                                <rect key="frame" x="0.0" y="415" width="375" height="270"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="379" id="xLH-7o-Yla"/>
-                                                    <constraint firstAttribute="width" constant="414" id="xqz-Mr-Vnh"/>
+                                                    <constraint firstAttribute="height" constant="270" id="Q1A-4l-DXU"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Tz-ta-OIH">
-                                                    <size key="itemSize" width="281" height="340"/>
+                                                    <size key="itemSize" width="228" height="250"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
+                                                    <inset key="sectionInset" minX="30" minY="16" maxX="30" maxY="16"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="7HL-9h-0Ug">
-                                                        <rect key="frame" x="30" y="19.5" width="281" height="340"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeSubscriptionCell" id="7HL-9h-0Ug" customClass="HomeSubscriptionCell" customModule="kkuduck" customModuleProvider="target">
+                                                        <rect key="frame" x="30" y="10" width="228" height="250"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Sjs-68-skh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="281" height="340"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="228" height="250"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8W-gr-hsY">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="281" height="340"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="228" height="250"/>
                                                                     <subviews>
-                                                                        <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fur-xa-KNh">
-                                                                            <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v9n-Uf-6AQ">
+                                                                            <rect key="frame" x="20" y="24" width="188" height="50"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="efS-wC-QXT">
-                                                                                    <rect key="frame" x="0.0" y="12.5" width="35" height="35"/>
+                                                                                <view tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Fur-xa-KNh">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                    <subviews>
+                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="efS-wC-QXT">
+                                                                                            <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="width" constant="30" id="382-Hf-rJZ"/>
+                                                                                                <constraint firstAttribute="width" secondItem="efS-wC-QXT" secondAttribute="height" multiplier="1:1" id="YEN-yd-XVA"/>
+                                                                                            </constraints>
+                                                                                        </imageView>
+                                                                                    </subviews>
+                                                                                    <color key="backgroundColor" red="0.86666667460000002" green="0.66666668650000005" blue="0.40784314269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="height" constant="35" id="4d7-jC-Um8"/>
-                                                                                        <constraint firstAttribute="width" constant="35" id="FYv-n1-neu"/>
-                                                                                        <constraint firstAttribute="width" secondItem="efS-wC-QXT" secondAttribute="height" multiplier="1:1" id="V1h-2z-NqX"/>
+                                                                                        <constraint firstItem="efS-wC-QXT" firstAttribute="centerX" secondItem="Fur-xa-KNh" secondAttribute="centerX" id="DAk-FU-ait"/>
+                                                                                        <constraint firstAttribute="width" constant="50" id="Ple-De-ewh"/>
+                                                                                        <constraint firstItem="efS-wC-QXT" firstAttribute="centerY" secondItem="Fur-xa-KNh" secondAttribute="centerY" id="ZLX-Go-ONx"/>
+                                                                                        <constraint firstAttribute="width" secondItem="Fur-xa-KNh" secondAttribute="height" multiplier="1:1" id="fFc-6r-HSg"/>
                                                                                     </constraints>
-                                                                                </imageView>
+                                                                                </view>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="넷플릭스" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzC-sk-SLc">
+                                                                                    <rect key="frame" x="58" y="0.0" width="130" height="50"/>
+                                                                                    <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="20"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
                                                                             </subviews>
-                                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                            <constraints>
-                                                                                <constraint firstItem="efS-wC-QXT" firstAttribute="centerY" secondItem="Fur-xa-KNh" secondAttribute="centerY" id="4vr-2q-LCX"/>
-                                                                                <constraint firstAttribute="height" constant="60" id="FSH-RR-uSw"/>
-                                                                                <constraint firstItem="efS-wC-QXT" firstAttribute="centerX" secondItem="Fur-xa-KNh" secondAttribute="centerX" constant="-12.5" id="Lap-TF-nIg"/>
-                                                                                <constraint firstAttribute="width" constant="60" id="hDd-e4-sfl"/>
-                                                                            </constraints>
-                                                                        </view>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="넷플릭스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzC-sk-SLc">
-                                                                            <rect key="frame" x="65" y="40" width="196" height="20"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="20" id="5bm-d9-lQe"/>
-                                                                                <constraint firstAttribute="width" constant="196" id="QX3-xr-xFM"/>
-                                                                            </constraints>
-                                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="20"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ip-3R-SZm">
-                                                                            <rect key="frame" x="20" y="91" width="241" height="1"/>
+                                                                        </stackView>
+                                                                        <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="2ip-3R-SZm">
+                                                                            <rect key="frame" x="20" y="85" width="188" height="1"/>
                                                                             <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="1" id="svh-K3-udv"/>
+                                                                                <constraint firstAttribute="height" constant="1" id="c8i-DC-eUw"/>
                                                                             </constraints>
                                                                         </view>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY3-7e-JsG">
-                                                                            <rect key="frame" x="20" y="140" width="118" height="15"/>
-                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFX-EW-PmM">
-                                                                            <rect key="frame" x="20" y="277" width="29" height="15"/>
-                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-MF-1pH">
-                                                                            <rect key="frame" x="179" y="140" width="82" height="15"/>
-                                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.10.25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-c8-h9t">
-                                                                            <rect key="frame" x="179" y="203" width="82" height="15"/>
-                                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,900원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q08-49-kpC">
-                                                                            <rect key="frame" x="179" y="277" width="82" height="15"/>
-                                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음 결제일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXw-uF-4py">
-                                                                            <rect key="frame" x="20" y="203" width="76.5" height="15"/>
-                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Htc-GP-xCM">
+                                                                            <rect key="frame" x="20" y="97" width="188" height="120"/>
+                                                                            <subviews>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eDy-Zb-0o6">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="34.666666666666664"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="결제 주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY3-7e-JsG">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="62" height="34.666666666666664"/>
+                                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="월" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-MF-1pH">
+                                                                                            <rect key="frame" x="70" y="0.0" width="118" height="34.666666666666664"/>
+                                                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bdT-Nw-c2j">
+                                                                                    <rect key="frame" x="0.0" y="42.666666666666657" width="188" height="34.666666666666657"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="다음 결제일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXw-uF-4py">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="34.666666666666664"/>
+                                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2021.10.25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-c8-h9t">
+                                                                                            <rect key="frame" x="84.666666666666686" y="0.0" width="103.33333333333331" height="34.666666666666664"/>
+                                                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3HZ-h7-Yqt">
+                                                                                    <rect key="frame" x="0.0" y="85.333333333333343" width="188" height="34.666666666666657"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFX-EW-PmM">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="29" height="34.666666666666664"/>
+                                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="9,900원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q08-49-kpC">
+                                                                                            <rect key="frame" x="37" y="0.0" width="151" height="34.666666666666664"/>
+                                                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                            </subviews>
+                                                                        </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstItem="euO-MF-1pH" firstAttribute="leading" secondItem="Q08-49-kpC" secondAttribute="leading" id="08P-Oo-L90"/>
-                                                                        <constraint firstAttribute="height" constant="340" id="19g-On-God"/>
-                                                                        <constraint firstItem="TFX-EW-PmM" firstAttribute="top" secondItem="hXw-uF-4py" secondAttribute="bottom" constant="59" id="2tx-uk-g9b"/>
-                                                                        <constraint firstItem="2ip-3R-SZm" firstAttribute="leading" secondItem="M8W-gr-hsY" secondAttribute="leading" constant="20" id="3X3-q6-XL0"/>
-                                                                        <constraint firstItem="Q08-49-kpC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TFX-EW-PmM" secondAttribute="trailing" constant="8" symbolic="YES" id="9Ox-p7-CMH"/>
-                                                                        <constraint firstItem="hXw-uF-4py" firstAttribute="top" secondItem="lY3-7e-JsG" secondAttribute="bottom" constant="48" id="Cq1-ZH-sNg"/>
-                                                                        <constraint firstItem="euO-MF-1pH" firstAttribute="leading" secondItem="mSZ-c8-h9t" secondAttribute="leading" id="G1M-OY-tjw"/>
-                                                                        <constraint firstItem="hXw-uF-4py" firstAttribute="leading" secondItem="lY3-7e-JsG" secondAttribute="leading" id="Jvs-qz-ewa"/>
-                                                                        <constraint firstAttribute="width" constant="281" id="KSy-Za-JMZ"/>
-                                                                        <constraint firstItem="Q08-49-kpC" firstAttribute="centerY" secondItem="TFX-EW-PmM" secondAttribute="centerY" id="NwO-Kc-3Rv"/>
-                                                                        <constraint firstItem="2ip-3R-SZm" firstAttribute="top" secondItem="Fur-xa-KNh" secondAttribute="bottom" constant="11" id="NyK-IP-hKx"/>
-                                                                        <constraint firstItem="mSZ-c8-h9t" firstAttribute="centerY" secondItem="hXw-uF-4py" secondAttribute="centerY" id="PYe-Qu-muN"/>
-                                                                        <constraint firstItem="lY3-7e-JsG" firstAttribute="leading" secondItem="M8W-gr-hsY" secondAttribute="leading" constant="20" id="RzM-Ye-N9o"/>
-                                                                        <constraint firstItem="euO-MF-1pH" firstAttribute="centerY" secondItem="lY3-7e-JsG" secondAttribute="centerY" id="X4s-ga-kQJ"/>
-                                                                        <constraint firstItem="Fur-xa-KNh" firstAttribute="top" secondItem="M8W-gr-hsY" secondAttribute="top" constant="20" id="YX4-Or-T8D"/>
-                                                                        <constraint firstItem="mSZ-c8-h9t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hXw-uF-4py" secondAttribute="trailing" constant="8" symbolic="YES" id="Yiz-fB-cTf"/>
-                                                                        <constraint firstItem="euO-MF-1pH" firstAttribute="trailing" secondItem="Q08-49-kpC" secondAttribute="trailing" id="Zxn-kH-eTU"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="euO-MF-1pH" secondAttribute="trailing" constant="20" id="da3-fO-hMT"/>
-                                                                        <constraint firstItem="euO-MF-1pH" firstAttribute="trailing" secondItem="mSZ-c8-h9t" secondAttribute="trailing" id="e4v-K6-TQV"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="TFX-EW-PmM" secondAttribute="bottom" constant="48" id="eJh-0Q-Wfb"/>
-                                                                        <constraint firstItem="Fur-xa-KNh" firstAttribute="leading" secondItem="M8W-gr-hsY" secondAttribute="leading" constant="20" id="fAj-vS-N7H"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="TzC-sk-SLc" secondAttribute="trailing" constant="20" id="gdr-Tk-obM"/>
-                                                                        <constraint firstItem="euO-MF-1pH" firstAttribute="leading" secondItem="lY3-7e-JsG" secondAttribute="trailing" constant="41" id="ibd-hk-z88"/>
-                                                                        <constraint firstItem="hXw-uF-4py" firstAttribute="leading" secondItem="TFX-EW-PmM" secondAttribute="leading" id="lKJ-i6-Rd9"/>
-                                                                        <constraint firstItem="TzC-sk-SLc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fur-xa-KNh" secondAttribute="trailing" constant="-15" id="nEZ-gb-TMO"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="2ip-3R-SZm" secondAttribute="trailing" constant="20" id="nau-cl-zWK"/>
-                                                                        <constraint firstItem="lY3-7e-JsG" firstAttribute="top" secondItem="2ip-3R-SZm" secondAttribute="bottom" constant="48" id="pZ1-sx-myj"/>
-                                                                        <constraint firstItem="TFX-EW-PmM" firstAttribute="top" secondItem="hXw-uF-4py" secondAttribute="bottom" constant="59" id="v2g-D7-AV9"/>
-                                                                        <constraint firstItem="TzC-sk-SLc" firstAttribute="centerY" secondItem="Fur-xa-KNh" secondAttribute="centerY" id="wbj-Zt-37R"/>
-                                                                        <constraint firstItem="hXw-uF-4py" firstAttribute="top" secondItem="lY3-7e-JsG" secondAttribute="bottom" constant="48" id="yro-j5-DVu"/>
+                                                                        <constraint firstItem="v9n-Uf-6AQ" firstAttribute="top" secondItem="M8W-gr-hsY" secondAttribute="top" constant="24" id="5F4-6z-Qsf"/>
+                                                                        <constraint firstItem="2ip-3R-SZm" firstAttribute="leading" secondItem="M8W-gr-hsY" secondAttribute="leading" constant="20" id="6hd-Ui-ZPv"/>
+                                                                        <constraint firstItem="2ip-3R-SZm" firstAttribute="top" secondItem="v9n-Uf-6AQ" secondAttribute="bottom" constant="11" id="K7e-Sh-iZr"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Htc-GP-xCM" secondAttribute="bottom" constant="33" id="KzX-ww-oni"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="v9n-Uf-6AQ" secondAttribute="trailing" constant="20" id="Nqe-WQ-RHL"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="2ip-3R-SZm" secondAttribute="trailing" constant="20" id="RA6-jI-dyE"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Htc-GP-xCM" secondAttribute="trailing" constant="20" id="TAy-r1-sgQ"/>
+                                                                        <constraint firstItem="Htc-GP-xCM" firstAttribute="leading" secondItem="M8W-gr-hsY" secondAttribute="leading" constant="20" id="b52-Qb-u0d"/>
+                                                                        <constraint firstItem="Htc-GP-xCM" firstAttribute="top" secondItem="2ip-3R-SZm" secondAttribute="bottom" constant="11" id="hvd-jQ-YFC"/>
+                                                                        <constraint firstItem="v9n-Uf-6AQ" firstAttribute="leading" secondItem="M8W-gr-hsY" secondAttribute="leading" constant="20" id="iOz-75-DaD"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="M8W-gr-hsY" secondAttribute="trailing" id="2lh-0o-whh"/>
-                                                                <constraint firstItem="M8W-gr-hsY" firstAttribute="leading" secondItem="Sjs-68-skh" secondAttribute="leading" id="Tn8-Ay-XOJ"/>
-                                                                <constraint firstAttribute="bottom" secondItem="M8W-gr-hsY" secondAttribute="bottom" id="bI6-qw-rVp"/>
-                                                                <constraint firstItem="M8W-gr-hsY" firstAttribute="top" secondItem="Sjs-68-skh" secondAttribute="top" id="w6e-ig-tj5"/>
+                                                                <constraint firstAttribute="trailing" secondItem="M8W-gr-hsY" secondAttribute="trailing" id="53Q-Wy-8m2"/>
+                                                                <constraint firstAttribute="bottom" secondItem="M8W-gr-hsY" secondAttribute="bottom" id="TwU-Ff-06A"/>
+                                                                <constraint firstItem="M8W-gr-hsY" firstAttribute="leading" secondItem="Sjs-68-skh" secondAttribute="leading" id="aVq-Wx-2cm"/>
+                                                                <constraint firstItem="M8W-gr-hsY" firstAttribute="top" secondItem="Sjs-68-skh" secondAttribute="top" id="vxx-n4-o33"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
-                                                        <size key="customSize" width="281" height="340"/>
+                                                        <connections>
+                                                            <outlet property="cycleLabel" destination="euO-MF-1pH" id="b8a-qw-o9e"/>
+                                                            <outlet property="nameLabel" destination="TzC-sk-SLc" id="PCi-sn-rvy"/>
+                                                            <outlet property="nextDateLabel" destination="mSZ-c8-h9t" id="Jp1-7o-5eH"/>
+                                                            <outlet property="priceLabel" destination="Q08-49-kpC" id="GDi-A0-cJk"/>
+                                                            <outlet property="thumbnailImageView" destination="efS-wC-QXT" id="7Uf-Pn-EkI"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3l3-tX-iz0">
+                                                        <rect key="frame" x="268" y="10" width="228" height="250"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gXP-9D-N3y">
+                                                            <rect key="frame" x="0.0" y="0.0" width="228" height="250"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="vkw-Bd-huf" id="Bxq-0S-p6c"/>
+                                                    <outlet property="delegate" destination="vkw-Bd-huf" id="cEc-Ld-4NN"/>
+                                                </connections>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님은" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yK-tq-z3k">
-                                                <rect key="frame" x="96" y="102" width="58" height="30"/>
-                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용하고 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-Dp-yas">
-                                                <rect key="frame" x="30" y="178" width="354" height="30"/>
-                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-hq-NEf">
-                                                <rect key="frame" x="30" y="35" width="50" height="50"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgf-ym-n3x">
+                                                <rect key="frame" x="20" y="246" width="335" height="78"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JNv-TR-BFL">
+                                                        <rect key="frame" x="16" y="26.666666666666686" width="303" height="25"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="총 구독 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-qM-baz">
+                                                                <rect key="frame" x="0.0" y="5" width="185.66666666666666" height="15"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="39000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKF-fC-S2T">
+                                                                <rect key="frame" x="193.66666666666666" y="0.0" width="86.666666666666657" height="25"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="25"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5G-M1-GfZ">
+                                                                <rect key="frame" x="288.33333333333331" y="5" width="14.666666666666686" height="15"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="4xs-hq-NEf" secondAttribute="height" multiplier="50:50" id="Ue0-2r-oMn"/>
-                                                    <constraint firstAttribute="height" constant="50" id="e6u-rS-R0d"/>
-                                                    <constraint firstAttribute="width" constant="50" id="eDL-0J-Gke"/>
+                                                    <constraint firstItem="JNv-TR-BFL" firstAttribute="leading" secondItem="fgf-ym-n3x" secondAttribute="leading" constant="16" id="Kon-UG-fXZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JNv-TR-BFL" secondAttribute="trailing" constant="16" id="MGz-f9-9Yo"/>
+                                                    <constraint firstAttribute="height" constant="78" id="W0q-SJ-mry"/>
+                                                    <constraint firstItem="JNv-TR-BFL" firstAttribute="centerY" secondItem="fgf-ym-n3x" secondAttribute="centerY" id="hhN-hA-UZA"/>
                                                 </constraints>
-                                            </imageView>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="fgf-ym-n3x" firstAttribute="top" secondItem="mpM-Dp-yas" secondAttribute="bottom" constant="33" id="0kv-Ox-ZRh"/>
-                                            <constraint firstItem="p0V-EZ-pQ3" firstAttribute="top" secondItem="4xs-hq-NEf" secondAttribute="bottom" constant="17" id="1Gq-jR-FLI"/>
-                                            <constraint firstItem="wjb-rQ-6iF" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="30" id="4fP-SY-ypr"/>
-                                            <constraint firstItem="59n-JM-yau" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" id="5cJ-7B-D5e"/>
-                                            <constraint firstItem="fgf-ym-n3x" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="30" id="7VN-9S-qjh"/>
-                                            <constraint firstAttribute="height" constant="980" id="BYx-j9-UcK"/>
-                                            <constraint firstItem="mpM-Dp-yas" firstAttribute="top" secondItem="wjb-rQ-6iF" secondAttribute="bottom" constant="8" symbolic="YES" id="CoF-Rl-9kq"/>
-                                            <constraint firstItem="mpM-Dp-yas" firstAttribute="leading" secondItem="fgf-ym-n3x" secondAttribute="leading" id="EwJ-Ux-3RU"/>
-                                            <constraint firstItem="oDO-Y0-LBO" firstAttribute="top" secondItem="fgf-ym-n3x" secondAttribute="bottom" constant="38" id="GXC-py-3Aq"/>
-                                            <constraint firstItem="fAY-iH-xum" firstAttribute="leading" secondItem="wjb-rQ-6iF" secondAttribute="trailing" constant="7.5" id="Ilx-Wv-TiE"/>
-                                            <constraint firstAttribute="trailing" secondItem="fgf-ym-n3x" secondAttribute="trailing" constant="30" id="N8l-kZ-NNh"/>
-                                            <constraint firstItem="wjb-rQ-6iF" firstAttribute="leading" secondItem="mpM-Dp-yas" secondAttribute="leading" id="QHS-sW-h7Q"/>
-                                            <constraint firstItem="4xs-hq-NEf" firstAttribute="leading" secondItem="p0V-EZ-pQ3" secondAttribute="leading" id="QaI-Ap-1Zl"/>
-                                            <constraint firstItem="59n-JM-yau" firstAttribute="top" secondItem="Jey-64-IqY" secondAttribute="top" constant="377" id="RNC-Uc-0y0"/>
-                                            <constraint firstItem="wjb-rQ-6iF" firstAttribute="baseline" secondItem="fAY-iH-xum" secondAttribute="baseline" id="S0J-hY-DUW"/>
-                                            <constraint firstAttribute="trailing" secondItem="oDO-Y0-LBO" secondAttribute="trailing" constant="30" id="W1F-5d-THG"/>
-                                            <constraint firstItem="wjb-rQ-6iF" firstAttribute="top" secondItem="p0V-EZ-pQ3" secondAttribute="bottom" constant="8" symbolic="YES" id="Wse-K3-Jdy"/>
-                                            <constraint firstItem="p0V-EZ-pQ3" firstAttribute="leading" secondItem="wjb-rQ-6iF" secondAttribute="leading" id="Y15-PZ-zD0"/>
-                                            <constraint firstItem="p0V-EZ-pQ3" firstAttribute="baseline" secondItem="8yK-tq-z3k" secondAttribute="baseline" id="Y43-us-KvU"/>
-                                            <constraint firstItem="4xs-hq-NEf" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="30" id="jNL-p0-BhS"/>
-                                            <constraint firstItem="fgf-ym-n3x" firstAttribute="leading" secondItem="oDO-Y0-LBO" secondAttribute="leading" id="lYi-E0-dHr"/>
-                                            <constraint firstItem="59n-JM-yau" firstAttribute="centerX" secondItem="oDO-Y0-LBO" secondAttribute="centerX" id="myI-r9-dMa"/>
-                                            <constraint firstItem="8yK-tq-z3k" firstAttribute="leading" secondItem="p0V-EZ-pQ3" secondAttribute="trailing" constant="8" symbolic="YES" id="ocd-WC-460"/>
-                                            <constraint firstItem="mpM-Dp-yas" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="30" id="qJW-gW-XPr"/>
-                                            <constraint firstItem="p0V-EZ-pQ3" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="30" id="tdU-2Z-24W"/>
-                                            <constraint firstItem="oDO-Y0-LBO" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="30" id="tuf-kN-x6h"/>
-                                            <constraint firstItem="59n-JM-yau" firstAttribute="centerX" secondItem="mpM-Dp-yas" secondAttribute="centerX" id="u1o-wg-i1Q"/>
-                                            <constraint firstAttribute="trailing" secondItem="fgf-ym-n3x" secondAttribute="trailing" constant="30" id="uaz-KJ-0UX"/>
-                                            <constraint firstItem="59n-JM-yau" firstAttribute="top" secondItem="oDO-Y0-LBO" secondAttribute="bottom" constant="5" id="uhp-ll-dLH"/>
-                                            <constraint firstItem="p0V-EZ-pQ3" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="30" id="vC8-AV-xlq"/>
-                                            <constraint firstItem="59n-JM-yau" firstAttribute="centerX" secondItem="fgf-ym-n3x" secondAttribute="centerX" id="xV0-V3-7GH"/>
-                                            <constraint firstAttribute="trailing" secondItem="mpM-Dp-yas" secondAttribute="trailing" constant="30" id="zOt-cq-tii"/>
+                                            <constraint firstItem="Ma8-f2-5Xc" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="20" id="5mo-QU-Rf7"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ma8-f2-5Xc" secondAttribute="trailing" constant="20" id="8di-iU-al8"/>
+                                            <constraint firstItem="59n-JM-yau" firstAttribute="top" secondItem="oDO-Y0-LBO" secondAttribute="bottom" constant="10" id="8gw-6A-Fga"/>
+                                            <constraint firstAttribute="trailing" secondItem="oDO-Y0-LBO" secondAttribute="trailing" constant="20" id="9zv-E5-7FZ"/>
+                                            <constraint firstItem="Ma8-f2-5Xc" firstAttribute="top" secondItem="4xs-hq-NEf" secondAttribute="bottom" constant="10" id="IR4-c5-FZE"/>
+                                            <constraint firstItem="oDO-Y0-LBO" firstAttribute="top" secondItem="fgf-ym-n3x" secondAttribute="bottom" constant="36" id="OQo-xO-pPP"/>
+                                            <constraint firstAttribute="bottom" secondItem="59n-JM-yau" secondAttribute="bottom" constant="20" id="Xwe-vv-Q51"/>
+                                            <constraint firstItem="4xs-hq-NEf" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="20" id="YBH-Jm-Tjr"/>
+                                            <constraint firstItem="59n-JM-yau" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" id="fUo-ru-VoQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="fgf-ym-n3x" secondAttribute="trailing" constant="20" id="jkk-Ne-6bH"/>
+                                            <constraint firstItem="fgf-ym-n3x" firstAttribute="top" secondItem="Ma8-f2-5Xc" secondAttribute="bottom" constant="36" id="k5d-kO-ym2"/>
+                                            <constraint firstItem="oDO-Y0-LBO" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="20" id="nRd-7U-XLd"/>
+                                            <constraint firstItem="4xs-hq-NEf" firstAttribute="top" secondItem="Jey-64-IqY" secondAttribute="top" constant="20" id="sUt-Rd-0lg"/>
+                                            <constraint firstAttribute="trailing" secondItem="59n-JM-yau" secondAttribute="trailing" id="vYj-0U-uAJ"/>
+                                            <constraint firstItem="fgf-ym-n3x" firstAttribute="leading" secondItem="Jey-64-IqY" secondAttribute="leading" constant="20" id="xba-71-ztf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Jey-64-IqY" firstAttribute="leading" secondItem="KH6-A2-3Dl" secondAttribute="leading" id="9PB-BB-X66"/>
-                                    <constraint firstItem="Jey-64-IqY" firstAttribute="bottom" secondItem="KH6-A2-3Dl" secondAttribute="bottom" id="Ha4-CO-W0D"/>
-                                    <constraint firstItem="Jey-64-IqY" firstAttribute="width" secondItem="E7G-7g-CjE" secondAttribute="width" id="OdJ-6G-jfj"/>
-                                    <constraint firstItem="Jey-64-IqY" firstAttribute="top" secondItem="KH6-A2-3Dl" secondAttribute="top" id="euq-gs-ggG"/>
-                                    <constraint firstItem="Jey-64-IqY" firstAttribute="trailing" secondItem="KH6-A2-3Dl" secondAttribute="trailing" id="x5E-Ow-tZr"/>
+                                    <constraint firstItem="Jey-64-IqY" firstAttribute="top" secondItem="KH6-A2-3Dl" secondAttribute="top" id="DQE-aG-BUA"/>
+                                    <constraint firstItem="Jey-64-IqY" firstAttribute="trailing" secondItem="KH6-A2-3Dl" secondAttribute="trailing" id="EyG-oU-Hdq"/>
+                                    <constraint firstItem="Jey-64-IqY" firstAttribute="leading" secondItem="KH6-A2-3Dl" secondAttribute="leading" id="QFk-9A-xh8"/>
+                                    <constraint firstItem="Jey-64-IqY" firstAttribute="bottom" secondItem="KH6-A2-3Dl" secondAttribute="bottom" id="miC-BC-c4h"/>
+                                    <constraint firstItem="Jey-64-IqY" firstAttribute="width" secondItem="Rde-G3-H9x" secondAttribute="width" id="t26-XM-mQd"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="KH6-A2-3Dl"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Rde-G3-H9x"/>
@@ -310,22 +325,19 @@
                         <viewLayoutGuide key="safeArea" id="78Y-hH-X8N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="E7G-7g-CjE" secondAttribute="bottom" id="0CW-PS-RPl"/>
-                            <constraint firstItem="E7G-7g-CjE" firstAttribute="leading" secondItem="78Y-hH-X8N" secondAttribute="leading" id="LTN-ZF-igW"/>
-                            <constraint firstItem="E7G-7g-CjE" firstAttribute="trailing" secondItem="78Y-hH-X8N" secondAttribute="trailing" id="XeO-Mk-D9f"/>
-                            <constraint firstItem="E7G-7g-CjE" firstAttribute="top" secondItem="dxU-ld-JeL" secondAttribute="top" id="aDE-em-qnl"/>
-                            <constraint firstAttribute="bottom" secondItem="E7G-7g-CjE" secondAttribute="bottom" id="dXv-HX-gzA"/>
-                            <constraint firstItem="E7G-7g-CjE" firstAttribute="top" secondItem="dxU-ld-JeL" secondAttribute="top" id="eSx-KS-OwE"/>
-                            <constraint firstItem="E7G-7g-CjE" firstAttribute="leading" secondItem="dxU-ld-JeL" secondAttribute="leading" id="utX-w0-ZvY"/>
+                            <constraint firstItem="E7G-7g-CjE" firstAttribute="bottom" secondItem="78Y-hH-X8N" secondAttribute="bottom" id="LeF-0A-uxI"/>
+                            <constraint firstItem="E7G-7g-CjE" firstAttribute="leading" secondItem="78Y-hH-X8N" secondAttribute="leading" id="TQr-v7-Ffw"/>
+                            <constraint firstItem="E7G-7g-CjE" firstAttribute="top" secondItem="78Y-hH-X8N" secondAttribute="top" id="cTF-U8-jyF"/>
+                            <constraint firstItem="E7G-7g-CjE" firstAttribute="trailing" secondItem="78Y-hH-X8N" secondAttribute="trailing" id="mDo-Kc-2US"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home_icon.png" selectedImage="home_icon.png" id="nH4-zK-L7l"/>
                     <navigationItem key="navigationItem" id="Lqo-DL-Tod"/>
                     <connections>
                         <outlet property="collectionView" destination="59n-JM-yau" id="nQa-iA-dJR"/>
-                        <outlet property="lblName" destination="p0V-EZ-pQ3" id="dr5-dh-bAb"/>
-                        <outlet property="lblSubNum" destination="wjb-rQ-6iF" id="CUU-ek-gnR"/>
-                        <outlet property="lblSumPrice" destination="dKF-fC-S2T" id="MLV-Fk-q1z"/>
+                        <outlet property="countLabel" destination="wjb-rQ-6iF" id="CUU-ek-gnR"/>
+                        <outlet property="totalPriceLabel" destination="dKF-fC-S2T" id="MLV-Fk-q1z"/>
+                        <outlet property="usernameLabel" destination="p0V-EZ-pQ3" id="dr5-dh-bAb"/>
                         <outlet property="viewTotalSub" destination="fgf-ym-n3x" id="B0g-qR-Qek"/>
                     </connections>
                 </viewController>
