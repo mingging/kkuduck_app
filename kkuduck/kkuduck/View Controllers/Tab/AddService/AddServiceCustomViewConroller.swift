@@ -11,49 +11,49 @@ final class AddServiceCustomViewConroller: UIViewController, UITextFieldDelegate
 
     var writeSubInfo: NSMutableArray?
     var dateInfo: String? // 날짜를 받기 위한 전역 변수 설정
-    
+
     @IBOutlet weak var textPlanName: UITextField!
     @IBOutlet weak var textPlanPrice: UITextField!
     @IBOutlet weak var textSubserviceID: UITextField!
     @IBOutlet weak var segCycle: UISegmentedControl!
     @IBOutlet weak var dateSubstartday: UIDatePicker!
     @IBOutlet weak var btnAddNew: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tabBarController?.tabBar.isHidden = true
         btnAddNew.layer.cornerRadius = 5
         textPlanName.delegate = self
         textPlanPrice.delegate = self
         textSubserviceID.delegate = self
-        
+
         writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
         // 파일을 doc에 복사해 옴. 이 파일에 데이터를 저장할 것임
     }
-    
+
     @IBAction func actBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
+
     @IBAction func actDone(_ sender: UIButton) {
         // textField 데이터
         let planName = textPlanName.text
         let planPrice = textPlanPrice.text // 뒤에 "원" 붙여서 데이터 저장되도록 하고, 숫자 외엔 입력 못도록 설정
         let subserviceID = textSubserviceID.text
         let img = ""
-        
+
         // segment 데이터
         let select = segCycle.selectedSegmentIndex
         let cycle = segCycle.titleForSegment(at: select) // seguement 입력 받는 방법 OK
-        
+
         // datepicker 데이터
         let subStartDay = dateInfo
-        
+
         let name = planName
         let price = planPrice
         let date = subStartDay
-        
+
         if name == "" || price == "" || date == nil {
             if name == "" {
                 alert(message: "구독 이름이 입력되지 않았습니다.")
@@ -66,12 +66,12 @@ final class AddServiceCustomViewConroller: UIViewController, UITextFieldDelegate
             }
         } else {
             let writeSub = ["planName": planName, "planPrice": planPrice, "subserviceID": subserviceID, "cycle": cycle, "subStartDay": subStartDay, "img": img]
-            
+
             guard let writeSubInfo = writeSubInfo else { return }
             writeSubInfo.add(writeSub)
             writeSubInfo.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
         }
-        
+
         // 완료 버튼을 누르면 이전 화면으로 돌아가도록 구현 OK
         navigationController?.popViewController(animated: true)
     }
@@ -91,12 +91,12 @@ final class AddServiceCustomViewConroller: UIViewController, UITextFieldDelegate
         // TODO: 날짜 선택하면 dismiss 되도록
 //        dismiss(animated: true)
     }
-    
+
     // textfield 입력시 keyboard 제어
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

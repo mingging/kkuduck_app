@@ -9,7 +9,7 @@ import UIKit
 import DropDown
 
 final class SelectPlanCell: DropDownCell {
-    
+
     @IBOutlet var testText: UILabel!
-    
+
 }

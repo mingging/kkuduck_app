@@ -27,6 +27,7 @@
 		396340CA272A385B0079E845 /* getFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340C9272A385B0079E845 /* getFile.swift */; };
 		396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340CD272A4AD90079E845 /* SelectPlanCell.swift */; };
 		396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396340CE272A4AD90079E845 /* SelectPlanCell.xib */; };
+		5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B022747A90700E406C3 /* .swiftlint.yml */; };
 		5DBCAB362733E60200343733 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor.swift */; };
 		5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */; };
 		5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB402733F74C00343733 /* ReusableView.swift */; };
@@ -61,6 +62,7 @@
 		396340C9272A385B0079E845 /* getFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getFile.swift; sourceTree = "<group>"; };
 		396340CD272A4AD90079E845 /* SelectPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanCell.swift; sourceTree = "<group>"; };
 		396340CE272A4AD90079E845 /* SelectPlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlanCell.xib; sourceTree = "<group>"; };
+		5D127B022747A90700E406C3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5DBCAB352733E60200343733 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		5DBCAB402733F74C00343733 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		39633FD42726497F0079E845 = {
 			isa = PBXGroup;
 			children = (
+				5D127B022747A90700E406C3 /* .swiftlint.yml */,
 				39633FDF272649800079E845 /* kkuduck */,
 				39633FDE272649800079E845 /* Products */,
 				04376B44EADD78797287DAC0 /* Pods */,
@@ -305,6 +308,7 @@
 				39633FDA2726497F0079E845 /* Frameworks */,
 				39633FDB2726497F0079E845 /* Resources */,
 				0E0E98A554F1A660449C8349 /* [CP] Embed Pods Frameworks */,
+				5D127B012747A8DC00E406C3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -352,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */,
 				5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */,
 				396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */,
 				39633FEA272649830079E845 /* Assets.xcassets in Resources */,
@@ -405,6 +410,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5D127B012747A8DC00E406C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
