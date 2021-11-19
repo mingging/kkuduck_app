@@ -21,6 +21,7 @@ final class AddServiceListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("git merge")
         configureNavigationController()
         configureCollectionView()
         // 기존에 있는 SubService 목록을 가지고 나열해줌 (읽기전용)
