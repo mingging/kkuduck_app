@@ -97,7 +97,7 @@ private extension HomeViewController {
 
 // MARK: - UICollectionViewDelegate
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return writeSubInfo?.count ?? 0
@@ -113,8 +113,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 100
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height = collectionView.frame.height
+        let cellShadowRadius: CGFloat = 10
+        let cellShadowOffsetHeight: CGFloat = 2
+        let cellWidth = width * 0.8
+        let cellHeight = height - cellShadowRadius * 2 - cellShadowOffsetHeight
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 
 }
