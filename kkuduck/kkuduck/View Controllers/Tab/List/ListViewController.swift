@@ -76,9 +76,7 @@ extension ListViewController: UITableViewDataSource {
         cell.subscriptionNameLabel.text = item["planName"] as? String
         guard let thumImage = item["img"] as? String else { return cell }
 
-        // TODO: AlamofireImage
-        cell.subscriptionImageView.sd_setImage(with: URL(string: thumImage),
-                                  placeholderImage: UIImage(named: "logo.png"))
+        cell.subscriptionImageView.image = UIImage(named: "placeholder.png")
         cell.stratDateLabel.text = item["subStartDay"] as? String
 
         guard let price = item["planPrice"] as? String else { return cell }

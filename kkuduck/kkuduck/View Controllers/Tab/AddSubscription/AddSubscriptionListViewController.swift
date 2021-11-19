@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 final class AddServiceListViewController: UIViewController {
     
@@ -85,7 +84,7 @@ extension AddServiceListViewController: UICollectionViewDelegate, UICollectionVi
         
         cell.lblSubTitle.text = item["subName"] as? String
         guard let thumImage = item["img"] as? String else { return cell }
-        cell.imageSubThum.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.imageSubThum.image = UIImage(named: "placeholder.png")
         return cell
     }
     

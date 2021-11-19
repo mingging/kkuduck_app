@@ -139,7 +139,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let thumImage = item["img"] as? String else {return cell}
         let thum = cell.viewWithTag(5) as? UIImageView
         if let thum = thum {
-            thum.sd_setImage(with: URL(string: thumImage), placeholderImage: UIImage(named: "logo.png"))
+            thum.image = UIImage(named: "placeholder.png")
         }
             // 다음 결제일 계산 악!!!!!!
             // 낡지 힘내요..
