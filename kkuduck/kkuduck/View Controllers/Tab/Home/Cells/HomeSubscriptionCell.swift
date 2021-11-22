@@ -26,7 +26,7 @@ final class HomeSubscriptionCell: UICollectionViewCell {
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.2
         layer.masksToBounds = false
-
+        
         thumbnailContainerView.layer.cornerRadius = (thumbnailContainerView.frame.height) / 2
     }
 
