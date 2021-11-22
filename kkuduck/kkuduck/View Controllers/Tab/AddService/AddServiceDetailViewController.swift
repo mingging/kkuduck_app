@@ -92,7 +92,7 @@ class AddServiceDetailViewController: UIViewController, UITextFieldDelegate {
             print(self.dataPrice)
         }
 
-        dropDown.backgroundColor = UIColor.white
+        dropDown.backgroundColor = .white
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.cellHeight = 64
         dropDown.cornerRadius = 5

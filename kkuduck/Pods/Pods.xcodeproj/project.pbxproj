@@ -357,7 +357,7 @@
 		9851D4D3E605C3625D9758663009A10A /* LineChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartRenderer.swift; path = Source/Charts/Renderers/LineChartRenderer.swift; sourceTree = "<group>"; };
 		987338B0681CBBF3CA78BFF5B34BA9AA /* Fill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fill.swift; path = Source/Charts/Utils/Fill.swift; sourceTree = "<group>"; };
 		9B6725B782188F18CB76A740433F14E4 /* DropDown */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E2271CEEE9D699F7F962813C7A85FF9 /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
 		9E5146654372C762EBB0C588B4FDA2FC /* ScatterChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartView.swift; path = Source/Charts/Charts/ScatterChartView.swift; sourceTree = "<group>"; };
 		9E8D5AFEFC53E58EEF0B1991B6B31106 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
@@ -444,7 +444,7 @@
 		FCDAE51B4B746A0CC41D97199F8E761D /* CandleStickChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleStickChartView.swift; path = Source/Charts/Charts/CandleStickChartView.swift; sourceTree = "<group>"; };
 		FD030C8B3BAD54EDD0EEF327BAD274DF /* CombinedChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartView.swift; path = Source/Charts/Charts/CombinedChartView.swift; sourceTree = "<group>"; };
 		FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FD8D1C1ADC40DA203A654901781C45E1 /* Pods-kkuduck */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-kkuduck"; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD8D1C1ADC40DA203A654901781C45E1 /* Pods_kkuduck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA8CF23FED912325115CDF34432DACE /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		FF5DFD2F392E270FB4B79596BF9B3ED2 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		FFA07653E148F91A03F9559C4D078291 /* YAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererRadarChart.swift; path = Source/Charts/Renderers/YAxisRendererRadarChart.swift; sourceTree = "<group>"; };
@@ -550,7 +550,6 @@
 				A5B093CCA037AD644F1F0A93DC32048A /* Validation.swift */,
 				72FD6E552059D5E7778A7AE893E588D1 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -763,7 +762,7 @@
 				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
 				A1C1B977ED8804E8AEEC884E7359EE58 /* Charts */,
 				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
-				FD8D1C1ADC40DA203A654901781C45E1 /* Pods-kkuduck */,
+				FD8D1C1ADC40DA203A654901781C45E1 /* Pods_kkuduck.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -780,7 +779,6 @@
 				F0623ACB958C68720FA5CF99AF5FB312 /* Resources */,
 				1E75408029FCCC65D9080EC059B61FE0 /* Support Files */,
 			);
-			name = DropDown;
 			path = DropDown;
 			sourceTree = "<group>";
 		};
@@ -800,7 +798,6 @@
 				8C8E8EA7A755BF69B5BF177D68CE2D74 /* Core */,
 				938B9EAFBBF5B8DDDBDB402CA55A5E27 /* Support Files */,
 			);
-			name = Charts;
 			path = Charts;
 			sourceTree = "<group>";
 		};
@@ -887,7 +884,7 @@
 			);
 			name = "Pods-kkuduck";
 			productName = Pods_kkuduck;
-			productReference = FD8D1C1ADC40DA203A654901781C45E1 /* Pods-kkuduck */;
+			productReference = FD8D1C1ADC40DA203A654901781C45E1 /* Pods_kkuduck.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BF03B0B2B8B052092CB5F90CC5FB3757 /* Charts */ = {

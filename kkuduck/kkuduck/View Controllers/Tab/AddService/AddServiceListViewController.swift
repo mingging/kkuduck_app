@@ -40,7 +40,7 @@ private extension AddServiceListViewController {
 
     func configureNavigationController() {
         navigationController?.isNavigationBarHidden = true
-        navigationController?.navigationBar.barTintColor = UIColor(hex: "#FDAC53ff")
+        navigationController?.navigationBar.barTintColor = .primary
         navigationController?.navigationBar.shadowImage = UIImage()
     }
 

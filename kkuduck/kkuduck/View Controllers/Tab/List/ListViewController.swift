@@ -43,14 +43,14 @@ final class ListViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor(hex: "#FDAC53ff")
+        tableView.backgroundColor = .primary
         searchBar.endEditing(true)
     }
 
     private func configureSearchBar() {
         searchBar.placeholder = "구독을 검색해보세요"
         searchBar.searchTextField.backgroundColor = .white
-        searchBar.barTintColor = UIColor(hex: "#FDAC53ff")
+        searchBar.barTintColor = .primary
         searchBar.backgroundImage = UIImage()
     }
 
@@ -114,7 +114,7 @@ extension ListViewController: UITableViewDelegate {
             completionHandler(true)
         }
         action.image = UIImage(systemName: "trash")
-        action.backgroundColor = UIColor(red: 253, green: 172, blue: 83, alpha: 0)
+        action.backgroundColor = .primary
         return UISwipeActionsConfiguration(actions: [action])
     }
 
@@ -126,7 +126,7 @@ extension ListViewController: UITableViewDelegate {
             completionHandler(true)
         }
         action.image = UIImage(systemName: "trash")
-        action.backgroundColor = UIColor(red: 253, green: 172, blue: 83, alpha: 0)
+        action.backgroundColor = .primary
         return UISwipeActionsConfiguration(actions: [action])
     }
 
