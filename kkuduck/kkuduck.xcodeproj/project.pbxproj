@@ -138,13 +138,13 @@
 			path = kkuduck;
 			sourceTree = "<group>";
 		};
-		39633FF4272651490079E845 /* font */ = {
+		39633FF4272651490079E845 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				39633FF6272651520079E845 /* GmarketSansBold.otf */,
 				39633FF5272651520079E845 /* GmarketSansMedium.otf */,
 			);
-			path = font;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		5DBCAB342733E5FA00343733 /* Utils */ = {
@@ -160,7 +160,7 @@
 		5DBCAB372733E95000343733 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				39633FF4272651490079E845 /* font */,
+				39633FF4272651490079E845 /* Fonts */,
 				39633FE9272649830079E845 /* Assets.xcassets */,
 			);
 			path = Resources;
