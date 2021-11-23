@@ -35,10 +35,8 @@ final class HomeSubscriptionCell: UICollectionViewCell {
         thumbnailImageView.image = UIImage(named: "logo.png") // TODO: image 수정
         cycleLabel.text = subscription.cycle
         priceLabel.text = "\(subscription.price) 원"
-        let nextDate = nextDate(from: subscription.startDate)
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        nextDateLabel.text = formatter.string(from: nextDate!)
+        let nextDate = nextDate(from: subscription.startDate)!
+        nextDateLabel.text = CustomDateFormatter.string(from: nextDate)
     }
 
     /// 구독 시작일을 전달하면 오늘 이후 가장 가까운 다음 구독일을 반환합니다.

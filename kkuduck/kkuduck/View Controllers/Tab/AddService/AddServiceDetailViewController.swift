@@ -94,10 +94,7 @@ final class AddServiceDetailViewController: UIViewController {
         var subscription: [String: Any] = [:]
 
         subscription["subserviceID"] = serviceIdentifierTextField.text
-        let date = startDateDatePicker.date
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        subscription["subStartDay"] = formatter.string(from: date)
+        subscription["subStartDay"] = CustomDateFormatter.string(from: startDateDatePicker.date)
 
         if let service = defaultSubscription,
            let selectedPlan = selectedPlan {

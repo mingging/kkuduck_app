@@ -28,7 +28,7 @@ final class AddServiceListViewController: UIViewController {
 
         fetchDefaultSubscription()
     }
-    
+
     private func fetchDefaultSubscription() {
         let sampleData = DefaultSubscription.sampleData
         do {

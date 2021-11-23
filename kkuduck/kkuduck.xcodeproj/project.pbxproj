@@ -31,7 +31,8 @@
 		5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B062747AB2000E406C3 /* Statistics.storyboard */; };
 		5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B082747AB5500E406C3 /* AddService.storyboard */; };
 		5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B0A2747ABAB00E406C3 /* Login.storyboard */; };
-		5DBCAB362733E60200343733 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor.swift */; };
+		5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */; };
+		5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor+Extension.swift */; };
 		5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */; };
 		5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB402733F74C00343733 /* ReusableView.swift */; };
 		5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF027C274345F800FE6C1D /* Home.storyboard */; };
@@ -69,7 +70,8 @@
 		5D127B062747AB2000E406C3 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		5D127B082747AB5500E406C3 /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddService.storyboard; sourceTree = "<group>"; };
 		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		5DBCAB352733E60200343733 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		5DBCAB352733E60200343733 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		5DBCAB402733F74C00343733 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5DBF027C274345F800FE6C1D /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = kkuduck/Storyboards/Home.storyboard; sourceTree = SOURCE_ROOT; };
@@ -149,7 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				396340C9272A385B0079E845 /* getFile.swift */,
-				5DBCAB352733E60200343733 /* UIColor.swift */,
+				5DBCAB352733E60200343733 /* UIColor+Extension.swift */,
+				5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */,
 				5DBCAB402733F74C00343733 /* ReusableView.swift */,
 			);
 			path = Utils;
@@ -453,9 +456,10 @@
 				396340CA272A385B0079E845 /* getFile.swift in Sources */,
 				5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */,
 				396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */,
+				5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */,
 				396340832727D2930079E845 /* AddServiceListViewController.swift in Sources */,
 				5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */,
-				5DBCAB362733E60200343733 /* UIColor.swift in Sources */,
+				5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
 				396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */,
 				3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */,

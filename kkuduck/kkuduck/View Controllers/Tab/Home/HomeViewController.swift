@@ -75,9 +75,7 @@ private extension HomeViewController {
         let price = item["planPrice"] as? Int ?? 0
         let imageUrl = item["img"] as! String
         let startDateString = item["subStartDay"] as? String ?? ""
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        let startDate = formatter.date(from: startDateString) ?? Date()
+        let startDate = CustomDateFormatter.date(from: startDateString) ?? Date()
         return Subscription(
             name: name,
             price: price,
