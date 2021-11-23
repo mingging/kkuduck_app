@@ -27,6 +27,7 @@
 		396340CA272A385B0079E845 /* getFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340C9272A385B0079E845 /* getFile.swift */; };
 		396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340CD272A4AD90079E845 /* SelectPlanCell.swift */; };
 		396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396340CE272A4AD90079E845 /* SelectPlanCell.xib */; };
+		398EAF31274D02A80026ED60 /* MonthlyStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */; };
 		5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B022747A90700E406C3 /* .swiftlint.yml */; };
 		5D127B052747AAE700E406C3 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B042747AAE600E406C3 /* List.storyboard */; };
 		5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B062747AB2000E406C3 /* Statistics.storyboard */; };
@@ -66,6 +67,7 @@
 		396340C9272A385B0079E845 /* getFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getFile.swift; sourceTree = "<group>"; };
 		396340CD272A4AD90079E845 /* SelectPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanCell.swift; sourceTree = "<group>"; };
 		396340CE272A4AD90079E845 /* SelectPlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlanCell.xib; sourceTree = "<group>"; };
+		398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyStatisticsViewController.swift; sourceTree = "<group>"; };
 		5D127B022747A90700E406C3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5D127B042747AAE600E406C3 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		5D127B062747AB2000E406C3 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				5D127B062747AB2000E406C3 /* Statistics.storyboard */,
 				3963407E2727C6520079E845 /* StatisticsViewController.swift */,
+				398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */,
 				3963409B272811740079E845 /* AddServiceCustomViewConroller.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
+				398EAF31274D02A80026ED60 /* MonthlyStatisticsViewController.swift in Sources */,
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
 				5DF277152743C945003C434B /* Subscribe.swift in Sources */,
 				3963407B2727C6490079E845 /* ListViewController.swift in Sources */,
@@ -612,6 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5N6533KS3;
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -619,7 +624,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hm.nambu.mini.project.kkuduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -632,6 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5N6533KS3;
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,7 +645,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hm.nambu.mini.project.kkuduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
