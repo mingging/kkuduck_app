@@ -9,7 +9,7 @@ import UIKit
 
 extension UIColor {
 
-    class var primary: UIColor? { return UIColor(named: "primary") }
-    class var secondary: UIColor? { return UIColor(named: "secondary") }
+    static var primary: UIColor? { return UIColor(named: "primary") }
+    static var secondary: UIColor? { return UIColor(named: "secondary") }
 
 }

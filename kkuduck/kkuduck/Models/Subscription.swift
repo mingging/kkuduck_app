@@ -66,7 +66,7 @@ extension DefaultSubscription {
             "cycle": "월"
           }
         ],
-        "imageUrl": "flo.png"
+        "imageUrl": "https://is2-ssl.mzstatic.com/image/thumb/Purple126/v4/5d/4f/ef/5d4fef03-9570-9eff-6fd1-866ff73c3d83/AppIcon-0-1x_U007emarketing-5-0-85-220.png/460x0w.png"
       },
       {
         "serviceName": "밀리의 서재",
@@ -92,7 +92,7 @@ extension DefaultSubscription {
             "cycle": "년"
           }
         ],
-        "imageUrl": "millie.png"
+        "imageUrl": "https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/fe/ff/9e/feff9ebc-3dd5-b055-65f2-df65dc128064/AppIcon-0-0-1x_U007emarketing-0-0-0-4-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp"
       },
       {
         "serviceName": "리디북스 셀렉트",
@@ -103,7 +103,7 @@ extension DefaultSubscription {
             "cycle": "월"
           }
         ],
-        "imageUrl": "ridibooks.png"
+        "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/14/4d/0b/144d0b8e-3d64-ec7e-4f42-6412da0a3e2b/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp"
       },
       {
         "serviceName": "카카오페이지",
@@ -139,7 +139,7 @@ extension DefaultSubscription {
             "cycle": "월"
           }
         ],
-        "imageUrl": "kakaopage.png"
+        "imageUrl": "https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/e7/f0/33/e7f0333d-31c0-9de7-0fb8-f96d613aa686/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp"
       },
       {
         "serviceName": "예스24",
@@ -160,7 +160,7 @@ extension DefaultSubscription {
             "cycle": "월"
           }
         ],
-        "imageUrl": "yes24.png"
+        "imageUrl": "https://is5-ssl.mzstatic.com/image/thumb/Purple116/v4/21/08/55/2108557d-e74a-82d0-338e-92c433944cc2/AppIcon-1x_U007emarketing-0-7-0-0-85-220.png/460x0w.webp"
       },
       {
         "serviceName": "카카오톡 이모티콘",
@@ -171,7 +171,7 @@ extension DefaultSubscription {
             "cycle": "월"
           }
         ],
-        "imageUrl": "kakaoemoticon.png"
+        "imageUrl": "https://is4-ssl.mzstatic.com/image/thumb/Purple116/v4/8f/b8/23/8fb823fb-c9cf-dbee-1201-38d0dc302cef/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp"
       },
       {
         "serviceName": "쿠팡 로켓와우",
@@ -182,7 +182,7 @@ extension DefaultSubscription {
             "cycle": "월"
           }
         ],
-        "imageUrl": "coupang.png"
+        "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/82/0c/74/820c74b8-cdd3-91cb-8a90-a3180c2dc530/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp"
       },
       {
         "serviceName": "네이버 멤버쉽 플러스",
@@ -193,7 +193,7 @@ extension DefaultSubscription {
             "cycle": "월"
           }
         ],
-        "imageUrl": "naver.png"
+        "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/69/83/bd/6983bd7a-0cca-4125-628b-2d061e998c55/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp"
       }
     ]
     """.data(using: .utf8)!

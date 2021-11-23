@@ -108,11 +108,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         let height = collectionView.frame.height
-        let cellShadowRadius: CGFloat = 10
-        let cellShadowOffsetHeight: CGFloat = 2
+        let cellShadowRadius: CGFloat = 15
         let cellWidth = width * 0.7
-        let cellHeight = height - cellShadowRadius * 2 - cellShadowOffsetHeight
+        let cellHeight = height - cellShadowRadius * 2
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.contentView.layer.masksToBounds = true
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
     }
 
 }

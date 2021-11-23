@@ -33,6 +33,8 @@
 		5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B0A2747ABAB00E406C3 /* Login.storyboard */; };
 		5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */; };
 		5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF9274CB66700E06F3B /* NavigationController.swift */; };
+		5DA9FA01274D084200D72377 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA00274D084200D72377 /* ImageCache.swift */; };
+		5DA9FA03274D222000D72377 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA02274D222000D72377 /* UIImage+Extension.swift */; };
 		5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor+Extension.swift */; };
 		5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */; };
 		5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB402733F74C00343733 /* ReusableView.swift */; };
@@ -73,6 +75,8 @@
 		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		5D9AEDF9274CB66700E06F3B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		5DA9FA00274D084200D72377 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		5DA9FA02274D222000D72377 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5DBCAB352733E60200343733 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		5DBCAB402733F74C00343733 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				5DF277162743C94D003C434B /* Models */,
 				5DBCAB392733ED7600343733 /* View Controllers */,
 				5DBCAB382733EA2800343733 /* Storyboards */,
+				5DA9F9FF274D07C800D72377 /* Networking */,
 				5DBCAB342733E5FA00343733 /* Utils */,
 				5DBCAB372733E95000343733 /* Resources */,
 				5DBCAB3F2733EEFC00343733 /* Supporting Files */,
@@ -149,6 +154,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		5DA9F9FF274D07C800D72377 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5DA9FA00274D084200D72377 /* ImageCache.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		5DBCAB342733E5FA00343733 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +169,7 @@
 				5DBCAB352733E60200343733 /* UIColor+Extension.swift */,
 				5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */,
 				5DBCAB402733F74C00343733 /* ReusableView.swift */,
+				5DA9FA02274D222000D72377 /* UIImage+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -463,9 +477,11 @@
 				396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */,
 				5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */,
 				5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */,
+				5DA9FA03274D222000D72377 /* UIImage+Extension.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
 				396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */,
 				3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */,
+				5DA9FA01274D084200D72377 /* ImageCache.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
 				5DF277152743C945003C434B /* Subscription.swift in Sources */,
@@ -616,6 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5N6533KS3;
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,7 +640,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hm.nambu.mini.project.kkuduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -636,6 +653,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5N6533KS3;
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,7 +661,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hm.nambu.mini.project.kkuduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

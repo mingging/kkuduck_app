@@ -10,19 +10,22 @@ import UIKit
 final class HomeSubscriptionCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cycleLabel: UILabel!
     @IBOutlet weak var nextDateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var thumbnailContainerView: UIView!
 
     override func awakeFromNib() {
-        contentView.layer.cornerRadius = 10
+        super.awakeFromNib()
+
+        backgroundColor = .clear
+        contentView.layer.cornerRadius = 15
         contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.clear.cgColor
-        contentView.layer.masksToBounds = true
+        contentView.layer.borderColor = UIColor.white.cgColor
+        contentView.backgroundColor = .white
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 1, height: 2)
+        layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.2
         layer.masksToBounds = false
@@ -32,11 +35,13 @@ final class HomeSubscriptionCell: UICollectionViewCell {
 
     func configure(with subscription: Subscription) {
         nameLabel.text = subscription.name
-        thumbnailImageView.image = UIImage(named: "logo.png") // TODO: image 수정
         cycleLabel.text = subscription.cycle
         priceLabel.text = "\(subscription.price) 원"
         let nextDate = nextDate(from: subscription.startDate)!
         nextDateLabel.text = CustomDateFormatter.string(from: nextDate)
+        ImageCache.load(urlString: subscription.imageUrl) { image in
+            self.imageView.image = image ?? .logo
+        }
     }
 
     /// 구독 시작일을 전달하면 오늘 이후 가장 가까운 다음 구독일을 반환합니다.
