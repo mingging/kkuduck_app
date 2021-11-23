@@ -104,7 +104,7 @@ class StatisticsViewController: UIViewController {
 
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "월별 사용 금액")
 
-        chartDataSet.colors = [.orange]
+        chartDataSet.colors = [.primary!]
 
         let chartData = BarChartData(dataSet: chartDataSet)
         barChartView.data = chartData
