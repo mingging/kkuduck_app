@@ -22,28 +22,16 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var barChartView: UIView!
     @IBOutlet weak var pieChartView: UIView!
 
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureTableView()
-        totalSubPrice()
+        // segmentControl Custom
+        segmentControl.titleTextAttributes(for: .normal)
+        segmentControl.selectedSegmentTintColor = UIColor(hex: "#FDAC53ff")
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
 
-        months = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov"]
-
-//        chartView.noDataText = "데이터가 없습니다."
-//        chartView.noDataFont = .systemFont(ofSize: 20)
-//        chartView.noDataTextColor = .lightGray
-
-        setChart(dataPoints: months, values: unitsSold)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        totalSubPrice()
-//        self.tableView.reloadData()
-
-        setChart(dataPoints: months, values: unitsSold)
     }
 
     private func configureTableView() {

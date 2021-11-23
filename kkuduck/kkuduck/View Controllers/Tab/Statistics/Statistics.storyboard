@@ -41,10 +41,13 @@
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5sA-d8-3ML">
                                 <rect key="frame" x="30" y="186" width="354" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="전체"/>
                                     <segment title="월별"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="switchView:" destination="82Y-Ig-Q8e" eventType="valueChanged" id="LSw-mG-M6u"/>
                                 </connections>
@@ -86,25 +89,26 @@
                         <outlet property="barChartView" destination="3dQ-eg-aMU" id="ynP-Sk-V5B"/>
                         <outlet property="charView" destination="bn0-iB-ydY" id="X25-pf-InV"/>
                         <outlet property="pieChartView" destination="nLH-ia-3U3" id="i2E-gr-OR4"/>
+                        <outlet property="segmentControl" destination="5sA-d8-3ML" id="uE1-KC-8ae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhA-O8-gCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1744.9275362318842" y="160.71428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--All Statistics View Controller-->
         <scene sceneID="qdo-Ee-2Oh">
             <objects>
-                <viewController id="v7S-w0-AH3" sceneMemberID="viewController">
+                <viewController id="v7S-w0-AH3" customClass="AllStatisticsViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0U7-5U-0l4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="625"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POi-Cs-esJ" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="30" y="0.0" width="354" height="287"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POi-Cs-esJ" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="30" y="0.0" width="354" height="432"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="287" id="ldI-52-ugO"/>
+                                    <constraint firstAttribute="height" constant="432" id="ldI-52-ugO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -116,10 +120,13 @@
                             <constraint firstItem="POi-Cs-esJ" firstAttribute="top" secondItem="0U7-5U-0l4" secondAttribute="top" id="xjn-HU-51G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pieChart" destination="POi-Cs-esJ" id="9Lp-AB-9EZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cR3-mw-kI0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="857"/>
+            <point key="canvasLocation" x="1228.985507246377" y="856.80803571428567"/>
         </scene>
         <!--Monthly Statistics View Controller-->
         <scene sceneID="PFc-vC-YzT">
