@@ -8,7 +8,7 @@
 import Foundation
 
 struct CustomDateFormatter {
-    
+
     private static let dateFormat = "yyyy.MM.dd"
     private static var dateFormatter: DateFormatter = {
        let formatter = DateFormatter()
@@ -23,5 +23,5 @@ struct CustomDateFormatter {
     static func date(from: String) -> Date? {
         return dateFormatter.date(from: from)
     }
-    
+
 }

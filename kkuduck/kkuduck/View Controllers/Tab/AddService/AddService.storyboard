@@ -21,13 +21,13 @@
         <!--구독 만들기-->
         <scene sceneID="gcY-C1-amO">
             <objects>
-                <viewController id="Xyu-8j-C61" customClass="AddServiceListViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xyu-8j-C61" customClass="AddSubscriptionListViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUw-xb-V4I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oz-cg-xsw">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <rect key="frame" x="20" y="108" width="374" height="754"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="4fy-yr-qoB">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="637"/>
@@ -59,7 +59,7 @@
                                                 <rect key="frame" x="0.0" y="137" width="374" height="500"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="500" id="wzz-QW-5tQ"/>
+                                                    <constraint firstAttribute="height" priority="750" constant="500" id="vM4-lP-k65"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="kf1-IQ-hEb">
                                                     <size key="itemSize" width="85" height="85"/>
@@ -68,7 +68,7 @@
                                                     <inset key="sectionInset" minX="30" minY="10" maxX="30" maxY="30"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddServiceCell" id="gGN-c6-aqd" customClass="AddServiceCell" customModule="kkuduck" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddSubscriptionCell" id="gGN-c6-aqd" customClass="AddSubscriptionCell" customModule="kkuduck" customModuleProvider="target">
                                                         <rect key="frame" x="30" y="10" width="85" height="85"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -79,11 +79,10 @@
                                                                     <rect key="frame" x="8" y="8" width="69" height="69"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1No-QT-hzz">
-                                                                            <rect key="frame" x="17" y="2" width="35" height="30.5"/>
+                                                                            <rect key="frame" x="17.5" y="2" width="34.5" height="30.5"/>
                                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="35" id="AGy-N4-xcP"/>
-                                                                                <constraint firstAttribute="height" constant="35" id="V2V-SW-ue6"/>
+                                                                                <constraint firstAttribute="width" secondItem="1No-QT-hzz" secondAttribute="height" multiplier="1:1" id="mnC-TD-Uxe"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="넷플릭스" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdM-v3-qFj">
@@ -105,8 +104,8 @@
                                                         </constraints>
                                                         <size key="customSize" width="85" height="85"/>
                                                         <connections>
-                                                            <outlet property="imageSubThum" destination="1No-QT-hzz" id="a9O-Y4-tux"/>
-                                                            <outlet property="lblSubTitle" destination="fdM-v3-qFj" id="1vf-Eu-ihv"/>
+                                                            <outlet property="imageView" destination="1No-QT-hzz" id="dmg-u7-O6h"/>
+                                                            <outlet property="nameLabel" destination="fdM-v3-qFj" id="1Nh-Sb-jSl"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -136,12 +135,12 @@
                         <constraints>
                             <constraint firstItem="gkL-ve-tbe" firstAttribute="trailing" secondItem="5oz-cg-xsw" secondAttribute="trailing" constant="20" id="72u-Eq-Am8"/>
                             <constraint firstItem="5oz-cg-xsw" firstAttribute="leading" secondItem="gkL-ve-tbe" secondAttribute="leading" constant="20" id="LK3-QG-vCx"/>
-                            <constraint firstItem="gkL-ve-tbe" firstAttribute="top" secondItem="5oz-cg-xsw" secondAttribute="top" id="n5u-L7-pAC"/>
+                            <constraint firstItem="5oz-cg-xsw" firstAttribute="top" secondItem="gkL-ve-tbe" secondAttribute="top" constant="20" id="f2V-se-3Lm"/>
                             <constraint firstItem="5oz-cg-xsw" firstAttribute="bottom" secondItem="gkL-ve-tbe" secondAttribute="bottom" id="ukp-NP-MVb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="add_icon.png" selectedImage="add_icon.png" id="kzj-PG-vZq"/>
-                    <navigationItem key="navigationItem" title="구독 만들기" id="5jV-Ej-1YV"/>
+                    <navigationItem key="navigationItem" title="구독 만들기" largeTitleDisplayMode="never" id="5jV-Ej-1YV"/>
                     <connections>
                         <outlet property="collectionView" destination="nXW-px-dMN" id="y7C-4U-mMy"/>
                         <segue destination="nYZ-ML-ujL" kind="show" identifier="showDetail" id="K0C-Jv-oWv"/>
@@ -149,24 +148,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwN-rM-P4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="858"/>
+            <point key="canvasLocation" x="2547.826086956522" y="857.8125"/>
         </scene>
-        <!--Add Service Detail View Controller-->
+        <!--Add Subscription Detail View Controller-->
         <scene sceneID="EJq-dy-Yyx">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="nYZ-ML-ujL" customClass="AddServiceDetailViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="nYZ-ML-ujL" customClass="AddSubscriptionDetailViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yuJ-Fb-ebV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xge-WT-gtd">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-vR-3PW">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="806"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wAN-hG-zjS">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="68"/>
+                                                <rect key="frame" x="20" y="20" width="374" height="68"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가 정보를" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTz-KT-WzL">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -183,7 +182,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-Lw-hio">
-                                                <rect key="frame" x="0.0" y="97" width="374" height="87"/>
+                                                <rect key="frame" x="20" y="117" width="374" height="87"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플랜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWt-wN-ljd">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -234,7 +233,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="PO8-BE-aou">
-                                                <rect key="frame" x="0.0" y="213" width="374" height="219"/>
+                                                <rect key="frame" x="20" y="233" width="374" height="219"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-1K-x00">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
@@ -298,7 +297,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ilw-ol-b3O">
-                                                <rect key="frame" x="0.0" y="461" width="374" height="183"/>
+                                                <rect key="frame" x="20" y="481" width="374" height="183"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 시작일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-cn-TwZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -317,7 +316,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BIv-RS-bgG">
-                                                <rect key="frame" x="0.0" y="673" width="374" height="55"/>
+                                                <rect key="frame" x="20" y="693" width="374" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 서비스 아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5l-9C-Icc">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -336,7 +335,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9T-gQ-chm">
-                                                <rect key="frame" x="0.0" y="757" width="374" height="49"/>
+                                                <rect key="frame" x="20" y="777" width="374" height="49"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="rVJ-ZP-YLu"/>
@@ -350,6 +349,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <edgeInsets key="layoutMargins" top="20" left="20" bottom="0.0" right="20"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -366,13 +366,13 @@
                         <viewLayoutGuide key="safeArea" id="cp0-AD-2z6"/>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
-                            <constraint firstItem="cp0-AD-2z6" firstAttribute="trailing" secondItem="xge-WT-gtd" secondAttribute="trailing" constant="20" id="Goq-3H-neJ"/>
-                            <constraint firstItem="xge-WT-gtd" firstAttribute="leading" secondItem="cp0-AD-2z6" secondAttribute="leading" constant="20" id="Viq-oH-eji"/>
+                            <constraint firstItem="cp0-AD-2z6" firstAttribute="trailing" secondItem="xge-WT-gtd" secondAttribute="trailing" id="Goq-3H-neJ"/>
+                            <constraint firstItem="xge-WT-gtd" firstAttribute="leading" secondItem="cp0-AD-2z6" secondAttribute="leading" id="Viq-oH-eji"/>
                             <constraint firstItem="cp0-AD-2z6" firstAttribute="bottom" secondItem="xge-WT-gtd" secondAttribute="bottom" id="X5c-sD-54D"/>
                             <constraint firstItem="xge-WT-gtd" firstAttribute="top" secondItem="cp0-AD-2z6" secondAttribute="top" id="sSZ-6E-AWe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zyT-9J-qYs"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="zyT-9J-qYs"/>
                     <connections>
                         <outlet property="containerView" destination="hf3-vR-3PW" id="R9A-Mw-5Qw"/>
                         <outlet property="customPlanContainerView" destination="PO8-BE-aou" id="h2n-W2-siw"/>
@@ -395,7 +395,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Akz-qx-VdQ">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController-m3p-e5-eVa" hidesBottomBarWhenPushed="YES" id="m3p-e5-eVa" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController-m3p-e5-eVa" hidesBottomBarWhenPushed="YES" id="m3p-e5-eVa" customClass="NavigationController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="add_icon.png" selectedImage="add_icon.png" id="6PW-tN-aY9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wo3-rd-kFK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

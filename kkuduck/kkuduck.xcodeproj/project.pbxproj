@@ -17,9 +17,9 @@
 		3963407B2727C6490079E845 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407A2727C6490079E845 /* ListViewController.swift */; };
 		3963407D2727C64D0079E845 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* ServiceCell.swift */; };
 		3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407E2727C6520079E845 /* StatisticsViewController.swift */; };
-		396340832727D2930079E845 /* AddServiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* AddServiceListViewController.swift */; };
+		396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* AddSubscriptionListViewController.swift */; };
 		396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340842727DF600079E845 /* AddSubscriptionCell.swift */; };
-		396340872727E4E30079E845 /* AddServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* AddServiceDetailViewController.swift */; };
+		396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */; };
 		396340A6272924260079E845 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340A5272924260079E845 /* TabBarController.swift */; };
 		396340C7272A38460079E845 /* subservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C5272A38460079E845 /* subservice.plist */; };
 		396340C8272A38460079E845 /* writeSubscription.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C6272A38460079E845 /* writeSubscription.plist */; };
@@ -32,6 +32,7 @@
 		5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B082747AB5500E406C3 /* AddService.storyboard */; };
 		5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B0A2747ABAB00E406C3 /* Login.storyboard */; };
 		5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */; };
+		5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF9274CB66700E06F3B /* NavigationController.swift */; };
 		5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor+Extension.swift */; };
 		5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */; };
 		5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB402733F74C00343733 /* ReusableView.swift */; };
@@ -56,9 +57,9 @@
 		3963407A2727C6490079E845 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3963407C2727C64D0079E845 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		3963407E2727C6520079E845 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
-		396340822727D2930079E845 /* AddServiceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceListViewController.swift; sourceTree = "<group>"; };
+		396340822727D2930079E845 /* AddSubscriptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionListViewController.swift; sourceTree = "<group>"; };
 		396340842727DF600079E845 /* AddSubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionCell.swift; sourceTree = "<group>"; };
-		396340862727E4E20079E845 /* AddServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceDetailViewController.swift; sourceTree = "<group>"; };
+		396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionDetailViewController.swift; sourceTree = "<group>"; };
 		396340A5272924260079E845 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		396340C5272A38460079E845 /* subservice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = subservice.plist; sourceTree = "<group>"; };
 		396340C6272A38460079E845 /* writeSubscription.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = writeSubscription.plist; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		5D127B082747AB5500E406C3 /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddService.storyboard; sourceTree = "<group>"; };
 		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		5D9AEDF9274CB66700E06F3B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5DBCAB352733E60200343733 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		5DBCAB402733F74C00343733 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -260,8 +262,9 @@
 			children = (
 				5D127B082747AB5500E406C3 /* AddService.storyboard */,
 				5DBF027A2743434000FE6C1D /* Cells */,
-				396340822727D2930079E845 /* AddServiceListViewController.swift */,
-				396340862727E4E20079E845 /* AddServiceDetailViewController.swift */,
+				396340822727D2930079E845 /* AddSubscriptionListViewController.swift */,
+				396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */,
+				5D9AEDF9274CB66700E06F3B /* NavigationController.swift */,
 			);
 			path = AddService;
 			sourceTree = "<group>";
@@ -457,7 +460,7 @@
 				5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */,
 				396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */,
 				5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */,
-				396340832727D2930079E845 /* AddServiceListViewController.swift in Sources */,
+				396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */,
 				5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */,
 				5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
@@ -468,8 +471,9 @@
 				5DF277152743C945003C434B /* Subscription.swift in Sources */,
 				3963407B2727C6490079E845 /* ListViewController.swift in Sources */,
 				396340A6272924260079E845 /* TabBarController.swift in Sources */,
+				5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,
-				396340872727E4E30079E845 /* AddServiceDetailViewController.swift in Sources */,
+				396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

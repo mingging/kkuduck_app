@@ -1,5 +1,5 @@
 //
-//  AddServiceListViewController.swift
+//  AddSubscriptionListViewController.swift
 //  kkuduck
 //
 //  Created by minimani on 2021/10/26.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AddServiceListViewController: UIViewController {
+final class AddSubscriptionListViewController: UIViewController {
 
     private enum Segue: String {
         case showDetail
@@ -42,7 +42,7 @@ final class AddServiceListViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? AddServiceDetailViewController else { return }
+        guard let destination = segue.destination as? AddSubscriptionDetailViewController else { return }
         destination.defaultSubscription = sender as? DefaultSubscription
     }
 
@@ -50,7 +50,7 @@ final class AddServiceListViewController: UIViewController {
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
-extension AddServiceListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AddSubscriptionListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return defaultSubscriptions.count + 1

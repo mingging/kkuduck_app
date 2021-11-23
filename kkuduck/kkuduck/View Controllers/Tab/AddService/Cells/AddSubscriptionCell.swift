@@ -23,6 +23,8 @@ final class AddSubscriptionCell: UICollectionViewCell {
         layer.shadowOffset = CGSize(width: 1, height: 2)
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.2
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
+
         layer.masksToBounds = false
     }
 

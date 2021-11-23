@@ -110,7 +110,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let height = collectionView.frame.height
         let cellShadowRadius: CGFloat = 10
         let cellShadowOffsetHeight: CGFloat = 2
-        let cellWidth = width * 0.8
+        let cellWidth = width * 0.7
         let cellHeight = height - cellShadowRadius * 2 - cellShadowOffsetHeight
         return CGSize(width: cellWidth, height: cellHeight)
     }

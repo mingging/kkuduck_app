@@ -1,5 +1,5 @@
 //
-//  AddServiceDetailViewController.swift
+//  AddSubscriptionDetailViewController.swift
 //  kkuduck
 //
 //  Created by minimani on 2021/10/26.
@@ -8,7 +8,7 @@
 import UIKit
 import DropDown
 
-final class AddServiceDetailViewController: UIViewController {
+final class AddSubscriptionDetailViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -126,7 +126,7 @@ final class AddServiceDetailViewController: UIViewController {
 
 // MARK: - UITextFieldDelegate
 
-extension AddServiceDetailViewController: UITextFieldDelegate {
+extension AddSubscriptionDetailViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
