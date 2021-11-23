@@ -1,5 +1,5 @@
 //
-//  MoreInfoServiceViewController.swift
+//  AddServiceDetailViewController.swift
 //  kkuduck
 //
 //  Created by minimani on 2021/10/26.
@@ -8,122 +8,116 @@
 import UIKit
 import DropDown
 
-// TODO: Custom과 중복되는 내용 많으므로 상속받는 방벙이 나은지?
-class AddServiceDetailViewController: UIViewController, UITextFieldDelegate {
+final class AddServiceDetailViewController: UIViewController {
+
+    // MARK: - Properties
 
     var writeSubInfo: NSMutableArray?
-    var dateInfo: String?
-    var subInfo: [String:Any]!
-    var planName: [String] = [""]
-    var planPrice: [String] = [""]
-    var cycle: String = ""
-    var dataPrice: String = ""
+    var defaultSubscription: DefaultSubscription?
+    var selectedPlan: Plan!
 
-    @IBOutlet weak var viewDorpDown: UIView!
-    @IBOutlet weak var lblPlanName: UILabel!
-    @IBOutlet weak var lblPlanPrice: UILabel!
-    @IBOutlet weak var btnSubAdd: UIButton!
-    @IBOutlet weak var textPlanName: UITextField!
-    @IBOutlet weak var textSubID: UITextField!
-    @IBOutlet weak var dateSubstartday: UIDatePicker!
+    // MARK: - Outlets
+
+    // Default
+
+    @IBOutlet weak var selectPlanContainerView: UIStackView!
+    @IBOutlet weak var selectPlanView: UIView!
+    @IBOutlet weak var planNameLabel: UILabel!
+    @IBOutlet weak var planPriceLabel: UILabel!
+
+    // Custom
+
+    @IBOutlet weak var customPlanContainerView: UIStackView!
+    @IBOutlet weak var planNameTextField: UITextField!
+    @IBOutlet weak var planPriceTextField: UITextField!
+
+    // Common
+
+    @IBOutlet weak var containerView: UIStackView!
+    @IBOutlet weak var cycleSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var startDateDatePicker: UIDatePicker!
+    @IBOutlet weak var serviceIdentifierTextField: UITextField!
+    @IBOutlet weak var doneButton: UIButton!
+
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        textSubID.delegate = self
-
-        tabBarController?.tabBar.isHidden = true
-        viewDorpDown.layer.cornerRadius = 5
-        btnSubAdd.layer.cornerRadius = 5
-
-        lblPlanName.text = ""
-        lblPlanPrice.text = ""
-
-        // 데이터 불러오기
         writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+        setupView()
     }
 
-    @IBAction func actBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+    private func setupView() {
+        selectPlanView.layer.cornerRadius = 5
+        doneButton.layer.cornerRadius = 5
+
+        if let defaultSubscription = defaultSubscription {
+            containerView.removeArrangedSubview(customPlanContainerView)
+            customPlanContainerView.removeFromSuperview()
+            selectedPlan = defaultSubscription.plans[0]
+            planNameLabel.text = selectedPlan.name
+            planPriceLabel.text = "\(selectedPlan.price)원/\(selectedPlan.cycle)"
+        } else {
+            selectPlanContainerView.removeFromSuperview()
+            containerView.removeArrangedSubview(selectPlanContainerView)
+        }
     }
 
-    @IBAction func actionDropDown(_ sender: UIButton) {
+    // MARK: - Actions
+
+    @IBAction func selctPlanButtonDidTap(_ sender: UIButton) {
+        guard let defaultSubscription = defaultSubscription else { return }
         let dropDown = DropDown()
-
-        // The view to which the drop down will appear on
-        dropDown.anchorView = viewDorpDown // UIView or UIBarButtonItem
-
-        // The list of items to display. Can be changed dynamically
-        // 가져온 플랜 적용하기
-        let subInfoPlans = subInfo["plan"] as? [String: String]
-
-        guard let subInfoPlan = subInfoPlans else { return }
-
-        planName = Array(subInfoPlan.keys)
-        planPrice = Array(subInfoPlan.values)
-        dropDown.dataSource = planName
-
-        // custom dropdown cell
-        dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
-        dropDown.customCellConfiguration = { index, _, cell in
-            guard let cell = cell as? SelectPlanCell else { return }
-            cell.optionLabel.text = self.planName[index]
-
-            let str = self.planPrice[index].components(separatedBy: "/")
-            let won = self.planPrice[index].components(separatedBy: "원")
-            self.cycle = str[str.count - 1]
-            self.dataPrice = won[0]
-
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .decimal
-            cell.testText.text = "\(numberFormatter.string(for: Int(self.dataPrice))!)/\(self.cycle)"
-        }
-
-        // 선택한 값 출력
-        dropDown.selectionAction = { (index: Int, item: String) in
-          print("Selected item: \(item) at index: \(index)")
-            self.lblPlanName.text = self.planName[index]
-            self.lblPlanPrice.text = self.planPrice[index]
-            let str = self.planPrice[index].components(separatedBy: "/")
-            let won = self.planPrice[index].components(separatedBy: "원")
-            self.cycle = str[str.count - 1]
-            self.dataPrice = won[0]
-            print(self.cycle)
-            print(self.dataPrice)
-        }
-
+        dropDown.anchorView = selectPlanView
         dropDown.backgroundColor = .white
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.cellHeight = 64
         dropDown.cornerRadius = 5
+        dropDown.dataSource = defaultSubscription.plans.map { $0.name }
+        dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
+        dropDown.customCellConfiguration = { index, _, cell in
+            guard let cell = cell as? SelectPlanCell else { return }
+            let target = defaultSubscription.plans[index]
+            cell.optionLabel.text = target.name
+            cell.priceLabel.text = "\(target.price)원/\(target.cycle)"
+        }
+        dropDown.selectionAction = { index, _ in
+            let target = defaultSubscription.plans[index]
+            self.planNameLabel.text = target.name
+            self.planPriceLabel.text = "\(target.price)원/\(target.cycle)"
+        }
         dropDown.show()
     }
 
-    // 구독 서비스 추가 버튼
-    @IBAction func actDone(_ sender: Any) {
-        let subserviceID = textSubID.text
-        let img = subInfo["img"] as! String
-        guard let subName = subInfo["subName"] as? String else { return }
+    @IBAction func doneButtonDidTap(_ sender: Any) {
+        var subscription: [String: Any] = [:]
 
-        let writeSub = ["planName": subName,
-                        "subserviceID": subserviceID,
-                        "subStartDay": dateInfo,
-                        "cycle": cycle,
-                        "planPrice": dataPrice,
-                        "img" : img]
+        subscription["subserviceID"] = serviceIdentifierTextField.text
+        let date = startDateDatePicker.date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd"
+        subscription["subStartDay"] = formatter.string(from: date)
+
+        if let service = defaultSubscription,
+           let selectedPlan = selectedPlan {
+            subscription["planName"] = service.name
+            subscription["planPrice"] = selectedPlan.price
+            subscription["cycle"] = selectedPlan.cycle
+            subscription["img"] = service.imageUrl
+        } else {
+            subscription["img"] = ""
+            subscription["planPrice"] = Int(planPriceTextField.text ?? "0") ?? 0
+            subscription["planName"] = planNameTextField.text
+            let cycle = cycleSegmentedControl.titleForSegment(at: cycleSegmentedControl.selectedSegmentIndex)
+            subscription["cycle"] = cycle
+        }
 
         guard let writeSubInfo = writeSubInfo else { return }
-        writeSubInfo.add(writeSub)
+        writeSubInfo.add(subscription)
         writeSubInfo.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
 
         navigationController?.popViewController(animated: true)
-    }
-
-    @IBAction func actDatePicker(_ sender: Any) {
-        let date = dateSubstartday.date
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        dateInfo = formatter.string(from: date)
     }
 
     // textfield 입력시 keyboard 제어
@@ -131,13 +125,15 @@ class AddServiceDetailViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
 
+}
+
+// MARK: - UITextFieldDelegate
+
+extension AddServiceDetailViewController: UITextFieldDelegate {
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-
-    func onThridVCAction(data: [String: Any]) {
-        subInfo = data
     }
 
 }

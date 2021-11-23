@@ -26,22 +26,33 @@ final class HomeSubscriptionCell: UICollectionViewCell {
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.2
         layer.masksToBounds = false
-        
+
         thumbnailContainerView.layer.cornerRadius = (thumbnailContainerView.frame.height) / 2
     }
 
-    func configure(with subscribe: Subscribe) {
-        nameLabel.text = subscribe.subscription.name
-        // TODO: image 수정
-        let imageUrl = URL(string: subscribe.subscription.imageUrl)
-        thumbnailImageView.image = UIImage(named: "logo.png")
-        cycleLabel.text = subscribe.subscription.cycle
-        priceLabel.text = "\(subscribe.subscription.price) 원"
-        let startDate = subscribe.startDate
-        let nextDate = Calendar.current.date(byAdding: .month, value: 1, to: startDate)
+    func configure(with subscription: Subscription) {
+        nameLabel.text = subscription.name
+        thumbnailImageView.image = UIImage(named: "logo.png") // TODO: image 수정
+        cycleLabel.text = subscription.cycle
+        priceLabel.text = "\(subscription.price) 원"
+        let nextDate = nextDate(from: subscription.startDate)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         nextDateLabel.text = formatter.string(from: nextDate!)
+    }
+
+    /// 구독 시작일을 전달하면 오늘 이후 가장 가까운 다음 구독일을 반환합니다.
+    func nextDate(from startDate: Date) -> Date? {
+        let startDateComponents = Calendar.current.dateComponents([.day], from: startDate)
+        let today = Date()
+        let nextDate = Calendar.current.nextDate(
+            after: today,
+            matching: startDateComponents,
+            matchingPolicy: .previousTimePreservingSmallerComponents,
+            repeatedTimePolicy: .first,
+            direction: .forward
+        )
+        return nextDate
     }
 
 }

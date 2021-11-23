@@ -303,8 +303,8 @@
                         <outlet property="collectionView" destination="59n-JM-yau" id="nQa-iA-dJR"/>
                         <outlet property="countLabel" destination="wjb-rQ-6iF" id="CUU-ek-gnR"/>
                         <outlet property="totalPriceLabel" destination="dKF-fC-S2T" id="MLV-Fk-q1z"/>
+                        <outlet property="totalPriceView" destination="fgf-ym-n3x" id="B0g-qR-Qek"/>
                         <outlet property="usernameLabel" destination="p0V-EZ-pQ3" id="dr5-dh-bAb"/>
-                        <outlet property="viewTotalSub" destination="fgf-ym-n3x" id="B0g-qR-Qek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fl5-Eb-A4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
