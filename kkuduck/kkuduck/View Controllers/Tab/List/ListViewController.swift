@@ -8,6 +8,7 @@
 import UIKit
 
 final class ListViewController: UIViewController {
+    @IBOutlet var segment: UISegmentedControl!
 
     // MARK: - Properties
 
@@ -49,6 +50,15 @@ final class ListViewController: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(named: "#FDAC53ff")
     }
+
+    @IBAction func onChangeSegment(_ sender: UISegmentedControl) {
+        self.tableView.reloadData()
+    }
+
+    @IBAction func addButton(_ sender: UIButton) {
+
+    }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -56,7 +66,7 @@ final class ListViewController: UIViewController {
 extension ListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 3
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,6 +75,23 @@ extension ListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ServiceCell.reuseIdentifier, for: indexPath) as! ServiceCell
+
+        let selectedIndex = self.segment.selectedSegmentIndex
+        switch selectedIndex {
+        case 0:
+            cell.endCellView.backgroundColor = .clear
+            cell.subscriptionNameLabel.text = "네이버"
+            return cell
+
+        case 1:
+            cell.endCellView.backgroundColor = .systemGray6
+            cell.endCellView.alpha = 0.5
+            cell.subscriptionNameLabel.text = "디즈니"
+            return cell
+        default:
+            return cell
+        }
+
         // 데이터 불러오기
 //        guard let item = writeSubInfo?[indexPath.row] as? [String: Any] else { return cell }
 //
@@ -91,7 +118,7 @@ extension ListViewController: UITableViewDataSource {
 //                cell.dDayLabel.text = "D + \(dDay)"
 //            }
 //        }
-        return cell
+//        return cell
     }
 
 }

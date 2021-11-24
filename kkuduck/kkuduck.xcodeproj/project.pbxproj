@@ -244,8 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				10DC86B5274DEAC100BF5B97 /* List.storyboard */,
-				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
 				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
+				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
 				5DBF027B274345A700FE6C1D /* Cells */,
 			);
 			path = List;
@@ -618,7 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V5N6533KS3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -638,7 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V5N6533KS3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
