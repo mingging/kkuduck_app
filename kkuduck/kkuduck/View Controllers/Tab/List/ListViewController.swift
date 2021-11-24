@@ -47,7 +47,7 @@ final class ListViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor(hex: "#FDAC53ff")
+        tableView.backgroundColor = UIColor(named: "#FDAC53ff")
     }
 }
 

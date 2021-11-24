@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10DC86B8274DEAC200BF5B97 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DC86B5274DEAC100BF5B97 /* List.storyboard */; };
+		10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B6274DEAC100BF5B97 /* ListViewController.swift */; };
+		10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */; };
 		39633FE1272649800079E845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE0272649800079E845 /* AppDelegate.swift */; };
 		39633FE3272649800079E845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE2272649800079E845 /* SceneDelegate.swift */; };
 		39633FEA272649830079E845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39633FE9272649830079E845 /* Assets.xcassets */; };
@@ -14,7 +17,6 @@
 		39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39633FF5272651520079E845 /* GmarketSansMedium.otf */; };
 		39633FFA272655E40079E845 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FF9272655E40079E845 /* LoginViewController.swift */; };
 		39633FFC27265A080079E845 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FFB27265A080079E845 /* HomeViewController.swift */; };
-		3963407B2727C6490079E845 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407A2727C6490079E845 /* ListViewController.swift */; };
 		3963407D2727C64D0079E845 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* ServiceCell.swift */; };
 		3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407E2727C6520079E845 /* StatisticsViewController.swift */; };
 		396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* AddSubscriptionListViewController.swift */; };
@@ -27,7 +29,6 @@
 		396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340CD272A4AD90079E845 /* SelectPlanCell.swift */; };
 		396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396340CE272A4AD90079E845 /* SelectPlanCell.xib */; };
 		5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B022747A90700E406C3 /* .swiftlint.yml */; };
-		5D127B052747AAE700E406C3 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B042747AAE600E406C3 /* List.storyboard */; };
 		5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B062747AB2000E406C3 /* Statistics.storyboard */; };
 		5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B082747AB5500E406C3 /* AddService.storyboard */; };
 		5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B0A2747ABAB00E406C3 /* Login.storyboard */; };
@@ -45,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10DC86B5274DEAC100BF5B97 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		10DC86B6274DEAC100BF5B97 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		39633FDD272649800079E845 /* kkuduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kkuduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39633FE0272649800079E845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39633FE2272649800079E845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +58,6 @@
 		39633FF6272651520079E845 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		39633FF9272655E40079E845 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39633FFB27265A080079E845 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		3963407A2727C6490079E845 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3963407C2727C64D0079E845 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		3963407E2727C6520079E845 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		396340822727D2930079E845 /* AddSubscriptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionListViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +70,6 @@
 		396340CD272A4AD90079E845 /* SelectPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanCell.swift; sourceTree = "<group>"; };
 		396340CE272A4AD90079E845 /* SelectPlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlanCell.xib; sourceTree = "<group>"; };
 		5D127B022747A90700E406C3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		5D127B042747AAE600E406C3 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		5D127B062747AB2000E406C3 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		5D127B082747AB5500E406C3 /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddService.storyboard; sourceTree = "<group>"; };
 		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -241,9 +243,10 @@
 		5DBF02772743419600FE6C1D /* List */ = {
 			isa = PBXGroup;
 			children = (
-				5D127B042747AAE600E406C3 /* List.storyboard */,
+				10DC86B5274DEAC100BF5B97 /* List.storyboard */,
+				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
+				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				5DBF027B274345A700FE6C1D /* Cells */,
-				3963407A2727C6490079E845 /* ListViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -379,10 +382,10 @@
 				39633FEA272649830079E845 /* Assets.xcassets in Resources */,
 				5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */,
 				5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */,
+				10DC86B8274DEAC200BF5B97 /* List.storyboard in Resources */,
 				396340C8272A38460079E845 /* writeSubscription.plist in Resources */,
 				39633FF7272651570079E845 /* GmarketSansBold.otf in Resources */,
 				5DF276FF27435FCE003C434B /* Main.storyboard in Resources */,
-				5D127B052747AAE700E406C3 /* List.storyboard in Resources */,
 				396340C7272A38460079E845 /* subservice.plist in Resources */,
 				39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */,
 			);
@@ -460,6 +463,7 @@
 				5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */,
 				396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */,
 				5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */,
+				10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */,
 				396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */,
 				5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */,
 				5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */,
@@ -469,10 +473,10 @@
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
 				5DF277152743C945003C434B /* Subscription.swift in Sources */,
-				3963407B2727C6490079E845 /* ListViewController.swift in Sources */,
 				396340A6272924260079E845 /* TabBarController.swift in Sources */,
 				5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,
+				10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */,
 				396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
