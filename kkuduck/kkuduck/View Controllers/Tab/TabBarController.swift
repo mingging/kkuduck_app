@@ -7,15 +7,18 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tabBar.backgroundColor = UIColor(hex: "#FDAC53ff")
+        setupView()
+    }
+
+    private func setupView() {
+        tabBar.backgroundColor = .primary
         tabBar.backgroundImage = UIImage()
-        tabBar.tintColor = UIColor(hex: "#ffffffff")
-        tabBar.shadowImage = UIImage()
+        tabBar.tintColor = .white
     }
 
 }

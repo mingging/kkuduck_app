@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10DC86B8274DEAC200BF5B97 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DC86B5274DEAC100BF5B97 /* List.storyboard */; };
+		10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B6274DEAC100BF5B97 /* ListViewController.swift */; };
+		10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */; };
 		39633FE1272649800079E845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE0272649800079E845 /* AppDelegate.swift */; };
 		39633FE3272649800079E845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE2272649800079E845 /* SceneDelegate.swift */; };
 		39633FEA272649830079E845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39633FE9272649830079E845 /* Assets.xcassets */; };
@@ -14,13 +17,11 @@
 		39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39633FF5272651520079E845 /* GmarketSansMedium.otf */; };
 		39633FFA272655E40079E845 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FF9272655E40079E845 /* LoginViewController.swift */; };
 		39633FFC27265A080079E845 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FFB27265A080079E845 /* HomeViewController.swift */; };
-		3963407B2727C6490079E845 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407A2727C6490079E845 /* ListViewController.swift */; };
 		3963407D2727C64D0079E845 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* ServiceCell.swift */; };
 		3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407E2727C6520079E845 /* StatisticsViewController.swift */; };
-		396340832727D2930079E845 /* AddServiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* AddServiceListViewController.swift */; };
-		396340852727DF600079E845 /* AddServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340842727DF600079E845 /* AddServiceCell.swift */; };
-		396340872727E4E30079E845 /* AddServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* AddServiceDetailViewController.swift */; };
-		3963409B272811740079E845 /* AddServiceCustomViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963409A272811740079E845 /* AddServiceCustomViewConroller.swift */; };
+		396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* AddSubscriptionListViewController.swift */; };
+		396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340842727DF600079E845 /* AddSubscriptionCell.swift */; };
+		396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */; };
 		396340A6272924260079E845 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340A5272924260079E845 /* TabBarController.swift */; };
 		396340C7272A38460079E845 /* subservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C5272A38460079E845 /* subservice.plist */; };
 		396340C8272A38460079E845 /* writeSubscription.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C6272A38460079E845 /* writeSubscription.plist */; };
@@ -30,22 +31,26 @@
 		398EAF31274D02A80026ED60 /* MonthlyStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */; };
 		398EAF33274D291A0026ED60 /* AllStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398EAF32274D291A0026ED60 /* AllStatisticsViewController.swift */; };
 		5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B022747A90700E406C3 /* .swiftlint.yml */; };
-		5D127B052747AAE700E406C3 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B042747AAE600E406C3 /* List.storyboard */; };
 		5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B062747AB2000E406C3 /* Statistics.storyboard */; };
 		5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B082747AB5500E406C3 /* AddService.storyboard */; };
 		5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B0A2747ABAB00E406C3 /* Login.storyboard */; };
-		5DBCAB362733E60200343733 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor.swift */; };
+		5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */; };
+		5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF9274CB66700E06F3B /* NavigationController.swift */; };
+		5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor+Extension.swift */; };
 		5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */; };
 		5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB402733F74C00343733 /* ReusableView.swift */; };
 		5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF027C274345F800FE6C1D /* Home.storyboard */; };
 		5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF276FB27435FB9003C434B /* LaunchScreen.storyboard */; };
 		5DF276FF27435FCE003C434B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF276FE27435FCE003C434B /* Main.storyboard */; };
 		5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF2770F2743B609003C434B /* HomeSubscriptionCell.swift */; };
-		5DF277152743C945003C434B /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF277142743C945003C434B /* Subscribe.swift */; };
+		5DF277152743C945003C434B /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF277142743C945003C434B /* Subscription.swift */; };
 		A0066EB4F690B1C972178648 /* Pods_kkuduck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10DC86B5274DEAC100BF5B97 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		10DC86B6274DEAC100BF5B97 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		39633FDD272649800079E845 /* kkuduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kkuduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39633FE0272649800079E845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39633FE2272649800079E845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,13 +60,11 @@
 		39633FF6272651520079E845 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		39633FF9272655E40079E845 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39633FFB27265A080079E845 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		3963407A2727C6490079E845 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3963407C2727C64D0079E845 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		3963407E2727C6520079E845 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
-		396340822727D2930079E845 /* AddServiceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceListViewController.swift; sourceTree = "<group>"; };
-		396340842727DF600079E845 /* AddServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceCell.swift; sourceTree = "<group>"; };
-		396340862727E4E20079E845 /* AddServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceDetailViewController.swift; sourceTree = "<group>"; };
-		3963409A272811740079E845 /* AddServiceCustomViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceCustomViewConroller.swift; sourceTree = "<group>"; };
+		396340822727D2930079E845 /* AddSubscriptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionListViewController.swift; sourceTree = "<group>"; };
+		396340842727DF600079E845 /* AddSubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionCell.swift; sourceTree = "<group>"; };
+		396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionDetailViewController.swift; sourceTree = "<group>"; };
 		396340A5272924260079E845 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		396340C5272A38460079E845 /* subservice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = subservice.plist; sourceTree = "<group>"; };
 		396340C6272A38460079E845 /* writeSubscription.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = writeSubscription.plist; sourceTree = "<group>"; };
@@ -71,18 +74,19 @@
 		398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyStatisticsViewController.swift; sourceTree = "<group>"; };
 		398EAF32274D291A0026ED60 /* AllStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStatisticsViewController.swift; sourceTree = "<group>"; };
 		5D127B022747A90700E406C3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		5D127B042747AAE600E406C3 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		5D127B062747AB2000E406C3 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		5D127B082747AB5500E406C3 /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddService.storyboard; sourceTree = "<group>"; };
 		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		5DBCAB352733E60200343733 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		5D9AEDF9274CB66700E06F3B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		5DBCAB352733E60200343733 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		5DBCAB402733F74C00343733 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5DBF027C274345F800FE6C1D /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = kkuduck/Storyboards/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		5DF276FC27435FB9003C434B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DF276FE27435FCE003C434B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5DF2770F2743B609003C434B /* HomeSubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubscriptionCell.swift; sourceTree = "<group>"; };
-		5DF277142743C945003C434B /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
+		5DF277142743C945003C434B /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		AB4C7738B9E157DF5B5D05B9 /* Pods-kkuduck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.debug.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B060A5EE82B12F09AD5F4A /* Pods-kkuduck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kkuduck.release.xcconfig"; path = "Target Support Files/Pods-kkuduck/Pods-kkuduck.release.xcconfig"; sourceTree = "<group>"; };
 		FE84AD19E314C0738A30ECD0 /* Pods_kkuduck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kkuduck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,20 +146,21 @@
 			path = kkuduck;
 			sourceTree = "<group>";
 		};
-		39633FF4272651490079E845 /* font */ = {
+		39633FF4272651490079E845 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				39633FF6272651520079E845 /* GmarketSansBold.otf */,
 				39633FF5272651520079E845 /* GmarketSansMedium.otf */,
 			);
-			path = font;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		5DBCAB342733E5FA00343733 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				396340C9272A385B0079E845 /* getFile.swift */,
-				5DBCAB352733E60200343733 /* UIColor.swift */,
+				5DBCAB352733E60200343733 /* UIColor+Extension.swift */,
+				5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */,
 				5DBCAB402733F74C00343733 /* ReusableView.swift */,
 			);
 			path = Utils;
@@ -164,7 +169,7 @@
 		5DBCAB372733E95000343733 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				39633FF4272651490079E845 /* font */,
+				39633FF4272651490079E845 /* Fonts */,
 				39633FE9272649830079E845 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -242,9 +247,10 @@
 		5DBF02772743419600FE6C1D /* List */ = {
 			isa = PBXGroup;
 			children = (
-				5D127B042747AAE600E406C3 /* List.storyboard */,
+				10DC86B5274DEAC100BF5B97 /* List.storyboard */,
+				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
+				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
 				5DBF027B274345A700FE6C1D /* Cells */,
-				3963407A2727C6490079E845 /* ListViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -265,9 +271,9 @@
 			children = (
 				5D127B082747AB5500E406C3 /* AddService.storyboard */,
 				5DBF027A2743434000FE6C1D /* Cells */,
-				396340822727D2930079E845 /* AddServiceListViewController.swift */,
-				396340862727E4E20079E845 /* AddServiceDetailViewController.swift */,
-				3963409A272811740079E845 /* AddServiceCustomViewConroller.swift */,
+				396340822727D2930079E845 /* AddSubscriptionListViewController.swift */,
+				396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */,
+				5D9AEDF9274CB66700E06F3B /* NavigationController.swift */,
 			);
 			path = AddService;
 			sourceTree = "<group>";
@@ -275,7 +281,7 @@
 		5DBF027A2743434000FE6C1D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				396340842727DF600079E845 /* AddServiceCell.swift */,
+				396340842727DF600079E845 /* AddSubscriptionCell.swift */,
 				396340CD272A4AD90079E845 /* SelectPlanCell.swift */,
 				396340CE272A4AD90079E845 /* SelectPlanCell.xib */,
 			);
@@ -301,7 +307,7 @@
 		5DF277162743C94D003C434B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5DF277142743C945003C434B /* Subscribe.swift */,
+				5DF277142743C945003C434B /* Subscription.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -382,10 +388,10 @@
 				39633FEA272649830079E845 /* Assets.xcassets in Resources */,
 				5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */,
 				5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */,
+				10DC86B8274DEAC200BF5B97 /* List.storyboard in Resources */,
 				396340C8272A38460079E845 /* writeSubscription.plist in Resources */,
 				39633FF7272651570079E845 /* GmarketSansBold.otf in Resources */,
 				5DF276FF27435FCE003C434B /* Main.storyboard in Resources */,
-				5D127B052747AAE700E406C3 /* List.storyboard in Resources */,
 				396340C7272A38460079E845 /* subservice.plist in Resources */,
 				39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */,
 			);
@@ -462,22 +468,24 @@
 				396340CA272A385B0079E845 /* getFile.swift in Sources */,
 				398EAF33274D291A0026ED60 /* AllStatisticsViewController.swift in Sources */,
 				5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */,
-				396340852727DF600079E845 /* AddServiceCell.swift in Sources */,
-				396340832727D2930079E845 /* AddServiceListViewController.swift in Sources */,
+				396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */,
+				5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */,
+				10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */,
+				396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */,
 				5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */,
-				5DBCAB362733E60200343733 /* UIColor.swift in Sources */,
+				5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
 				396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */,
 				3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */,
-				3963409B272811740079E845 /* AddServiceCustomViewConroller.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
 				398EAF31274D02A80026ED60 /* MonthlyStatisticsViewController.swift in Sources */,
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
-				5DF277152743C945003C434B /* Subscribe.swift in Sources */,
-				3963407B2727C6490079E845 /* ListViewController.swift in Sources */,
+				5DF277152743C945003C434B /* Subscription.swift in Sources */,
 				396340A6272924260079E845 /* TabBarController.swift in Sources */,
+				5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,
-				396340872727E4E30079E845 /* AddServiceDetailViewController.swift in Sources */,
+				10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */,
+				396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V5N6533KS3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -639,7 +647,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V5N6533KS3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "kkuduck/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

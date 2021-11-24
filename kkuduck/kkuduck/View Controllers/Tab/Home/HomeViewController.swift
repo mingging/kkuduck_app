@@ -15,11 +15,11 @@ final class HomeViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var viewTotalSub: UIView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var totalPriceView: UIView!
     @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     // MARK: - View Life Cycle
 
@@ -27,7 +27,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // view round 조정
-        viewTotalSub.layer.cornerRadius = 15
+        totalPriceView.layer.cornerRadius = 15
 
         // ADD 앱을 껐다가 켜도 이름이 저장되어 있도록 설정
         DispatchQueue.main.async {
@@ -61,43 +61,35 @@ private extension HomeViewController {
         }
         let prices = writeSubInfo
             .map { $0 as! [String: Any] }
-            .map { $0["planPrice"] as! String }
-            .map { Int($0)! }
+            .map { $0["planPrice"] as? Int ?? 0 }
             .reduce(0, +)
         return prices
     }
 
-    func subscribe(at row: Int) -> Subscribe {
+    func subscription(at row: Int) -> Subscription {
         guard let writeSubInfo = writeSubInfo,
             let item = writeSubInfo[row] as? [String: Any] else { fatalError() }
 
         let name = item["planName"] as! String
         let cycle = item["cycle"] as! String
-        let priceString = item["planPrice"] as! String
-        let price = Int(priceString)!
-        let imageUrlString = item["img"] as! String
-        let startDateString = item["subStartDay"] as! String
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        let startDate = formatter.date(from: startDateString)!
-        let subscribe = Subscribe(
-            subscription: Subscription(
-                name: name,
-                imageUrl: imageUrlString,
-                price: price,
-                cycle: cycle
-            ),
-            startDate: startDate
+        let price = item["planPrice"] as? Int ?? 0
+        let imageUrl = item["img"] as! String
+        let startDateString = item["subStartDay"] as? String ?? ""
+        let startDate = CustomDateFormatter.date(from: startDateString) ?? Date()
+        return Subscription(
+            name: name,
+            price: price,
+            cycle: cycle,
+            startDate: startDate,
+            imageUrl: imageUrl
         )
-
-        return subscribe
     }
 
 }
 
 // MARK: - UICollectionViewDelegate
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return writeSubInfo?.count ?? 0
@@ -108,13 +100,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
 
-        let subscribe = subscribe(at: indexPath.row)
-        cell.configure(with: subscribe)
+        let subscription = subscription(at: indexPath.row)
+        cell.configure(with: subscription)
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 100
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height = collectionView.frame.height
+        let cellShadowRadius: CGFloat = 10
+        let cellShadowOffsetHeight: CGFloat = 2
+        let cellWidth = width * 0.7
+        let cellHeight = height - cellShadowRadius * 2 - cellShadowOffsetHeight
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 
 }

@@ -37,6 +37,5 @@ class StatisticsViewController: UIViewController {
             pieChartView.alpha = 0.0
             barChartView.alpha = 1.0
         }
-
     }
 }
