@@ -7,7 +7,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Charts
+  - Charts (~> 3.6.0)
   - DropDown
 
 SPEC REPOS:
@@ -21,6 +21,6 @@ SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
 
-PODFILE CHECKSUM: cdb1b2e4fbf40d317908d150be4be9ab7f4ced3a
+PODFILE CHECKSUM: c4df4077e50bff5a3c130e53aa7d83d36c7506f6
 
 COCOAPODS: 1.11.2
