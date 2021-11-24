@@ -169,6 +169,9 @@
                                     <segment title="만료됨"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="onChangeSegment:" destination="onN-QY-mZ7" eventType="valueChanged" id="QO2-xD-veH"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hh5-9u-3hG">
                                 <rect key="frame" x="0.0" y="248" width="414" height="614"/>
@@ -237,7 +240,16 @@
                                                         <constraint firstItem="hsN-dO-Kwt" firstAttribute="leading" secondItem="GoS-Qx-pof" secondAttribute="trailing" constant="25" id="xPb-7E-Q02"/>
                                                     </constraints>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hi-2k-ke3">
+                                                    <rect key="frame" x="20" y="10" width="374" height="90"/>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="6hi-2k-ke3" secondAttribute="bottom" constant="10" id="ArY-1h-JEq"/>
+                                                <constraint firstItem="6hi-2k-ke3" firstAttribute="leading" secondItem="o3z-jS-1AC" secondAttribute="leading" constant="20" id="EoM-p8-w2H"/>
+                                                <constraint firstItem="6hi-2k-ke3" firstAttribute="top" secondItem="o3z-jS-1AC" secondAttribute="top" constant="10" id="Wnf-hz-N0s"/>
+                                                <constraint firstAttribute="trailing" secondItem="6hi-2k-ke3" secondAttribute="trailing" constant="20" id="mql-au-FP7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="Bet-oX-f7Y" firstAttribute="leading" secondItem="lKl-E4-Tdh" secondAttribute="leading" constant="20" id="KeE-wm-tU8"/>
@@ -247,6 +259,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cellView" destination="Bet-oX-f7Y" id="vjV-DX-HkJ"/>
+                                            <outlet property="endCellView" destination="6hi-2k-ke3" id="JcI-UM-stT"/>
                                             <outlet property="priceLabel" destination="tZc-SG-5EO" id="ef0-KO-trB"/>
                                             <outlet property="subscriptionImageView" destination="GoS-Qx-pof" id="Ey5-JW-4dJ"/>
                                             <outlet property="subscriptionNameLabel" destination="l3g-8i-gIC" id="tn8-h8-BWS"/>
@@ -280,6 +293,9 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="1" green="0.88235294119999996" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addButton:" destination="onN-QY-mZ7" eventType="touchUpInside" id="diy-Mf-hQ5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gMy-Gv-y7P"/>
@@ -302,6 +318,7 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="gOG-Jv-gWL"/>
                     <connections>
+                        <outlet property="segment" destination="mnR-uf-Z4b" id="7lS-tk-N16"/>
                         <outlet property="tableView" destination="Hh5-9u-3hG" id="yws-9b-u5y"/>
                     </connections>
                 </viewController>

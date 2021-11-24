@@ -12,9 +12,10 @@ final class ServiceCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var subscriptionImageView: UIImageView!
     @IBOutlet weak var subscriptionNameLabel: UILabel!
-    @IBOutlet weak var stratDateLabel: UILabel!
+//    @IBOutlet weak var stratDateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var dDayLabel: UILabel!
+//    @IBOutlet weak var dDayLabel: UILabel!
+    @IBOutlet var endCellView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,9 @@ final class ServiceCell: UITableViewCell {
         cellView.layer.shadowRadius = 10
         cellView.layer.shadowOffset = CGSize(width: 1, height: 2)
         cellView.layer.masksToBounds = false
+
+        endCellView.layer.cornerRadius = 15
+
     }
 
 }
