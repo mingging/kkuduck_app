@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afv-1H-Piq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afv-1H-Piq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UJ-Xu-l8Q">
-                                <rect key="frame" x="30" y="173" width="354" height="90"/>
+                                <rect key="frame" x="30" y="188" width="354" height="105"/>
                                 <string key="text">만나서 반가워요!
 꾸덕을 시작하기 전에
 이름을 알려주세요!</string>
@@ -48,29 +48,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KG-Sa-hfy">
-                                <rect key="frame" x="30" y="382" width="354" height="13"/>
+                                <rect key="frame" x="30" y="443" width="354" height="15.5"/>
                                 <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ynd-IZ-g5m">
-                                <rect key="frame" x="30" y="404" width="354" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="TT4-lI-WaE"/>
-                                    <constraint firstAttribute="width" constant="354" id="kNx-rG-dZS"/>
-                                </constraints>
+                                <rect key="frame" x="30" y="468.5" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT3-aZ-0aR">
-                                <rect key="frame" x="30" y="556" width="354" height="49"/>
+                                <rect key="frame" x="30" y="732" width="354" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="2y7-TM-OVo"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="Kd0-zX-W8C"/>
-                                    <constraint firstAttribute="width" constant="354" id="LmL-G4-CxB"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="354" id="Xpu-Lc-ghD"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
                                 <state key="normal" title="시작하기">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -83,21 +73,18 @@
                         <viewLayoutGuide key="safeArea" id="nUp-Y1-Gsl"/>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="4KG-Sa-hfy" secondAttribute="trailing" constant="30" id="2n9-1G-AdF"/>
-                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="8UJ-Xu-l8Q" secondAttribute="trailing" constant="30" id="4Hx-Zg-4AM"/>
-                            <constraint firstItem="Ynd-IZ-g5m" firstAttribute="top" secondItem="4KG-Sa-hfy" secondAttribute="bottom" constant="9" id="IFo-a0-vZm"/>
-                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="dT3-aZ-0aR" secondAttribute="trailing" constant="30" id="MYH-qA-7js"/>
-                            <constraint firstItem="Ynd-IZ-g5m" firstAttribute="centerX" secondItem="bcr-aF-85i" secondAttribute="centerX" id="XaH-UE-w0K"/>
-                            <constraint firstItem="4KG-Sa-hfy" firstAttribute="top" secondItem="8UJ-Xu-l8Q" secondAttribute="bottom" constant="119" id="bXz-WZ-vWN"/>
-                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="Ynd-IZ-g5m" secondAttribute="trailing" constant="30" id="e36-bV-tG4"/>
-                            <constraint firstItem="8UJ-Xu-l8Q" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="lI0-un-0uG"/>
-                            <constraint firstItem="8UJ-Xu-l8Q" firstAttribute="top" secondItem="nUp-Y1-Gsl" secondAttribute="top" constant="85" id="n0a-Lm-nYK"/>
-                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="top" secondItem="Ynd-IZ-g5m" secondAttribute="bottom" constant="118" id="rek-oQ-UIu"/>
-                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="xaI-z1-CPW"/>
-                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="centerX" secondItem="bcr-aF-85i" secondAttribute="centerX" id="xki-B3-227"/>
-                            <constraint firstItem="Ynd-IZ-g5m" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="xqy-QW-K3G"/>
-                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="top" secondItem="Ynd-IZ-g5m" secondAttribute="bottom" constant="118" id="yHQ-a9-bg3"/>
-                            <constraint firstItem="4KG-Sa-hfy" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="yle-T4-z84"/>
+                            <constraint firstItem="Ynd-IZ-g5m" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="4NM-fw-rNe"/>
+                            <constraint firstItem="8UJ-Xu-l8Q" firstAttribute="top" secondItem="nUp-Y1-Gsl" secondAttribute="top" constant="100" id="Buo-Yb-kjV"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="bottom" secondItem="dT3-aZ-0aR" secondAttribute="bottom" constant="100" id="EXf-xj-1ES"/>
+                            <constraint firstItem="8UJ-Xu-l8Q" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="PUc-u1-i9K"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="8UJ-Xu-l8Q" secondAttribute="trailing" constant="30" id="TRK-Wu-Mf3"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="Ynd-IZ-g5m" secondAttribute="trailing" constant="30" id="Vt0-aO-JYD"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="dT3-aZ-0aR" secondAttribute="trailing" constant="30" id="bD7-vb-4FH"/>
+                            <constraint firstItem="4KG-Sa-hfy" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="fvb-Ne-B8g"/>
+                            <constraint firstItem="dT3-aZ-0aR" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" constant="30" id="nMV-3F-6Ek"/>
+                            <constraint firstItem="4KG-Sa-hfy" firstAttribute="top" secondItem="8UJ-Xu-l8Q" secondAttribute="bottom" constant="150" id="qJ3-4Z-Ojc"/>
+                            <constraint firstItem="Ynd-IZ-g5m" firstAttribute="top" secondItem="4KG-Sa-hfy" secondAttribute="bottom" constant="10" id="qcj-4R-YlE"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="4KG-Sa-hfy" secondAttribute="trailing" constant="30" id="tah-cx-mB5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zHc-XM-Fd3"/>
