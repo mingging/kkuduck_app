@@ -9,6 +9,15 @@ import UIKit
 
 final class HomeSubscriptionCell: UICollectionViewCell {
 
+    private enum Metric {
+        static let cornerRadius: CGFloat = 15
+        static let borderWidth: CGFloat = 1
+        static let shadowRadius: CGFloat = 10
+        static let shadowOpacity: Float = 0.2
+    }
+
+    // MARK: - Outlets
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cycleLabel: UILabel!
@@ -20,42 +29,56 @@ final class HomeSubscriptionCell: UICollectionViewCell {
         super.awakeFromNib()
 
         backgroundColor = .clear
-        contentView.layer.cornerRadius = 15
-        contentView.layer.borderWidth = 1
+        contentView.layer.cornerRadius = Metric.cornerRadius
+        contentView.layer.borderWidth = Metric.borderWidth
         contentView.layer.borderColor = UIColor.white.cgColor
         contentView.backgroundColor = .white
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 10
-        layer.shadowOpacity = 0.2
+        layer.shadowOffset = .zero
+        layer.shadowRadius = Metric.shadowRadius
+        layer.shadowOpacity = Metric.shadowOpacity
         layer.masksToBounds = false
 
         thumbnailContainerView.layer.cornerRadius = (thumbnailContainerView.frame.height) / 2
     }
 
     func configure(with subscription: Subscription) {
-        nameLabel.text = subscription.name
-        cycleLabel.text = subscription.cycle
-        priceLabel.text = "\(subscription.price) 원"
-        let nextDate = nextDate(from: subscription.startDate)!
+        nameLabel.text = subscription.serviceName
+        cycleLabel.text = subscription.cycle.rawValue
+        priceLabel.text = "\(subscription.planPrice) 원"
+        let nextDate = nextSubscriptionDate(from: subscription.startDate, matching: subscription.cycle)!
         nextDateLabel.text = CustomDateFormatter.string(from: nextDate)
         ImageCache.load(urlString: subscription.imageUrl) { image in
             self.imageView.image = image ?? .logo
         }
     }
 
-    /// 구독 시작일을 전달하면 오늘 이후 가장 가까운 다음 구독일을 반환합니다.
-    func nextDate(from startDate: Date) -> Date? {
-        let startDateComponents = Calendar.current.dateComponents([.day], from: startDate)
+    /// 주어진 구독 시작일과 결제 주기에 해당하는 다음 결제 예정일을 계산합니다.
+    ///
+    /// - Parameter startDate: 구독 시작일
+    /// - Parameter component: 결제 주기
+    /// - Returns: 다음 결제 예정일
+    private func nextSubscriptionDate(from startDate: Date, matching cycle: Cycle) -> Date? {
+        let startDateComponents = Calendar.current.dateComponents(cycle.matchingComponents, from: startDate)
         let today = Date()
-        let nextDate = Calendar.current.nextDate(
+        return Calendar.current.nextDate(
             after: today,
             matching: startDateComponents,
             matchingPolicy: .previousTimePreservingSmallerComponents,
             repeatedTimePolicy: .first,
             direction: .forward
         )
-        return nextDate
     }
 
+}
+
+fileprivate extension Cycle {
+    var matchingComponents: Set<Calendar.Component> {
+        switch self {
+        case .month:
+            return [.day]
+        case .year:
+            return [.month, .day]
+        }
+    }
 }

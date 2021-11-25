@@ -11,7 +11,7 @@ struct CustomDateFormatter {
 
     private static let dateFormat = "yyyy.MM.dd"
     private static var dateFormatter: DateFormatter = {
-       let formatter = DateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = dateFormat
         return formatter
     }()

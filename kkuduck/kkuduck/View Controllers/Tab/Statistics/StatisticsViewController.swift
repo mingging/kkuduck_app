@@ -49,7 +49,7 @@ class StatisticsViewController: UIViewController {
 
     func totalSubPrice() {
         // 데이터 불러오기
-        writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+        writeSubInfo = LocalSubscriptionRepository.plist
 
         guard let writeSubInfo = writeSubInfo else { return }
         let count = writeSubInfo.count

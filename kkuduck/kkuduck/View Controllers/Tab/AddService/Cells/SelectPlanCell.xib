@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,26 +22,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="베이식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkc-kd-5lx">
-                        <rect key="frame" x="20" y="14" width="280" height="15"/>
-                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
-                        <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,500원 / 월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlu-dh-Br2">
-                        <rect key="frame" x="20" y="37" width="280" height="13"/>
-                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ly3-i2-L0d">
+                        <rect key="frame" x="20" y="14" width="280" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="베이식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkc-kd-5lx">
+                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="15"/>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,500원 / 월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlu-dh-Br2">
+                                <rect key="frame" x="0.0" y="23" width="78.5" height="13"/>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Zlu-dh-Br2" secondAttribute="bottom" constant="14" id="0sG-TZ-aTL"/>
-                    <constraint firstAttribute="trailing" secondItem="Zlu-dh-Br2" secondAttribute="trailing" constant="20" id="AmN-Ma-HUs"/>
-                    <constraint firstAttribute="trailing" secondItem="Qkc-kd-5lx" secondAttribute="trailing" constant="20" id="hro-Xi-d5Q"/>
-                    <constraint firstItem="Qkc-kd-5lx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="q12-Ly-UPz"/>
-                    <constraint firstItem="Zlu-dh-Br2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="s8r-Hr-4AY"/>
-                    <constraint firstItem="Qkc-kd-5lx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="wZl-KP-17J"/>
+                    <constraint firstItem="ly3-i2-L0d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="3tt-Qu-eob"/>
+                    <constraint firstAttribute="trailing" secondItem="ly3-i2-L0d" secondAttribute="trailing" constant="20" id="IgP-Ib-E7a"/>
+                    <constraint firstItem="ly3-i2-L0d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="K0R-KU-SE9"/>
+                    <constraint firstAttribute="bottom" secondItem="ly3-i2-L0d" secondAttribute="bottom" constant="14" id="fb3-pE-gh2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -49,7 +52,7 @@
                 <outlet property="optionLabel" destination="Qkc-kd-5lx" id="R49-YL-xwP"/>
                 <outlet property="priceLabel" destination="Zlu-dh-Br2" id="eY2-Gj-hd1"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="67.633928571428569"/>
+            <point key="canvasLocation" x="139" y="72"/>
         </tableViewCell>
     </objects>
 </document>

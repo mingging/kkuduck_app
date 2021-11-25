@@ -32,7 +32,7 @@ final class LoginViewController: UIViewController {
         btnStart.layer.cornerRadius = 10
 
         // plist 복사
-        let targetPath = getFileName("writeSubscription.plist")
+        let targetPath = LocalSubscriptionRepository.fileURL.path
         print(targetPath)
 
         guard let sourcePath = Bundle.main.path(forResource: "writeSubscription", ofType: "plist") else { return }

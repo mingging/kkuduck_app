@@ -34,7 +34,8 @@ final class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 
-        writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
+        writeSubInfo = LocalSubscriptionRepository.plist
+
         tableView.reloadData()
     }
 
@@ -109,7 +110,7 @@ extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: nil) { _, _, completionHandler in
             self.writeSubInfo?.removeObject(at: indexPath.row)
-            self.writeSubInfo?.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
+            self.writeSubInfo?.write(toFile: LocalSubscriptionRepository.fileURL.path, atomically: true)
             tableView.deleteRows(at: [indexPath], with: .fade)
             completionHandler(true)
         }
@@ -121,7 +122,7 @@ extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: nil) { _, _, completionHandler in
             self.writeSubInfo?.removeObject(at: indexPath.row)
-            self.writeSubInfo?.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
+            self.writeSubInfo?.write(toFile: LocalSubscriptionRepository.fileURL.path, atomically: true)
             tableView.deleteRows(at: [indexPath], with: .fade)
             completionHandler(true)
         }
