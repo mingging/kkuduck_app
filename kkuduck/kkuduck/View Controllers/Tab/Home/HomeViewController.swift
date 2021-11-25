@@ -32,7 +32,7 @@ final class HomeViewController: UIViewController {
         setupView()
 
         DispatchQueue.main.async {
-            self.usernameLabel.text = UserDefaults.standard.string(forKey: "userID")
+            self.usernameLabel.text = UserDefaults.standard.string(forKey: UserDefaults.Keys.username.rawValue)
         }
     }
 

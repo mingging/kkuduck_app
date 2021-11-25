@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10DC86B8274DEAC200BF5B97 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DC86B5274DEAC100BF5B97 /* List.storyboard */; };
 		10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B6274DEAC100BF5B97 /* ListViewController.swift */; };
 		10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */; };
 		39633FE1272649800079E845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE0272649800079E845 /* AppDelegate.swift */; };
@@ -23,8 +22,6 @@
 		396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340842727DF600079E845 /* AddSubscriptionCell.swift */; };
 		396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */; };
 		396340A6272924260079E845 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340A5272924260079E845 /* TabBarController.swift */; };
-		396340C7272A38460079E845 /* subservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C5272A38460079E845 /* subservice.plist */; };
-		396340C8272A38460079E845 /* writeSubscription.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396340C6272A38460079E845 /* writeSubscription.plist */; };
 		396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340CD272A4AD90079E845 /* SelectPlanCell.swift */; };
 		396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396340CE272A4AD90079E845 /* SelectPlanCell.xib */; };
 		398EAF31274D02A80026ED60 /* MonthlyStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */; };
@@ -33,6 +30,9 @@
 		5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B062747AB2000E406C3 /* Statistics.storyboard */; };
 		5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B082747AB5500E406C3 /* AddService.storyboard */; };
 		5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B0A2747ABAB00E406C3 /* Login.storyboard */; };
+		5D20028B274F767500C21E14 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DC86B5274DEAC100BF5B97 /* List.storyboard */; };
+		5D20028D274FB44C00C21E14 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */; };
+		5D20028F274FB4D500C21E14 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */; };
 		5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */; };
 		5D5CD3AE274E240D0082DBE8 /* LocalSubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AD274E240D0082DBE8 /* LocalSubscriptionRepository.swift */; };
 		5D5CD3B0274E24A70082DBE8 /* RemoteSubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AF274E24A70082DBE8 /* RemoteSubscriptionRepository.swift */; };
@@ -43,7 +43,6 @@
 		5DA9FA0A274DB13200D72377 /* SubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA09274DB13200D72377 /* SubscriptionRequest.swift */; };
 		5DA9FA0C274DB15A00D72377 /* DefaultSubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA0B274DB15900D72377 /* DefaultSubscriptionRequest.swift */; };
 		5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor+Extension.swift */; };
-		5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */; };
 		5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB402733F74C00343733 /* ReusableView.swift */; };
 		5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF027C274345F800FE6C1D /* Home.storyboard */; };
 		5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF276FB27435FB9003C434B /* LaunchScreen.storyboard */; };
@@ -72,16 +71,16 @@
 		396340842727DF600079E845 /* AddSubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionCell.swift; sourceTree = "<group>"; };
 		396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionDetailViewController.swift; sourceTree = "<group>"; };
 		396340A5272924260079E845 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		396340C5272A38460079E845 /* subservice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = subservice.plist; sourceTree = "<group>"; };
-		396340C6272A38460079E845 /* writeSubscription.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = writeSubscription.plist; sourceTree = "<group>"; };
 		396340CD272A4AD90079E845 /* SelectPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanCell.swift; sourceTree = "<group>"; };
 		396340CE272A4AD90079E845 /* SelectPlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlanCell.xib; sourceTree = "<group>"; };
 		398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyStatisticsViewController.swift; sourceTree = "<group>"; };
 		398EAF32274D291A0026ED60 /* AllStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStatisticsViewController.swift; sourceTree = "<group>"; };
 		5D127B022747A90700E406C3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5D127B062747AB2000E406C3 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
-		5D127B082747AB5500E406C3 /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddService.storyboard; sourceTree = "<group>"; };
-		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5D127B082747AB5500E406C3 /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddService.storyboard; path = kkuduck/Storyboards/AddService.storyboard; sourceTree = SOURCE_ROOT; };
+		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = kkuduck/Storyboards/Login.storyboard; sourceTree = SOURCE_ROOT; };
+		5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRepository.swift; sourceTree = "<group>"; };
 		5D5CD3AD274E240D0082DBE8 /* LocalSubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSubscriptionRepository.swift; sourceTree = "<group>"; };
 		5D5CD3AF274E24A70082DBE8 /* RemoteSubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSubscriptionRepository.swift; sourceTree = "<group>"; };
@@ -92,7 +91,6 @@
 		5DA9FA09274DB13200D72377 /* SubscriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRequest.swift; sourceTree = "<group>"; };
 		5DA9FA0B274DB15900D72377 /* DefaultSubscriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscriptionRequest.swift; sourceTree = "<group>"; };
 		5DBCAB352733E60200343733 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		5DBCAB402733F74C00343733 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5DBF027C274345F800FE6C1D /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = kkuduck/Storyboards/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		5DF276FC27435FB9003C434B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -207,11 +205,13 @@
 		5DBCAB342733E5FA00343733 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */,
 				5DBCAB352733E60200343733 /* UIColor+Extension.swift */,
 				5DA9FA02274D222000D72377 /* UIImage+Extension.swift */,
-				5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */,
 				5DBCAB402733F74C00343733 /* ReusableView.swift */,
+				5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */,
 				5DA9FA00274D084200D72377 /* ImageCache.swift */,
+				5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -230,7 +230,6 @@
 			children = (
 				5DF276FB27435FB9003C434B /* LaunchScreen.storyboard */,
 				5DF276FE27435FCE003C434B /* Main.storyboard */,
-				5DBCAB3D2733EEAA00343733 /* UIStoryboard.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -257,8 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				39633FEE272649830079E845 /* Info.plist */,
-				396340C5272A38460079E845 /* subservice.plist */,
-				396340C6272A38460079E845 /* writeSubscription.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -430,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D20028B274F767500C21E14 /* List.storyboard in Resources */,
 				5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */,
 				5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */,
 				5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */,
@@ -438,11 +436,8 @@
 				39633FEA272649830079E845 /* Assets.xcassets in Resources */,
 				5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */,
 				5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */,
-				10DC86B8274DEAC200BF5B97 /* List.storyboard in Resources */,
-				396340C8272A38460079E845 /* writeSubscription.plist in Resources */,
 				39633FF7272651570079E845 /* GmarketSansBold.otf in Resources */,
 				5DF276FF27435FCE003C434B /* Main.storyboard in Resources */,
-				396340C7272A38460079E845 /* subservice.plist in Resources */,
 				39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,8 +519,8 @@
 				396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */,
 				5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */,
 				10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */,
+				5D20028D274FB44C00C21E14 /* UIStoryboard+Extension.swift in Sources */,
 				396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */,
-				5DBCAB3E2733EEAA00343733 /* UIStoryboard.swift in Sources */,
 				5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */,
 				5DA9FA03274D222000D72377 /* UIImage+Extension.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
@@ -541,6 +536,7 @@
 				5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,
 				10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */,
+				5D20028F274FB4D500C21E14 /* UserDefaults+Extension.swift in Sources */,
 				396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

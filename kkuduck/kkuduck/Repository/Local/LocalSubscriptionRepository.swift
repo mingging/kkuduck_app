@@ -20,13 +20,17 @@ struct LocalSubscriptionRepository: SubscriptionRepositoryType {
     }
 
     private static func load() -> [Subscription] {
-        let decoder = PropertyListDecoder()
-        guard let data = try? Data(contentsOf: fileURL),
-              let subscriptions = try? decoder.decode([Subscription].self, from: data) else { return [] }
-        return subscriptions
+        if !FileManager.default.fileExists(atPath: fileURL.path) {
+            FileManager.default.createFile(atPath: fileURL.path, contents: nil, attributes: nil)
+        }
+        if let data = FileManager.default.contents(atPath: fileURL.path),
+           let subscriptions = try? PropertyListDecoder().decode([Subscription].self, from: data) {
+            return subscriptions
+        }
+        return []
     }
 
-    // MARK: -
+    // MARK: - 
 
     static func items(completion: @escaping ([Subscription]?) -> Void) {
         completion(load())
@@ -41,12 +45,12 @@ struct LocalSubscriptionRepository: SubscriptionRepositoryType {
         if let data = try? encoder.encode(subscriptions) {
             try! data.write(to: fileURL)
         }
-
     }
 
     static func delete(at index: Int) {
         var subscriptions = load()
         subscriptions.remove(at: index)
+
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         if let data = try? encoder.encode(subscriptions) {

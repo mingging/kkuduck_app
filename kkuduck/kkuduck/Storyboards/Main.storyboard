@@ -65,15 +65,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TW2-cz-Uw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468" y="1371"/>
+            <point key="canvasLocation" x="-455" y="1371"/>
         </scene>
         <!--Login-->
         <scene sceneID="DXv-TS-sYa">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="loginNavController" storyboardName="Login" id="aOu-BM-nIc" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="LoginViewController" storyboardName="Login" id="aOu-BM-nIc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvm-ZX-jxz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1315" y="792"/>
+            <point key="canvasLocation" x="-1333" y="858"/>
         </scene>
     </scenes>
 </document>

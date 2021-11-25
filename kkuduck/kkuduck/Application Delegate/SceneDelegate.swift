@@ -14,11 +14,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
 
-        if UserDefaults.standard.string(forKey: "userID") != nil {
-            let tabBarController = UIStoryboard.main.instantiateViewController(identifier: "TabBarController")
+        if UserDefaults.standard.string(forKey: UserDefaults.Keys.username.rawValue) != nil {
+            let tabBarController = UIStoryboard.main.instantiateViewController(withIdentifier: TabBarController.self)
             window?.rootViewController = tabBarController
         } else {
-            let loginNavController = UIStoryboard.main.instantiateViewController(identifier: "loginNavController")
+            let loginNavController = UIStoryboard.main.instantiateViewController(withIdentifier: LoginViewController.self)
             window?.rootViewController = loginNavController
         }
     }

@@ -16,7 +16,6 @@ final class AddSubscriptionDetailViewController: UIViewController {
 
     // MARK: - Properties
 
-    var writeSubInfo: NSMutableArray?
     var defaultSubscription: DefaultSubscription?
     var selectedPlan: Plan!
 
@@ -49,7 +48,6 @@ final class AddSubscriptionDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        writeSubInfo = LocalSubscriptionRepository.plist
         setupView()
     }
 
@@ -126,7 +124,6 @@ final class AddSubscriptionDetailViewController: UIViewController {
                     userId: userIdTextField.text
                 )
             }
-
         }
         LocalSubscriptionRepository.save(subscription: subscription)
         navigationController?.popViewController(animated: true)
