@@ -162,7 +162,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-vR-3PW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="928"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1010"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wAN-hG-zjS">
                                                 <rect key="frame" x="20" y="20" width="374" height="68"/>
@@ -317,8 +317,38 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-tb-HfY">
+                                                <rect key="frame" x="20" y="563" width="374" height="53"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 사용 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWr-wA-icH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="13W-zd-A8m">
+                                                        <rect key="frame" x="0.0" y="21" width="374" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmd-Dr-KNx">
+                                                                <rect key="frame" x="10" y="9.5" width="262" height="13"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="KwQ-mR-SYV">
+                                                                <rect key="frame" x="280" y="0.0" width="94" height="32"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <action selector="shareCountStepperValueChanged:" destination="nYZ-ML-ujL" eventType="valueChanged" id="YeM-Mo-oPb"/>
+                                                                </connections>
+                                                            </stepper>
+                                                        </subviews>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="10" bottom="0.0" trailing="0.0"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ilw-ol-b3O">
-                                                <rect key="frame" x="20" y="563" width="374" height="183"/>
+                                                <rect key="frame" x="20" y="645" width="374" height="183"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 시작일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-cn-TwZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -337,7 +367,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BIv-RS-bgG">
-                                                <rect key="frame" x="20" y="775" width="374" height="55"/>
+                                                <rect key="frame" x="20" y="857" width="374" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 서비스 아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5l-9C-Icc">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -356,7 +386,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9T-gQ-chm">
-                                                <rect key="frame" x="20" y="859" width="374" height="49"/>
+                                                <rect key="frame" x="20" y="941" width="374" height="49"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="rVJ-ZP-YLu"/>
@@ -405,8 +435,10 @@
                         <outlet property="planPriceLabel" destination="BTY-r8-Awb" id="lCw-3C-Taw"/>
                         <outlet property="planPriceTextField" destination="MFG-X8-dPM" id="pp5-xr-3Sa"/>
                         <outlet property="serviceNameTextField" destination="gfJ-ig-37R" id="qIz-Ia-Xl5"/>
+                        <outlet property="shareCountLabel" destination="Rmd-Dr-KNx" id="OKo-tz-oHe"/>
+                        <outlet property="shareCountStepper" destination="KwQ-mR-SYV" id="cpc-ea-gYI"/>
+                        <outlet property="shareIdTextField" destination="K9w-nI-ABs" id="8EU-Oi-DFT"/>
                         <outlet property="startDateDatePicker" destination="qP7-OL-pO3" id="PLQ-XC-c7Y"/>
-                        <outlet property="userIdTextField" destination="K9w-nI-ABs" id="8EU-Oi-DFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6L-oT-OyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

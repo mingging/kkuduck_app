@@ -18,24 +18,27 @@ struct Subscription: Codable {
     let planPrice: Int
     /// 구독 결제 주기
     let cycle: Cycle
+    /// 서비스 사용 인원
+    let shareCount: Int
     /// 구독 시작일
     let startDate: Date
     /// 구독 만료일
     let endDate: Date?
     /// 구독 서비스 이미지
     let imageUrl: String
-    /// 사용자 구독 아이디
-    let userId: String?
+    /// 서비스 사용 아이디
+    let shareId: String?
 
     enum CodingKeys: String, CodingKey {
     case serviceName
         case planName
         case planPrice
         case cycle
+        case shareCount
         case startDate
         case endDate
         case imageUrl
-        case userId
+        case shareId
     }
 }
 

@@ -12,7 +12,7 @@ import Charts
 final class AddSubscriptionDetailViewController: UIViewController {
 
     private enum Metric {
-        static let radius: CGFloat = 10
+        static let cornerRadius: CGFloat = 10
     }
 
     // MARK: - Properties
@@ -22,6 +22,11 @@ final class AddSubscriptionDetailViewController: UIViewController {
         didSet {
             self.planNameLabel.text = selectedPlan.name
             self.planPriceLabel.text =  "\(selectedPlan.price)원/\(selectedPlan.cycle.rawValue)"
+        }
+    }
+    var shareCount: Int = 1 {
+        didSet {
+            self.shareCountLabel.text = "\(shareCount)명"
         }
     }
 
@@ -39,7 +44,7 @@ final class AddSubscriptionDetailViewController: UIViewController {
         dropDown.backgroundColor = .white
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.cellHeight = 64
-        dropDown.cornerRadius = Metric.radius
+        dropDown.cornerRadius = Metric.cornerRadius
         dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
         return dropDown
     }()
@@ -53,9 +58,11 @@ final class AddSubscriptionDetailViewController: UIViewController {
 
     // Common
 
+    @IBOutlet weak var shareCountLabel: UILabel!
+    @IBOutlet weak var shareCountStepper: UIStepper!
     @IBOutlet weak var cycleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var startDateDatePicker: UIDatePicker!
-    @IBOutlet weak var userIdTextField: UITextField!
+    @IBOutlet weak var shareIdTextField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
 
     // MARK: - View Life Cycle
@@ -67,14 +74,15 @@ final class AddSubscriptionDetailViewController: UIViewController {
     }
 
     private func setupView() {
-        doneButton.layer.cornerRadius = Metric.radius
+        doneButton.layer.cornerRadius = Metric.cornerRadius
+        shareCountStepper.layer.cornerRadius = Metric.cornerRadius
         startDateDatePicker.backgroundColor = .white
-        startDateDatePicker.layer.cornerRadius = Metric.radius
+        startDateDatePicker.layer.cornerRadius = Metric.cornerRadius
         startDateDatePicker.layer.masksToBounds = true
 
         if let defaultSubscription = defaultSubscription {
             customSubscriptionView.removeFromSuperview()
-            planMenuView.layer.cornerRadius = Metric.radius
+            planMenuView.layer.cornerRadius = Metric.cornerRadius
             selectedPlan = defaultSubscription.plans[0]
             planMenu.dataSource = defaultSubscription.plans.map { $0.name }
             planMenu.customCellConfiguration = { index, _, cell in
@@ -104,24 +112,26 @@ final class AddSubscriptionDetailViewController: UIViewController {
                 planName: selectedPlan.name,
                 planPrice: selectedPlan.price,
                 cycle: selectedPlan.cycle,
+                shareCount: shareCount,
                 startDate: startDateDatePicker.date,
                 endDate: nil,
                 imageUrl: defaultSubscription.imageUrl,
-                userId: userIdTextField.text
+                shareId: shareIdTextField.text
             )
         } else {
             if let serviceName = serviceNameTextField.text,
                let planName = planNameTextField.text,
-               let planPrice = planPriceTextField.text {
+               let planPrice = Int(planPriceTextField.text!) {
                 subscription = Subscription(
                     serviceName: serviceName,
                     planName: planName,
-                    planPrice: Int(planPrice) ?? 0,
+                    planPrice: planPrice,
                     cycle: Cycle.allCases[cycleSegmentedControl.selectedSegmentIndex],
+                    shareCount: shareCount,
                     startDate: startDateDatePicker.date,
                     endDate: nil,
                     imageUrl: "",
-                    userId: userIdTextField.text
+                    shareId: shareIdTextField.text
                 )
             }
         }
@@ -129,8 +139,12 @@ final class AddSubscriptionDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func shareCountStepperValueChanged(_ sender: UIStepper) {
+        shareCount = Int(sender.value)
+    }
     // textfield 입력시 keyboard 제어
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 

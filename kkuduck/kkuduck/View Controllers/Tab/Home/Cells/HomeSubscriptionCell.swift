@@ -63,8 +63,11 @@ final class HomeSubscriptionCell: UICollectionViewCell {
     /// - Parameter component: 결제 주기
     /// - Returns: 다음 결제 예정일
     private func nextSubscriptionDate(from startDate: Date, matching cycle: Cycle) -> Date? {
-        let startDateComponents = Calendar.current.dateComponents(cycle.matchingComponents, from: startDate)
         let today = Date()
+        if startDate > today {
+            return startDate
+        }
+        let startDateComponents = Calendar.current.dateComponents(cycle.matchingComponents, from: startDate)
         return Calendar.current.nextDate(
             after: today,
             matching: startDateComponents,
