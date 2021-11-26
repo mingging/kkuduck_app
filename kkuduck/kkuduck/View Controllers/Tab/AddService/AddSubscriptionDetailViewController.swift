@@ -154,6 +154,17 @@ final class AddSubscriptionDetailViewController: UIViewController {
 
 extension AddSubscriptionDetailViewController: UITextFieldDelegate {
 
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case planPriceTextField:
+            let allowedCharacters = CharacterSet.decimalDigits
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        default:
+            return true
+        }
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case planNameTextField:
