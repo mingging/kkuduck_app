@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -194,16 +193,10 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Tr-Ax-9Sl">
                                                         <rect key="frame" x="0.0" y="21" width="374" height="64"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nm-7a-ijA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                                                <state key="normal">
-                                                                    <imageReference key="image" image="down_arrow" renderingMode="original"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="selctPlanButtonDidTap:" destination="nYZ-ML-ujL" eventType="touchUpInside" id="ARa-P0-sH1"/>
-                                                                </connections>
-                                                            </button>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cIZ-p8-L1r">
+                                                                <rect key="frame" x="335.5" y="27" width="18.5" height="10.5"/>
+                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </imageView>
                                                             <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m65-vO-5Th">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
                                                                 <subviews>
@@ -220,21 +213,24 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <gestureRecognizers/>
                                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="20" bottom="10" trailing="20"/>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="1nm-7a-ijA" secondAttribute="trailing" id="1Ie-G4-PV8"/>
-                                                            <constraint firstItem="1nm-7a-ijA" firstAttribute="top" secondItem="8Tr-Ax-9Sl" secondAttribute="top" id="6eh-9b-o4v"/>
                                                             <constraint firstAttribute="bottom" secondItem="m65-vO-5Th" secondAttribute="bottom" id="6lw-0v-0uX"/>
                                                             <constraint firstAttribute="trailing" secondItem="m65-vO-5Th" secondAttribute="trailing" id="ESi-WO-wdM"/>
                                                             <constraint firstAttribute="height" constant="64" id="Ewc-wA-cqg"/>
-                                                            <constraint firstItem="1nm-7a-ijA" firstAttribute="leading" secondItem="8Tr-Ax-9Sl" secondAttribute="leading" id="KkM-i1-HHW"/>
                                                             <constraint firstItem="m65-vO-5Th" firstAttribute="leading" secondItem="8Tr-Ax-9Sl" secondAttribute="leading" id="PaT-VG-jHl"/>
-                                                            <constraint firstAttribute="bottom" secondItem="1nm-7a-ijA" secondAttribute="bottom" id="bgw-cu-wL1"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cIZ-p8-L1r" secondAttribute="trailing" constant="20" id="erR-LA-ePc"/>
+                                                            <constraint firstItem="cIZ-p8-L1r" firstAttribute="centerY" secondItem="8Tr-Ax-9Sl" secondAttribute="centerY" id="hzN-Ge-9fg"/>
                                                             <constraint firstItem="m65-vO-5Th" firstAttribute="top" secondItem="8Tr-Ax-9Sl" secondAttribute="top" id="sSF-13-FVD"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="hPo-ug-OhM" appends="YES" id="eXt-tI-iCP"/>
+                                                        </connections>
                                                     </view>
                                                 </subviews>
                                             </stackView>
@@ -399,22 +395,26 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="zyT-9J-qYs"/>
                     <connections>
-                        <outlet property="containerView" destination="hf3-vR-3PW" id="R9A-Mw-5Qw"/>
                         <outlet property="customSubscriptionView" destination="PO8-BE-aou" id="h2n-W2-siw"/>
                         <outlet property="cycleSegmentedControl" destination="qGM-zU-ihP" id="Pce-7E-6vd"/>
+                        <outlet property="defaualtSubscriptionView" destination="Mcq-Lw-hio" id="lfi-UP-qdN"/>
                         <outlet property="doneButton" destination="I9T-gQ-chm" id="qEy-ia-QbW"/>
+                        <outlet property="planMenuView" destination="8Tr-Ax-9Sl" id="4x6-DT-bvq"/>
                         <outlet property="planNameLabel" destination="ZZn-I3-spE" id="bnQ-UX-kAm"/>
                         <outlet property="planNameTextField" destination="gfB-uy-IEs" id="jFd-Qb-rMh"/>
                         <outlet property="planPriceLabel" destination="BTY-r8-Awb" id="lCw-3C-Taw"/>
                         <outlet property="planPriceTextField" destination="MFG-X8-dPM" id="pp5-xr-3Sa"/>
-                        <outlet property="selectPlanContainerView" destination="Mcq-Lw-hio" id="lfi-UP-qdN"/>
-                        <outlet property="selectPlanView" destination="8Tr-Ax-9Sl" id="4x6-DT-bvq"/>
                         <outlet property="serviceNameTextField" destination="gfJ-ig-37R" id="qIz-Ia-Xl5"/>
                         <outlet property="startDateDatePicker" destination="qP7-OL-pO3" id="PLQ-XC-c7Y"/>
                         <outlet property="userIdTextField" destination="K9w-nI-ABs" id="8EU-Oi-DFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6L-oT-OyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hPo-ug-OhM">
+                    <connections>
+                        <action selector="planMenuViewDidTap:" destination="nYZ-ML-ujL" id="GuB-mP-GfF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3318.840579710145" y="857.8125"/>
         </scene>
@@ -426,7 +426,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wo3-rd-kFK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="primary"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Xyu-8j-C61" kind="relationship" relationship="rootViewController" id="saJ-WG-8WF"/>
@@ -439,7 +439,7 @@
     </scenes>
     <resources>
         <image name="add_icon.png" width="18" height="18"/>
-        <image name="down_arrow" width="6" height="6"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="primary">
             <color red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

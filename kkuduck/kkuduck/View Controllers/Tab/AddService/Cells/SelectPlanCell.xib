@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +22,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjv-Vf-uLN">
+                        <rect key="frame" x="160" y="32" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ly3-i2-L0d">
                         <rect key="frame" x="20" y="14" width="280" height="36"/>
                         <subviews>
@@ -44,13 +50,16 @@
                     <constraint firstItem="ly3-i2-L0d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="3tt-Qu-eob"/>
                     <constraint firstAttribute="trailing" secondItem="ly3-i2-L0d" secondAttribute="trailing" constant="20" id="IgP-Ib-E7a"/>
                     <constraint firstItem="ly3-i2-L0d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="K0R-KU-SE9"/>
+                    <constraint firstItem="Pjv-Vf-uLN" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="UGV-RM-9i4"/>
                     <constraint firstAttribute="bottom" secondItem="ly3-i2-L0d" secondAttribute="bottom" constant="14" id="fb3-pE-gh2"/>
+                    <constraint firstItem="Pjv-Vf-uLN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wQS-DA-Qqr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="optionLabel" destination="Qkc-kd-5lx" id="R49-YL-xwP"/>
-                <outlet property="priceLabel" destination="Zlu-dh-Br2" id="eY2-Gj-hd1"/>
+                <outlet property="nameLabel" destination="Qkc-kd-5lx" id="njv-cX-Y3y"/>
+                <outlet property="optionLabel" destination="Pjv-Vf-uLN" id="7GR-Yf-ihz"/>
+                <outlet property="priceLabel" destination="Zlu-dh-Br2" id="yuv-H0-CpS"/>
             </connections>
             <point key="canvasLocation" x="139" y="72"/>
         </tableViewCell>

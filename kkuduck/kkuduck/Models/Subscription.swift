@@ -52,21 +52,27 @@ enum Cycle: String, Codable, CaseIterable {
 // MARK: - DefaultSubscription
 
 struct DefaultSubscription: Decodable {
+    /// 구독 서비스 이름
     let name: String
+    /// 구독 플랜
     let plans: [Plan]
+    /// 구독 서비스 이미지
     let imageUrl: String
+
+    struct Plan: Decodable {
+        /// 구독 플랜 이름
+        let name: String
+        /// 구독 플랜 가격
+        let price: Int
+        /// 구독 플랜 주기
+        let cycle: Cycle
+    }
 
     enum CodingKeys: String, CodingKey {
         case name = "serviceName"
         case plans
         case imageUrl
     }
-}
-
-struct Plan: Decodable {
-    let name: String
-    let price: Int
-    let cycle: Cycle
 }
 
 // MARK: - SampleData

@@ -9,8 +9,16 @@ import UIKit
 
 final class LoginViewController: UIViewController {
 
+    private enum Metric {
+        static let cornerRadius: CGFloat = 15
+    }
+
+    // MARK: - Outlets
+
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var usernameLabel: UITextField!
+
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +29,8 @@ final class LoginViewController: UIViewController {
     private func setupView() {
         startButton.layer.cornerRadius = 5
     }
+
+    // MARK: - Actions
 
     @IBAction func startButtonDidTap(_ sender: UIButton) {
         let tabBarController = UIStoryboard.main.instantiateViewController(withIdentifier: TabBarController.self)

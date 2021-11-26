@@ -25,6 +25,8 @@ final class HomeSubscriptionCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var thumbnailContainerView: UIView!
 
+    // MARK: - View Life Cycle
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -53,6 +55,8 @@ final class HomeSubscriptionCell: UICollectionViewCell {
         }
     }
 
+    // MARK: -
+
     /// 주어진 구독 시작일과 결제 주기에 해당하는 다음 결제 예정일을 계산합니다.
     ///
     /// - Parameter startDate: 구독 시작일
@@ -71,6 +75,8 @@ final class HomeSubscriptionCell: UICollectionViewCell {
     }
 
 }
+
+// MARK: - Cycle 
 
 fileprivate extension Cycle {
     var matchingComponents: Set<Calendar.Component> {

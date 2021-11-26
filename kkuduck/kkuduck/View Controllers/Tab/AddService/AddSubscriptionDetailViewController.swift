@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import Charts
 
 final class AddSubscriptionDetailViewController: UIViewController {
 
@@ -17,16 +18,31 @@ final class AddSubscriptionDetailViewController: UIViewController {
     // MARK: - Properties
 
     var defaultSubscription: DefaultSubscription?
-    var selectedPlan: Plan!
+    var selectedPlan: DefaultSubscription.Plan! {
+        didSet {
+            self.planNameLabel.text = selectedPlan.name
+            self.planPriceLabel.text =  "\(selectedPlan.price)원/\(selectedPlan.cycle.rawValue)"
+        }
+    }
 
     // MARK: - Outlets
 
     // Default
 
-    @IBOutlet weak var selectPlanContainerView: UIStackView!
-    @IBOutlet weak var selectPlanView: UIView!
+    @IBOutlet weak var defaualtSubscriptionView: UIStackView!
+    @IBOutlet weak var planMenuView: UIView!
     @IBOutlet weak var planNameLabel: UILabel!
     @IBOutlet weak var planPriceLabel: UILabel!
+    lazy var planMenu: DropDown = {
+        let dropDown = DropDown()
+        dropDown.anchorView = planMenuView
+        dropDown.backgroundColor = .white
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.cellHeight = 64
+        dropDown.cornerRadius = Metric.radius
+        dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
+        return dropDown
+    }()
 
     // Custom
 
@@ -37,7 +53,6 @@ final class AddSubscriptionDetailViewController: UIViewController {
 
     // Common
 
-    @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var cycleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var startDateDatePicker: UIDatePicker!
     @IBOutlet weak var userIdTextField: UITextField!
@@ -52,48 +67,33 @@ final class AddSubscriptionDetailViewController: UIViewController {
     }
 
     private func setupView() {
-        selectPlanView.layer.cornerRadius = Metric.radius
         doneButton.layer.cornerRadius = Metric.radius
         startDateDatePicker.backgroundColor = .white
         startDateDatePicker.layer.cornerRadius = Metric.radius
         startDateDatePicker.layer.masksToBounds = true
 
         if let defaultSubscription = defaultSubscription {
-            containerView.removeArrangedSubview(customSubscriptionView)
             customSubscriptionView.removeFromSuperview()
+            planMenuView.layer.cornerRadius = Metric.radius
             selectedPlan = defaultSubscription.plans[0]
-            planNameLabel.text = selectedPlan.name
-            planPriceLabel.text = "\(selectedPlan.price)원/\(selectedPlan.cycle.rawValue)"
+            planMenu.dataSource = defaultSubscription.plans.map { $0.name }
+            planMenu.customCellConfiguration = { index, _, cell in
+                guard let cell = cell as? SelectPlanCell else { return }
+                let plan = defaultSubscription.plans[index]
+                cell.configure(with: plan)
+            }
+            planMenu.selectionAction = { index, _ in
+                self.selectedPlan = defaultSubscription.plans[index]
+            }
         } else {
-            selectPlanContainerView.removeFromSuperview()
-            containerView.removeArrangedSubview(selectPlanContainerView)
+            defaualtSubscriptionView.removeFromSuperview()
         }
     }
 
     // MARK: - Actions
 
-    @IBAction func selctPlanButtonDidTap(_ sender: UIButton) {
-        guard let defaultSubscription = defaultSubscription else { return }
-        let dropDown = DropDown()
-        dropDown.anchorView = selectPlanView
-        dropDown.backgroundColor = .white
-        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
-        dropDown.cellHeight = 64
-        dropDown.cornerRadius = Metric.radius
-        dropDown.dataSource = defaultSubscription.plans.map { $0.name }
-        dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
-        dropDown.customCellConfiguration = { index, _, cell in
-            guard let cell = cell as? SelectPlanCell else { return }
-            let target = defaultSubscription.plans[index]
-            cell.optionLabel.text = target.name
-            cell.priceLabel.text = "\(target.price)원/\(target.cycle.rawValue)"
-        }
-        dropDown.selectionAction = { index, _ in
-            let target = defaultSubscription.plans[index]
-            self.planNameLabel.text = target.name
-            self.planPriceLabel.text = "\(target.price)원/\(target.cycle.rawValue)"
-        }
-        dropDown.show()
+    @IBAction func planMenuViewDidTap(_ sender: Any) {
+        planMenu.show()
     }
 
     @IBAction func doneButtonDidTap(_ sender: Any) {

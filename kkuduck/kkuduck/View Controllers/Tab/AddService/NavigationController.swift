@@ -13,6 +13,8 @@ final class NavigationController: UINavigationController {
         static let navigaionBar = UIFont(name: "GmarketSansBold", size: 18)
     }
 
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,7 @@ final class NavigationController: UINavigationController {
         navigationBarAppearance.backgroundColor = .primary
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationBar.standardAppearance = navigationBarAppearance
+        navigationBar.tintColor = .label
         navigationBar.shadowImage = UIImage()
     }
 
