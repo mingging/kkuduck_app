@@ -73,4 +73,9 @@ extension AddSubscriptionListViewController: UICollectionViewDelegate, UICollect
         performSegue(withIdentifier: Segue.showDetail.rawValue, sender: defaultSubscription)
     }
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.contentView.layer.masksToBounds = true
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+    }
+
 }

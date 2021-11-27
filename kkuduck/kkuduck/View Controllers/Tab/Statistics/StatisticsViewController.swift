@@ -23,7 +23,6 @@ class StatisticsViewController: UIViewController {
         segmentControl.titleTextAttributes(for: .normal)
         segmentControl.selectedSegmentTintColor = UIColor(hex: "#FDAC53ff")
         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-
     }
 
     // segmentControl

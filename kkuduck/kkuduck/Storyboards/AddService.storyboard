@@ -158,11 +158,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xge-WT-gtd">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xge-WT-gtd">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-vR-3PW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1010"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wAN-hG-zjS">
                                                 <rect key="frame" x="20" y="20" width="374" height="68"/>
@@ -181,8 +181,8 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-Lw-hio">
-                                                <rect key="frame" x="20" y="117" width="374" height="87"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-Lw-hio">
+                                                <rect key="frame" x="20" y="117" width="374" height="85"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플랜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWt-wN-ljd">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -191,52 +191,73 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Tr-Ax-9Sl">
-                                                        <rect key="frame" x="0.0" y="21" width="374" height="66"/>
+                                                        <rect key="frame" x="0.0" y="21" width="374" height="64"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="베이식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-I3-spE">
-                                                                <rect key="frame" x="20" y="14" width="334" height="15"/>
-                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
-                                                                <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,500원 / 월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTY-r8-Awb">
-                                                                <rect key="frame" x="20" y="37" width="334" height="15"/>
-                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nm-7a-ijA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="64"/>
-                                                                <state key="normal" image="down_arrow.png"/>
-                                                                <connections>
-                                                                    <action selector="selctPlanButtonDidTap:" destination="nYZ-ML-ujL" eventType="touchUpInside" id="ARa-P0-sH1"/>
-                                                                </connections>
-                                                            </button>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cIZ-p8-L1r">
+                                                                <rect key="frame" x="335.5" y="27" width="18.5" height="10.5"/>
+                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </imageView>
+                                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m65-vO-5Th">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="베이식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-I3-spE">
+                                                                        <rect key="frame" x="20" y="10" width="334" height="22"/>
+                                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                                        <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,500원 / 월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTY-r8-Awb">
+                                                                        <rect key="frame" x="20" y="32" width="334" height="22"/>
+                                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <gestureRecognizers/>
+                                                                <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="20" bottom="10" trailing="20"/>
+                                                            </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="ZZn-I3-spE" secondAttribute="trailing" constant="20" id="5oe-dS-a5F"/>
-                                                            <constraint firstItem="BTY-r8-Awb" firstAttribute="top" secondItem="ZZn-I3-spE" secondAttribute="bottom" constant="8" id="Dr7-He-upZ"/>
-                                                            <constraint firstAttribute="bottom" secondItem="BTY-r8-Awb" secondAttribute="bottom" constant="14" id="H6m-fT-QpU"/>
-                                                            <constraint firstItem="1nm-7a-ijA" firstAttribute="firstBaseline" secondItem="ZZn-I3-spE" secondAttribute="baseline" id="IEI-UA-iZz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="1nm-7a-ijA" secondAttribute="trailing" constant="20" id="VnW-Oi-dmL"/>
-                                                            <constraint firstAttribute="trailing" secondItem="BTY-r8-Awb" secondAttribute="trailing" constant="20" id="Y5V-9n-20S"/>
-                                                            <constraint firstItem="BTY-r8-Awb" firstAttribute="leading" secondItem="8Tr-Ax-9Sl" secondAttribute="leading" constant="20" id="eQj-tR-Svc"/>
-                                                            <constraint firstItem="ZZn-I3-spE" firstAttribute="leading" secondItem="8Tr-Ax-9Sl" secondAttribute="leading" constant="20" id="fAE-ca-Se7"/>
-                                                            <constraint firstItem="1nm-7a-ijA" firstAttribute="top" secondItem="8Tr-Ax-9Sl" secondAttribute="topMargin" constant="-8" id="hPq-qQ-eIC"/>
-                                                            <constraint firstItem="ZZn-I3-spE" firstAttribute="top" secondItem="8Tr-Ax-9Sl" secondAttribute="top" constant="14" id="n6s-cN-Nkx"/>
-                                                            <constraint firstItem="BTY-r8-Awb" firstAttribute="centerX" secondItem="ZZn-I3-spE" secondAttribute="centerX" id="nGt-Dv-N8A"/>
-                                                            <constraint firstItem="1nm-7a-ijA" firstAttribute="leading" secondItem="8Tr-Ax-9Sl" secondAttribute="leadingMargin" constant="-8" id="tN8-1Q-CLQ"/>
-                                                            <constraint firstItem="BTY-r8-Awb" firstAttribute="centerX" secondItem="ZZn-I3-spE" secondAttribute="centerX" id="ynD-4G-5UJ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="m65-vO-5Th" secondAttribute="bottom" id="6lw-0v-0uX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="m65-vO-5Th" secondAttribute="trailing" id="ESi-WO-wdM"/>
+                                                            <constraint firstAttribute="height" constant="64" id="Ewc-wA-cqg"/>
+                                                            <constraint firstItem="m65-vO-5Th" firstAttribute="leading" secondItem="8Tr-Ax-9Sl" secondAttribute="leading" id="PaT-VG-jHl"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cIZ-p8-L1r" secondAttribute="trailing" constant="20" id="erR-LA-ePc"/>
+                                                            <constraint firstItem="cIZ-p8-L1r" firstAttribute="centerY" secondItem="8Tr-Ax-9Sl" secondAttribute="centerY" id="hzN-Ge-9fg"/>
+                                                            <constraint firstItem="m65-vO-5Th" firstAttribute="top" secondItem="8Tr-Ax-9Sl" secondAttribute="top" id="sSF-13-FVD"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="hPo-ug-OhM" appends="YES" id="eXt-tI-iCP"/>
+                                                        </connections>
                                                     </view>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="PO8-BE-aou">
-                                                <rect key="frame" x="20" y="233" width="374" height="219"/>
+                                                <rect key="frame" x="20" y="231" width="374" height="303"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-1K-x00">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-SW-PyI">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독서비스 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDH-oZ-q4w">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gfJ-ig-37R">
+                                                                <rect key="frame" x="0.0" y="21" width="374" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="13"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="nYZ-ML-ujL" id="uav-fF-ku7"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-1K-x00">
+                                                        <rect key="frame" x="0.0" y="84" width="374" height="55"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플랜 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDb-n7-2HM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -255,7 +276,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-91-UXD">
-                                                        <rect key="frame" x="0.0" y="84" width="374" height="55"/>
+                                                        <rect key="frame" x="0.0" y="168" width="374" height="55"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플랜 가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z11-ER-ACP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -274,7 +295,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CJ8-87-cyi">
-                                                        <rect key="frame" x="0.0" y="168" width="374" height="51"/>
+                                                        <rect key="frame" x="0.0" y="252" width="374" height="51"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA7-sp-r1L">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -296,8 +317,38 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-tb-HfY">
+                                                <rect key="frame" x="20" y="563" width="374" height="53"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 사용 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWr-wA-icH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="13W-zd-A8m">
+                                                        <rect key="frame" x="0.0" y="21" width="374" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmd-Dr-KNx">
+                                                                <rect key="frame" x="10" y="9.5" width="262" height="13"/>
+                                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="KwQ-mR-SYV">
+                                                                <rect key="frame" x="280" y="0.0" width="94" height="32"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <action selector="shareCountStepperValueChanged:" destination="nYZ-ML-ujL" eventType="valueChanged" id="YeM-Mo-oPb"/>
+                                                                </connections>
+                                                            </stepper>
+                                                        </subviews>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="10" bottom="0.0" trailing="0.0"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ilw-ol-b3O">
-                                                <rect key="frame" x="20" y="481" width="374" height="183"/>
+                                                <rect key="frame" x="20" y="645" width="374" height="183"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 시작일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-cn-TwZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -316,7 +367,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BIv-RS-bgG">
-                                                <rect key="frame" x="20" y="693" width="374" height="55"/>
+                                                <rect key="frame" x="20" y="857" width="374" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 서비스 아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5l-9C-Icc">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
@@ -327,7 +378,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9w-nI-ABs">
                                                         <rect key="frame" x="0.0" y="21" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="13"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="nYZ-ML-ujL" id="EGR-3a-YNK"/>
                                                         </connections>
@@ -335,7 +386,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9T-gQ-chm">
-                                                <rect key="frame" x="20" y="777" width="374" height="49"/>
+                                                <rect key="frame" x="20" y="941" width="374" height="49"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="rVJ-ZP-YLu"/>
@@ -349,7 +400,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <edgeInsets key="layoutMargins" top="20" left="20" bottom="0.0" right="20"/>
+                                        <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -374,23 +425,30 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="zyT-9J-qYs"/>
                     <connections>
-                        <outlet property="containerView" destination="hf3-vR-3PW" id="R9A-Mw-5Qw"/>
-                        <outlet property="customPlanContainerView" destination="PO8-BE-aou" id="h2n-W2-siw"/>
+                        <outlet property="customSubscriptionView" destination="PO8-BE-aou" id="h2n-W2-siw"/>
                         <outlet property="cycleSegmentedControl" destination="qGM-zU-ihP" id="Pce-7E-6vd"/>
+                        <outlet property="defaualtSubscriptionView" destination="Mcq-Lw-hio" id="lfi-UP-qdN"/>
                         <outlet property="doneButton" destination="I9T-gQ-chm" id="qEy-ia-QbW"/>
+                        <outlet property="planMenuView" destination="8Tr-Ax-9Sl" id="4x6-DT-bvq"/>
                         <outlet property="planNameLabel" destination="ZZn-I3-spE" id="bnQ-UX-kAm"/>
                         <outlet property="planNameTextField" destination="gfB-uy-IEs" id="jFd-Qb-rMh"/>
                         <outlet property="planPriceLabel" destination="BTY-r8-Awb" id="lCw-3C-Taw"/>
                         <outlet property="planPriceTextField" destination="MFG-X8-dPM" id="pp5-xr-3Sa"/>
-                        <outlet property="selectPlanContainerView" destination="Mcq-Lw-hio" id="lfi-UP-qdN"/>
-                        <outlet property="selectPlanView" destination="8Tr-Ax-9Sl" id="4x6-DT-bvq"/>
-                        <outlet property="serviceIdentifierTextField" destination="K9w-nI-ABs" id="8EU-Oi-DFT"/>
+                        <outlet property="serviceNameTextField" destination="gfJ-ig-37R" id="qIz-Ia-Xl5"/>
+                        <outlet property="shareCountLabel" destination="Rmd-Dr-KNx" id="OKo-tz-oHe"/>
+                        <outlet property="shareCountStepper" destination="KwQ-mR-SYV" id="cpc-ea-gYI"/>
+                        <outlet property="shareIdTextField" destination="K9w-nI-ABs" id="8EU-Oi-DFT"/>
                         <outlet property="startDateDatePicker" destination="qP7-OL-pO3" id="PLQ-XC-c7Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6L-oT-OyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hPo-ug-OhM">
+                    <connections>
+                        <action selector="planMenuViewDidTap:" destination="nYZ-ML-ujL" id="GuB-mP-GfF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3319" y="858"/>
+            <point key="canvasLocation" x="3318.840579710145" y="857.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Akz-qx-VdQ">
@@ -400,7 +458,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wo3-rd-kFK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="primary"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Xyu-8j-C61" kind="relationship" relationship="rootViewController" id="saJ-WG-8WF"/>
@@ -413,7 +471,7 @@
     </scenes>
     <resources>
         <image name="add_icon.png" width="18" height="18"/>
-        <image name="down_arrow.png" width="12" height="12"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="primary">
             <color red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

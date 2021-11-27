@@ -9,6 +9,12 @@ import UIKit
 
 final class NavigationController: UINavigationController {
 
+    private enum Font {
+        static let navigaionBar = UIFont(name: "GmarketSansBold", size: 18)
+    }
+
+    // MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,13 +23,14 @@ final class NavigationController: UINavigationController {
 
     private func setupView() {
         let navigationBarAppearance = UINavigationBarAppearance()
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansBold", size: 18)!]
+        let attributes = [NSAttributedString.Key.font: Font.navigaionBar!]
         navigationBarAppearance.titleTextAttributes = attributes
         navigationBarAppearance.buttonAppearance.normal.titleTextAttributes = attributes
         navigationBarAppearance.doneButtonAppearance.normal.titleTextAttributes = attributes
         navigationBarAppearance.backgroundColor = .primary
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationBar.standardAppearance = navigationBarAppearance
+        navigationBar.tintColor = .label
         navigationBar.shadowImage = UIImage()
     }
 

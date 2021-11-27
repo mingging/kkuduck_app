@@ -9,5 +9,16 @@ import UIKit
 import DropDown
 
 final class SelectPlanCell: DropDownCell {
-    @IBOutlet var priceLabel: UILabel!
+
+    // MARK: - Outlets
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+
+    func configure(with plan: DefaultSubscription.Plan) {
+        optionLabel.text = ""
+        nameLabel.text = plan.name
+        priceLabel.text = "\(plan.price)원/\(plan.cycle.rawValue)"
+    }
+
 }

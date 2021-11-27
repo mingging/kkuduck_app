@@ -7,36 +7,62 @@
 
 import UIKit
 import DropDown
+import Charts
 
 final class AddSubscriptionDetailViewController: UIViewController {
 
+    private enum Metric {
+        static let cornerRadius: CGFloat = 10
+    }
+
     // MARK: - Properties
 
-    var writeSubInfo: NSMutableArray?
     var defaultSubscription: DefaultSubscription?
-    var selectedPlan: Plan!
+    var selectedPlan: DefaultSubscription.Plan! {
+        didSet {
+            self.planNameLabel.text = selectedPlan.name
+            self.planPriceLabel.text =  "\(selectedPlan.price)원/\(selectedPlan.cycle.rawValue)"
+        }
+    }
+    var shareCount: Int = 1 {
+        didSet {
+            self.shareCountLabel.text = "\(shareCount)명"
+        }
+    }
 
     // MARK: - Outlets
 
     // Default
 
-    @IBOutlet weak var selectPlanContainerView: UIStackView!
-    @IBOutlet weak var selectPlanView: UIView!
+    @IBOutlet weak var defaualtSubscriptionView: UIStackView!
+    @IBOutlet weak var planMenuView: UIView!
     @IBOutlet weak var planNameLabel: UILabel!
     @IBOutlet weak var planPriceLabel: UILabel!
+    lazy var planMenu: DropDown = {
+        let dropDown = DropDown()
+        dropDown.anchorView = planMenuView
+        dropDown.backgroundColor = .white
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.cellHeight = 64
+        dropDown.cornerRadius = Metric.cornerRadius
+        dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
+        return dropDown
+    }()
 
     // Custom
 
-    @IBOutlet weak var customPlanContainerView: UIStackView!
+    @IBOutlet weak var customSubscriptionView: UIStackView!
+    @IBOutlet weak var serviceNameTextField: UITextField!
     @IBOutlet weak var planNameTextField: UITextField!
     @IBOutlet weak var planPriceTextField: UITextField!
 
     // Common
 
-    @IBOutlet weak var containerView: UIStackView!
+    @IBOutlet weak var shareCountLabel: UILabel!
+    @IBOutlet weak var shareCountStepper: UIStepper!
     @IBOutlet weak var cycleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var startDateDatePicker: UIDatePicker!
-    @IBOutlet weak var serviceIdentifierTextField: UITextField!
+    @IBOutlet weak var shareIdTextField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
 
     // MARK: - View Life Cycle
@@ -44,81 +70,81 @@ final class AddSubscriptionDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        writeSubInfo = NSMutableArray(contentsOfFile: getFileName("writeSubscription.plist"))
         setupView()
     }
 
     private func setupView() {
-        selectPlanView.layer.cornerRadius = 5
-        doneButton.layer.cornerRadius = 5
+        doneButton.layer.cornerRadius = Metric.cornerRadius
+        shareCountStepper.layer.cornerRadius = Metric.cornerRadius
+        startDateDatePicker.backgroundColor = .white
+        startDateDatePicker.layer.cornerRadius = Metric.cornerRadius
+        startDateDatePicker.layer.masksToBounds = true
 
         if let defaultSubscription = defaultSubscription {
-            containerView.removeArrangedSubview(customPlanContainerView)
-            customPlanContainerView.removeFromSuperview()
+            customSubscriptionView.removeFromSuperview()
+            planMenuView.layer.cornerRadius = Metric.cornerRadius
             selectedPlan = defaultSubscription.plans[0]
-            planNameLabel.text = selectedPlan.name
-            planPriceLabel.text = "\(selectedPlan.price)원/\(selectedPlan.cycle)"
+            planMenu.dataSource = defaultSubscription.plans.map { $0.name }
+            planMenu.customCellConfiguration = { index, _, cell in
+                guard let cell = cell as? SelectPlanCell else { return }
+                let plan = defaultSubscription.plans[index]
+                cell.configure(with: plan)
+            }
+            planMenu.selectionAction = { index, _ in
+                self.selectedPlan = defaultSubscription.plans[index]
+            }
         } else {
-            selectPlanContainerView.removeFromSuperview()
-            containerView.removeArrangedSubview(selectPlanContainerView)
+            defaualtSubscriptionView.removeFromSuperview()
         }
     }
 
     // MARK: - Actions
 
-    @IBAction func selctPlanButtonDidTap(_ sender: UIButton) {
-        guard let defaultSubscription = defaultSubscription else { return }
-        let dropDown = DropDown()
-        dropDown.anchorView = selectPlanView
-        dropDown.backgroundColor = .white
-        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
-        dropDown.cellHeight = 64
-        dropDown.cornerRadius = 5
-        dropDown.dataSource = defaultSubscription.plans.map { $0.name }
-        dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
-        dropDown.customCellConfiguration = { index, _, cell in
-            guard let cell = cell as? SelectPlanCell else { return }
-            let target = defaultSubscription.plans[index]
-            cell.optionLabel.text = target.name
-            cell.priceLabel.text = "\(target.price)원/\(target.cycle)"
-        }
-        dropDown.selectionAction = { index, _ in
-            let target = defaultSubscription.plans[index]
-            self.planNameLabel.text = target.name
-            self.planPriceLabel.text = "\(target.price)원/\(target.cycle)"
-        }
-        dropDown.show()
+    @IBAction func planMenuViewDidTap(_ sender: Any) {
+        planMenu.show()
     }
 
     @IBAction func doneButtonDidTap(_ sender: Any) {
-        var subscription: [String: Any] = [:]
-
-        subscription["subserviceID"] = serviceIdentifierTextField.text
-        subscription["subStartDay"] = CustomDateFormatter.string(from: startDateDatePicker.date)
-
-        if let service = defaultSubscription,
-           let selectedPlan = selectedPlan {
-            subscription["planName"] = service.name
-            subscription["planPrice"] = selectedPlan.price
-            subscription["cycle"] = selectedPlan.cycle
-            subscription["img"] = service.imageUrl
+        var subscription: Subscription!
+        if let defaultSubscription = defaultSubscription, let selectedPlan = selectedPlan {
+            subscription = Subscription(
+                serviceName: defaultSubscription.name,
+                planName: selectedPlan.name,
+                planPrice: selectedPlan.price,
+                cycle: selectedPlan.cycle,
+                shareCount: shareCount,
+                startDate: startDateDatePicker.date,
+                endDate: nil,
+                imageUrl: defaultSubscription.imageUrl,
+                shareId: shareIdTextField.text
+            )
         } else {
-            subscription["img"] = ""
-            subscription["planPrice"] = Int(planPriceTextField.text ?? "0") ?? 0
-            subscription["planName"] = planNameTextField.text
-            let cycle = cycleSegmentedControl.titleForSegment(at: cycleSegmentedControl.selectedSegmentIndex)
-            subscription["cycle"] = cycle
+            if let serviceName = serviceNameTextField.text,
+               let planName = planNameTextField.text,
+               let planPrice = Int(planPriceTextField.text!) {
+                subscription = Subscription(
+                    serviceName: serviceName,
+                    planName: planName,
+                    planPrice: planPrice,
+                    cycle: Cycle.allCases[cycleSegmentedControl.selectedSegmentIndex],
+                    shareCount: shareCount,
+                    startDate: startDateDatePicker.date,
+                    endDate: nil,
+                    imageUrl: "",
+                    shareId: shareIdTextField.text
+                )
+            }
         }
-
-        guard let writeSubInfo = writeSubInfo else { return }
-        writeSubInfo.add(subscription)
-        writeSubInfo.write(toFile: getFileName("writeSubscription.plist"), atomically: true)
-
+        LocalSubscriptionRepository.save(subscription: subscription)
         navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func shareCountStepperValueChanged(_ sender: UIStepper) {
+        shareCount = Int(sender.value)
+    }
     // textfield 입력시 keyboard 제어
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 
@@ -129,7 +155,12 @@ final class AddSubscriptionDetailViewController: UIViewController {
 extension AddSubscriptionDetailViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        switch textField {
+        case planNameTextField:
+            planPriceTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
         return true
     }
 
