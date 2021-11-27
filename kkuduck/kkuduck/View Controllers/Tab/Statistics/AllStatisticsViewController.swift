@@ -33,7 +33,7 @@ class AllStatisticsViewController: UIViewController {
         let chartDataSet = PieChartDataSet(entries: allChartEntries, label: "테스트")
         let chartData = PieChartData(dataSet: chartDataSet)
 
-        let colors = [UIColor(hex: "#A2E9FCff"), UIColor(hex: "#F8D495ff")]
+        let colors = [UIColor.primary, UIColor.secondary]
         chartDataSet.colors = colors as! [NSUIColor]
 
         pieChart.data = chartData

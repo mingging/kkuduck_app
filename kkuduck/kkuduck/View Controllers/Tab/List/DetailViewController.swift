@@ -20,10 +20,27 @@ class DetailViewController: UIViewController {
     @IBOutlet var startDate: UILabel!
     @IBOutlet var endDate: UILabel!
     @IBOutlet var nextDate: UILabel!
+    @IBOutlet var editButton: UIButton!
+    @IBOutlet var deleteButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        editButton.layer.cornerRadius = 15
+        editButton.layer.shadowColor = UIColor.black.cgColor
+        editButton.layer.shadowOpacity = 0.2
+        editButton.layer.shadowRadius = 10
+        editButton.layer.shadowOffset = CGSize(width: 1, height: 2)
+        editButton.layer.masksToBounds = false
+        editButton.layer.shadowPath = UIBezierPath(roundedRect: editButton.bounds, cornerRadius: editButton.layer.cornerRadius).cgPath
+
+        deleteButton.layer.cornerRadius = 15
+        deleteButton.layer.shadowColor = UIColor.black.cgColor
+        deleteButton.layer.shadowOpacity = 0.2
+        deleteButton.layer.shadowRadius = 10
+        deleteButton.layer.shadowOffset = CGSize(width: 1, height: 2)
+        deleteButton.layer.masksToBounds = false
+        deleteButton.layer.shadowPath = UIBezierPath(roundedRect: deleteButton.bounds, cornerRadius: deleteButton.layer.cornerRadius).cgPath
     }
 
     @IBAction func editButton(_ sender: UIButton) {

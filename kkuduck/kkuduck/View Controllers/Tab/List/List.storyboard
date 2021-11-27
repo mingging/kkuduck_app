@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,140 +14,8 @@
         <array key="GmarketSansBold.otf">
             <string>GmarketSansBold</string>
         </array>
-        <array key="GmarketSansMedium.otf">
-            <string>GmarketSansMedium</string>
-        </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="AjS-rs-vOD">
-            <objects>
-                <viewController id="Utf-Gy-Aft" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tb6-n0-dDA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6FD-Mm-tF3">
-                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="yAx-rH-tfR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServiceCell" rowHeight="110" id="B2A-sv-c1R">
-                                        <rect key="frame" x="0.0" y="88.5" width="414" height="110"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B2A-sv-c1R" id="mQP-Bw-AcT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPF-pk-7KX">
-                                                    <rect key="frame" x="20" y="10" width="374" height="90"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D + 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du2-ZV-C93">
-                                                            <rect key="frame" x="312" y="34.5" width="49" height="24"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                            <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9ci-nc-S9m">
-                                                            <rect key="frame" x="79" y="17" width="70.5" height="59"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="넷플릭스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQa-gB-gp7">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="70.5" height="20"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="tzF-jM-L2Z"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="18"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.10.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5u-3k-AEU">
-                                                                    <rect key="frame" x="0.0" y="23" width="70.5" height="18.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="21.5" id="6Ad-Uy-05A"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9900원 / 월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9M-hx-TH6">
-                                                                    <rect key="frame" x="0.0" y="44.5" width="70.5" height="14.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="14.5" id="Ek5-q3-t1g"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="KNd-YC-3sg">
-                                                            <rect key="frame" x="13" y="24" width="45" height="45"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="KNd-YC-3sg" secondAttribute="height" multiplier="1:1" id="AZj-h6-ex5"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="FdV-7n-kSV"/>
-                                                                <constraint firstAttribute="width" constant="45" id="JhS-M1-e6S"/>
-                                                                <constraint firstAttribute="height" constant="45" id="lqs-tv-e9G"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <constraints>
-                                                        <constraint firstItem="du2-ZV-C93" firstAttribute="trailing" secondItem="PPF-pk-7KX" secondAttribute="trailingMargin" constant="-5" id="3AG-UK-MiV"/>
-                                                        <constraint firstItem="KNd-YC-3sg" firstAttribute="centerY" secondItem="9ci-nc-S9m" secondAttribute="centerY" id="5Z6-et-NbX"/>
-                                                        <constraint firstAttribute="bottom" secondItem="9ci-nc-S9m" secondAttribute="bottom" constant="14" id="NsI-h9-kAV"/>
-                                                        <constraint firstItem="KNd-YC-3sg" firstAttribute="leading" secondItem="PPF-pk-7KX" secondAttribute="leading" constant="13" id="OWc-NG-4Ro"/>
-                                                        <constraint firstItem="9ci-nc-S9m" firstAttribute="leading" secondItem="KNd-YC-3sg" secondAttribute="trailing" constant="21" id="Qfd-pO-UrN"/>
-                                                        <constraint firstItem="KNd-YC-3sg" firstAttribute="top" secondItem="PPF-pk-7KX" secondAttribute="top" constant="24" id="SyT-yM-Hrt"/>
-                                                        <constraint firstItem="du2-ZV-C93" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9ci-nc-S9m" secondAttribute="trailing" constant="8" symbolic="YES" id="Uh9-pQ-do6"/>
-                                                        <constraint firstAttribute="trailing" secondItem="du2-ZV-C93" secondAttribute="trailing" constant="13" id="pt6-Bd-Dwg"/>
-                                                        <constraint firstItem="du2-ZV-C93" firstAttribute="centerY" secondItem="9ci-nc-S9m" secondAttribute="centerY" id="qOq-IV-OYk"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="PPF-pk-7KX" secondAttribute="trailing" constant="20" id="X8h-92-dJF"/>
-                                                <constraint firstItem="PPF-pk-7KX" firstAttribute="leading" secondItem="mQP-Bw-AcT" secondAttribute="leading" constant="20" id="gEJ-GZ-CNZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="PPF-pk-7KX" secondAttribute="bottom" constant="10" id="lON-FK-XMf"/>
-                                                <constraint firstItem="PPF-pk-7KX" firstAttribute="top" secondItem="mQP-Bw-AcT" secondAttribute="top" constant="10" id="rxF-xS-vpi"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <outlet property="dDayLabel" destination="du2-ZV-C93" id="Bxq-vh-SyR"/>
-                                            <outlet property="priceLabel" destination="J9M-hx-TH6" id="0a7-YJ-ggh"/>
-                                            <outlet property="stratDateLabel" destination="C5u-3k-AEU" id="VV7-wW-msP"/>
-                                            <outlet property="subscriptionImageView" destination="KNd-YC-3sg" id="uQs-v4-upW"/>
-                                            <outlet property="subscriptionNameLabel" destination="xQa-gB-gp7" id="3L1-CU-rGd"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8JK-jh-2xr"/>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="6FD-Mm-tF3" firstAttribute="bottom" secondItem="8JK-jh-2xr" secondAttribute="bottom" id="6If-Pw-z9p"/>
-                            <constraint firstItem="6FD-Mm-tF3" firstAttribute="top" secondItem="8JK-jh-2xr" secondAttribute="top" constant="30" id="BI2-uU-YHs"/>
-                            <constraint firstItem="6FD-Mm-tF3" firstAttribute="leading" secondItem="8JK-jh-2xr" secondAttribute="leading" id="SiK-du-yzc"/>
-                            <constraint firstItem="6FD-Mm-tF3" firstAttribute="trailing" secondItem="8JK-jh-2xr" secondAttribute="trailing" id="TBO-Ay-NR3"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="list_icon.png" selectedImage="list_icon.png" id="TWA-Pj-q7V"/>
-                    <connections>
-                        <outlet property="searchBar" destination="yAx-rH-tfR" id="3Mz-pC-344"/>
-                        <outlet property="tableView" destination="6FD-Mm-tF3" id="X9T-SG-rXe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yvm-wO-YMh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="759" y="159"/>
-        </scene>
         <!--List View Controller-->
         <scene sceneID="qiB-Pl-wHV">
             <objects>
@@ -168,13 +37,13 @@
                                     <segment title="구독중"/>
                                     <segment title="만료됨"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedSegmentTintColor" name="primary"/>
                                 <connections>
                                     <action selector="onChangeSegment:" destination="onN-QY-mZ7" eventType="valueChanged" id="QO2-xD-veH"/>
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hh5-9u-3hG">
-                                <rect key="frame" x="0.0" y="248" width="414" height="614"/>
+                                <rect key="frame" x="0.0" y="248" width="414" height="565"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServiceCell" rowHeight="110" id="lKl-E4-Tdh" customClass="ServiceCell" customModule="kkuduck" customModuleProvider="target">
@@ -225,7 +94,7 @@
                                                                 <color key="titleColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             </state>
                                                             <buttonConfiguration key="configuration" style="plain" image="chevron.forward" catalog="system">
-                                                                <color key="baseForegroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="baseForegroundColor" name="primary"/>
                                                             </buttonConfiguration>
                                                         </button>
                                                     </subviews>
@@ -279,27 +148,33 @@
                                 <state key="normal" image="gearshape.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCb-sg-eU9">
-                                <rect key="frame" x="334" y="782" width="50" height="50"/>
+                                <rect key="frame" x="334" y="733" width="50" height="50"/>
+                                <color key="backgroundColor" name="secondary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="fEP-2e-G2P"/>
                                     <constraint firstAttribute="height" constant="50" id="onN-GV-xli"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="plus" catalog="system">
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="1" green="0.88235294119999996" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addButton:" destination="onN-QY-mZ7" eventType="touchUpInside" id="diy-Mf-hQ5"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gMy-Gv-y7P"/>
-                        <color key="backgroundColor" red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="primary"/>
                         <constraints>
                             <constraint firstItem="gMy-Gv-y7P" firstAttribute="trailing" secondItem="XCb-sg-eU9" secondAttribute="trailing" constant="30" id="2fe-sc-TIG"/>
                             <constraint firstItem="RN6-Yt-ssF" firstAttribute="top" secondItem="gMy-Gv-y7P" secondAttribute="top" constant="54" id="Z4t-Hn-jBc"/>
@@ -340,7 +215,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="넷플릭스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUf-ph-4Ti">
                                         <rect key="frame" x="0.0" y="0.0" width="104" height="36"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
-                                        <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="를" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLh-ta-Zpi">
@@ -357,7 +232,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMh-hj-RqK">
                                         <rect key="frame" x="0.0" y="0.0" width="33.5" height="36"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
-                                        <color key="textColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일 동안 이용했어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M1-Vg-IFL">
@@ -369,7 +244,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlB-ph-lOQ" customClass="DatailCell" customModule="kkuduck" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="254" width="414" height="428"/>
+                                <rect key="frame" x="0.0" y="254" width="414" height="379"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="RPI-w7-9kZ">
                                         <rect key="frame" x="30" y="10" width="45" height="45"/>
@@ -524,46 +399,33 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYk-Ob-T4C">
-                                <rect key="frame" x="30" y="782" width="150" height="50"/>
+                                <rect key="frame" x="30" y="733" width="150" height="50"/>
+                                <color key="backgroundColor" name="primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WfH-t6-nsh"/>
                                     <constraint firstAttribute="width" secondItem="rYk-Ob-T4C" secondAttribute="height" multiplier="3:1" id="fYx-VO-MZF"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="수정">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <font key="NSFont" size="15" name="GmarketSansBold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseBackgroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="수정">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="editButton:" destination="Lk7-9w-mhN" eventType="touchUpInside" id="U4a-hh-hHO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bw-Ym-r4k">
-                                <rect key="frame" x="244" y="782" width="150" height="50"/>
+                                <rect key="frame" x="244" y="733" width="150" height="50"/>
+                                <color key="backgroundColor" name="primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IR3-ja-KdX"/>
                                     <constraint firstAttribute="width" secondItem="9Bw-Ym-r4k" secondAttribute="height" multiplier="3:1" id="qMD-0X-K55"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="삭제">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="15" name="GmarketSansBold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                                    <color key="baseBackgroundColor" red="0.99215686270000003" green="0.67450980390000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="삭제">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="deleteButton:" destination="Lk7-9w-mhN" eventType="touchUpInside" id="qja-Uj-tw6"/>
                                 </connections>
@@ -589,7 +451,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="oc5-ct-CYd"/>
                     <connections>
+                        <outlet property="deleteButton" destination="9Bw-Ym-r4k" id="41E-wb-KyK"/>
                         <outlet property="detailCellView" destination="wlB-ph-lOQ" id="Vjd-ps-Ynr"/>
+                        <outlet property="editButton" destination="rYk-Ob-T4C" id="YYZ-vA-Uhn"/>
                         <outlet property="endDate" destination="pSv-RL-VXw" id="Etn-vE-Ctz"/>
                         <outlet property="nextDate" destination="Bg3-rB-aYL" id="RiH-yj-FGk"/>
                         <outlet property="planCycle" destination="tgu-j5-FgV" id="aME-Si-ZrX"/>
@@ -609,7 +473,9 @@
         <scene sceneID="D9k-da-1nb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gJE-wb-P8Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="list_icon.png" selectedImage="list_icon.png" id="TWA-Pj-q7V"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="94c-2v-IOL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -631,14 +497,17 @@
         <image name="logo" width="84" height="84"/>
         <image name="logo.png" width="168" height="168"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="primary">
+            <color red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondary">
+            <color red="1" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
