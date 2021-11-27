@@ -27,6 +27,7 @@ final class ServiceCell: UITableViewCell {
         cellView.layer.shadowRadius = 10
         cellView.layer.shadowOffset = CGSize(width: 1, height: 2)
         cellView.layer.masksToBounds = false
+        cellView.layer.shadowPath = UIBezierPath(roundedRect: cellView.bounds, cornerRadius: cellView.layer.cornerRadius).cgPath
 
         endCellView.layer.cornerRadius = 15
 
