@@ -8,15 +8,15 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-    @IBOutlet var segment: UISegmentedControl!
 
     // MARK: - Properties
 
-    private var writeSubInfo: NSMutableArray?
+    private var subscriptions: [Subscription] = []
 
     // MARK: - Outlets
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segment: UISegmentedControl!
 
     // MARK: - View Life Cycle
 
@@ -32,13 +32,16 @@ final class ListViewController: UIViewController {
     // TODO: 왜 테이블뷰에 리로드가 안 되는 것인가??? OK -> 중복코드 개선 방안 ....
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
-        writeSubInfo = LocalSubscriptionRepository.plist
+        LocalSubscriptionRepository.items { subscriptions in
+            self.subscriptions = subscriptions ?? []
+        }
         tableView.reloadData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     // MARK: - Configurations
@@ -50,21 +53,28 @@ final class ListViewController: UIViewController {
     }
 
     @IBAction func onChangeSegment(_ sender: UISegmentedControl) {
-        self.tableView.reloadData()
-    }
-
-    @IBAction func addButton(_ sender: UIButton) {
-
+        tableView.reloadData()
     }
 
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension ListViewController: UITableViewDataSource {
+extension ListViewController: UITableViewDataSource, UITableViewDelegate {
+
+    // MARK: - TODO
+    // 세그먼트를 선택하면 각각의 세그먼트에 관한 데이터를 불러옴
+    // 만료됨 세그먼트를 선택하면 cell에 회색의 블라인드 처리
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        switch segment.selectedSegmentIndex {
+        case 0:
+            return subscriptions.count
+        case 1:
+            return subscriptions.count
+        default:
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,15 +82,13 @@ extension ListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ServiceCell.reuseIdentifier, for: indexPath) as! ServiceCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListSubscriptionCell.reuseIdentifier, for: indexPath) as! ListSubscriptionCell
 
-        let selectedIndex = self.segment.selectedSegmentIndex
-        switch selectedIndex {
+        switch segment.selectedSegmentIndex {
         case 0:
             cell.endCellView.backgroundColor = .clear
             cell.subscriptionNameLabel.text = "네이버"
             return cell
-
         case 1:
             cell.endCellView.backgroundColor = .systemGray6
             cell.endCellView.alpha = 0.5
@@ -119,36 +127,4 @@ extension ListViewController: UITableViewDataSource {
         //        return cell
     }
 
-}
-
-// 세그먼트를 선택하면 각각의 세그먼트에 관한 데이터를 불러옴
-// 만료됨 세그먼트를 선택하면 cell에 회색의 블라인드 처리
-
-// MARK: - UITableViewDelegate
-
-extension ListViewController: UITableViewDelegate {
-    // 테이블뷰에서 셀을 삭제하면 저장된 데이터도 삭제되도록 구현
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .destructive, title: nil) { _, _, completionHandler in
-            self.writeSubInfo?.removeObject(at: indexPath.row)
-            self.writeSubInfo?.write(toFile: LocalSubscriptionRepository.fileURL.path, atomically: true)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            completionHandler(true)
-        }
-        action.image = UIImage(systemName: "trash")
-        action.backgroundColor = .primary
-        return UISwipeActionsConfiguration(actions: [action])
-    }
-
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .destructive, title: nil) { _, _, completionHandler in
-            self.writeSubInfo?.removeObject(at: indexPath.row)
-            self.writeSubInfo?.write(toFile: LocalSubscriptionRepository.fileURL.path, atomically: true)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            completionHandler(true)
-        }
-        action.image = UIImage(systemName: "trash")
-        action.backgroundColor = .primary
-        return UISwipeActionsConfiguration(actions: [action])
-    }
 }
