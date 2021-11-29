@@ -24,60 +24,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-cf-tah">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-U1-sRU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UJ-Xu-l8Q">
-                                        <rect key="frame" x="30" y="100" width="354" height="90"/>
-                                        <string key="text">만나서 반가워요!
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-cf-tah">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UJ-Xu-l8Q">
+                                                <rect key="frame" x="30" y="100" width="354" height="90"/>
+                                                <string key="text">만나서 반가워요!
 꾸덕을 시작하기 전에
 이름을 알려주세요!</string>
-                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="23p-3h-Io2">
-                                        <rect key="frame" x="30" y="412" width="354" height="57"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="사용자 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KG-Sa-hfy">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="13"/>
-                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ynd-IZ-g5m">
-                                                <rect key="frame" x="0.0" y="23" width="354" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="23p-3h-Io2">
+                                                <rect key="frame" x="30" y="412" width="354" height="57"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="사용자 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KG-Sa-hfy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="13"/>
+                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ynd-IZ-g5m">
+                                                        <rect key="frame" x="0.0" y="23" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="qsf-JF-zK4" id="eYW-V5-QX0"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT3-aZ-0aR">
+                                                <rect key="frame" x="30" y="691" width="354" height="27"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                <state key="normal" title="시작하기">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startButtonDidTap:" destination="qsf-JF-zK4" eventType="touchUpInside" id="yQu-7p-R65"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="100" leading="30" bottom="100" trailing="30"/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT3-aZ-0aR">
-                                        <rect key="frame" x="30" y="691" width="354" height="27"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
-                                        <state key="normal" title="시작하기">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="startButtonDidTap:" destination="qsf-JF-zK4" eventType="touchUpInside" id="yQu-7p-R65"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <directionalEdgeInsets key="directionalLayoutMargins" top="100" leading="30" bottom="100" trailing="30"/>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="EdT-cf-tah" firstAttribute="leading" secondItem="RjT-hN-gKt" secondAttribute="leading" id="1Fd-kE-JG2"/>
+                                    <constraint firstItem="EdT-cf-tah" firstAttribute="bottom" secondItem="RjT-hN-gKt" secondAttribute="bottom" id="2bH-i0-TuP"/>
+                                    <constraint firstItem="EdT-cf-tah" firstAttribute="height" secondItem="1ml-IT-tuq" secondAttribute="height" priority="750" id="2is-H4-f3x"/>
+                                    <constraint firstItem="EdT-cf-tah" firstAttribute="width" secondItem="1ml-IT-tuq" secondAttribute="width" id="IMp-g0-DSX"/>
+                                    <constraint firstItem="EdT-cf-tah" firstAttribute="top" secondItem="RjT-hN-gKt" secondAttribute="top" id="MX2-xo-34V"/>
+                                    <constraint firstItem="EdT-cf-tah" firstAttribute="trailing" secondItem="RjT-hN-gKt" secondAttribute="trailing" id="PxK-hf-1CF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="RjT-hN-gKt"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="1ml-IT-tuq"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nUp-Y1-Gsl"/>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
-                            <constraint firstItem="EdT-cf-tah" firstAttribute="leading" secondItem="nUp-Y1-Gsl" secondAttribute="leading" id="hd3-Po-CQh"/>
-                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="trailing" secondItem="EdT-cf-tah" secondAttribute="trailing" id="jER-Jj-1xD"/>
-                            <constraint firstItem="EdT-cf-tah" firstAttribute="top" secondItem="nUp-Y1-Gsl" secondAttribute="top" id="rvP-ij-nqG"/>
-                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="bottom" secondItem="EdT-cf-tah" secondAttribute="bottom" id="vGq-eU-g4d"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="leading" secondItem="Doc-U1-sRU" secondAttribute="leading" id="3yc-Nd-LNe"/>
+                            <constraint firstItem="nUp-Y1-Gsl" firstAttribute="top" secondItem="Doc-U1-sRU" secondAttribute="top" id="HOb-ZV-NVJ"/>
+                            <constraint firstItem="Doc-U1-sRU" firstAttribute="trailing" secondItem="nUp-Y1-Gsl" secondAttribute="trailing" id="exo-fj-eEz"/>
+                            <constraint firstItem="Doc-U1-sRU" firstAttribute="bottom" secondItem="nUp-Y1-Gsl" secondAttribute="bottom" id="vM5-12-tyj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zHc-XM-Fd3"/>
                     <connections>
+                        <outlet property="scrollView" destination="Doc-U1-sRU" id="5Dc-lg-iRr"/>
                         <outlet property="startButton" destination="dT3-aZ-0aR" id="o86-hM-Eil"/>
                         <outlet property="usernameLabel" destination="Ynd-IZ-g5m" id="vq0-jV-bE0"/>
                     </connections>
