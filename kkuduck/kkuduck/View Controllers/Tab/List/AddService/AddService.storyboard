@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m3p-e5-eVa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m3p-e5-eVa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,25 +30,25 @@
                                 <rect key="frame" x="20" y="108" width="374" height="754"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="4fy-yr-qoB">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="637"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="652"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JYA-u5-HrK">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="106"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="121"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아래 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnm-CV-hRU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 사용 중인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5g-E7-2zX">
-                                                        <rect key="frame" x="0.0" y="38" width="374" height="30"/>
+                                                        <rect key="frame" x="0.0" y="43" width="374" height="35"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스가 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxX-a1-hId">
-                                                        <rect key="frame" x="0.0" y="76" width="374" height="30"/>
+                                                        <rect key="frame" x="0.0" y="86" width="374" height="35"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                                 </subviews>
                                             </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nXW-px-dMN">
-                                                <rect key="frame" x="0.0" y="137" width="374" height="500"/>
+                                                <rect key="frame" x="0.0" y="152" width="374" height="500"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" constant="500" id="vM4-lP-k65"/>
@@ -86,7 +86,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="넷플릭스" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdM-v3-qFj">
-                                                                            <rect key="frame" x="15.5" y="34.5" width="38.5" height="34.5"/>
+                                                                            <rect key="frame" x="17" y="34.5" width="35" height="34.5"/>
                                                                             <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="10"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwN-rM-P4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2547.826086956522" y="857.8125"/>
+            <point key="canvasLocation" x="2499" y="1001"/>
         </scene>
         <!--Add Subscription Detail View Controller-->
         <scene sceneID="EJq-dy-Yyx">
@@ -162,36 +162,36 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-vR-3PW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1010"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1041"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wAN-hG-zjS">
-                                                <rect key="frame" x="20" y="20" width="374" height="68"/>
+                                                <rect key="frame" x="20" y="20" width="374" height="79"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가 정보를" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTz-KT-WzL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입력해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yK-um-7dz">
-                                                        <rect key="frame" x="0.0" y="38" width="374" height="30"/>
-                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                                        <rect key="frame" x="0.0" y="43" width="374" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-Lw-hio">
-                                                <rect key="frame" x="20" y="117" width="374" height="85"/>
+                                                <rect key="frame" x="20" y="128" width="374" height="87.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플랜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWt-wN-ljd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="15.5"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Tr-Ax-9Sl">
-                                                        <rect key="frame" x="0.0" y="21" width="374" height="64"/>
+                                                        <rect key="frame" x="0.0" y="23.5" width="374" height="64"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cIZ-p8-L1r">
                                                                 <rect key="frame" x="335.5" y="27" width="18.5" height="10.5"/>
@@ -235,19 +235,19 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="PO8-BE-aou">
-                                                <rect key="frame" x="20" y="231" width="374" height="303"/>
+                                                <rect key="frame" x="20" y="244.5" width="374" height="313"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-SW-PyI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독서비스 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDH-oZ-q4w">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gfJ-ig-37R">
-                                                                <rect key="frame" x="0.0" y="21" width="374" height="34"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                                 <connections>
@@ -257,16 +257,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-1K-x00">
-                                                        <rect key="frame" x="0.0" y="84" width="374" height="55"/>
+                                                        <rect key="frame" x="0.0" y="86.5" width="374" height="57.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플랜 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDb-n7-2HM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gfB-uy-IEs">
-                                                                <rect key="frame" x="0.0" y="21" width="374" height="34"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                                 <connections>
@@ -276,16 +276,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-91-UXD">
-                                                        <rect key="frame" x="0.0" y="168" width="374" height="55"/>
+                                                        <rect key="frame" x="0.0" y="173" width="374" height="57.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플랜 가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z11-ER-ACP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MFG-X8-dPM">
-                                                                <rect key="frame" x="0.0" y="21" width="374" height="34"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                                 <connections>
@@ -295,16 +295,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CJ8-87-cyi">
-                                                        <rect key="frame" x="0.0" y="252" width="374" height="51"/>
+                                                        <rect key="frame" x="0.0" y="259.5" width="374" height="53.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA7-sp-r1L">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-zU-ihP">
-                                                                <rect key="frame" x="0.0" y="21" width="374" height="31"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="374" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="xDD-oZ-NRN"/>
                                                                 </constraints>
@@ -318,19 +318,19 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-tb-HfY">
-                                                <rect key="frame" x="20" y="563" width="374" height="53"/>
+                                                <rect key="frame" x="20" y="586.5" width="374" height="55.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 사용 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWr-wA-icH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="15.5"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="13W-zd-A8m">
-                                                        <rect key="frame" x="0.0" y="21" width="374" height="32"/>
+                                                        <rect key="frame" x="0.0" y="23.5" width="374" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmd-Dr-KNx">
-                                                                <rect key="frame" x="10" y="9.5" width="262" height="13"/>
+                                                                <rect key="frame" x="10" y="8.5" width="262" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -348,16 +348,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ilw-ol-b3O">
-                                                <rect key="frame" x="20" y="645" width="374" height="183"/>
+                                                <rect key="frame" x="20" y="671" width="374" height="185.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 시작일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-cn-TwZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="15.5"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="qP7-OL-pO3">
-                                                        <rect key="frame" x="0.0" y="21" width="374" height="162"/>
+                                                        <rect key="frame" x="0.0" y="23.5" width="374" height="162"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="162" id="RY7-eq-BJg"/>
@@ -367,16 +367,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BIv-RS-bgG">
-                                                <rect key="frame" x="20" y="857" width="374" height="55"/>
+                                                <rect key="frame" x="20" y="885.5" width="374" height="57.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 서비스 아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5l-9C-Icc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="13"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="15.5"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9w-nI-ABs">
-                                                        <rect key="frame" x="0.0" y="21" width="374" height="34"/>
+                                                        <rect key="frame" x="0.0" y="23.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="13"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                                         <connections>
@@ -386,7 +386,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9T-gQ-chm">
-                                                <rect key="frame" x="20" y="941" width="374" height="49"/>
+                                                <rect key="frame" x="20" y="972" width="374" height="49"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="rVJ-ZP-YLu"/>
@@ -448,13 +448,14 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3318.840579710145" y="857.8125"/>
+            <point key="canvasLocation" x="3270" y="1001"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Akz-qx-VdQ">
             <objects>
                 <navigationController storyboardIdentifier="UINavigationController-m3p-e5-eVa" hidesBottomBarWhenPushed="YES" id="m3p-e5-eVa" customClass="NavigationController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="add_icon.png" selectedImage="add_icon.png" id="6PW-tN-aY9"/>
+                    <navigationItem key="navigationItem" id="4QK-Zs-fop"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wo3-rd-kFK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -466,7 +467,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMj-md-M11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="858"/>
+            <point key="canvasLocation" x="1696" y="1001"/>
         </scene>
     </scenes>
     <resources>
