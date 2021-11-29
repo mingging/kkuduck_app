@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCell.swift
+//  ListSubscriptionCell.swift
 //  kkuduck
 //
 //  Created by Khyeji on 2021/10/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ServiceCell: UITableViewCell {
+final class ListSubscriptionCell: UITableViewCell {
 
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var subscriptionImageView: UIImageView!

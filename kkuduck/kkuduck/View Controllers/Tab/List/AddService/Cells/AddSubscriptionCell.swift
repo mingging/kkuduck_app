@@ -16,6 +16,7 @@ final class AddSubscriptionCell: UICollectionViewCell {
         static let shadowRadius: CGFloat = 10
         static let shadowOpacity: Float = 0.2
     }
+
     // MARK: - Outlets
 
     @IBOutlet weak var nameLabel: UILabel!

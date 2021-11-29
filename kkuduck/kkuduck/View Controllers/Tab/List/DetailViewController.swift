@@ -26,6 +26,20 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+
+    @IBAction func editButton(_ sender: UIButton) {
+        // 수정 버튼을 누르면 addView로 이동
+    }
+
+    @IBAction func deleteButton(_ sender: UIButton) {
+        // 삭제 버튼을 누르면 테이블 뷰에서 삭제 됨
+    }
+
+    private func setupView() {
         editButton.layer.cornerRadius = 15
         editButton.layer.shadowColor = UIColor.black.cgColor
         editButton.layer.shadowOpacity = 0.2
@@ -43,22 +57,14 @@ class DetailViewController: UIViewController {
         deleteButton.layer.shadowPath = UIBezierPath(roundedRect: deleteButton.bounds, cornerRadius: deleteButton.layer.cornerRadius).cgPath
     }
 
-    @IBAction func editButton(_ sender: UIButton) {
-        // 수정 버튼을 누르면 addView로 이동
-    }
-
-    @IBAction func deleteButton(_ sender: UIButton) {
-        // 삭제 버튼을 누르면 테이블 뷰에서 삭제 됨
-    }
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
 }

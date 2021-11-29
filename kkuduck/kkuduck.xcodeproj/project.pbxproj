@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10688515275467CE0057AD2D /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10688514275467CE0057AD2D /* AddService.storyboard */; };
 		10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B6274DEAC100BF5B97 /* ListViewController.swift */; };
 		10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */; };
 		39633FE1272649800079E845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE0272649800079E845 /* AppDelegate.swift */; };
@@ -16,7 +17,7 @@
 		39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39633FF5272651520079E845 /* GmarketSansMedium.otf */; };
 		39633FFA272655E40079E845 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FF9272655E40079E845 /* LoginViewController.swift */; };
 		39633FFC27265A080079E845 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FFB27265A080079E845 /* HomeViewController.swift */; };
-		3963407D2727C64D0079E845 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* ServiceCell.swift */; };
+		3963407D2727C64D0079E845 /* ListSubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407C2727C64D0079E845 /* ListSubscriptionCell.swift */; };
 		3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963407E2727C6520079E845 /* StatisticsViewController.swift */; };
 		396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340822727D2930079E845 /* AddSubscriptionListViewController.swift */; };
 		396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396340842727DF600079E845 /* AddSubscriptionCell.swift */; };
@@ -28,9 +29,8 @@
 		398EAF33274D291A0026ED60 /* AllStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398EAF32274D291A0026ED60 /* AllStatisticsViewController.swift */; };
 		5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B022747A90700E406C3 /* .swiftlint.yml */; };
 		5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B062747AB2000E406C3 /* Statistics.storyboard */; };
-		5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B082747AB5500E406C3 /* AddService.storyboard */; };
+		5D127B092747AB5500E406C3 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B082747AB5500E406C3 /* List.storyboard */; };
 		5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B0A2747ABAB00E406C3 /* Login.storyboard */; };
-		5D20028B274F767500C21E14 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DC86B5274DEAC100BF5B97 /* List.storyboard */; };
 		5D20028D274FB44C00C21E14 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */; };
 		5D20028F274FB4D500C21E14 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */; };
 		5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */; };
@@ -53,7 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10DC86B5274DEAC100BF5B97 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		10688514275467CE0057AD2D /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddService.storyboard; sourceTree = "<group>"; };
 		10DC86B6274DEAC100BF5B97 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		39633FDD272649800079E845 /* kkuduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kkuduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,11 +61,11 @@
 		39633FE2272649800079E845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		39633FE9272649830079E845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39633FEE272649830079E845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39633FF5272651520079E845 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
-		39633FF6272651520079E845 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
+		39633FF5272651520079E845 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansMedium.otf; path = kkuduck/Resources/Fonts/GmarketSansMedium.otf; sourceTree = SOURCE_ROOT; };
+		39633FF6272651520079E845 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansBold.otf; path = kkuduck/Resources/Fonts/GmarketSansBold.otf; sourceTree = SOURCE_ROOT; };
 		39633FF9272655E40079E845 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39633FFB27265A080079E845 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		3963407C2727C64D0079E845 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		3963407C2727C64D0079E845 /* ListSubscriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSubscriptionCell.swift; sourceTree = "<group>"; };
 		3963407E2727C6520079E845 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		396340822727D2930079E845 /* AddSubscriptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionListViewController.swift; sourceTree = "<group>"; };
 		396340842727DF600079E845 /* AddSubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionCell.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		398EAF32274D291A0026ED60 /* AllStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStatisticsViewController.swift; sourceTree = "<group>"; };
 		5D127B022747A90700E406C3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5D127B062747AB2000E406C3 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
-		5D127B082747AB5500E406C3 /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddService.storyboard; path = kkuduck/Storyboards/AddService.storyboard; sourceTree = SOURCE_ROOT; };
+		5D127B082747AB5500E406C3 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = List.storyboard; path = "kkuduck/View Controllers/Tab/List/List.storyboard"; sourceTree = SOURCE_ROOT; };
 		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = kkuduck/Storyboards/Login.storyboard; sourceTree = SOURCE_ROOT; };
 		5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
@@ -274,9 +274,8 @@
 			children = (
 				396340A5272924260079E845 /* TabBarController.swift */,
 				5DBF02762743418D00FE6C1D /* Home */,
-				5DBF02772743419600FE6C1D /* List */,
 				5DBF0278274341AE00FE6C1D /* Statistics */,
-				5DBF0279274341D100FE6C1D /* AddService */,
+				5DBF02772743419600FE6C1D /* List */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
@@ -294,10 +293,11 @@
 		5DBF02772743419600FE6C1D /* List */ = {
 			isa = PBXGroup;
 			children = (
-				10DC86B5274DEAC100BF5B97 /* List.storyboard */,
+				5D127B082747AB5500E406C3 /* List.storyboard */,
+				5DBF027B274345A700FE6C1D /* Cells */,
 				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
-				5DBF027B274345A700FE6C1D /* Cells */,
+				5DBF0279274341D100FE6C1D /* AddService */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 		5DBF0279274341D100FE6C1D /* AddService */ = {
 			isa = PBXGroup;
 			children = (
-				5D127B082747AB5500E406C3 /* AddService.storyboard */,
+				10688514275467CE0057AD2D /* AddService.storyboard */,
 				5DBF027A2743434000FE6C1D /* Cells */,
 				396340822727D2930079E845 /* AddSubscriptionListViewController.swift */,
 				396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */,
@@ -338,7 +338,7 @@
 		5DBF027B274345A700FE6C1D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3963407C2727C64D0079E845 /* ServiceCell.swift */,
+				3963407C2727C64D0079E845 /* ListSubscriptionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -427,15 +427,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D20028B274F767500C21E14 /* List.storyboard in Resources */,
 				5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */,
 				5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */,
+				10688515275467CE0057AD2D /* AddService.storyboard in Resources */,
 				5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */,
 				396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */,
 				5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */,
 				39633FEA272649830079E845 /* Assets.xcassets in Resources */,
 				5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */,
-				5D127B092747AB5500E406C3 /* AddService.storyboard in Resources */,
+				5D127B092747AB5500E406C3 /* List.storyboard in Resources */,
 				39633FF7272651570079E845 /* GmarketSansBold.otf in Resources */,
 				5DF276FF27435FCE003C434B /* Main.storyboard in Resources */,
 				39633FF8272651580079E845 /* GmarketSansMedium.otf in Resources */,
@@ -510,7 +510,7 @@
 			files = (
 				5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */,
 				5DA9FA0C274DB15A00D72377 /* DefaultSubscriptionRequest.swift in Sources */,
-				3963407D2727C64D0079E845 /* ServiceCell.swift in Sources */,
+				3963407D2727C64D0079E845 /* ListSubscriptionCell.swift in Sources */,
 				5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */,
 				398EAF33274D291A0026ED60 /* AllStatisticsViewController.swift in Sources */,
 				5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */,
