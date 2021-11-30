@@ -10,6 +10,7 @@ import UIKit
 final class ListSubscriptionCell: UITableViewCell {
 
     @IBOutlet weak var cellView: UIView!
+    @IBOutlet var imageCellView: UIView!
     @IBOutlet weak var subscriptionImageView: UIImageView!
     @IBOutlet weak var subscriptionNameLabel: UILabel!
 //    @IBOutlet weak var stratDateLabel: UILabel!
