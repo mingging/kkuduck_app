@@ -23,15 +23,20 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        LocalSubscriptionRepository.items { subscriptions in
-            self.subscriptions = subscriptions ?? []
-        }
-        tableView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
+
+        LocalSubscriptionRepository.items { subscriptions in
+            self.subscriptions = subscriptions ?? []
+        }
+        tableView.reloadData()
+
+        guard let font = UIFont(name: "GmarketSansMedium", size: 12) else { return }
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,7 +61,14 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     // 만료됨 세그먼트를 선택하면 cell에 회색의 블라인드 처리
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subscriptions.count
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            return subscriptions.count
+        case 1:
+            return subscriptions.count
+        default:
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -66,14 +78,26 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListSubscriptionCell.reuseIdentifier, for: indexPath) as! ListSubscriptionCell
 
+        let subscription = subscriptions[indexPath.row]
+
         switch segmentedControl.selectedSegmentIndex {
         case 0:
+            // 만료일이 지나지 않았거나 만료일이 없을 경우 함수 구현
             cell.endCellView.backgroundColor = .clear
-            cell.subscriptionNameLabel.text = "네이버"
+            ImageCache.load(urlString: subscription.imageUrl) { image in
+                cell.subscriptionImageView.image = image ?? .logo
+            }
+            cell.subscriptionNameLabel.text = subscription.serviceName
+            cell.priceLabel.text = "\(subscription.planPrice)원 / \(subscription.cycle.rawValue)"
         case 1:
+            // 만료일이 지난 경우 함수 구현
             cell.endCellView.backgroundColor = .systemGray6
             cell.endCellView.alpha = 0.5
-            cell.subscriptionNameLabel.text = "디즈니"
+            ImageCache.load(urlString: subscription.imageUrl) { image in
+                cell.subscriptionImageView.image = image ?? .logo
+            }
+            cell.subscriptionNameLabel.text = subscription.serviceName
+            cell.priceLabel.text = "\(subscription.planPrice)원 / \(subscription.cycle.rawValue)"
         default:
             break
         }
@@ -107,5 +131,27 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         //        }
         //        return cell
     }
+
+     // MARK: - Navigation
+
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+         switch segmentedControl.selectedSegmentIndex {
+         case 0:
+             if let destVC = segue.destination as? DetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                 destVC.subscription = subscriptions[indexPath.row]
+             }
+         case 1:
+             if let destVC = segue.destination as? DetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                 destVC.subscription = subscriptions[indexPath.row]
+             }
+         default:
+             break
+         }
+     }
 
 }
