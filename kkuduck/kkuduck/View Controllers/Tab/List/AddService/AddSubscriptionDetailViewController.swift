@@ -135,14 +135,14 @@ final class AddSubscriptionDetailViewController: UIViewController {
                 )
             }
         }
-        LocalSubscriptionRepository.save(subscription: subscription)
-        navigationController?.popViewController(animated: true)
+        SubscriptionRepository.shared.save(subscription: subscription)
+        dismiss(animated: true)
     }
 
     @IBAction func shareCountStepperValueChanged(_ sender: UIStepper) {
         shareCount = Int(sender.value)
     }
-    // textfield 입력시 keyboard 제어
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)

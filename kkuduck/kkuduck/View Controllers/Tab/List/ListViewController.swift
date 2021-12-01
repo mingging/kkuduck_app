@@ -9,12 +9,16 @@ import UIKit
 import Alamofire
 
 final class ListViewController: UIViewController {
-    let strURL = "http://20.196.199.127:8000/users/1"
-//    let userId: Int?
 
     // MARK: - Properties
 
-    private var subscriptions: [Subscription] = []
+    private var subscriptions: [Subscription] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     // MARK: - Outlets
 
@@ -33,9 +37,8 @@ final class ListViewController: UIViewController {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        LocalSubscriptionRepository.items { subscriptions in
-            self.subscriptions = subscriptions ?? []
-        }
+
+        subscriptions = SubscriptionRepository.shared.subscriptions()
 
         guard let font = UIFont(name: "GmarketSansMedium", size: 12) else { return }
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
@@ -48,7 +51,6 @@ final class ListViewController: UIViewController {
         addSubscriptionButton.layer.masksToBounds = false
         addSubscriptionButton.layer.shadowPath = UIBezierPath(roundedRect: addSubscriptionButton.bounds, cornerRadius: addSubscriptionButton.layer.cornerRadius).cgPath
 
-        tableView.reloadData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
