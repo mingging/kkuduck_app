@@ -33,15 +33,14 @@
 		5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B0A2747ABAB00E406C3 /* Login.storyboard */; };
 		5D20028D274FB44C00C21E14 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */; };
 		5D20028F274FB4D500C21E14 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */; };
+		5D2002942754B6E500C21E14 /* DefaultSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2002932754B6E400C21E14 /* DefaultSubscription.swift */; };
 		5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */; };
-		5D5CD3AE274E240D0082DBE8 /* LocalSubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AD274E240D0082DBE8 /* LocalSubscriptionRepository.swift */; };
-		5D5CD3B0274E24A70082DBE8 /* RemoteSubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AF274E24A70082DBE8 /* RemoteSubscriptionRepository.swift */; };
-		5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */; };
+		5D5CD3B0274E24A70082DBE8 /* DefaultSubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */; };
+		5D9AEDF8274C9B1200E06F3B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */; };
 		5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF9274CB66700E06F3B /* NavigationController.swift */; };
 		5DA9FA01274D084200D72377 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA00274D084200D72377 /* ImageCache.swift */; };
 		5DA9FA03274D222000D72377 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA02274D222000D72377 /* UIImage+Extension.swift */; };
-		5DA9FA0A274DB13200D72377 /* SubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA09274DB13200D72377 /* SubscriptionRequest.swift */; };
-		5DA9FA0C274DB15A00D72377 /* DefaultSubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA0B274DB15900D72377 /* DefaultSubscriptionRequest.swift */; };
+		5DA9FA0A274DB13200D72377 /* DefaultSubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA09274DB13200D72377 /* DefaultSubscriptionRequest.swift */; };
 		5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB352733E60200343733 /* UIColor+Extension.swift */; };
 		5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCAB402733F74C00343733 /* ReusableView.swift */; };
 		5DBF027D274345F800FE6C1D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF027C274345F800FE6C1D /* Home.storyboard */; };
@@ -81,15 +80,14 @@
 		5D127B0A2747ABAB00E406C3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = kkuduck/Storyboards/Login.storyboard; sourceTree = SOURCE_ROOT; };
 		5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		5D2002932754B6E400C21E14 /* DefaultSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscription.swift; sourceTree = "<group>"; };
 		5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRepository.swift; sourceTree = "<group>"; };
-		5D5CD3AD274E240D0082DBE8 /* LocalSubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSubscriptionRepository.swift; sourceTree = "<group>"; };
-		5D5CD3AF274E24A70082DBE8 /* RemoteSubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSubscriptionRepository.swift; sourceTree = "<group>"; };
-		5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscriptionRepository.swift; sourceTree = "<group>"; };
+		5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5D9AEDF9274CB66700E06F3B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5DA9FA00274D084200D72377 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		5DA9FA02274D222000D72377 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		5DA9FA09274DB13200D72377 /* SubscriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRequest.swift; sourceTree = "<group>"; };
-		5DA9FA0B274DB15900D72377 /* DefaultSubscriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscriptionRequest.swift; sourceTree = "<group>"; };
+		5DA9FA09274DB13200D72377 /* DefaultSubscriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscriptionRequest.swift; sourceTree = "<group>"; };
 		5DBCAB352733E60200343733 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5DBCAB402733F74C00343733 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5DBF027C274345F800FE6C1D /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = kkuduck/Storyboards/Home.storyboard; sourceTree = SOURCE_ROOT; };
@@ -166,40 +164,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		5D5CD3A9274E14A10082DBE8 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				5D5CD3AD274E240D0082DBE8 /* LocalSubscriptionRepository.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		5D5CD3AA274E14AB0082DBE8 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				5D5CD3AF274E24A70082DBE8 /* RemoteSubscriptionRepository.swift */,
-				5DA9FA08274DB12400D72377 /* Request */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
 		5DA9F9FF274D07C800D72377 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */,
-				5D5CD3A9274E14A10082DBE8 /* Local */,
-				5D5CD3AA274E14AB0082DBE8 /* Remote */,
+				5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */,
+				5DA9FA09274DB13200D72377 /* DefaultSubscriptionRequest.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		5DA9FA08274DB12400D72377 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				5DA9FA09274DB13200D72377 /* SubscriptionRequest.swift */,
-				5DA9FA0B274DB15900D72377 /* DefaultSubscriptionRequest.swift */,
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		5DBCAB342733E5FA00343733 /* Utils */ = {
@@ -209,7 +181,7 @@
 				5DBCAB352733E60200343733 /* UIColor+Extension.swift */,
 				5DA9FA02274D222000D72377 /* UIImage+Extension.swift */,
 				5DBCAB402733F74C00343733 /* ReusableView.swift */,
-				5D9AEDF7274C9B1200E06F3B /* CustomDateFormatter.swift */,
+				5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */,
 				5DA9FA00274D084200D72377 /* ImageCache.swift */,
 				5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */,
 			);
@@ -355,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				5DF277142743C945003C434B /* Subscription.swift */,
+				5D2002932754B6E400C21E14 /* DefaultSubscription.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -509,15 +482,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */,
-				5DA9FA0C274DB15A00D72377 /* DefaultSubscriptionRequest.swift in Sources */,
 				3963407D2727C64D0079E845 /* ListSubscriptionCell.swift in Sources */,
 				5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */,
 				398EAF33274D291A0026ED60 /* AllStatisticsViewController.swift in Sources */,
 				5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */,
-				5DA9FA0A274DB13200D72377 /* SubscriptionRequest.swift in Sources */,
-				5D5CD3B0274E24A70082DBE8 /* RemoteSubscriptionRepository.swift in Sources */,
+				5DA9FA0A274DB13200D72377 /* DefaultSubscriptionRequest.swift in Sources */,
+				5D5CD3B0274E24A70082DBE8 /* DefaultSubscriptionRepository.swift in Sources */,
 				396340852727DF600079E845 /* AddSubscriptionCell.swift in Sources */,
-				5D9AEDF8274C9B1200E06F3B /* CustomDateFormatter.swift in Sources */,
+				5D9AEDF8274C9B1200E06F3B /* DateHelper.swift in Sources */,
+				5D2002942754B6E500C21E14 /* DefaultSubscription.swift in Sources */,
 				10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */,
 				5D20028D274FB44C00C21E14 /* UIStoryboard+Extension.swift in Sources */,
 				396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */,
@@ -528,7 +501,6 @@
 				3963407F2727C6520079E845 /* StatisticsViewController.swift in Sources */,
 				5DA9FA01274D084200D72377 /* ImageCache.swift in Sources */,
 				39633FE3272649800079E845 /* SceneDelegate.swift in Sources */,
-				5D5CD3AE274E240D0082DBE8 /* LocalSubscriptionRepository.swift in Sources */,
 				398EAF31274D02A80026ED60 /* MonthlyStatisticsViewController.swift in Sources */,
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
 				5DF277152743C945003C434B /* Subscription.swift in Sources */,

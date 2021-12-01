@@ -1,5 +1,5 @@
 //
-//  StartMainViewController.swift
+//  LoginViewController.swift
 //  kkuduck
 //
 //  Created by minimani on 2021/10/25.
@@ -83,7 +83,9 @@ final class LoginViewController: UIViewController {
 
 }
 
-extension LoginViewController: UISearchTextFieldDelegate {
+// MARK: - UITextFieldDelegate
+
+extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
