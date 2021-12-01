@@ -136,6 +136,7 @@ final class AddSubscriptionDetailViewController: UIViewController {
             }
         }
         SubscriptionRepository.shared.save(subscription: subscription)
+        CheckServiceChange.shared.isServiceAdd = true
         dismiss(animated: true)
     }
 

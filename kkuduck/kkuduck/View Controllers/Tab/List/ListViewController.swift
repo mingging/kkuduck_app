@@ -40,9 +40,9 @@ final class ListViewController: UIViewController {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        LocalSubscriptionRepository.items { subscriptions in
-            self.subscriptions = subscriptions ?? []
-        }
+//        LocalSubscriptionRepository.items { subscriptions in
+//            self.subscriptions = subscriptions ?? []
+//        }
 
         guard let font = UIFont(name: "GmarketSansMedium", size: 12) else { return }
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
