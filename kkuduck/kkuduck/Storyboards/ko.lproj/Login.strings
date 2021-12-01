@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "사용자 이름"; ObjectID = "4KG-Sa-hfy"; */
+"4KG-Sa-hfy.text" = "사용자 이름";
+
+/* Class = "UILabel"; text = "만나서 반가워요!\n꾸덕을 시작하기 전에\n이름을 알려주세요!"; ObjectID = "8UJ-Xu-l8Q"; */
+"8UJ-Xu-l8Q.text" = "만나서 반가워요!\n꾸덕을 시작하기 전에\n이름을 알려주세요!";
+
+/* Class = "UIButton"; normalTitle = "시작하기"; ObjectID = "dT3-aZ-0aR"; */
+"dT3-aZ-0aR.normalTitle" = "시작하기";
