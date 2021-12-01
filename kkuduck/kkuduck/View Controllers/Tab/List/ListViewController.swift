@@ -39,7 +39,6 @@ final class ListViewController: UIViewController {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-
         subscriptions = SubscriptionRepository.shared.subscriptions()
 
         guard let font = UIFont(name: "GmarketSansMedium", size: 12) else { return }
