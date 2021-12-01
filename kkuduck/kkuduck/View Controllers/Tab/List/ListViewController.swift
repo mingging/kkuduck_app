@@ -14,7 +14,13 @@ final class ListViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var subscriptions: [Subscription] = []
+    private var subscriptions: [Subscription] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     // MARK: - Outlets
 
@@ -27,6 +33,7 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        subscriptions = SubscriptionRepository.shared.subscriptions()
     }
 
     override func viewWillAppear(_ animated: Bool) {

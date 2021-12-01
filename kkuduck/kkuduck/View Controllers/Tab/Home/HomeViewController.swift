@@ -11,10 +11,20 @@ final class HomeViewController: UIViewController {
 
     private enum Metric {
         static let cornerRadius: CGFloat = 15
+        static let cellSpacing: CGFloat = 15
     }
+
     // MARK: - Properties
 
-    private var subscriptions: [Subscription] = []
+    private var subscriptions: [Subscription] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.countLabel.text = String(self.subscriptions.count)
+                self.totalPriceLabel.text = String(self.subscriptions.map { $0.planPrice }.reduce(0, +))
+                self.collectionView.reloadData()
+            }
+        }
+    }
 
     // MARK: - Outlets
 
@@ -40,7 +50,7 @@ final class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
 
         fetchSubscriptions()
-        collectionView.reloadData()
+        collectionView.setContentOffset(.zero, animated: true)
     }
 
     private func setupView() {
@@ -48,11 +58,11 @@ final class HomeViewController: UIViewController {
     }
 
     private func fetchSubscriptions() {
-        LocalSubscriptionRepository.items { subscriptions in
-            self.subscriptions = subscriptions ?? []
-        }
-        countLabel.text = String(subscriptions.count)
-        totalPriceLabel.text = String(subscriptions.map { $0.planPrice }.reduce(0, +))
+        subscriptions = SubscriptionRepository.shared.subscriptions()
+            .sorted {
+                DateHelper.nextSubscriptionDate(from: $0.startDate, matching: $0.cycle)!
+                < DateHelper.nextSubscriptionDate(from: $1.startDate, matching: $1.cycle)!
+            }
     }
 
 }
@@ -78,15 +88,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         let height = collectionView.frame.height
-        let cellShadowRadius: CGFloat = 15
         let cellWidth = width * 0.7
-        let cellHeight = height - cellShadowRadius * 2
+        let cellHeight = height - Metric.cellSpacing * 2
         return CGSize(width: cellWidth, height: cellHeight)
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.contentView.layer.masksToBounds = true
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        cell.layer.shadowPath = UIBezierPath(
+            roundedRect: cell.bounds,
+            cornerRadius: cell.contentView.layer.cornerRadius
+        ).cgPath
     }
 
 }

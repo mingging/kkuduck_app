@@ -48,46 +48,11 @@ final class HomeSubscriptionCell: UICollectionViewCell {
         nameLabel.text = subscription.serviceName
         cycleLabel.text = subscription.cycle.rawValue
         priceLabel.text = "\(subscription.planPrice) 원"
-        let nextDate = nextSubscriptionDate(from: subscription.startDate, matching: subscription.cycle)!
-        nextDateLabel.text = CustomDateFormatter.string(from: nextDate)
+        let nextDate = DateHelper.nextSubscriptionDate(from: subscription.startDate, matching: subscription.cycle)!
+        nextDateLabel.text = DateHelper.string(from: nextDate)
         ImageCache.load(urlString: subscription.imageUrl) { image in
             self.imageView.image = image ?? .logo
         }
     }
 
-    // MARK: -
-
-    /// 주어진 구독 시작일과 결제 주기에 해당하는 다음 결제 예정일을 계산합니다.
-    ///
-    /// - Parameter startDate: 구독 시작일
-    /// - Parameter component: 결제 주기
-    /// - Returns: 다음 결제 예정일
-    private func nextSubscriptionDate(from startDate: Date, matching cycle: Cycle) -> Date? {
-        let today = Date()
-        if startDate > today {
-            return startDate
-        }
-        let startDateComponents = Calendar.current.dateComponents(cycle.matchingComponents, from: startDate)
-        return Calendar.current.nextDate(
-            after: today,
-            matching: startDateComponents,
-            matchingPolicy: .previousTimePreservingSmallerComponents,
-            repeatedTimePolicy: .first,
-            direction: .forward
-        )
-    }
-
-}
-
-// MARK: - Cycle 
-
-fileprivate extension Cycle {
-    var matchingComponents: Set<Calendar.Component> {
-        switch self {
-        case .month:
-            return [.day]
-        case .year:
-            return [.month, .day]
-        }
-    }
 }
