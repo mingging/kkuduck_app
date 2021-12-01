@@ -15,7 +15,13 @@ final class AddSubscriptionListViewController: UIViewController {
 
     // MARK: - Properties
 
-    var defaultSubscriptions: [DefaultSubscription] = []
+    var defaultSubscriptions: [DefaultSubscription] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
 
     // MARK: - Outlets
 
@@ -30,12 +36,8 @@ final class AddSubscriptionListViewController: UIViewController {
     }
 
     private func fetchDefaultSubscription() {
-        let sampleData = DefaultSubscription.sampleData
-        do {
-            let services = try JSONDecoder().decode([DefaultSubscription].self, from: sampleData)
-            self.defaultSubscriptions = services
-        } catch {
-            fatalError(error.localizedDescription)
+        DefaultSubscriptionRepository.shared.defaultSubscriptions { defaultSubscriptions in
+            self.defaultSubscriptions = defaultSubscriptions ?? []
         }
     }
 
