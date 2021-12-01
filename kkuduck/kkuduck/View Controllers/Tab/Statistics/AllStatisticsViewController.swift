@@ -12,10 +12,9 @@ class AllStatisticsViewController: UIViewController {
 
     // MARK: - Property
 
-    var testValue = PieChartDataEntry(value: 5000)
-    var test2Value = PieChartDataEntry(value: 9900)
-
     var allChartEntries = [PieChartDataEntry]()
+
+    var metricData = [[String:Any]]()
 
     // MARK: - Outlet
 
@@ -24,17 +23,64 @@ class AllStatisticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        allChartEntries = [testValue, test2Value]
-
+       // allChartEntries = [testValue, test2Value]
         setChart()
     }
 
-    func setChart() {
-        let chartDataSet = PieChartDataSet(entries: allChartEntries, label: "테스트")
-        let chartData = PieChartData(dataSet: chartDataSet)
+    override func viewWillAppear(_ animated: Bool) {
+        print( "all \(CheckServiceChange.shared.isServiceAdd)")
+        if CheckServiceChange.shared.isServiceAdd {
+            setChart()
 
-        let colors = [UIColor.primary, UIColor.secondary]
-        chartDataSet.colors = colors as! [NSUIColor]
+            CheckServiceChange.shared.isServiceAdd = false
+        }
+    }
+
+    func setChart() {
+        metricData = [[String:Any]]()
+        allChartEntries = [PieChartDataEntry]()
+        pieChart.noDataText = "데이터가 없습니다."
+        for i in 0..<SubscriptionRepository.shared.subscriptions().count {
+            let data = [
+                "serviceName": SubscriptionRepository.shared.subscriptions()[i].serviceName,
+                "planPrice": SubscriptionRepository.shared.subscriptions()[i].planPrice
+            ] as [String : Any]
+            metricData.append(data)
+        }
+
+        var totalPrice = 0
+        for i in 0..<metricData.count {
+            if !metricData[i].isEmpty {
+                totalPrice = metricData[i]["planPrice"] as! Int
+                for j in 0..<metricData.count {
+                    if i != j
+                        && !metricData[j].isEmpty {
+                        if (metricData[i]["serviceName"] as! String == metricData[j]["serviceName"] as! String) {
+                            totalPrice += metricData[j]["planPrice"] as! Int
+                            metricData[j] = [:]
+                        }
+                    }
+                }
+                metricData[i]["planPrice"] = totalPrice
+            }
+        }
+
+        var colors = [UIColor]()
+        for i in 0..<metricData.count {
+            if !metricData[i].isEmpty {
+                allChartEntries.append(
+                    PieChartDataEntry(
+                        value: Double(metricData[i]["planPrice"] as! Int),
+                        label: metricData[i]["serviceName"] as? String
+                    )
+                )
+                colors.append(.random)
+            }
+        }
+
+        let chartDataSet = PieChartDataSet(entries: allChartEntries, label: "")
+        let chartData = PieChartData(dataSet: chartDataSet)
+        chartDataSet.colors = colors
 
         pieChart.data = chartData
     }

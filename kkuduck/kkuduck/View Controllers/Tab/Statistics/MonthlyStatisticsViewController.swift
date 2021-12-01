@@ -40,7 +40,6 @@ class MonthlyStatisticsViewController: UIViewController, ChartViewDelegate {
         print(CheckServiceChange.shared.isServiceAdd)
         if CheckServiceChange.shared.isServiceAdd {
             setChart()
-            CheckServiceChange.shared.isServiceAdd = false
         }
         monthData = metricData
     }
@@ -69,13 +68,13 @@ class MonthlyStatisticsViewController: UIViewController, ChartViewDelegate {
     // charts setting
     func setChart() {
         metricData = [[String:Any]]()
+        unitsSold = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         barChart.noDataText = "데이터가 없습니다."
         barChart.noDataFont = .systemFont(ofSize: 20)
         barChart.noDataTextColor = .lightGray
 
         // 현재 날짜 출력
         nowDate = Date()
-        print(nowDate)
 
         // 현재 날짜로부터 6개월 전
         getPreviouseSixMonth(nowDate)
@@ -158,7 +157,6 @@ class MonthlyStatisticsViewController: UIViewController, ChartViewDelegate {
     }
 
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        print("호출")
         monthData = [[String:Any]]()
         monthData = metricData
         DispatchQueue.main.async {
