@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10688515275467CE0057AD2D /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10688514275467CE0057AD2D /* AddService.storyboard */; };
+		1068855A2755E28E0057AD2D /* ListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106885592755E28E0057AD2D /* ListNavigationController.swift */; };
 		10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B6274DEAC100BF5B97 /* ListViewController.swift */; };
 		10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */; };
 		39633FE1272649800079E845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39633FE0272649800079E845 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		10688514275467CE0057AD2D /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddService.storyboard; sourceTree = "<group>"; };
+		106885592755E28E0057AD2D /* ListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNavigationController.swift; sourceTree = "<group>"; };
 		10DC86B6274DEAC100BF5B97 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		39633FDD272649800079E845 /* kkuduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kkuduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +271,7 @@
 				5DBF027B274345A700FE6C1D /* Cells */,
 				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
+				106885592755E28E0057AD2D /* ListNavigationController.swift */,
 				5DBF0279274341D100FE6C1D /* AddService */,
 			);
 			path = List;
@@ -484,6 +487,7 @@
 				5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */,
 				3963407D2727C64D0079E845 /* ListSubscriptionCell.swift in Sources */,
 				5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */,
+				1068855A2755E28E0057AD2D /* ListNavigationController.swift in Sources */,
 				398EAF33274D291A0026ED60 /* AllStatisticsViewController.swift in Sources */,
 				5DF277102743B609003C434B /* HomeSubscriptionCell.swift in Sources */,
 				5DA9FA0A274DB13200D72377 /* DefaultSubscriptionRequest.swift in Sources */,
