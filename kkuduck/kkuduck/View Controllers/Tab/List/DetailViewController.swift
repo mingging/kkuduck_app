@@ -73,8 +73,6 @@ class DetailViewController: UIViewController {
     @IBAction func editButton(_ sender: UIButton) {
         // TODO: 수정 버튼을 누르면 addView로 이동
         SubscriptionRepository.shared.save(subscription: subscription!)
-
-
     }
 
     @IBAction func deleteButton(_ sender: UIButton) {
