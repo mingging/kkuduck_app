@@ -56,9 +56,9 @@ class DetailViewController: UIViewController {
         planCycleLabel.text = subscription.cycle.rawValue
         shareCountLabel.text = "\(subscription.shareCount)명"
         shareIdLabel.text = subscription.shareId
-        startDateLabel.text = CustomDateFormatter.string(from: subscription.startDate)
+        startDateLabel.text = DateHelper.string(from: subscription.startDate)
         if subscription.endDate != nil {
-            endDateLabel.text = CustomDateFormatter.string(from: subscription.endDate!)
+            endDateLabel.text = DateHelper.string(from: subscription.endDate!)
         } else {
             endDateLabel.text = "-"
         }
