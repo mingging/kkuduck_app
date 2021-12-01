@@ -33,16 +33,14 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        subscriptions = SubscriptionRepository.shared.subscriptions()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        LocalSubscriptionRepository.items { subscriptions in
-            self.subscriptions = subscriptions ?? []
-        }
+
+        subscriptions = SubscriptionRepository.shared.subscriptions()
 
         guard let font = UIFont(name: "GmarketSansMedium", size: 12) else { return }
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
@@ -55,7 +53,6 @@ final class ListViewController: UIViewController {
         addSubscriptionButton.layer.masksToBounds = false
         addSubscriptionButton.layer.shadowPath = UIBezierPath(roundedRect: addSubscriptionButton.bounds, cornerRadius: addSubscriptionButton.layer.cornerRadius).cgPath
 
-        tableView.reloadData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

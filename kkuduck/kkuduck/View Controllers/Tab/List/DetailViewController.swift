@@ -56,9 +56,9 @@ class DetailViewController: UIViewController {
         planCycleLabel.text = subscription.cycle.rawValue
         shareCountLabel.text = "\(subscription.shareCount)명"
         shareIdLabel.text = subscription.shareId
-        startDateLabel.text = CustomDateFormatter.string(from: subscription.startDate)
+        startDateLabel.text = DateHelper.string(from: subscription.startDate)
         if subscription.endDate != nil {
-            endDateLabel.text = CustomDateFormatter.string(from: subscription.endDate!)
+            endDateLabel.text = DateHelper.string(from: subscription.endDate!)
         } else {
             endDateLabel.text = "-"
         }
@@ -72,12 +72,13 @@ class DetailViewController: UIViewController {
 
     @IBAction func editButton(_ sender: UIButton) {
         // TODO: 수정 버튼을 누르면 addView로 이동
-        LocalSubscriptionRepository.save(subscription: subscription!)
+        SubscriptionRepository.shared.save(subscription: subscription!)
+
 
     }
 
     @IBAction func deleteButton(_ sender: UIButton) {
-        LocalSubscriptionRepository.delete(at: index!)
+        SubscriptionRepository.shared.delete(subscription: subscription!)
         navigationController?.popViewController(animated: true)
     }
 
