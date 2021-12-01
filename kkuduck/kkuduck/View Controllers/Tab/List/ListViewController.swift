@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Alamofire
 
 final class ListViewController: UIViewController {
+    let strURL = "http://20.196.199.127:8000/users/1"
+//    let userId: Int?
 
     // MARK: - Properties
 
@@ -17,6 +20,7 @@ final class ListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet var addSubscriptionButton: UIButton!
 
     // MARK: - View Life Cycle
 
@@ -32,11 +36,19 @@ final class ListViewController: UIViewController {
         LocalSubscriptionRepository.items { subscriptions in
             self.subscriptions = subscriptions ?? []
         }
-        tableView.reloadData()
 
         guard let font = UIFont(name: "GmarketSansMedium", size: 12) else { return }
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
 
+        addSubscriptionButton.layer.cornerRadius = 25
+        addSubscriptionButton.layer.shadowColor = UIColor.black.cgColor
+        addSubscriptionButton.layer.shadowOpacity = 0.2
+        addSubscriptionButton.layer.shadowRadius = 10
+        addSubscriptionButton.layer.shadowOffset = CGSize(width: 1, height: 2)
+        addSubscriptionButton.layer.masksToBounds = false
+        addSubscriptionButton.layer.shadowPath = UIBezierPath(roundedRect: addSubscriptionButton.bounds, cornerRadius: addSubscriptionButton.layer.cornerRadius).cgPath
+
+        tableView.reloadData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -118,36 +130,25 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         //        let numberFormatter = NumberFormatter()
         //        numberFormatter.numberStyle = .decimal
         //        cell.priceLabel.text = "\(numberFormatter.string(for: Int(price))!)원/\(cycle)"
-        //
-        //        // D-day OK
-        //       if let dateString = item["subStartDay"] as? String {
-        //            let formatter = DateFormatter()
-        //            formatter.dateFormat = "yyyy.MM.dd"
-        //            if let date = formatter.date(from: dateString) {
-        //                let now = Date()
-        //                let dDay = Calendar.current.dateComponents([.day], from: date, to: now).day! + 1
-        //                cell.dDayLabel.text = "D + \(dDay)"
-        //            }
-        //        }
-        //        return cell
+
     }
 
      // MARK: - Navigation
 
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
          switch segmentedControl.selectedSegmentIndex {
          case 0:
              if let destVC = segue.destination as? DetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow {
                  destVC.subscription = subscriptions[indexPath.row]
+                 destVC.index = indexPath.row
              }
          case 1:
              if let destVC = segue.destination as? DetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow {
                  destVC.subscription = subscriptions[indexPath.row]
+                 destVC.index = indexPath.row
              }
          default:
              break

@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     // MARK: - Properties
     var subscription: Subscription?
+    var index: Int?
 
     private enum Metric {
         static let cornerRadius: CGFloat = 15
@@ -70,13 +71,13 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func editButton(_ sender: UIButton) {
-        // 수정 버튼을 누르면 addView로 이동
+        // TODO: 수정 버튼을 누르면 addView로 이동
+        LocalSubscriptionRepository.save(subscription: subscription!)
 
     }
 
     @IBAction func deleteButton(_ sender: UIButton) {
-        // 삭제 버튼을 누르면 테이블 뷰에서 삭제 됨
-
+        LocalSubscriptionRepository.delete(at: index!)
         navigationController?.popViewController(animated: true)
     }
 
