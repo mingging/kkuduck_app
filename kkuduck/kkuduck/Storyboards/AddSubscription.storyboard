@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,121 +27,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oz-cg-xsw">
-                                <rect key="frame" x="20" y="108" width="374" height="754"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4fy-yr-qoB">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="626"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JYA-u5-HrK">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="106"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아래 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnm-CV-hRU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
-                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 사용 중인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5g-E7-2zX">
-                                                        <rect key="frame" x="0.0" y="38" width="374" height="30"/>
-                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스가 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxX-a1-hId">
-                                                        <rect key="frame" x="0.0" y="76" width="374" height="30"/>
-                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nXW-px-dMN">
-                                                <rect key="frame" x="0.0" y="126" width="374" height="500"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" priority="750" constant="500" id="vM4-lP-k65"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="kf1-IQ-hEb">
-                                                    <size key="itemSize" width="85" height="85"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="30" minY="10" maxX="30" maxY="30"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddSubscriptionCell" id="gGN-c6-aqd" customClass="AddSubscriptionCell" customModule="kkuduck" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="10" width="85" height="85"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vCp-d4-f3S">
-                                                                    <rect key="frame" x="8" y="8" width="69" height="69"/>
-                                                                    <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1No-QT-hzz">
-                                                                            <rect key="frame" x="17.5" y="2" width="34.5" height="30.5"/>
-                                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="1No-QT-hzz" secondAttribute="height" multiplier="1:1" id="mnC-TD-Uxe"/>
-                                                                            </constraints>
-                                                                        </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="넷플릭스" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdM-v3-qFj">
-                                                                            <rect key="frame" x="15.5" y="34.5" width="38.5" height="34.5"/>
-                                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="10"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                        </view>
-                                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="vCp-d4-f3S" secondAttribute="trailing" constant="8" id="DcC-UF-Hep"/>
-                                                            <constraint firstAttribute="bottom" secondItem="vCp-d4-f3S" secondAttribute="bottom" constant="8" id="Fqk-eo-lOu"/>
-                                                            <constraint firstItem="vCp-d4-f3S" firstAttribute="top" secondItem="gGN-c6-aqd" secondAttribute="top" constant="8" id="ejh-zX-kxV"/>
-                                                            <constraint firstItem="vCp-d4-f3S" firstAttribute="leading" secondItem="gGN-c6-aqd" secondAttribute="leading" constant="8" id="rOk-BI-aMd"/>
-                                                        </constraints>
-                                                        <size key="customSize" width="85" height="85"/>
-                                                        <connections>
-                                                            <outlet property="imageView" destination="1No-QT-hzz" id="dmg-u7-O6h"/>
-                                                            <outlet property="nameLabel" destination="fdM-v3-qFj" id="1Nh-Sb-jSl"/>
-                                                        </connections>
-                                                    </collectionViewCell>
-                                                </cells>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="Xyu-8j-C61" id="gEA-bd-SPb"/>
-                                                    <outlet property="delegate" destination="Xyu-8j-C61" id="qiR-7R-hcK"/>
-                                                </connections>
-                                            </collectionView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nXW-px-dMN">
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="4fy-yr-qoB" firstAttribute="bottom" secondItem="Lvj-9g-8M2" secondAttribute="bottom" id="b6G-Qo-iMT"/>
-                                    <constraint firstItem="4fy-yr-qoB" firstAttribute="trailing" secondItem="Lvj-9g-8M2" secondAttribute="trailing" id="ccO-jF-6G2"/>
-                                    <constraint firstItem="4fy-yr-qoB" firstAttribute="top" secondItem="Lvj-9g-8M2" secondAttribute="top" id="eDI-Bl-KDd"/>
-                                    <constraint firstItem="4fy-yr-qoB" firstAttribute="width" secondItem="KzG-SU-gKh" secondAttribute="width" id="hb0-an-dal"/>
-                                    <constraint firstItem="4fy-yr-qoB" firstAttribute="leading" secondItem="Lvj-9g-8M2" secondAttribute="leading" id="sGI-vp-pyz"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Lvj-9g-8M2"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="KzG-SU-gKh"/>
-                            </scrollView>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="kf1-IQ-hEb">
+                                    <size key="itemSize" width="85" height="85"/>
+                                    <size key="headerReferenceSize" width="50" height="120"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="30" minY="10" maxX="30" maxY="30"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddSubscriptionCell" id="gGN-c6-aqd" customClass="AddSubscriptionCell" customModule="kkuduck" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="130" width="85" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vCp-d4-f3S">
+                                                    <rect key="frame" x="8" y="8" width="69" height="69"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1No-QT-hzz">
+                                                            <rect key="frame" x="17.5" y="2" width="34.5" height="30.5"/>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="1No-QT-hzz" secondAttribute="height" multiplier="1:1" id="mnC-TD-Uxe"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="넷플릭스" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdM-v3-qFj">
+                                                            <rect key="frame" x="15.5" y="34.5" width="38.5" height="34.5"/>
+                                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vCp-d4-f3S" secondAttribute="trailing" constant="8" id="DcC-UF-Hep"/>
+                                            <constraint firstAttribute="bottom" secondItem="vCp-d4-f3S" secondAttribute="bottom" constant="8" id="Fqk-eo-lOu"/>
+                                            <constraint firstItem="vCp-d4-f3S" firstAttribute="top" secondItem="gGN-c6-aqd" secondAttribute="top" constant="8" id="ejh-zX-kxV"/>
+                                            <constraint firstItem="vCp-d4-f3S" firstAttribute="leading" secondItem="gGN-c6-aqd" secondAttribute="leading" constant="8" id="rOk-BI-aMd"/>
+                                        </constraints>
+                                        <size key="customSize" width="85" height="85"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="1No-QT-hzz" id="dmg-u7-O6h"/>
+                                            <outlet property="nameLabel" destination="fdM-v3-qFj" id="1Nh-Sb-jSl"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddSubscriptionHeader" id="zFB-aa-afz" customClass="AddSubscriptionHeader" customModule="kkuduck" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnm-CV-hRU" userLabel="다음 중 현재 사용 중인 서비스가 있나요?">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                            <string key="text">다음 중
+현재 사용 중인 서비스가 있나요?</string>
+                                            <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Dnm-CV-hRU" secondAttribute="trailing" id="L7G-yO-Vs9"/>
+                                        <constraint firstAttribute="bottom" secondItem="Dnm-CV-hRU" secondAttribute="bottom" id="QUJ-H4-4GJ"/>
+                                        <constraint firstItem="Dnm-CV-hRU" firstAttribute="leading" secondItem="zFB-aa-afz" secondAttribute="leading" id="msH-aA-A1P"/>
+                                        <constraint firstItem="Dnm-CV-hRU" firstAttribute="top" secondItem="zFB-aa-afz" secondAttribute="top" id="qFs-m8-03G"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="Dnm-CV-hRU" id="3oU-Yw-6Gg"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xyu-8j-C61" id="gEA-bd-SPb"/>
+                                    <outlet property="delegate" destination="Xyu-8j-C61" id="qiR-7R-hcK"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gkL-ve-tbe"/>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
-                            <constraint firstItem="gkL-ve-tbe" firstAttribute="trailing" secondItem="5oz-cg-xsw" secondAttribute="trailing" constant="20" id="72u-Eq-Am8"/>
-                            <constraint firstItem="5oz-cg-xsw" firstAttribute="leading" secondItem="gkL-ve-tbe" secondAttribute="leading" constant="20" id="LK3-QG-vCx"/>
-                            <constraint firstItem="5oz-cg-xsw" firstAttribute="top" secondItem="gkL-ve-tbe" secondAttribute="top" constant="20" id="f2V-se-3Lm"/>
-                            <constraint firstItem="5oz-cg-xsw" firstAttribute="bottom" secondItem="gkL-ve-tbe" secondAttribute="bottom" id="ukp-NP-MVb"/>
+                            <constraint firstItem="nXW-px-dMN" firstAttribute="top" secondItem="gkL-ve-tbe" secondAttribute="top" id="CHy-n6-Ch3"/>
+                            <constraint firstItem="nXW-px-dMN" firstAttribute="bottom" secondItem="gkL-ve-tbe" secondAttribute="bottom" id="PEa-Wr-Lur"/>
+                            <constraint firstItem="gkL-ve-tbe" firstAttribute="trailing" secondItem="nXW-px-dMN" secondAttribute="trailing" constant="20" id="RQ4-4X-aF4"/>
+                            <constraint firstItem="nXW-px-dMN" firstAttribute="leading" secondItem="gkL-ve-tbe" secondAttribute="leading" constant="20" id="c4q-Hk-uK9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="add_icon.png" selectedImage="add_icon.png" id="kzj-PG-vZq"/>
-                    <navigationItem key="navigationItem" title="구독 만들기" largeTitleDisplayMode="never" id="5jV-Ej-1YV"/>
+                    <navigationItem key="navigationItem" title="구독 만들기" largeTitleDisplayMode="never" id="5jV-Ej-1YV">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="Cna-kd-SOJ">
+                            <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                            <connections>
+                                <action selector="closeButtonDidTap:" destination="Xyu-8j-C61" id="J1J-Ht-Nr3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="nXW-px-dMN" id="y7C-4U-mMy"/>
                         <segue destination="nYZ-ML-ujL" kind="show" identifier="showDetail" id="K0C-Jv-oWv"/>
@@ -148,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwN-rM-P4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2499" y="1001"/>
+            <point key="canvasLocation" x="2498.5507246376815" y="1000.4464285714286"/>
         </scene>
         <!--Add Subscription Detail View Controller-->
         <scene sceneID="EJq-dy-Yyx">
@@ -450,10 +434,10 @@
             </objects>
             <point key="canvasLocation" x="3270" y="1001"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Subscription Navigation Controller-->
         <scene sceneID="Akz-qx-VdQ">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController-m3p-e5-eVa" hidesBottomBarWhenPushed="YES" id="m3p-e5-eVa" customClass="NavigationController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" id="m3p-e5-eVa" customClass="AddSubscriptionNavigationController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="add_icon.png" selectedImage="add_icon.png" id="6PW-tN-aY9"/>
                     <navigationItem key="navigationItem" id="4QK-Zs-fop"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wo3-rd-kFK">
@@ -474,6 +458,7 @@
         <image name="add_icon.png" width="18" height="18"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="primary">
             <color red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
