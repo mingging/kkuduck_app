@@ -9,8 +9,6 @@ import UIKit
 import Alamofire
 
 final class ListViewController: UIViewController {
-    let strURL = "http://20.196.199.127:8000/users/1"
-//    let userId: Int?
 
     // MARK: - Properties
 
@@ -51,12 +49,31 @@ final class ListViewController: UIViewController {
         addSubscriptionButton.layer.shadowOffset = CGSize(width: 1, height: 2)
         addSubscriptionButton.layer.masksToBounds = false
         addSubscriptionButton.layer.shadowPath = UIBezierPath(roundedRect: addSubscriptionButton.bounds, cornerRadius: addSubscriptionButton.layer.cornerRadius).cgPath
-
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    func subscriptionsWithEndDate(_ subscriptions: [Subscription]) -> [Subscription] {
+        var subscriptionsWithEndDate: [Subscription] = []
+        for i in 0..<subscriptions.count {
+            if subscriptions[i].endDate != nil {
+                subscriptionsWithEndDate.append(subscriptions[i])
+            }
+        }
+        return subscriptionsWithEndDate
+    }
+
+    func subscriptionsWithoutEndDate(_ subscriptions: [Subscription]) -> [Subscription] {
+        var subscriptionsWithoutEndDate: [Subscription] = []
+        for i in 0..<subscriptions.count {
+            if subscriptions[i].endDate == nil {
+                subscriptionsWithoutEndDate.append(subscriptions[i])
+            }
+        }
+        return subscriptionsWithoutEndDate
     }
 
     // MARK: - Configurations
@@ -76,14 +93,16 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     // 만료됨 세그먼트를 선택하면 cell에 회색의 블라인드 처리
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var returnValue = 0
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            return subscriptions.count
+            returnValue = subscriptionsWithoutEndDate(subscriptions).count
         case 1:
-            return subscriptions.count
+            returnValue = subscriptionsWithEndDate(subscriptions).count
         default:
-            return 0
+            break
         }
+        return returnValue
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,26 +112,28 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListSubscriptionCell.reuseIdentifier, for: indexPath) as! ListSubscriptionCell
 
-        let subscription = subscriptions[indexPath.row]
-
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            // 만료일이 지나지 않았거나 만료일이 없을 경우 함수 구현
+            // TODO: 만료일이 만료일이 없을 경우 함수 구현
+            let subscription = subscriptionsWithoutEndDate(subscriptions)[indexPath.row]
             cell.endCellView.backgroundColor = .clear
             ImageCache.load(urlString: subscription.imageUrl) { image in
                 cell.subscriptionImageView.image = image ?? .logo
             }
             cell.subscriptionNameLabel.text = subscription.serviceName
             cell.priceLabel.text = "\(subscription.planPrice)원 / \(subscription.cycle.rawValue)"
+            break
         case 1:
-            // 만료일이 지난 경우 함수 구현
+            // TODO: 만료일이 있는 경우 함수 구현
+            let subscription = subscriptionsWithEndDate(subscriptions)[indexPath.row]
             cell.endCellView.backgroundColor = .systemGray6
             cell.endCellView.alpha = 0.5
             ImageCache.load(urlString: subscription.imageUrl) { image in
                 cell.subscriptionImageView.image = image ?? .logo
             }
-            cell.subscriptionNameLabel.text = subscription.serviceName
-            cell.priceLabel.text = "\(subscription.planPrice)원 / \(subscription.cycle.rawValue)"
+            cell.subscriptionNameLabel.text = "0"
+            cell.priceLabel.text = "0"
+            break
         default:
             break
         }
@@ -144,14 +165,12 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
          case 0:
              if let destVC = segue.destination as? DetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow {
-                 destVC.subscription = subscriptions[indexPath.row]
-                 destVC.index = indexPath.row
+                 destVC.subscription = subscriptionsWithoutEndDate(subscriptions)[indexPath.row]
              }
          case 1:
              if let destVC = segue.destination as? DetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow {
-                 destVC.subscription = subscriptions[indexPath.row]
-                 destVC.index = indexPath.row
+                 destVC.subscription = subscriptionsWithEndDate(subscriptions)[indexPath.row]
              }
          default:
              break
