@@ -536,27 +536,27 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bt-ve-AbG">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="812.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xSo-gY-HTV">
-                                                <rect key="frame" x="30" y="10" width="188.5" height="82"/>
+                                                <rect key="frame" x="30" y="10" width="210.5" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정하실 정보를" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="570-3e-mun">
-                                                        <rect key="frame" x="0.0" y="0.0" width="188.5" height="36"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="30"/>
+                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입력해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeI-TM-6ld">
-                                                        <rect key="frame" x="0.0" y="46" width="188.5" height="36"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <rect key="frame" x="0.0" y="40" width="210.5" height="30"/>
+                                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fIS-Ug-1FB">
-                                                <rect key="frame" x="30" y="122" width="354" height="559"/>
+                                                <rect key="frame" x="30" y="110" width="354" height="559"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tjA-sy-BJl">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="55"/>
@@ -690,7 +690,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7T-5n-nsK">
-                                                <rect key="frame" x="30" y="731" width="354" height="50"/>
+                                                <rect key="frame" x="30" y="719" width="354" height="50"/>
                                                 <color key="backgroundColor" name="primary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="SfR-tR-ghn"/>
@@ -744,7 +744,10 @@
         <scene sceneID="Zlz-MA-B3k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AcY-Z9-3z8" customClass="ListNavigationController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="9pr-E3-eck"/>
+                    <tabBarItem key="tabBarItem" title="" id="9pr-E3-eck">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="person.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GzK-Eu-zug">
@@ -776,6 +779,7 @@
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="logo" width="84" height="84"/>
         <image name="logo.png" width="168" height="168"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="primary">

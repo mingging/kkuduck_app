@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="82Y-Ig-Q8e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="82Y-Ig-Q8e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -84,7 +85,10 @@
                             <constraint firstItem="THn-Y7-fIj" firstAttribute="top" secondItem="xWA-ot-u9j" secondAttribute="top" constant="54" id="zhQ-8q-rE9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="metric_icon.png" selectedImage="metric_icon.png" id="x3T-vB-hr1"/>
+                    <tabBarItem key="tabBarItem" title="" id="x3T-vB-hr1">
+                        <imageReference key="image" image="chart.bar" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="chart.bar.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="barChartView" destination="3dQ-eg-aMU" id="ynP-Sk-V5B"/>
                         <outlet property="charView" destination="bn0-iB-ydY" id="X25-pf-InV"/>
@@ -203,7 +207,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="metric_icon.png" width="24" height="24"/>
+        <image name="chart.bar" catalog="system" width="128" height="90"/>
+        <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,6 +9,12 @@ import UIKit
 
 final class TabBarController: UITabBarController {
 
+    private enum Metric {
+        static let shadowOffset = CGSize.zero
+        static let shadowRadius: CGFloat = 2
+        static let shadowOpacity: Float = 0.2
+    }
+
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
@@ -19,8 +25,12 @@ final class TabBarController: UITabBarController {
 
     private func setupView() {
         tabBar.backgroundColor = .primary
-        tabBar.backgroundImage = UIImage()
-        tabBar.tintColor = .white
+        tabBar.tintColor = .label
+        tabBar.unselectedItemTintColor = .label
+        tabBar.layer.shadowOffset = Metric.shadowOffset
+        tabBar.layer.shadowRadius = Metric.shadowRadius
+        tabBar.layer.shadowColor = UIColor.black.cgColor
+        tabBar.layer.shadowOpacity = Metric.shadowOpacity
     }
 
 }
