@@ -15,13 +15,12 @@ class DetailViewController: UIViewController {
 
     private enum Metric {
         static let cornerRadius: CGFloat = 15
-        static let shadowOffset: CGSize = CGSize(width: 1, height: 2)
-        static let shadowRadius: CGFloat = 10
-        static let shadowOpacity: Float = 0.2
     }
 
     // MARK: - Outlets
     @IBOutlet var detailCellView: UIView!
+    @IBOutlet var endDetailCellView: UIView!
+    @IBOutlet var endLabel: UILabel!
     @IBOutlet var subscriptionNameLabel: UILabel!
     @IBOutlet var detailsubscriptionNameLabel: UILabel!
     @IBOutlet var logoImageView: UIImageView!
@@ -39,9 +38,19 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
 
         guard let subscription = subscription else {
             return
+        }
+
+        if subscription.endDate == nil {
+            endDetailCellView.backgroundColor = .clear
+            endLabel.textColor = .clear
+        } else {
+            endDetailCellView.backgroundColor = .systemGray4
+            endDetailCellView.alpha = 0.5
+            endButton.isEnabled = false
         }
 
         subscriptionNameLabel.text = subscription.serviceName
@@ -79,27 +88,26 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func deleteButton(_ sender: UIButton) {
-        SubscriptionRepository.shared.delete(subscription: subscription!)
-        CheckServiceChange.shared.isServiceAdd = true
-        navigationController?.popViewController(animated: true)
+        let deleteAlert = UIAlertController(title: "", message: "구독 정보를 정말로 삭제하시겠습니까?", preferredStyle: .alert)
+        let cancleAction = UIAlertAction(title: "취소", style: .default) { _ in
+            print("취소했습니다.")
+        }
+        let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            SubscriptionRepository.shared.delete(subscription: self.subscription!)
+            CheckServiceChange.shared.isServiceAdd = true
+            self.navigationController?.popViewController(animated: true)
+        }
+        deleteAlert.addAction(cancleAction)
+        deleteAlert.addAction(deleteAction)
+        present(deleteAlert, animated: true)
     }
 
     private func setupView() {
         endButton.layer.cornerRadius = Metric.cornerRadius
-        endButton.layer.shadowColor = UIColor.black.cgColor
-        endButton.layer.shadowOpacity = Metric.shadowOpacity
-        endButton.layer.shadowRadius = Metric.shadowRadius
-        endButton.layer.shadowOffset = Metric.shadowOffset
         endButton.layer.masksToBounds = false
-        endButton.layer.shadowPath = UIBezierPath(roundedRect: endButton.bounds, cornerRadius: endButton.layer.cornerRadius).cgPath
 
         deleteButton.layer.cornerRadius = Metric.cornerRadius
-        deleteButton.layer.shadowColor = UIColor.black.cgColor
-        deleteButton.layer.shadowOpacity = Metric.shadowOpacity
-        deleteButton.layer.shadowRadius = Metric.shadowRadius
-        deleteButton.layer.shadowOffset = Metric.shadowOffset
         deleteButton.layer.masksToBounds = false
-        deleteButton.layer.shadowPath = UIBezierPath(roundedRect: deleteButton.bounds, cornerRadius: deleteButton.layer.cornerRadius).cgPath
     }
 
     private func DDay(_ startDate: Date) -> Int {

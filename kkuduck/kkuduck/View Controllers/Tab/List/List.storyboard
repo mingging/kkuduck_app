@@ -262,7 +262,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMz-z5-VKS" customClass="DatailCell" customModule="kkuduck" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="208" width="414" height="474"/>
+                                <rect key="frame" x="0.0" y="208" width="414" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cvl-8U-uR7">
                                         <rect key="frame" x="30" y="10" width="30" height="30"/>
@@ -451,8 +451,24 @@
                                     <constraint firstItem="lHn-Q3-ZPE" firstAttribute="top" secondItem="DdB-Ad-PlN" secondAttribute="bottom" constant="30" id="ygn-hK-XNh"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3T-y8-Xiy">
+                                <rect key="frame" x="0.0" y="208" width="414" height="380"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="만료됨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AW-vr-9OI">
+                                        <rect key="frame" x="168" y="172" width="78" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6AW-vr-9OI" firstAttribute="centerY" secondItem="Q3T-y8-Xiy" secondAttribute="centerY" id="Io5-y2-kIN"/>
+                                    <constraint firstItem="6AW-vr-9OI" firstAttribute="centerX" secondItem="Q3T-y8-Xiy" secondAttribute="centerX" id="tge-gn-n6W"/>
+                                    <constraint firstAttribute="height" constant="380" id="tle-Qi-wiF"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEQ-Ye-WSB" userLabel="End Button">
-                                <rect key="frame" x="30" y="782" width="150" height="50"/>
+                                <rect key="frame" x="30" y="762" width="150" height="50"/>
                                 <color key="backgroundColor" name="primary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pEQ-Ye-WSB" secondAttribute="height" multiplier="3:1" id="OT7-GJ-XfR"/>
@@ -463,12 +479,9 @@
                                 <state key="normal" title="만료">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="endButton:" destination="5ZO-8V-gNL" eventType="touchUpInside" id="BXk-fh-WfF"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbA-rG-lqU">
-                                <rect key="frame" x="234" y="782" width="150" height="50"/>
+                                <rect key="frame" x="234" y="762" width="150" height="50"/>
                                 <color key="backgroundColor" name="primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1zt-Vq-XuG"/>
@@ -490,13 +503,16 @@
                             <constraint firstItem="rxS-un-0eJ" firstAttribute="top" secondItem="cNI-aB-4h3" secondAttribute="bottom" constant="10" id="6CI-r7-sff"/>
                             <constraint firstItem="wMz-z5-VKS" firstAttribute="leading" secondItem="eok-fO-Wt7" secondAttribute="leading" id="6jT-lp-CL3"/>
                             <constraint firstItem="pEQ-Ye-WSB" firstAttribute="leading" secondItem="eok-fO-Wt7" secondAttribute="leading" constant="30" id="8Mi-iL-WNq"/>
-                            <constraint firstItem="eok-fO-Wt7" firstAttribute="bottom" secondItem="pEQ-Ye-WSB" secondAttribute="bottom" constant="30" id="CZD-c0-H0N"/>
-                            <constraint firstItem="eok-fO-Wt7" firstAttribute="bottom" secondItem="NbA-rG-lqU" secondAttribute="bottom" constant="30" id="Jch-0w-TPy"/>
+                            <constraint firstItem="eok-fO-Wt7" firstAttribute="bottom" secondItem="pEQ-Ye-WSB" secondAttribute="bottom" constant="50" id="CZD-c0-H0N"/>
+                            <constraint firstItem="Q3T-y8-Xiy" firstAttribute="leading" secondItem="eok-fO-Wt7" secondAttribute="leading" id="EwI-hd-9nr"/>
+                            <constraint firstItem="eok-fO-Wt7" firstAttribute="bottom" secondItem="NbA-rG-lqU" secondAttribute="bottom" constant="50" id="Jch-0w-TPy"/>
                             <constraint firstItem="eok-fO-Wt7" firstAttribute="trailing" secondItem="wMz-z5-VKS" secondAttribute="trailing" id="Mn9-z9-tUB"/>
-                            <constraint firstItem="pEQ-Ye-WSB" firstAttribute="top" secondItem="wMz-z5-VKS" secondAttribute="bottom" constant="100" id="NdI-8S-Avv"/>
                             <constraint firstItem="cNI-aB-4h3" firstAttribute="top" secondItem="eok-fO-Wt7" secondAttribute="top" constant="10" id="WRJ-gR-4QS"/>
+                            <constraint firstItem="eok-fO-Wt7" firstAttribute="trailing" secondItem="Q3T-y8-Xiy" secondAttribute="trailing" id="WUY-Kt-O6S"/>
                             <constraint firstItem="rxS-un-0eJ" firstAttribute="leading" secondItem="eok-fO-Wt7" secondAttribute="leading" constant="30" id="ZUd-km-fQh"/>
+                            <constraint firstItem="pEQ-Ye-WSB" firstAttribute="top" secondItem="wMz-z5-VKS" secondAttribute="bottom" constant="154" id="dBh-AT-sjW"/>
                             <constraint firstItem="cNI-aB-4h3" firstAttribute="leading" secondItem="eok-fO-Wt7" secondAttribute="leading" constant="30" id="ePI-0H-Vea"/>
+                            <constraint firstItem="Q3T-y8-Xiy" firstAttribute="top" secondItem="rxS-un-0eJ" secondAttribute="bottom" constant="30" id="ilp-Ct-BBt"/>
                             <constraint firstItem="eok-fO-Wt7" firstAttribute="trailing" secondItem="NbA-rG-lqU" secondAttribute="trailing" constant="30" id="k9a-QG-XGz"/>
                             <constraint firstItem="wMz-z5-VKS" firstAttribute="top" secondItem="rxS-un-0eJ" secondAttribute="bottom" constant="30" id="p2A-Xc-YZG"/>
                         </constraints>
@@ -506,7 +522,10 @@
                         <outlet property="deleteButton" destination="NbA-rG-lqU" id="0Cy-aF-OH0"/>
                         <outlet property="detailCellView" destination="wMz-z5-VKS" id="75y-8L-y0k"/>
                         <outlet property="detailsubscriptionNameLabel" destination="VbA-ua-z8F" id="ZMq-Hd-KoY"/>
+                        <outlet property="endButton" destination="pEQ-Ye-WSB" id="LaG-6m-ic9"/>
                         <outlet property="endDateLabel" destination="Pa4-6I-nv0" id="qKC-sJ-1hS"/>
+                        <outlet property="endDetailCellView" destination="Q3T-y8-Xiy" id="744-0L-UBT"/>
+                        <outlet property="endLabel" destination="6AW-vr-9OI" id="8ex-gY-TLC"/>
                         <outlet property="logoImageView" destination="cvl-8U-uR7" id="ECq-Oe-pUd"/>
                         <outlet property="nextDateLabel" destination="ROK-da-N5E" id="eyl-Wn-GdV"/>
                         <outlet property="planCycleLabel" destination="xPa-n7-1Ig" id="FPQ-gf-0Pw"/>
