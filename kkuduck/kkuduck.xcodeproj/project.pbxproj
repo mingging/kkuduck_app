@@ -267,8 +267,8 @@
 		5DBF02772743419600FE6C1D /* List */ = {
 			isa = PBXGroup;
 			children = (
-				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				5D127B082747AB5500E406C3 /* List.storyboard */,
+				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				5DBF027B274345A700FE6C1D /* Cells */,
 				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
 				106885592755E28E0057AD2D /* ListNavigationController.swift */,
