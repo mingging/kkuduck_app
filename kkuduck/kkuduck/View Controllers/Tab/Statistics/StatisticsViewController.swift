@@ -28,7 +28,6 @@ class StatisticsViewController: UIViewController {
     // segmentControl
 
     @IBAction func switchView(_ sender: UISegmentedControl) {
-
         if sender.selectedSegmentIndex == 0 {
             pieChartView.alpha = 1.0
             barChartView.alpha = 0.0
