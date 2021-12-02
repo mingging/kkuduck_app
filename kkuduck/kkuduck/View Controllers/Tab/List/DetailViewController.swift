@@ -12,7 +12,6 @@ class DetailViewController: UIViewController {
 
     // MARK: - Properties
     var subscription: Subscription?
-    var index: Int?
 
     private enum Metric {
         static let cornerRadius: CGFloat = 15
@@ -35,7 +34,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var startDateLabel: UILabel!
     @IBOutlet var endDateLabel: UILabel!
     @IBOutlet var nextDateLabel: UILabel!
-    @IBOutlet var editButton: UIButton!
+    @IBOutlet var endButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
 
     override func viewDidLoad() {
@@ -62,17 +61,21 @@ class DetailViewController: UIViewController {
         } else {
             endDateLabel.text = "-"
         }
-//        nextDateLabel.text
-
+        let nextDate = DateHelper.nextSubscriptionDate(from: subscription.startDate, matching: subscription.cycle)
+        nextDateLabel.text = DateHelper.string(from: nextDate!)
     }
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
-
     }
 
-    @IBAction func editButton(_ sender: UIButton) {
-        // TODO: 수정 버튼을 누르면 addView로 이동
+    @IBAction func endButton(_ sender: UIButton) {
+        // TODO: 만료 버튼을 누르면 만료일 생성 후 업데이트
+        let endDate = Date()
+        endDateLabel.text = DateHelper.string(from: endDate)
+
         SubscriptionRepository.shared.save(subscription: subscription!)
+        navigationController?.popViewController(animated: true)
     }
 
     @IBAction func deleteButton(_ sender: UIButton) {
@@ -81,13 +84,13 @@ class DetailViewController: UIViewController {
     }
 
     private func setupView() {
-        editButton.layer.cornerRadius = Metric.cornerRadius
-        editButton.layer.shadowColor = UIColor.black.cgColor
-        editButton.layer.shadowOpacity = Metric.shadowOpacity
-        editButton.layer.shadowRadius = Metric.shadowRadius
-        editButton.layer.shadowOffset = Metric.shadowOffset
-        editButton.layer.masksToBounds = false
-        editButton.layer.shadowPath = UIBezierPath(roundedRect: editButton.bounds, cornerRadius: editButton.layer.cornerRadius).cgPath
+        endButton.layer.cornerRadius = Metric.cornerRadius
+        endButton.layer.shadowColor = UIColor.black.cgColor
+        endButton.layer.shadowOpacity = Metric.shadowOpacity
+        endButton.layer.shadowRadius = Metric.shadowRadius
+        endButton.layer.shadowOffset = Metric.shadowOffset
+        endButton.layer.masksToBounds = false
+        endButton.layer.shadowPath = UIBezierPath(roundedRect: endButton.bounds, cornerRadius: endButton.layer.cornerRadius).cgPath
 
         deleteButton.layer.cornerRadius = Metric.cornerRadius
         deleteButton.layer.shadowColor = UIColor.black.cgColor
@@ -98,22 +101,11 @@ class DetailViewController: UIViewController {
         deleteButton.layer.shadowPath = UIBezierPath(roundedRect: deleteButton.bounds, cornerRadius: deleteButton.layer.cornerRadius).cgPath
     }
 
-    func DDay(_ startDate: Date) -> Int {
+    private func DDay(_ startDate: Date) -> Int {
         guard let subscription = subscription else {
             return 0
         }
         let now = Date()
         return Calendar.current.dateComponents([.day], from: subscription.startDate, to: now).day! + 1
     }
-
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-
 }
