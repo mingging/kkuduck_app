@@ -30,7 +30,7 @@
                                 <rect key="frame" x="20" y="108" width="374" height="754"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4fy-yr-qoB">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="626"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="754"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JYA-u5-HrK">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="106"/>
@@ -56,11 +56,8 @@
                                                 </subviews>
                                             </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nXW-px-dMN">
-                                                <rect key="frame" x="0.0" y="126" width="374" height="500"/>
+                                                <rect key="frame" x="0.0" y="126" width="374" height="628"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" priority="750" constant="500" id="vM4-lP-k65"/>
-                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="kf1-IQ-hEb">
                                                     <size key="itemSize" width="85" height="85"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -125,6 +122,7 @@
                                     <constraint firstItem="4fy-yr-qoB" firstAttribute="top" secondItem="Lvj-9g-8M2" secondAttribute="top" id="eDI-Bl-KDd"/>
                                     <constraint firstItem="4fy-yr-qoB" firstAttribute="width" secondItem="KzG-SU-gKh" secondAttribute="width" id="hb0-an-dal"/>
                                     <constraint firstItem="4fy-yr-qoB" firstAttribute="leading" secondItem="Lvj-9g-8M2" secondAttribute="leading" id="sGI-vp-pyz"/>
+                                    <constraint firstItem="4fy-yr-qoB" firstAttribute="height" secondItem="KzG-SU-gKh" secondAttribute="height" priority="750" id="zZF-Iz-uPs"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Lvj-9g-8M2"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="KzG-SU-gKh"/>

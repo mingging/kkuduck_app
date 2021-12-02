@@ -6,13 +6,8 @@
 //
 
 import UIKit
-import Charts
 
-class DetailViewController: UIViewController {
-
-    // MARK: - Properties
-    var subscription: Subscription?
-    var index: Int?
+final class DetailViewController: UIViewController {
 
     private enum Metric {
         static let cornerRadius: CGFloat = 15
@@ -21,29 +16,69 @@ class DetailViewController: UIViewController {
         static let shadowOpacity: Float = 0.2
     }
 
+    // MARK: - Properties
+
+    var subscription: Subscription?
+
     // MARK: - Outlets
-    @IBOutlet var detailCellView: UIView!
-    @IBOutlet var subscriptionNameLabel: UILabel!
-    @IBOutlet var detailsubscriptionNameLabel: UILabel!
-    @IBOutlet var logoImageView: UIImageView!
-    @IBOutlet var subscriptionDDayLabel: UILabel!
-    @IBOutlet var planNameLabel: UILabel!
-    @IBOutlet var planPriceLabel: UILabel!
-    @IBOutlet var planCycleLabel: UILabel!
-    @IBOutlet var shareCountLabel: UILabel!
-    @IBOutlet var shareIdLabel: UILabel!
-    @IBOutlet var startDateLabel: UILabel!
-    @IBOutlet var endDateLabel: UILabel!
-    @IBOutlet var nextDateLabel: UILabel!
-    @IBOutlet var editButton: UIButton!
-    @IBOutlet var deleteButton: UIButton!
+
+    @IBOutlet weak var detailCellView: UIView!
+    @IBOutlet weak var subscriptionNameLabel: UILabel!
+    @IBOutlet weak var detailsubscriptionNameLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var subscriptionDDayLabel: UILabel!
+    @IBOutlet weak var planNameLabel: UILabel!
+    @IBOutlet weak var planPriceLabel: UILabel!
+    @IBOutlet weak var planCycleLabel: UILabel!
+    @IBOutlet weak var shareCountLabel: UILabel!
+    @IBOutlet weak var shareIdLabel: UILabel!
+    @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var nextDateLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let subscription = subscription else {
-            return
-        }
+        setupView()
+        configure(with: subscription)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+
+    private func setupView() {
+        editButton.layer.cornerRadius = Metric.cornerRadius
+        editButton.layer.shadowColor = UIColor.black.cgColor
+        editButton.layer.shadowOpacity = Metric.shadowOpacity
+        editButton.layer.shadowRadius = Metric.shadowRadius
+        editButton.layer.shadowOffset = Metric.shadowOffset
+        editButton.layer.masksToBounds = false
+        editButton.layer.shadowPath = UIBezierPath(
+            roundedRect: editButton.bounds,
+            cornerRadius: editButton.layer.cornerRadius
+        ).cgPath
+
+        deleteButton.layer.cornerRadius = Metric.cornerRadius
+        deleteButton.layer.shadowColor = UIColor.black.cgColor
+        deleteButton.layer.shadowOpacity = Metric.shadowOpacity
+        deleteButton.layer.shadowRadius = Metric.shadowRadius
+        deleteButton.layer.shadowOffset = Metric.shadowOffset
+        deleteButton.layer.masksToBounds = false
+        deleteButton.layer.shadowPath = UIBezierPath(
+            roundedRect: deleteButton.bounds,
+            cornerRadius: deleteButton.layer.cornerRadius
+        ).cgPath
+    }
+
+    private func configure(with: Subscription?) {
+        guard let subscription = subscription else { return }
 
         subscriptionNameLabel.text = subscription.serviceName
         detailsubscriptionNameLabel.text = subscription.serviceName
@@ -57,48 +92,15 @@ class DetailViewController: UIViewController {
         shareCountLabel.text = "\(subscription.shareCount)명"
         shareIdLabel.text = subscription.shareId
         startDateLabel.text = DateHelper.string(from: subscription.startDate)
-        if subscription.endDate != nil {
-            endDateLabel.text = DateHelper.string(from: subscription.endDate!)
+
+        if let endDate = subscription.endDate {
+            endDateLabel.text = DateHelper.string(from: endDate)
         } else {
             endDateLabel.text = "-"
         }
-//        nextDateLabel.text
-
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
-
     }
 
-    @IBAction func editButton(_ sender: UIButton) {
-        // TODO: 수정 버튼을 누르면 addView로 이동
-        SubscriptionRepository.shared.save(subscription: subscription!)
-    }
-
-    @IBAction func deleteButton(_ sender: UIButton) {
-        SubscriptionRepository.shared.delete(subscription: subscription!)
-        navigationController?.popViewController(animated: true)
-    }
-
-    private func setupView() {
-        editButton.layer.cornerRadius = Metric.cornerRadius
-        editButton.layer.shadowColor = UIColor.black.cgColor
-        editButton.layer.shadowOpacity = Metric.shadowOpacity
-        editButton.layer.shadowRadius = Metric.shadowRadius
-        editButton.layer.shadowOffset = Metric.shadowOffset
-        editButton.layer.masksToBounds = false
-        editButton.layer.shadowPath = UIBezierPath(roundedRect: editButton.bounds, cornerRadius: editButton.layer.cornerRadius).cgPath
-
-        deleteButton.layer.cornerRadius = Metric.cornerRadius
-        deleteButton.layer.shadowColor = UIColor.black.cgColor
-        deleteButton.layer.shadowOpacity = Metric.shadowOpacity
-        deleteButton.layer.shadowRadius = Metric.shadowRadius
-        deleteButton.layer.shadowOffset = Metric.shadowOffset
-        deleteButton.layer.masksToBounds = false
-        deleteButton.layer.shadowPath = UIBezierPath(roundedRect: deleteButton.bounds, cornerRadius: deleteButton.layer.cornerRadius).cgPath
-    }
-
-    func DDay(_ startDate: Date) -> Int {
+    private func DDay(_ startDate: Date) -> Int {
         guard let subscription = subscription else {
             return 0
         }
@@ -106,14 +108,17 @@ class DetailViewController: UIViewController {
         return Calendar.current.dateComponents([.day], from: subscription.startDate, to: now).day! + 1
     }
 
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Actions
+
+    @IBAction func editButtonDidTap(_ sender: UIButton) {
+        let current = Date()
+        endDateLabel.text = DateHelper.string(from: current)
+        SubscriptionRepository.shared.update(endDate: current, for: subscription!)
+    }
+
+    @IBAction func deleteButtonDidTap(_ sender: UIButton) {
+        SubscriptionRepository.shared.delete(subscription: subscription!)
+        navigationController?.popViewController(animated: true)
+    }
 
 }
