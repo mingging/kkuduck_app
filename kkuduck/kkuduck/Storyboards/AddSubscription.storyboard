@@ -434,10 +434,10 @@
             </objects>
             <point key="canvasLocation" x="3270" y="1001"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Subscription Navigation Controller-->
         <scene sceneID="Akz-qx-VdQ">
             <objects>
-                <navigationController hidesBottomBarWhenPushed="YES" id="m3p-e5-eVa" customClass="NavigationController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" id="m3p-e5-eVa" customClass="AddSubscriptionNavigationController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="add_icon.png" selectedImage="add_icon.png" id="6PW-tN-aY9"/>
                     <navigationItem key="navigationItem" id="4QK-Zs-fop"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wo3-rd-kFK">

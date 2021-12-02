@@ -763,10 +763,10 @@
             </objects>
             <point key="canvasLocation" x="1642.0289855072465" y="159.375"/>
         </scene>
-        <!--AddService-->
+        <!--AddSubscription-->
         <scene sceneID="2x9-A4-A5d">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UINavigationController-m3p-e5-eVa" storyboardName="AddService" id="fKh-aS-69U" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="UINavigationController-m3p-e5-eVa" storyboardName="AddSubscription" id="fKh-aS-69U" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Msf-1p-1vZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VE-wa-nTp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
