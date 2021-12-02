@@ -522,7 +522,6 @@
                         <outlet property="deleteButton" destination="NbA-rG-lqU" id="0Cy-aF-OH0"/>
                         <outlet property="detailCellView" destination="wMz-z5-VKS" id="75y-8L-y0k"/>
                         <outlet property="detailsubscriptionNameLabel" destination="VbA-ua-z8F" id="ZMq-Hd-KoY"/>
-                        <outlet property="endButton" destination="pEQ-Ye-WSB" id="LaG-6m-ic9"/>
                         <outlet property="endDateLabel" destination="Pa4-6I-nv0" id="qKC-sJ-1hS"/>
                         <outlet property="endDetailCellView" destination="Q3T-y8-Xiy" id="744-0L-UBT"/>
                         <outlet property="endLabel" destination="6AW-vr-9OI" id="8ex-gY-TLC"/>
