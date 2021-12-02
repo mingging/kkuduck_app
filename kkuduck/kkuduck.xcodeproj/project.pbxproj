@@ -35,6 +35,7 @@
 		5D20028D274FB44C00C21E14 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */; };
 		5D20028F274FB4D500C21E14 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */; };
 		5D2002942754B6E500C21E14 /* DefaultSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2002932754B6E400C21E14 /* DefaultSubscription.swift */; };
+		5D2002A327586F4100C21E14 /* AddSubscriptionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2002A227586F4100C21E14 /* AddSubscriptionHeader.swift */; };
 		5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */; };
 		5D5CD3B0274E24A70082DBE8 /* DefaultSubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */; };
 		5D9AEDF8274C9B1200E06F3B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */; };
@@ -83,6 +84,7 @@
 		5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		5D2002932754B6E400C21E14 /* DefaultSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscription.swift; sourceTree = "<group>"; };
+		5D2002A227586F4100C21E14 /* AddSubscriptionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionHeader.swift; sourceTree = "<group>"; };
 		5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRepository.swift; sourceTree = "<group>"; };
 		5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscriptionRepository.swift; sourceTree = "<group>"; };
 		5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				396340842727DF600079E845 /* AddSubscriptionCell.swift */,
+				5D2002A227586F4100C21E14 /* AddSubscriptionHeader.swift */,
 				396340CD272A4AD90079E845 /* SelectPlanCell.swift */,
 				396340CE272A4AD90079E845 /* SelectPlanCell.xib */,
 			);
@@ -512,6 +515,7 @@
 				5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,
 				10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */,
+				5D2002A327586F4100C21E14 /* AddSubscriptionHeader.swift in Sources */,
 				5D20028F274FB4D500C21E14 /* UserDefaults+Extension.swift in Sources */,
 				396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */,
 			);
