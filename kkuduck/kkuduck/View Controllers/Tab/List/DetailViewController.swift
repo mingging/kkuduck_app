@@ -77,6 +77,7 @@ class DetailViewController: UIViewController {
 
     @IBAction func deleteButton(_ sender: UIButton) {
         SubscriptionRepository.shared.delete(subscription: subscription!)
+        CheckServiceChange.shared.isServiceAdd = true
         navigationController?.popViewController(animated: true)
     }
 

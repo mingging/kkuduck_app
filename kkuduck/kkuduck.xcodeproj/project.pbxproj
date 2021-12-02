@@ -28,6 +28,7 @@
 		396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396340CE272A4AD90079E845 /* SelectPlanCell.xib */; };
 		398EAF31274D02A80026ED60 /* MonthlyStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */; };
 		398EAF33274D291A0026ED60 /* AllStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398EAF32274D291A0026ED60 /* AllStatisticsViewController.swift */; };
+		39EE3A0F2757B3B000D7560A /* CheckServiceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE3A0E2757B3B000D7560A /* CheckServiceChange.swift */; };
 		5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B022747A90700E406C3 /* .swiftlint.yml */; };
 		5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B062747AB2000E406C3 /* Statistics.storyboard */; };
 		5D127B092747AB5500E406C3 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D127B082747AB5500E406C3 /* List.storyboard */; };
@@ -76,6 +77,7 @@
 		396340CE272A4AD90079E845 /* SelectPlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlanCell.xib; sourceTree = "<group>"; };
 		398EAF30274D02A80026ED60 /* MonthlyStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyStatisticsViewController.swift; sourceTree = "<group>"; };
 		398EAF32274D291A0026ED60 /* AllStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStatisticsViewController.swift; sourceTree = "<group>"; };
+		39EE3A0E2757B3B000D7560A /* CheckServiceChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckServiceChange.swift; sourceTree = "<group>"; };
 		5D127B022747A90700E406C3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5D127B062747AB2000E406C3 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		5D127B082747AB5500E406C3 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = List.storyboard; path = "kkuduck/View Controllers/Tab/List/List.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -172,6 +174,7 @@
 				5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */,
 				5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */,
 				5DA9FA09274DB13200D72377 /* DefaultSubscriptionRequest.swift */,
+				39EE3A0E2757B3B000D7560A /* CheckServiceChange.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				5D20028D274FB44C00C21E14 /* UIStoryboard+Extension.swift in Sources */,
 				396340832727D2930079E845 /* AddSubscriptionListViewController.swift in Sources */,
 				5DBCAB362733E60200343733 /* UIColor+Extension.swift in Sources */,
+				39EE3A0F2757B3B000D7560A /* CheckServiceChange.swift in Sources */,
 				5DA9FA03274D222000D72377 /* UIImage+Extension.swift in Sources */,
 				39633FE1272649800079E845 /* AppDelegate.swift in Sources */,
 				396340CF272A4AD90079E845 /* SelectPlanCell.swift in Sources */,
