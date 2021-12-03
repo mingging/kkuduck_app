@@ -6,20 +6,36 @@
 //
 
 import UIKit
-import Charts
 
-class DetailViewController: UIViewController {
-
-    // MARK: - Properties
-    var subscription: Subscription?
+final class DetailViewController: UIViewController {
 
     private enum Metric {
         static let cornerRadius: CGFloat = 15
     }
 
+    // MARK: - Properties
+
+    var subscription: Subscription?
+    var endDate: Date? {
+        didSet {
+            if let endDate = endDate {
+                detailContainerView.backgroundColor = .systemGray4
+                detailContainerView.alpha = 0.5
+                endLabel.textColor = .label
+                endButton.isEnabled = false
+                endDateLabel.text = DateHelper.string(from: endDate)
+            } else {
+                detailContainerView.backgroundColor = .clear
+                detailContainerView.alpha = 1
+                endLabel.textColor = .clear
+                endDateLabel.text = "-"
+            }
+        }
+    }
+
     // MARK: - Outlets
-    @IBOutlet var detailCellView: UIView!
-    @IBOutlet var endDetailCellView: UIView!
+
+    @IBOutlet var detailContainerView: UIStackView!
     @IBOutlet var endLabel: UILabel!
     @IBOutlet var subscriptionNameLabel: UILabel!
     @IBOutlet var detailsubscriptionNameLabel: UILabel!
@@ -36,23 +52,31 @@ class DetailViewController: UIViewController {
     @IBOutlet var endButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
 
+    // MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
 
-        guard let subscription = subscription else {
-            return
-        }
+        setupView()
+        configure(with: subscription)
+    }
 
-        if subscription.endDate == nil {
-            endDetailCellView.backgroundColor = .clear
-            endLabel.textColor = .clear
-        } else {
-            endDetailCellView.backgroundColor = .systemGray4
-            endDetailCellView.alpha = 0.5
-            endButton.isEnabled = false
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+
+    private func setupView() {
+        endButton.layer.cornerRadius = Metric.cornerRadius
+        endButton.layer.masksToBounds = false
+        deleteButton.layer.cornerRadius = Metric.cornerRadius
+        deleteButton.layer.masksToBounds = false
+    }
+
+    private func configure(with: Subscription?) {
+        guard let subscription = subscription else { return }
         subscriptionNameLabel.text = subscription.serviceName
         detailsubscriptionNameLabel.text = subscription.serviceName
         subscriptionDDayLabel.text = "\(DDay(subscription.startDate))"
@@ -65,33 +89,30 @@ class DetailViewController: UIViewController {
         shareCountLabel.text = "\(subscription.shareCount)명"
         shareIdLabel.text = subscription.shareId
         startDateLabel.text = DateHelper.string(from: subscription.startDate)
-        if subscription.endDate != nil {
-            endDateLabel.text = DateHelper.string(from: subscription.endDate!)
-        } else {
-            endDateLabel.text = "-"
-        }
         let nextDate = DateHelper.nextSubscriptionDate(from: subscription.startDate, matching: subscription.cycle)
         nextDateLabel.text = DateHelper.string(from: nextDate!)
+        endDate = subscription.endDate
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-
-    @IBAction func endButton(_ sender: UIButton) {
-        // TODO: 만료 버튼을 누르면 만료일 생성 후 업데이트
-        let endDate = Date()
-        endDateLabel.text = DateHelper.string(from: endDate)
-
-        SubscriptionRepository.shared.save(subscription: subscription!)
-        navigationController?.popViewController(animated: true)
-    }
-
-    @IBAction func deleteButton(_ sender: UIButton) {
-        let deleteAlert = UIAlertController(title: "", message: "구독 정보를 정말로 삭제하시겠습니까?", preferredStyle: .alert)
-        let cancleAction = UIAlertAction(title: "취소", style: .default) { _ in
-            print("취소했습니다.")
+    private func DDay(_ startDate: Date) -> Int {
+        guard let subscription = subscription else {
+            return 0
         }
+        let now = Date()
+        return Calendar.current.dateComponents([.day], from: subscription.startDate, to: now).day! + 1
+    }
+
+    // MARK: - Actions
+
+    @IBAction func endButtonDidTap(_ sender: UIButton) {
+        let current = Date()
+        endDate = current
+        SubscriptionRepository.shared.update(endDate: current, for: subscription!)
+    }
+
+    @IBAction func deleteButtonDidTap(_ sender: UIButton) {
+        let deleteAlert = UIAlertController(title: "", message: "구독 정보를 정말로 삭제하시겠습니까?", preferredStyle: .alert)
+        let cancleAction = UIAlertAction(title: "취소", style: .default)
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
             SubscriptionRepository.shared.delete(subscription: self.subscription!)
             CheckServiceChange.shared.isServiceAdd = true
@@ -102,19 +123,4 @@ class DetailViewController: UIViewController {
         present(deleteAlert, animated: true)
     }
 
-    private func setupView() {
-        endButton.layer.cornerRadius = Metric.cornerRadius
-        endButton.layer.masksToBounds = false
-
-        deleteButton.layer.cornerRadius = Metric.cornerRadius
-        deleteButton.layer.masksToBounds = false
-    }
-
-    private func DDay(_ startDate: Date) -> Int {
-        guard let subscription = subscription else {
-            return 0
-        }
-        let now = Date()
-        return Calendar.current.dateComponents([.day], from: subscription.startDate, to: now).day! + 1
-    }
 }

@@ -56,7 +56,7 @@ final class ListViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
-    func subscriptionsWithEndDate(_ subscriptions: [Subscription]) -> [Subscription] {
+    private func subscriptionsWithEndDate(_ subscriptions: [Subscription]) -> [Subscription] {
         var subscriptionsWithEndDate: [Subscription] = []
         for i in 0..<subscriptions.count {
             if subscriptions[i].endDate != nil {
@@ -66,7 +66,7 @@ final class ListViewController: UIViewController {
         return subscriptionsWithEndDate
     }
 
-    func subscriptionsWithoutEndDate(_ subscriptions: [Subscription]) -> [Subscription] {
+    private func subscriptionsWithoutEndDate(_ subscriptions: [Subscription]) -> [Subscription] {
         var subscriptionsWithoutEndDate: [Subscription] = []
         for i in 0..<subscriptions.count {
             if subscriptions[i].endDate == nil {
@@ -131,50 +131,34 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             ImageCache.load(urlString: subscription.imageUrl) { image in
                 cell.subscriptionImageView.image = image ?? .logo
             }
-            cell.subscriptionNameLabel.text = "0"
-            cell.priceLabel.text = "0"
+            cell.subscriptionNameLabel.text = subscription.serviceName
+            cell.priceLabel.text = "\(subscription.planPrice)원 / \(subscription.cycle.rawValue)"
             break
         default:
             break
         }
 
         return cell
-        // 데이터 불러오기
-        //        guard let item = writeSubInfo?[indexPath.row] as? [String: Any] else { return cell }
-        //
-        //        cell.subscriptionNameLabel.text = item["planName"] as? String
-        //        guard let thumImage = item["img"] as? String else { return cell }
-        //
-        //        // TODO: image 수정
-        //        cell.subscriptionImageView.image = UIImage(named: "logo.png")
-        //        cell.stratDateLabel.text = item["subStartDay"] as? String
-        //
-        //        guard let price = item["planPrice"] as? String else { return cell }
-        //        guard let cycle = item["cycle"] as? String else { return cell }
-        //        let numberFormatter = NumberFormatter()
-        //        numberFormatter.numberStyle = .decimal
-        //        cell.priceLabel.text = "\(numberFormatter.string(for: Int(price))!)원/\(cycle)"
 
     }
 
-     // MARK: - Navigation
+    // MARK: - Navigation
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         switch segmentedControl.selectedSegmentIndex {
-         case 0:
-             if let destVC = segue.destination as? DetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow {
-                 destVC.subscription = subscriptionsWithoutEndDate(subscriptions)[indexPath.row]
-             }
-         case 1:
-             if let destVC = segue.destination as? DetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow {
-                 destVC.subscription = subscriptionsWithEndDate(subscriptions)[indexPath.row]
-             }
-         default:
-             break
-         }
-     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            if let destVC = segue.destination as? DetailViewController,
+               let indexPath = tableView.indexPathForSelectedRow {
+                destVC.subscription = subscriptionsWithoutEndDate(subscriptions)[indexPath.row]
+            }
+        case 1:
+            if let destVC = segue.destination as? DetailViewController,
+               let indexPath = tableView.indexPathForSelectedRow {
+                destVC.subscription = subscriptionsWithEndDate(subscriptions)[indexPath.row]
+            }
+        default:
+            break
+        }
+    }
 
 }

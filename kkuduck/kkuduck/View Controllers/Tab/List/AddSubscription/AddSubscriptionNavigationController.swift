@@ -1,5 +1,5 @@
 //
-//  NavigationController.swift
+//  AddSubscriptionNavigationController.swift
 //  kkuduck
 //
 //  Created by 홍다희 on 2021/11/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class NavigationController: UINavigationController {
+final class AddSubscriptionNavigationController: UINavigationController {
 
     private enum Font {
         static let navigaionBar = UIFont(name: "GmarketSansBold", size: 18)
