@@ -56,6 +56,7 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
 
         setupView()
         configure(with: subscription)
@@ -76,7 +77,6 @@ final class DetailViewController: UIViewController {
 
     private func configure(with: Subscription?) {
         guard let subscription = subscription else { return }
-
         subscriptionNameLabel.text = subscription.serviceName
         detailsubscriptionNameLabel.text = subscription.serviceName
         subscriptionDDayLabel.text = "\(DDay(subscription.startDate))"

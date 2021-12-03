@@ -142,23 +142,23 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 
     }
 
-     // MARK: - Navigation
+    // MARK: - Navigation
 
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         switch segmentedControl.selectedSegmentIndex {
-         case 0:
-             if let destVC = segue.destination as? DetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow {
-                 destVC.subscription = subscriptionsWithoutEndDate(subscriptions)[indexPath.row]
-             }
-         case 1:
-             if let destVC = segue.destination as? DetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow {
-                 destVC.subscription = subscriptionsWithEndDate(subscriptions)[indexPath.row]
-             }
-         default:
-             break
-         }
-     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            if let destVC = segue.destination as? DetailViewController,
+               let indexPath = tableView.indexPathForSelectedRow {
+                destVC.subscription = subscriptionsWithoutEndDate(subscriptions)[indexPath.row]
+            }
+        case 1:
+            if let destVC = segue.destination as? DetailViewController,
+               let indexPath = tableView.indexPathForSelectedRow {
+                destVC.subscription = subscriptionsWithEndDate(subscriptions)[indexPath.row]
+            }
+        default:
+            break
+        }
+    }
 
 }

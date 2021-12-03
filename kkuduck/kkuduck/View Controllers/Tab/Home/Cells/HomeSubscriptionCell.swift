@@ -40,6 +40,10 @@ final class HomeSubscriptionCell: UICollectionViewCell {
         layer.shadowRadius = Metric.shadowRadius
         layer.shadowOpacity = Metric.shadowOpacity
         layer.masksToBounds = false
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
 
         thumbnailContainerView.layer.cornerRadius = (thumbnailContainerView.frame.height) / 2
     }
