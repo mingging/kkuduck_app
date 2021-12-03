@@ -59,6 +59,7 @@ final class HomeViewController: UIViewController {
 
     private func fetchSubscriptions() {
         subscriptions = SubscriptionRepository.shared.subscriptions()
+            .filter { $0.endDate == nil }
             .sorted {
                 DateHelper.nextSubscriptionDate(from: $0.startDate, matching: $0.cycle)!
                 < DateHelper.nextSubscriptionDate(from: $1.startDate, matching: $1.cycle)!

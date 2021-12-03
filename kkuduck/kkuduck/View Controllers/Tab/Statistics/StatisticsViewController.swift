@@ -6,26 +6,33 @@
 //
 
 import UIKit
-import Charts
 
-class StatisticsViewController: UIViewController {
+final class StatisticsViewController: UIViewController {
 
-    // container view
+    private enum Font {
+        static let segmentedControl = UIFont(name: "GmarketSansMedium", size: 12)!
+    }
+
+    // MARK: - Outlets
+
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var barChartView: UIView!
     @IBOutlet weak var pieChartView: UIView!
 
-    @IBOutlet weak var segmentControl: UISegmentedControl!
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // segmentControl Custom
-        segmentControl.titleTextAttributes(for: .normal)
-        segmentControl.selectedSegmentTintColor = .primary
-        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        setupView()
     }
 
-    // segmentControl
+    private func setupView() {
+        let attributes = [NSAttributedString.Key.font: Font.segmentedControl]
+        segmentedControl.setTitleTextAttributes(attributes, for: .normal)
+    }
+
+    // MARK: - Actions
 
     @IBAction func switchView(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
@@ -36,4 +43,5 @@ class StatisticsViewController: UIViewController {
             barChartView.alpha = 1.0
         }
     }
+
 }

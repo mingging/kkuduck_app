@@ -10,6 +10,10 @@ import Charts
 
 final class MonthlyStatisticsViewController: UIViewController {
 
+    private enum Font {
+        static let chartLabel = UIFont(name: "GmarketSansBold", size: 15)!
+    }
+
     // MARK: - Properties
 
     var monthArray: [String] = []
@@ -22,7 +26,7 @@ final class MonthlyStatisticsViewController: UIViewController {
 
     private lazy var monthDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM" // ex) Dec
+        formatter.dateFormat = "MMM" // ex) 12월이면 Dec
         return formatter
     }()
 
@@ -38,7 +42,8 @@ final class MonthlyStatisticsViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        barChart.delegate = self
+
+        setup(barChartView: barChart)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +51,28 @@ final class MonthlyStatisticsViewController: UIViewController {
 
         setChart()
         chartValueNothingSelected(barChart)
+    }
+
+    // MARK: -
+
+    private func setup(barChartView chartView: BarChartView) {
+        chartView.delegate = self
+
+        chartView.doubleTapToZoomEnabled = false
+        chartView.legend.enabled = false
+
+        chartView.xAxis.labelPosition = .bottom
+        chartView.xAxis.drawAxisLineEnabled = false
+        chartView.xAxis.drawGridLinesEnabled = false
+
+        chartView.rightAxis.enabled = false
+
+        chartView.leftAxis.drawAxisLineEnabled = false
+        chartView.leftAxis.enabled = false
+
+        chartView.noDataFont = Font.chartLabel
+        chartView.noDataTextColor = .label
+        chartView.noDataText = "데이터가 없습니다."
     }
 
     private func setChart() {
@@ -82,26 +109,13 @@ final class MonthlyStatisticsViewController: UIViewController {
         }
 
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "월별 사용 금액")
-        chartDataSet.colors = [.orange]
+        chartDataSet.colors = [.primary!]
         chartDataSet.highlightEnabled = true
 
         let chartData = BarChartData(dataSet: chartDataSet)
-
-        barChart.noDataFont = .systemFont(ofSize: 20)
-        barChart.noDataText = "데이터가 없습니다."
-        barChart.noDataTextColor = .lightGray
-        barChart.data = chartData
-        barChart.doubleTapToZoomEnabled = false
-
-        barChart.xAxis.labelPosition = .bottom
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: monthArray)
-        barChart.xAxis.drawAxisLineEnabled = false
-        barChart.xAxis.drawGridLinesEnabled = false
         barChart.xAxis.setLabelCount(monthArray.count, force: false)
-
-        barChart.rightAxis.enabled = false
-        barChart.leftAxis.drawAxisLineEnabled = false
-        barChart.leftAxis.enabled = false
+        barChart.data = chartData
     }
 
     private func getPreviouseSixMonth(_ date: Date) {
