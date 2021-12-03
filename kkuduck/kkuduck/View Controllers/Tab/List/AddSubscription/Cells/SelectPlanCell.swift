@@ -18,7 +18,7 @@ final class SelectPlanCell: DropDownCell {
     func configure(with plan: DefaultSubscription.Plan) {
         optionLabel.text = ""
         nameLabel.text = plan.name
-        priceLabel.text = "\(plan.price)원/\(plan.cycle.rawValue)"
+        priceLabel.text = "\(plan.price.currencyString)/\(plan.cycle.rawValue)"
     }
 
 }

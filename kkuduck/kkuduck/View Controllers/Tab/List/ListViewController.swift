@@ -121,7 +121,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.subscriptionImageView.image = image ?? .logo
             }
             cell.subscriptionNameLabel.text = subscription.serviceName
-            cell.priceLabel.text = "\(subscription.planPrice)원 / \(subscription.cycle.rawValue)"
+            cell.priceLabel.text = "\(subscription.planPrice.currencyString) / \(subscription.cycle.rawValue)"
             break
         case 1:
             // TODO: 만료일이 있는 경우 함수 구현
@@ -132,7 +132,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.subscriptionImageView.image = image ?? .logo
             }
             cell.subscriptionNameLabel.text = subscription.serviceName
-            cell.priceLabel.text = "\(subscription.planPrice)원 / \(subscription.cycle.rawValue)"
+            cell.priceLabel.text = "\(subscription.planPrice.currencyString) / \(subscription.cycle.rawValue)"
             break
         default:
             break

@@ -84,7 +84,7 @@ final class DetailViewController: UIViewController {
             self.logoImageView.image = image ?? .logo
         }
         planNameLabel.text = subscription.planName
-        planPriceLabel.text = "\(subscription.planPrice)원"
+        planPriceLabel.text = subscription.planPrice.currencyString
         planCycleLabel.text = subscription.cycle.rawValue
         shareCountLabel.text = "\(subscription.shareCount)명"
         shareIdLabel.text = subscription.shareId

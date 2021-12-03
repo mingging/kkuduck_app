@@ -39,6 +39,7 @@
 		5D2002A327586F4100C21E14 /* AddSubscriptionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2002A227586F4100C21E14 /* AddSubscriptionHeader.swift */; };
 		5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */; };
 		5D5CD3B0274E24A70082DBE8 /* DefaultSubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */; };
+		5D5CD3FB2759F94B0082DBE8 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3FA2759F94B0082DBE8 /* Int+Extension.swift */; };
 		5D9AEDF8274C9B1200E06F3B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */; };
 		5D9AEDFA274CB66700E06F3B /* AddSubscriptionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF9274CB66700E06F3B /* AddSubscriptionNavigationController.swift */; };
 		5DA9FA01274D084200D72377 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA00274D084200D72377 /* ImageCache.swift */; };
@@ -89,6 +90,7 @@
 		5D2002A227586F4100C21E14 /* AddSubscriptionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionHeader.swift; sourceTree = "<group>"; };
 		5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRepository.swift; sourceTree = "<group>"; };
 		5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscriptionRepository.swift; sourceTree = "<group>"; };
+		5D5CD3FA2759F94B0082DBE8 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5D9AEDF9274CB66700E06F3B /* AddSubscriptionNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionNavigationController.swift; sourceTree = "<group>"; };
 		5DA9FA00274D084200D72377 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				5DA9FA02274D222000D72377 /* UIImage+Extension.swift */,
 				5DBCAB402733F74C00343733 /* ReusableView.swift */,
 				5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */,
+				5D5CD3FA2759F94B0082DBE8 /* Int+Extension.swift */,
 				5DA9FA00274D084200D72377 /* ImageCache.swift */,
 				5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */,
 			);
@@ -273,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				5D127B082747AB5500E406C3 /* List.storyboard */,
-				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				5DBF027B274345A700FE6C1D /* Cells */,
 				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
@@ -492,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */,
+				5D5CD3FB2759F94B0082DBE8 /* Int+Extension.swift in Sources */,
 				3963407D2727C64D0079E845 /* ListSubscriptionCell.swift in Sources */,
 				5DBCAB412733F74C00343733 /* ReusableView.swift in Sources */,
 				1068855A2755E28E0057AD2D /* ListNavigationController.swift in Sources */,
