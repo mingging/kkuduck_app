@@ -60,3 +60,25 @@ fileprivate extension Cycle {
         }
     }
 }
+
+// MARK: - DateComponents + Comparable
+
+extension DateComponents: Comparable {
+    public static func < (lhs: DateComponents, rhs: DateComponents) -> Bool {
+        guard let lhsDate = Calendar.current.date(from: lhs),
+              let rhsDate = Calendar.current.date(from: rhs) else {
+                  assertionFailure("A date which matches the components couldn't be found")
+                  return false
+              }
+        return lhsDate < rhsDate
+    }
+
+    public static func == (lhs: DateComponents, rhs: DateComponents) -> Bool {
+        guard let lhsDate = Calendar.current.date(from: lhs),
+              let rhsDate = Calendar.current.date(from: rhs) else {
+                  assertionFailure("A date which matches the components couldn't be found")
+                  return false
+              }
+        return lhsDate == rhsDate
+    }
+}

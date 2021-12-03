@@ -8,108 +8,73 @@
 import UIKit
 import Charts
 
-class MonthlyStatisticsViewController: UIViewController, ChartViewDelegate {
+final class MonthlyStatisticsViewController: UIViewController {
 
-    // MARK: - Property
+    // MARK: - Properties
 
-    var nowDate = Date()
-    var previousMonth: Date?
     var monthArray: [String] = []
-    var nowYear: String?
+    var months: [Date] = []
 
     var unitsSold = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-    var metricData = [[String:Any]]()
-    var monthData = [[String:Any]]()
+    var metricData = [[String: Any]]()
+    var monthData = [[String: Any]]()
 
-    // MARK: - Outlet
+    private lazy var monthDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM" // ex) Dec
+        return formatter
+    }()
+
+    // MARK: - Outlets
 
     @IBOutlet weak var barChart: BarChartView!
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
         barChart.delegate = self
-        setChart()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        print(CheckServiceChange.shared.isServiceAdd)
-        if CheckServiceChange.shared.isServiceAdd {
-            setChart()
-        }
-        monthData = metricData
+        super.viewWillAppear(animated)
+
+        setChart()
+        chartValueNothingSelected(barChart)
     }
 
-    func getPreviouseSixMonth(_ date: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "LLL"
-
-        // 현재 날짜 월과 배열에 마지막 값의 월이 같으면 리턴
-        if monthArray.last == dateFormatter.string(from: nowDate) {
-            return
-        }
-
-        for i in 0..<6 {
-            previousMonth = Calendar.current.date(byAdding: .month, value: -i, to: date)
-            guard let previousMonth = previousMonth else { return }
-            monthArray.append(dateFormatter.string(from: previousMonth))
-        }
-
-        dateFormatter.dateFormat = "yyyy"
-        nowYear = dateFormatter.string(from: date)
-
-        monthArray.reverse()
-    }
-
-    // charts setting
-    func setChart() {
-        metricData = [[String:Any]]()
+    private func setChart() {
+        metricData = [[String: Any]]()
         unitsSold = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        barChart.noDataText = "데이터가 없습니다."
-        barChart.noDataFont = .systemFont(ofSize: 20)
-        barChart.noDataTextColor = .lightGray
-
-        // 현재 날짜 출력
-        nowDate = Date()
 
         // 현재 날짜로부터 6개월 전
-        getPreviouseSixMonth(nowDate)
+        let today = Date()
+        getPreviouseSixMonth(today)
 
         // 데이터 뿌리기
         var dataEntries: [BarChartDataEntry] = []
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "LLL"
-
-        let yearFormatter = DateFormatter()
-        yearFormatter.dateFormat = "yyyy"
-
-        // 현재 날짜와 시작 날짜가 같으면 값 더하기
-        for i in 0..<monthArray.count {
-            for j in 0..<SubscriptionRepository.shared.subscriptions().count {
-                // 년이 같은지 체크
-                if nowYear
-                    == yearFormatter.string(from: SubscriptionRepository.shared.subscriptions()[j].startDate) {
-                    // 월이 같은지 체크 
-                    if monthArray[i]
-                        == dateFormatter.string(from: SubscriptionRepository.shared.subscriptions()[j].startDate) {
-                        unitsSold[i] += Double(SubscriptionRepository.shared.subscriptions()[j].planPrice)
-                        let data = [
-                            "month": dateFormatter.string(from: SubscriptionRepository.shared.subscriptions()[j].startDate),
-                            "serviceName": SubscriptionRepository.shared.subscriptions()[j].serviceName,
-                            "planPrice": SubscriptionRepository.shared.subscriptions()[j].planPrice
-                        ] as [String : Any]
-                        metricData.append(data)
-                    }
+        (0..<months.count).forEach { index in
+            let month = months[index]
+            SubscriptionRepository.shared.subscriptions().forEach { subscription in
+                let calendar = Calendar.current
+                let startDateComponent = calendar.dateComponents([.year, .month], from: subscription.startDate)
+                let monthComponent = calendar.dateComponents([.year, .month], from: month)
+                if monthComponent >= startDateComponent {
+                    unitsSold[index] += Double(subscription.planPrice)
+                    let data = [
+                        "month": monthArray[index],
+                        "serviceName": subscription.serviceName,
+                        "planPrice": subscription.planPrice
+                    ] as [String: Any]
+                    metricData.append(data)
                 }
             }
         }
-
-        print(unitsSold)
 
         for i in 0..<monthArray.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: unitsSold[i])
@@ -117,48 +82,71 @@ class MonthlyStatisticsViewController: UIViewController, ChartViewDelegate {
         }
 
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "월별 사용 금액")
-
         chartDataSet.colors = [.orange]
+        chartDataSet.highlightEnabled = true
 
         let chartData = BarChartData(dataSet: chartDataSet)
-        barChart.data = chartData
 
-        chartDataSet.highlightEnabled = true
+        barChart.noDataFont = .systemFont(ofSize: 20)
+        barChart.noDataText = "데이터가 없습니다."
+        barChart.noDataTextColor = .lightGray
+        barChart.data = chartData
         barChart.doubleTapToZoomEnabled = false
 
         barChart.xAxis.labelPosition = .bottom
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: monthArray)
-
+        barChart.xAxis.drawAxisLineEnabled = false
+        barChart.xAxis.drawGridLinesEnabled = false
         barChart.xAxis.setLabelCount(monthArray.count, force: false)
 
         barChart.rightAxis.enabled = false
-
-        barChart.xAxis.drawAxisLineEnabled = false
         barChart.leftAxis.drawAxisLineEnabled = false
         barChart.leftAxis.enabled = false
-        barChart.xAxis.drawGridLinesEnabled = false
     }
 
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        monthData = [[String:Any]]()
-        let pos = NSInteger(entry.x)
-        for i in 0..<metricData.count {
-            let data = metricData[i]
-            let month = data["month"]
-            if let month = month {
-                if monthArray[pos] == month as! String {
-                    monthData.append(data)
-                }
-            }
+    private func getPreviouseSixMonth(_ date: Date) {
+        months = []
+        monthArray = []
+        (0..<6).forEach { index in
+            let previousMonth = Calendar.current.date(byAdding: .month, value: -index, to: date)
+            guard let previousMonth = previousMonth else { return }
+            months.append(previousMonth)
+            monthArray.append(monthDateFormatter.string(from: previousMonth))
         }
+        months.reverse()
+        monthArray.reverse()
+    }
+
+}
+
+// MARK: - ChartViewDelegate
+
+extension MonthlyStatisticsViewController: ChartViewDelegate {
+
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {let selectedIndex = Int(entry.x)
+        let selectedMonth = monthArray[selectedIndex]
+        let filteredMonthData: [[String: Any]] = metricData.filter {
+            let month = $0["month"] as! String
+            return month == selectedMonth
+        }
+        monthData = filteredMonthData
+
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
 
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        monthData = [[String:Any]]()
-        monthData = metricData
+        // 서비스별 총 이용금액
+        var totalPrices = [String: Int]()
+        let services = Set(metricData.map { $0["serviceName"] as! String })
+        services.forEach { serviceName in
+            totalPrices[serviceName] = metricData
+                .filter { serviceName == $0["serviceName"] as! String }
+                .map { $0["planPrice"] as! Int }
+                .reduce(0, +)
+        }
+        monthData = totalPrices.map { ["serviceName": $0.key, "planPrice": $0.value] as [String: Any] }
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -166,12 +154,10 @@ class MonthlyStatisticsViewController: UIViewController, ChartViewDelegate {
 
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
 extension MonthlyStatisticsViewController:
     UITableViewDelegate, UITableViewDataSource {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return monthData.count
