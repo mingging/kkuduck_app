@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="82Y-Ig-Q8e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="82Y-Ig-Q8e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -93,7 +93,7 @@
                         <outlet property="barChartView" destination="3dQ-eg-aMU" id="ynP-Sk-V5B"/>
                         <outlet property="charView" destination="bn0-iB-ydY" id="X25-pf-InV"/>
                         <outlet property="pieChartView" destination="nLH-ia-3U3" id="i2E-gr-OR4"/>
-                        <outlet property="segmentControl" destination="5sA-d8-3ML" id="uE1-KC-8ae"/>
+                        <outlet property="segmentedControl" destination="5sA-d8-3ML" id="uE1-KC-8ae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhA-O8-gCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -109,19 +109,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POi-Cs-esJ" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="30" y="0.0" width="354" height="432"/>
+                                <rect key="frame" x="30" y="135.5" width="354" height="354"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="432" id="ldI-52-ugO"/>
+                                    <constraint firstAttribute="width" secondItem="POi-Cs-esJ" secondAttribute="height" multiplier="1:1" id="vs9-yd-0Jg"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="veH-x6-OLw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="POi-Cs-esJ" firstAttribute="leading" secondItem="0U7-5U-0l4" secondAttribute="leading" constant="30" id="MU9-VG-zOU"/>
-                            <constraint firstAttribute="trailing" secondItem="POi-Cs-esJ" secondAttribute="trailing" constant="30" id="hmJ-5R-BaC"/>
-                            <constraint firstItem="POi-Cs-esJ" firstAttribute="top" secondItem="0U7-5U-0l4" secondAttribute="top" id="xjn-HU-51G"/>
+                            <constraint firstItem="POi-Cs-esJ" firstAttribute="leading" secondItem="veH-x6-OLw" secondAttribute="leading" constant="30" id="HjX-Ds-Jeq"/>
+                            <constraint firstItem="POi-Cs-esJ" firstAttribute="centerY" secondItem="0U7-5U-0l4" secondAttribute="centerY" id="ern-L8-dGB"/>
+                            <constraint firstItem="veH-x6-OLw" firstAttribute="trailing" secondItem="POi-Cs-esJ" secondAttribute="trailing" constant="30" id="m1g-bq-cnm"/>
                         </constraints>
                     </view>
                     <connections>
@@ -182,6 +182,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bvg-53-bUn" id="HA8-76-Bi8"/>
+                                    <outlet property="delegate" destination="bvg-53-bUn" id="qib-Vd-dat"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zjK-ng-jqu"/>

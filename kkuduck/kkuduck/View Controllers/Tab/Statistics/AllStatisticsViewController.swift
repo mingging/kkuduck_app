@@ -8,35 +8,47 @@
 import UIKit
 import Charts
 
-class AllStatisticsViewController: UIViewController {
+final class AllStatisticsViewController: UIViewController {
 
-    // MARK: - Property
+    private enum Font {
+        static let chartLabel = UIFont(name: "GmarketSansBold", size: 15)!
+    }
+
+    // MARK: - Properties
 
     var allChartEntries = [PieChartDataEntry]()
 
-    var metricData = [[String:Any]]()
+    var metricData = [[String: Any]]()
 
-    // MARK: - Outlet
+    // MARK: - Outlets
 
     @IBOutlet weak var pieChart: PieChartView!
+
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // allChartEntries = [testValue, test2Value]
+        setup(pieChartView: pieChart)
         setChart()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        print( "all \(CheckServiceChange.shared.isServiceAdd)")
+        super.viewWillAppear(animated)
+
         if CheckServiceChange.shared.isServiceAdd {
             setChart()
-
             CheckServiceChange.shared.isServiceAdd = false
         }
     }
 
-    func setChart() {
+    private func setup(pieChartView chartView: PieChartView) {
+        chartView.entryLabelFont = Font.chartLabel
+        chartView.entryLabelColor = .label
+        chartView.legend.enabled = false
+    }
+
+    private func setChart() {
         metricData = [[String:Any]]()
         allChartEntries = [PieChartDataEntry]()
         pieChart.noDataText = "데이터가 없습니다."
@@ -74,25 +86,18 @@ class AllStatisticsViewController: UIViewController {
                         label: metricData[i]["serviceName"] as? String
                     )
                 )
-                colors.append(.random)
+                let alpha = 1 - CGFloat(i) / CGFloat(metricData.count)
+                let color = UIColor.primary?.withAlphaComponent(alpha)
+                colors.append(color ?? .random)
             }
         }
 
-        let chartDataSet = PieChartDataSet(entries: allChartEntries, label: "")
+        let chartDataSet = PieChartDataSet(entries: allChartEntries, label: nil)
         let chartData = PieChartData(dataSet: chartDataSet)
+        chartData.setValueTextColor(.label)
         chartDataSet.colors = colors
 
         pieChart.data = chartData
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
