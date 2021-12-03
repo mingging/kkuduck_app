@@ -13,6 +13,7 @@ final class AddSubscriptionDetailViewController: UIViewController {
 
     private enum Metric {
         static let cornerRadius: CGFloat = 10
+        static let selectPlanCellHeight: CGFloat = 64
     }
 
     // MARK: - Properties
@@ -43,7 +44,7 @@ final class AddSubscriptionDetailViewController: UIViewController {
         dropDown.anchorView = planMenuView
         dropDown.backgroundColor = .white
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
-        dropDown.cellHeight = 64
+        dropDown.cellHeight = Metric.selectPlanCellHeight
         dropDown.cornerRadius = Metric.cornerRadius
         dropDown.cellNib = UINib(nibName: SelectPlanCell.reuseIdentifier, bundle: nil)
         return dropDown
@@ -151,6 +152,16 @@ final class AddSubscriptionDetailViewController: UIViewController {
 
 }
 
+// MARK: - UIScrollViewDelegate
+
+extension AddSubscriptionDetailViewController: UIScrollViewDelegate {
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+
+}
+
 // MARK: - UITextFieldDelegate
 
 extension AddSubscriptionDetailViewController: UITextFieldDelegate {
@@ -168,6 +179,8 @@ extension AddSubscriptionDetailViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
+        case serviceNameTextField:
+            planNameTextField.becomeFirstResponder()
         case planNameTextField:
             planPriceTextField.becomeFirstResponder()
         default:
