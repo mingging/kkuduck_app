@@ -186,8 +186,8 @@ extension MonthlyStatisticsViewController:
         serviceName.text = data["serviceName"] as? String
 
         let planPrice = cell.viewWithTag(2) as! UILabel
-        guard let price = data["planPrice"] else { return cell }
-        planPrice.text = "\(price)원"
+        guard let price = data["planPrice"] as? Int else { return cell }
+        planPrice.text = price.currencyString
         return cell
     }
 

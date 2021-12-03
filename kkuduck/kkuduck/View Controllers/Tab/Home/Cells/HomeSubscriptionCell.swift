@@ -51,7 +51,7 @@ final class HomeSubscriptionCell: UICollectionViewCell {
     func configure(with subscription: Subscription) {
         nameLabel.text = subscription.serviceName
         cycleLabel.text = subscription.cycle.rawValue
-        priceLabel.text = "\(subscription.planPrice) 원"
+        priceLabel.text = subscription.planPrice.currencyString
         let nextDate = DateHelper.nextSubscriptionDate(from: subscription.startDate, matching: subscription.cycle)!
         nextDateLabel.text = DateHelper.string(from: nextDate)
         ImageCache.load(urlString: subscription.imageUrl) { image in

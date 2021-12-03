@@ -20,7 +20,7 @@ final class HomeViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.countLabel.text = String(self.subscriptions.count)
-                self.totalPriceLabel.text = String(self.subscriptions.map { $0.planPrice }.reduce(0, +))
+                self.totalPriceLabel.text = self.subscriptions.map { $0.planPrice }.reduce(0, +).currencyString
                 self.collectionView.reloadData()
             }
         }

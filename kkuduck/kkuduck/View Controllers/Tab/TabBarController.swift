@@ -31,6 +31,7 @@ final class TabBarController: UITabBarController {
         tabBar.layer.shadowRadius = Metric.shadowRadius
         tabBar.layer.shadowColor = UIColor.black.cgColor
         tabBar.layer.shadowOpacity = Metric.shadowOpacity
+        tabBar.layer.shadowPath = UIBezierPath(roundedRect: tabBar.bounds, cornerRadius: tabBar.layer.cornerRadius).cgPath
     }
 
 }

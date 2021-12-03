@@ -21,7 +21,7 @@ final class AddSubscriptionDetailViewController: UIViewController {
     var selectedPlan: DefaultSubscription.Plan! {
         didSet {
             self.planNameLabel.text = selectedPlan.name
-            self.planPriceLabel.text =  "\(selectedPlan.price)원/\(selectedPlan.cycle.rawValue)"
+            self.planPriceLabel.text =  "\(selectedPlan.price.currencyString)/\(selectedPlan.cycle.rawValue)"
         }
     }
     var shareCount: Int = 1 {
