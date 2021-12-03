@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10688515275467CE0057AD2D /* AddService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10688514275467CE0057AD2D /* AddService.storyboard */; };
+		10688515275467CE0057AD2D /* AddSubscription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10688514275467CE0057AD2D /* AddSubscription.storyboard */; };
 		1068855A2755E28E0057AD2D /* ListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106885592755E28E0057AD2D /* ListNavigationController.swift */; };
 		10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B6274DEAC100BF5B97 /* ListViewController.swift */; };
 		10DC86BA274DEAC200BF5B97 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */; };
@@ -36,10 +36,11 @@
 		5D20028D274FB44C00C21E14 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */; };
 		5D20028F274FB4D500C21E14 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */; };
 		5D2002942754B6E500C21E14 /* DefaultSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2002932754B6E400C21E14 /* DefaultSubscription.swift */; };
+		5D2002A327586F4100C21E14 /* AddSubscriptionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2002A227586F4100C21E14 /* AddSubscriptionHeader.swift */; };
 		5D5CD3AC274E19230082DBE8 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */; };
 		5D5CD3B0274E24A70082DBE8 /* DefaultSubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */; };
 		5D9AEDF8274C9B1200E06F3B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */; };
-		5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF9274CB66700E06F3B /* NavigationController.swift */; };
+		5D9AEDFA274CB66700E06F3B /* AddSubscriptionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9AEDF9274CB66700E06F3B /* AddSubscriptionNavigationController.swift */; };
 		5DA9FA01274D084200D72377 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA00274D084200D72377 /* ImageCache.swift */; };
 		5DA9FA03274D222000D72377 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA02274D222000D72377 /* UIImage+Extension.swift */; };
 		5DA9FA0A274DB13200D72377 /* DefaultSubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9FA09274DB13200D72377 /* DefaultSubscriptionRequest.swift */; };
@@ -54,7 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10688514275467CE0057AD2D /* AddService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddService.storyboard; sourceTree = "<group>"; };
+		10688514275467CE0057AD2D /* AddSubscription.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddSubscription.storyboard; path = kkuduck/Storyboards/AddSubscription.storyboard; sourceTree = SOURCE_ROOT; };
 		106885592755E28E0057AD2D /* ListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNavigationController.swift; sourceTree = "<group>"; };
 		10DC86B6274DEAC100BF5B97 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -85,10 +86,11 @@
 		5D20028C274FB44C00C21E14 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		5D20028E274FB4D500C21E14 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		5D2002932754B6E400C21E14 /* DefaultSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscription.swift; sourceTree = "<group>"; };
+		5D2002A227586F4100C21E14 /* AddSubscriptionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionHeader.swift; sourceTree = "<group>"; };
 		5D5CD3AB274E19230082DBE8 /* SubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRepository.swift; sourceTree = "<group>"; };
 		5D5CD3AF274E24A70082DBE8 /* DefaultSubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscriptionRepository.swift; sourceTree = "<group>"; };
 		5D9AEDF7274C9B1200E06F3B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
-		5D9AEDF9274CB66700E06F3B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		5D9AEDF9274CB66700E06F3B /* AddSubscriptionNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionNavigationController.swift; sourceTree = "<group>"; };
 		5DA9FA00274D084200D72377 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		5DA9FA02274D222000D72377 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5DA9FA09274DB13200D72377 /* DefaultSubscriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubscriptionRequest.swift; sourceTree = "<group>"; };
@@ -273,9 +275,10 @@
 				5D127B082747AB5500E406C3 /* List.storyboard */,
 				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				5DBF027B274345A700FE6C1D /* Cells */,
+				10DC86B6274DEAC100BF5B97 /* ListViewController.swift */,
 				10DC86B7274DEAC100BF5B97 /* DetailViewController.swift */,
 				106885592755E28E0057AD2D /* ListNavigationController.swift */,
-				5DBF0279274341D100FE6C1D /* AddService */,
+				5DBF0279274341D100FE6C1D /* AddSubscription */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -291,22 +294,23 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
-		5DBF0279274341D100FE6C1D /* AddService */ = {
+		5DBF0279274341D100FE6C1D /* AddSubscription */ = {
 			isa = PBXGroup;
 			children = (
-				10688514275467CE0057AD2D /* AddService.storyboard */,
+				10688514275467CE0057AD2D /* AddSubscription.storyboard */,
 				5DBF027A2743434000FE6C1D /* Cells */,
 				396340822727D2930079E845 /* AddSubscriptionListViewController.swift */,
 				396340862727E4E20079E845 /* AddSubscriptionDetailViewController.swift */,
-				5D9AEDF9274CB66700E06F3B /* NavigationController.swift */,
+				5D9AEDF9274CB66700E06F3B /* AddSubscriptionNavigationController.swift */,
 			);
-			path = AddService;
+			path = AddSubscription;
 			sourceTree = "<group>";
 		};
 		5DBF027A2743434000FE6C1D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				396340842727DF600079E845 /* AddSubscriptionCell.swift */,
+				5D2002A227586F4100C21E14 /* AddSubscriptionHeader.swift */,
 				396340CD272A4AD90079E845 /* SelectPlanCell.swift */,
 				396340CE272A4AD90079E845 /* SelectPlanCell.xib */,
 			);
@@ -408,7 +412,7 @@
 			files = (
 				5D127B032747A90700E406C3 /* .swiftlint.yml in Resources */,
 				5DF276FD27435FB9003C434B /* LaunchScreen.storyboard in Resources */,
-				10688515275467CE0057AD2D /* AddService.storyboard in Resources */,
+				10688515275467CE0057AD2D /* AddSubscription.storyboard in Resources */,
 				5D127B0B2747ABAB00E406C3 /* Login.storyboard in Resources */,
 				396340D0272A4AD90079E845 /* SelectPlanCell.xib in Resources */,
 				5D127B072747AB2000E406C3 /* Statistics.storyboard in Resources */,
@@ -513,9 +517,10 @@
 				39633FFA272655E40079E845 /* LoginViewController.swift in Sources */,
 				5DF277152743C945003C434B /* Subscription.swift in Sources */,
 				396340A6272924260079E845 /* TabBarController.swift in Sources */,
-				5D9AEDFA274CB66700E06F3B /* NavigationController.swift in Sources */,
+				5D9AEDFA274CB66700E06F3B /* AddSubscriptionNavigationController.swift in Sources */,
 				39633FFC27265A080079E845 /* HomeViewController.swift in Sources */,
 				10DC86B9274DEAC200BF5B97 /* ListViewController.swift in Sources */,
+				5D2002A327586F4100C21E14 /* AddSubscriptionHeader.swift in Sources */,
 				5D20028F274FB4D500C21E14 /* UserDefaults+Extension.swift in Sources */,
 				396340872727E4E30079E845 /* AddSubscriptionDetailViewController.swift in Sources */,
 			);

@@ -21,7 +21,7 @@ public struct Subscription: Codable, Equatable {
     /// 구독 시작일
     let startDate: Date
     /// 구독 만료일
-    let endDate: Date?
+    var endDate: Date?
     /// 구독 서비스 이미지
     let imageUrl: String
     /// 서비스 사용 아이디

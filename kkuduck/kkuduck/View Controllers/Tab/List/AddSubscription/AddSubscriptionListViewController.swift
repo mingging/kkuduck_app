@@ -41,6 +41,12 @@ final class AddSubscriptionListViewController: UIViewController {
         }
     }
 
+    // MARK: - Actions
+
+    @IBAction func closeButtonDidTap(_ sender: Any) {
+        dismiss(animated: true)
+    }
+
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,6 +84,13 @@ extension AddSubscriptionListViewController: UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.contentView.layer.masksToBounds = true
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AddSubscriptionHeader.reuseIdentifier, for: indexPath) as? AddSubscriptionHeader else {
+            return UICollectionReusableView()
+        }
+        return header
     }
 
 }

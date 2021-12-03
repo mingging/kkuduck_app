@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -310,7 +311,10 @@
                             <constraint firstItem="78Y-hH-X8N" firstAttribute="bottom" secondItem="d4e-Eg-XMU" secondAttribute="bottom" id="hdX-g5-1p3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="home_icon.png" selectedImage="home_icon.png" id="nH4-zK-L7l"/>
+                    <tabBarItem key="tabBarItem" title="" id="nH4-zK-L7l">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="Lqo-DL-Tod"/>
                     <connections>
                         <outlet property="collectionView" destination="59n-JM-yau" id="nQa-iA-dJR"/>
@@ -326,7 +330,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home_icon.png" width="22" height="22"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logo" width="84" height="84"/>
         <image name="logo.png" width="168" height="168"/>
         <namedColor name="primary">

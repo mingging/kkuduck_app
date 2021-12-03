@@ -34,7 +34,7 @@ public final class SubscriptionRepository: SubscriptionRepositoryType {
         return encoder
     }()
 
-    // MARK: - 
+    // MARK: -
 
     func subscriptions() -> [Subscription] {
         if !FileManager.default.fileExists(atPath: fileURL.path) {
@@ -51,6 +51,15 @@ public final class SubscriptionRepository: SubscriptionRepositoryType {
     func save(subscription: Subscription) {
         var subscriptions = subscriptions()
         subscriptions.append(subscription)
+        if let data = try? encoder.encode(subscriptions) {
+            try! data.write(to: fileURL)
+        }
+    }
+
+    func update(endDate: Date, for subscription: Subscription) {
+        var subscriptions = subscriptions()
+        guard let index = subscriptions.firstIndex(of: subscription) else { return }
+        subscriptions[index].endDate = endDate
         if let data = try? encoder.encode(subscriptions) {
             try! data.write(to: fileURL)
         }
