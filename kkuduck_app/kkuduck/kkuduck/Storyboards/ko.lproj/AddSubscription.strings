@@ -1,0 +1,66 @@
+
+/* Class = "UILabel"; text = "입력해주세요!"; ObjectID = "3yK-um-7dz"; */
+"3yK-um-7dz.text" = "입력해주세요!";
+
+/* Class = "UINavigationItem"; title = "구독 만들기"; ObjectID = "5jV-Ej-1YV"; */
+"5jV-Ej-1YV.title" = "구독 만들기";
+
+/* Class = "UILabel"; text = "9,500원 / 월"; ObjectID = "BTY-r8-Awb"; */
+"BTY-r8-Awb.text" = "9,500원 / 월";
+
+/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "Cna-kd-SOJ"; */
+"Cna-kd-SOJ.title" = "Close";
+
+/* Class = "UILabel"; text = "다음 중\n현재 사용 중인 서비스가 있나요?"; ObjectID = "Dnm-CV-hRU"; */
+"Dnm-CV-hRU.text" = "다음 중\n현재 사용 중인 서비스가 있나요?";
+
+/* Class = "UILabel"; text = "플랜 이름"; ObjectID = "GDb-n7-2HM"; */
+"GDb-n7-2HM.text" = "플랜 이름";
+
+/* Class = "UILabel"; text = "플랜"; ObjectID = "GWt-wN-ljd"; */
+"GWt-wN-ljd.text" = "플랜";
+
+/* Class = "UIButton"; normalTitle = "완료"; ObjectID = "I9T-gQ-chm"; */
+"I9T-gQ-chm.normalTitle" = "완료";
+
+/* Class = "UILabel"; text = "구독서비스 이름"; ObjectID = "JDH-oZ-q4w"; */
+"JDH-oZ-q4w.text" = "구독서비스 이름";
+
+/* Class = "UILabel"; text = "(선택)"; ObjectID = "MZK-Oy-KY4"; */
+"MZK-Oy-KY4.text" = "(선택)";
+
+/* Class = "UILabel"; text = "서비스 사용 인원"; ObjectID = "OWr-wA-icH"; */
+"OWr-wA-icH.text" = "서비스 사용 인원";
+
+/* Class = "UILabel"; text = "1명"; ObjectID = "Rmd-Dr-KNx"; */
+"Rmd-Dr-KNx.text" = "1명";
+
+/* Class = "UILabel"; text = "플랜 가격"; ObjectID = "Z11-ER-ACP"; */
+"Z11-ER-ACP.text" = "플랜 가격";
+
+/* Class = "UILabel"; text = "베이식"; ObjectID = "ZZn-I3-spE"; */
+"ZZn-I3-spE.text" = "베이식";
+
+/* Class = "UILabel"; text = "구독 서비스 아이디"; ObjectID = "a5l-9C-Icc"; */
+"a5l-9C-Icc.text" = "구독 서비스 아이디";
+
+/* Class = "UILabel"; text = "추가 정보를"; ObjectID = "cTz-KT-WzL"; */
+"cTz-KT-WzL.text" = "추가 정보를";
+
+/* Class = "UILabel"; text = "넷플릭스"; ObjectID = "fdM-v3-qFj"; */
+"fdM-v3-qFj.text" = "넷플릭스";
+
+/* Class = "UILabel"; text = "(선택)"; ObjectID = "fol-Ez-Scc"; */
+"fol-Ez-Scc.text" = "(선택)";
+
+/* Class = "UILabel"; text = "결제 주기"; ObjectID = "kA7-sp-r1L"; */
+"kA7-sp-r1L.text" = "결제 주기";
+
+/* Class = "UISegmentedControl"; qGM-zU-ihP.segmentTitles[0] = "월"; ObjectID = "qGM-zU-ihP"; */
+"qGM-zU-ihP.segmentTitles[0]" = "월";
+
+/* Class = "UISegmentedControl"; qGM-zU-ihP.segmentTitles[1] = "년"; ObjectID = "qGM-zU-ihP"; */
+"qGM-zU-ihP.segmentTitles[1]" = "년";
+
+/* Class = "UILabel"; text = "구독 시작일"; ObjectID = "xpj-cn-TwZ"; */
+"xpj-cn-TwZ.text" = "구독 시작일";

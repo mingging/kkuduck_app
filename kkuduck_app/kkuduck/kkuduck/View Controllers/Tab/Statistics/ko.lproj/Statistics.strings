@@ -1,0 +1,18 @@
+
+/* Class = "UISegmentedControl"; 5sA-d8-3ML.segmentTitles[0] = "전체"; ObjectID = "5sA-d8-3ML"; */
+"5sA-d8-3ML.segmentTitles[0]" = "전체";
+
+/* Class = "UISegmentedControl"; 5sA-d8-3ML.segmentTitles[1] = "월별"; ObjectID = "5sA-d8-3ML"; */
+"5sA-d8-3ML.segmentTitles[1]" = "월별";
+
+/* Class = "UILabel"; text = "넷플릭스"; ObjectID = "CtB-tl-aEH"; */
+"CtB-tl-aEH.text" = "넷플릭스";
+
+/* Class = "UILabel"; text = "500,000원"; ObjectID = "JeE-gt-JQD"; */
+"JeE-gt-JQD.text" = "500,000원";
+
+/* Class = "UILabel"; text = "나의 구독 사용 금액을"; ObjectID = "T6q-fI-exd"; */
+"T6q-fI-exd.text" = "나의 구독 사용 금액을";
+
+/* Class = "UILabel"; text = "확인해보세요!"; ObjectID = "VQ0-gW-Izn"; */
+"VQ0-gW-Izn.text" = "확인해보세요!";

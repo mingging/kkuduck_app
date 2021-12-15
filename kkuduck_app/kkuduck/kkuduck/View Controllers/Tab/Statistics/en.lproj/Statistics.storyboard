@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="82Y-Ig-Q8e">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansBold.otf">
+            <string>GmarketSansBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Statistics View Controller-->
+        <scene sceneID="cmb-aA-f2a">
+            <objects>
+                <viewController id="82Y-Ig-Q8e" customClass="StatisticsViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hMW-5m-sc2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="THn-Y7-fIj">
+                                <rect key="frame" x="30" y="98" width="354" height="71"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6q-fI-exd">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your usage!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-gW-Izn">
+                                        <rect key="frame" x="0.0" y="38" width="354" height="33"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5sA-d8-3ML">
+                                <rect key="frame" x="30" y="189" width="354" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Totlal usage"/>
+                                    <segment title="Monthly usage"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" red="0.99215686274509807" green="0.67450980392156867" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchView:" destination="82Y-Ig-Q8e" eventType="valueChanged" id="LSw-mG-M6u"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dQ-eg-aMU">
+                                <rect key="frame" x="0.0" y="240" width="414" height="622"/>
+                                <connections>
+                                    <segue destination="bvg-53-bUn" kind="embed" id="eJW-Uw-7I3"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-ia-3U3">
+                                <rect key="frame" x="0.0" y="240" width="414" height="622"/>
+                                <connections>
+                                    <segue destination="v7S-w0-AH3" kind="embed" id="MAp-I6-vLs"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xWA-ot-u9j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="bottom" secondItem="nLH-ia-3U3" secondAttribute="bottom" id="8E7-PN-Sb1"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="trailing" secondItem="5sA-d8-3ML" secondAttribute="trailing" constant="30" id="Cvt-qh-tDL"/>
+                            <constraint firstItem="THn-Y7-fIj" firstAttribute="leading" secondItem="xWA-ot-u9j" secondAttribute="leading" constant="30" id="G5p-7m-pIc"/>
+                            <constraint firstItem="5sA-d8-3ML" firstAttribute="top" secondItem="THn-Y7-fIj" secondAttribute="bottom" constant="20" id="Iep-J2-9ex"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="bottom" secondItem="3dQ-eg-aMU" secondAttribute="bottom" id="RxI-aW-kKZ"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="trailing" secondItem="3dQ-eg-aMU" secondAttribute="trailing" id="Sqq-sy-QG7"/>
+                            <constraint firstItem="nLH-ia-3U3" firstAttribute="leading" secondItem="xWA-ot-u9j" secondAttribute="leading" id="cLQ-TF-djk"/>
+                            <constraint firstItem="3dQ-eg-aMU" firstAttribute="top" secondItem="5sA-d8-3ML" secondAttribute="bottom" constant="20" id="cW5-Vb-H6s"/>
+                            <constraint firstItem="nLH-ia-3U3" firstAttribute="top" secondItem="5sA-d8-3ML" secondAttribute="bottom" constant="20" id="jJG-uU-pm3"/>
+                            <constraint firstItem="3dQ-eg-aMU" firstAttribute="leading" secondItem="xWA-ot-u9j" secondAttribute="leading" id="p2r-K4-fS2"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="trailing" secondItem="THn-Y7-fIj" secondAttribute="trailing" constant="30" id="qEg-eR-Bkv"/>
+                            <constraint firstItem="5sA-d8-3ML" firstAttribute="leading" secondItem="xWA-ot-u9j" secondAttribute="leading" constant="30" id="uYg-CY-gYQ"/>
+                            <constraint firstItem="xWA-ot-u9j" firstAttribute="trailing" secondItem="nLH-ia-3U3" secondAttribute="trailing" id="xOm-mM-SGt"/>
+                            <constraint firstItem="THn-Y7-fIj" firstAttribute="top" secondItem="xWA-ot-u9j" secondAttribute="top" constant="54" id="zhQ-8q-rE9"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="x3T-vB-hr1">
+                        <imageReference key="image" image="chart.bar" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="chart.bar.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="barChartView" destination="3dQ-eg-aMU" id="ynP-Sk-V5B"/>
+                        <outlet property="charView" destination="bn0-iB-ydY" id="X25-pf-InV"/>
+                        <outlet property="pieChartView" destination="nLH-ia-3U3" id="i2E-gr-OR4"/>
+                        <outlet property="segmentedControl" destination="5sA-d8-3ML" id="uE1-KC-8ae"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhA-O8-gCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1744.9275362318842" y="160.71428571428569"/>
+        </scene>
+        <!--All Statistics View Controller-->
+        <scene sceneID="qdo-Ee-2Oh">
+            <objects>
+                <viewController id="v7S-w0-AH3" customClass="AllStatisticsViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0U7-5U-0l4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="622"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POi-Cs-esJ" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="30" y="134" width="354" height="354"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="POi-Cs-esJ" secondAttribute="height" multiplier="1:1" id="vs9-yd-0Jg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="veH-x6-OLw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="POi-Cs-esJ" firstAttribute="leading" secondItem="veH-x6-OLw" secondAttribute="leading" constant="30" id="HjX-Ds-Jeq"/>
+                            <constraint firstItem="POi-Cs-esJ" firstAttribute="centerY" secondItem="0U7-5U-0l4" secondAttribute="centerY" id="ern-L8-dGB"/>
+                            <constraint firstItem="veH-x6-OLw" firstAttribute="trailing" secondItem="POi-Cs-esJ" secondAttribute="trailing" constant="30" id="m1g-bq-cnm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pieChart" destination="POi-Cs-esJ" id="9Lp-AB-9EZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cR3-mw-kI0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228.985507246377" y="856.80803571428567"/>
+        </scene>
+        <!--Monthly Statistics View Controller-->
+        <scene sceneID="PFc-vC-YzT">
+            <objects>
+                <viewController id="bvg-53-bUn" customClass="MonthlyStatisticsViewController" customModule="kkuduck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RhJ-kx-2Eo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="622"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bn0-iB-ydY" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="30" y="0.0" width="354" height="287"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="287" id="U5n-PB-ag5"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EWM-Pl-YCh">
+                                <rect key="frame" x="0.0" y="307" width="414" height="315"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="Aqn-IB-haO">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aqn-IB-haO" id="EkM-Gb-VDp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Netflix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtB-tl-aEH">
+                                                    <rect key="frame" x="20" y="11" width="56" height="28"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="424.82 $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeE-gt-JQD">
+                                                    <rect key="frame" x="324" y="11" width="70" height="28"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JeE-gt-JQD" firstAttribute="top" secondItem="EkM-Gb-VDp" secondAttribute="topMargin" id="13d-cm-GWn"/>
+                                                <constraint firstItem="JeE-gt-JQD" firstAttribute="centerY" secondItem="CtB-tl-aEH" secondAttribute="centerY" id="HcD-wu-cBp"/>
+                                                <constraint firstItem="CtB-tl-aEH" firstAttribute="top" secondItem="EkM-Gb-VDp" secondAttribute="topMargin" id="Jux-RC-x7U"/>
+                                                <constraint firstItem="CtB-tl-aEH" firstAttribute="leading" secondItem="EkM-Gb-VDp" secondAttribute="leadingMargin" id="MGA-hM-0kr"/>
+                                                <constraint firstItem="JeE-gt-JQD" firstAttribute="trailing" secondItem="EkM-Gb-VDp" secondAttribute="trailingMargin" id="Xhs-jG-Bxv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CtB-tl-aEH" secondAttribute="bottom" id="cFx-KT-yBV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bvg-53-bUn" id="HA8-76-Bi8"/>
+                                    <outlet property="delegate" destination="bvg-53-bUn" id="qib-Vd-dat"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zjK-ng-jqu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EWM-Pl-YCh" secondAttribute="trailing" id="JLU-nf-eR4"/>
+                            <constraint firstItem="EWM-Pl-YCh" firstAttribute="leading" secondItem="RhJ-kx-2Eo" secondAttribute="leading" id="TYE-Ol-Adf"/>
+                            <constraint firstAttribute="bottom" secondItem="EWM-Pl-YCh" secondAttribute="bottom" id="a5V-JF-AJH"/>
+                            <constraint firstItem="bn0-iB-ydY" firstAttribute="top" secondItem="RhJ-kx-2Eo" secondAttribute="top" id="eEm-6X-Zf5"/>
+                            <constraint firstAttribute="trailing" secondItem="bn0-iB-ydY" secondAttribute="trailing" constant="30" id="l1a-VQ-6ak"/>
+                            <constraint firstItem="bn0-iB-ydY" firstAttribute="leading" secondItem="RhJ-kx-2Eo" secondAttribute="leading" constant="30" id="lUH-tJ-CtY"/>
+                            <constraint firstItem="EWM-Pl-YCh" firstAttribute="top" secondItem="bn0-iB-ydY" secondAttribute="bottom" constant="20" id="lvg-BD-AKx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barChart" destination="bn0-iB-ydY" id="NJ3-nj-Riw"/>
+                        <outlet property="tableView" destination="EWM-Pl-YCh" id="MhR-P6-ZNv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7Y-21-we0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2141" y="857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chart.bar" catalog="system" width="128" height="90"/>
+        <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

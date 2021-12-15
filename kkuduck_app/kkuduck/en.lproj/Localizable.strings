@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  kkuduck
+
+  Created by jo on 2021/12/10.
+  
+*/
+
+//백에서 영문으로 받고 한글로 되어있는 곳을 영문으로
+//키를 영문으로 바꾸기
+
+//Add subscription
+"넷플릭스" = "Netflix";  //"Netflix" = " 바꿀 버전 어쩌구"
+"티빙" = "Tving";
+"왓챠" = "Watha";
+"디즈니 플러스" = "Disney Plus";
+"웨이브" ="Wave";
+"멜론" ="Melon";
+"애플뮤직"="Apple";
+"스포티파이" = "spotify";
+"유튜브 프리미엄" = "Youtube Premeium";
+"플로" = "flo";
+"밀리의 서재" = "Millie";
+"리디북스 셀렉트" = "Ridibooks select";
+"카카오페이지" = "Kakao page";
+"예스24" = "Yes24";
+"카카오톡 이모티콘" = "Kakao imoticon";
+"쿠팡 로켓와우" = "Coupang Wow";
+"네이버 멤버쉽 플러스" = "Naver plus";
+"추가하기" = "add more";
+
+//Add subscription Detail
+"명" = " person";
+"원" = "$";
+"월" = "month";
+"년" = "year";
+
+//MetricView
+"데이터가 없습니다." = "There is no data";
+
+
+//DetailViewController
+"구독 정보를 정말로 삭제하시겠습니까?" = "Are you sure to delete?";
+"취소" = "cancel";
+"삭제" = "delete";
+
+"베이직" = "Basic";
+"왓챠" = "Watcha";
+"스포티파이" = "Spotify";
+"개인" = ""
+
+
+

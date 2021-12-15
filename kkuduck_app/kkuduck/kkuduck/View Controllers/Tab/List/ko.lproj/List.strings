@@ -1,0 +1,87 @@
+
+/* Class = "UILabel"; text = "만료됨"; ObjectID = "6AW-vr-9OI"; */
+"6AW-vr-9OI.text" = "만료됨";
+
+/* Class = "UILabel"; text = "를"; ObjectID = "6f2-zj-k4c"; */
+"6f2-zj-k4c.text" = "를";
+
+/* Class = "UILabel"; text = "넷플릭스"; ObjectID = "87S-PN-GZp"; */
+"87S-PN-GZp.text" = "넷플릭스";
+
+/* Class = "UILabel"; text = "49"; ObjectID = "GiC-Qu-cs6"; */
+"GiC-Qu-cs6.text" = "49";
+
+/* Class = "UILabel"; text = "가격"; ObjectID = "LXM-2P-YXc"; */
+"LXM-2P-YXc.text" = "가격";
+
+/* Class = "UIButton"; normalTitle = "삭제"; ObjectID = "NbA-rG-lqU"; */
+"NbA-rG-lqU.normalTitle" = "삭제";
+
+/* Class = "UILabel"; text = "서비스 ID"; ObjectID = "OC1-gX-BoF"; */
+"OC1-gX-BoF.text" = "서비스 ID";
+
+/* Class = "UILabel"; text = "2022.01.23"; ObjectID = "Pa4-6I-nv0"; */
+"Pa4-6I-nv0.text" = "2022.01.23";
+
+/* Class = "UILabel"; text = "2021.12.24"; ObjectID = "ROK-da-N5E"; */
+"ROK-da-N5E.text" = "2021.12.24";
+
+/* Class = "UILabel"; text = "구독 만료일"; ObjectID = "SQw-Ey-5F6"; */
+"SQw-Ey-5F6.text" = "구독 만료일";
+
+/* Class = "UILabel"; text = "9,900원"; ObjectID = "T9R-dk-hmk"; */
+"T9R-dk-hmk.text" = "9,900원";
+
+/* Class = "UILabel"; text = "넷플릭스"; ObjectID = "VbA-ua-z8F"; */
+"VbA-ua-z8F.text" = "넷플릭스";
+
+/* Class = "UILabel"; text = "1명"; ObjectID = "XZ6-ek-gUy"; */
+"XZ6-ek-gUy.text" = "1명";
+
+/* Class = "UILabel"; text = "결제 주기"; ObjectID = "YEo-j7-noa"; */
+"YEo-j7-noa.text" = "결제 주기";
+
+/* Class = "UILabel"; text = "플랜"; ObjectID = "arm-5I-hMD"; */
+"arm-5I-hMD.text" = "플랜";
+
+/* Class = "UILabel"; text = "베이직"; ObjectID = "bTD-zE-KIz"; */
+"bTD-zE-KIz.text" = "베이직";
+
+/* Class = "UILabel"; text = "kkuduck"; ObjectID = "hqM-fg-laC"; */
+"hqM-fg-laC.text" = "kkuduck";
+
+/* Class = "UILabel"; text = "일 동안 이용했어요!"; ObjectID = "msL-tr-3aI"; */
+"msL-tr-3aI.text" = "일 동안 이용했어요!";
+
+/* Class = "UILabel"; text = "2021.11.23"; ObjectID = "oDu-LD-Xuj"; */
+"oDu-LD-Xuj.text" = "2021.11.23";
+
+/* Class = "UILabel"; text = "나의 구독 서비스"; ObjectID = "pA2-ez-Fer"; */
+"pA2-ez-Fer.text" = "나의 구독 서비스";
+
+/* Class = "UIButton"; normalTitle = "만료"; ObjectID = "pEQ-Ye-WSB"; */
+"pEQ-Ye-WSB.normalTitle" = "만료";
+
+/* Class = "UILabel"; text = "다음 결제일"; ObjectID = "qPS-gd-Z3b"; */
+"qPS-gd-Z3b.text" = "다음 결제일";
+
+/* Class = "UILabel"; text = "구독 시작일"; ObjectID = "rdC-Oy-UvU"; */
+"rdC-Oy-UvU.text" = "구독 시작일";
+
+/* Class = "UILabel"; text = "사용 인원"; ObjectID = "sXm-FT-DJ3"; */
+"sXm-FT-DJ3.text" = "사용 인원";
+
+/* Class = "UILabel"; text = "9,900원 / 월"; ObjectID = "teY-bU-Pah"; */
+"teY-bU-Pah.text" = "9,900원 / 월";
+
+/* Class = "UILabel"; text = "넷플릭스"; ObjectID = "uGH-2C-yAm"; */
+"uGH-2C-yAm.text" = "넷플릭스";
+
+/* Class = "UILabel"; text = "월"; ObjectID = "xPa-n7-1Ig"; */
+"xPa-n7-1Ig.text" = "월";
+
+/* Class = "UISegmentedControl"; yrA-89-zhv.segmentTitles[0] = "구독중"; ObjectID = "yrA-89-zhv"; */
+"yrA-89-zhv.segmentTitles[0]" = "구독중";
+
+/* Class = "UISegmentedControl"; yrA-89-zhv.segmentTitles[1] = "만료됨"; ObjectID = "yrA-89-zhv"; */
+"yrA-89-zhv.segmentTitles[1]" = "만료됨";

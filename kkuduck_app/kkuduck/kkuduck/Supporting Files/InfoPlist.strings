@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  kkuduck
+
+  Created by jo on 2021/12/07.
+  
+*/
+
+"CFBundleDisplayName" = "kkuduck";
+"NSLocationWhenInUseUsageDescription" = "This is for checking your location";
